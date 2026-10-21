@@ -33,7 +33,7 @@ Folder `assets/` adalah **flat** (tidak banyak subdirektori) — sebagian besar 
 | `assets/MainView/` | Asset menu utama |
 | `assets/battle/` | Asset battle/pertempuran |
 | `assets/embattle/` | Asset formasi/barisan hero |
-| `assets/english/` | Lokalisasi Inggris (string file) — berisi text bahasa Inggris |
+| `assets/english/` | Lokalisasi Inggris — duplikat penuh aset (XML, JSON, PNG, BIN) dengan teks bahasa Inggris; dipilih saat device non-Cina |
 | `assets/flop/` | Asset mini-game kartu terbalik (memory card) |
 | `assets/hero/` | Sprite hero/karakter |
 | `assets/monster/` | Sprite monster |
@@ -362,15 +362,26 @@ File `.plist` adalah metadata Apple plist (XML format) yang dibaca `CCSpriteFram
 
 ---
 
-## 🌐 LOKALISASI
+## 🌐 LOKALISASI — DUA BAHASA PENUH
 
-| Folder/file | Bahasa |
-|---|---|
-| String default di nama item/monster/skill di XML | Tionghoa Tradisional (Taiwan/Hong Kong, terbukti dari `Locale.getDefault()` == `zh_TW`) |
-| `assets/english/` (folder) | String versi Inggris (nama hero/monster/item/menu) |
-| Dua bahasa dipilih di awal aplikasi: `zh_TW`/`zh` → setLanguage(0) (Cina), else → setLanguage(1) (Inggris) |
+Game mendukung **2 bahasa penuh** (Cina Tradisional dan Inggris) dengan aset terpisah:
 
-Dari kode Java `MonsterHunter.java`, semua pesan Toast/Dialog punya dua versi (Cina Tradisional aksara 繁體 dan Inggris). Contoh:
+| Bahasa | Folder | Cara dipilih |
+|---|---|---|
+| **Cina Tradisional (default)** | `assets/` (root) | Jika device `Locale.getDefault().getLanguage().equals("zh_TW")` atau `"zh"` → `setLanguage(0)` |
+| **Inggris** | `assets/english/` | Selain locale Cina → `setLanguage(1)` |
+
+**Folder `assets/english/` berisi DUPLIKAT SET ASET LENGKAP** yang dialihbahasakan (mirror struktur `assets/` root):
+- 22 XML data (monster, item, skill, equip, shop, activecode, dsb.) dengan nama/deskripsi bahasa Inggris
+- 92 JSON layout CocoStudio (teks UI di dalamnya sudah bahasa Inggris)
+- 200+ gambar PNG tombol/label berisi tulisan Inggris (btn, shop_goods_*, img_name_0..19 untuk nama hero/monster, img_shiping, dll.)
+- `data.xml`, `msg.xml`, `cinema.bin`, `ctext.bin` versi Inggris
+- Subfolder serupa: `battle/`, `embattle/`, `flop/`, `hero/`, `monster/`, `pay/`, `rally/`, `ranking/`, `register/`, `shop/`, `success/`, `task/`, `tollgate/`, `townres/`, `Loading/`, `MainView/`
+- Beberapa aset tambahan khusus Inggris: `num_moner.png`, `public_block.png`, `public_new.png`, `shop_goods_15.png`, `Task_3.json`
+
+> Mekanisme switching: native C++ kemungkinan mem-prefix path dengan `"english/"` saat bahasa Inggris aktif, karena struktur folder persis sama dengan `assets/` root. Jadi string Cina tidak diterjemahkan secara real-time; game memuat file aset yang berbeda tergantung bahasa.
+
+Dari kode Java `MonsterHunter.java`, semua pesan Toast/Dialog juga punya dua versi hardcoded (Cina Tradisional aksara 繁體 dan Inggris). Contoh:
 - "確定退出遊戲?" / "exit the game?"
 - "沒有可用的廣告..." / "no available ads"
 - "鑽石 X2" / "Diamonds X2"

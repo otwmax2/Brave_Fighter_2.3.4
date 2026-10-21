@@ -1,8 +1,12 @@
 # README DEKRIPSI FILE XML — Brave Fighter 2.3.4
 
 ## Ringkasan
-Semua 22 file XML yang tadinya ter-enkripsi di folder `assets/` telah berhasil
-didekripsi dan disimpan di folder ini (`xml_decryp/`).
+Semua **22 file XML Cina** (di `assets/` root) dan **21 file XML Inggris** (di `assets/english/`) yang tadinya ter-enkripsi XOR telah berhasil didekripsi dan disimpan di folder ini:
+
+- `xml_decryp/*.xml` — 22 file XML bahasa Cina Tradisional (versi default)
+- `xml_decryp/english/*.xml` — 21 file XML bahasa Inggris (versi `setLanguage(1)`)
+- `LAPORAN_DEKRIPSI_XML.md` — laporan detail format XML per-file (versi Cina)
+- `README_ENGLISH.md` — ringkasan isi XML versi Inggris (nama skill/weapon/shop yang sudah plain Inggris)
 
 ## Kunci Enkripsi yang Ditemukan
 

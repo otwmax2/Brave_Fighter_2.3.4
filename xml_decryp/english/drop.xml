@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<drop>
+	<Levels>
+		<level id="0" dropindex0="1000" random0="40" dropindex1="2000" random1="40" dropindex2="3000" random2="10" dropindex3="3020" random3="10" dropindex4="1000" random4="0"  time="500" getgold="30" />
+		<level id="1" dropindex0="1000" random0="35" dropindex1="2000" random1="35" dropindex2="3000" random2="15" dropindex3="3020" random3="15" dropindex4="1000" random4="0"  time="510" getgold="35" />
+		<level id="2" dropindex0="1000" random0="30" dropindex1="2000" random1="30" dropindex2="1001" random2="10" dropindex3="2001" random3="10" dropindex4="3000" random4="20" time="520" getgold="40" />
+		<level id="3" dropindex0="1000" random0="25" dropindex1="2000" random1="25" dropindex2="1001" random2="15" dropindex3="2001" random3="15" dropindex4="3020" random4="20" time="795" getgold="50" />                                                                                                                                                                       
+		<level id="4" dropindex0="1001" random0="20" dropindex1="2001" random1="20" dropindex2="3000" random2="25" dropindex3="3020" random3="25" dropindex4="3001" random4="10" time="540" getgold="45" />
+		<level id="5" dropindex0="1001" random0="20" dropindex1="2001" random1="20" dropindex2="3000" random2="25" dropindex3="3020" random3="25" dropindex4="3021" random4="10" time="550" getgold="50" />
+		<level id="6" dropindex0="1001" random0="30" dropindex1="2001" random1="30" dropindex2="1002" random2="10" dropindex3="2002" random3="10" dropindex4="3001" random4="20" time="560" getgold="55" />
+		<level id="7" dropindex0="1001" random0="30" dropindex1="2001" random1="30" dropindex2="1002" random2="10" dropindex3="2002" random3="10" dropindex4="3021" random4="20" time="855" getgold="65" />                                                                                                                                                                      
+
+		<level id="8"  dropindex0="1003"  random0="35" dropindex1="1006"  random1="35" dropindex2="2003" random2="15" dropindex3="2006"  random3="15" dropindex4="1003" random4="0" time="600" getgold="70" />
+
+		<level id="9"  dropindex0="1004" random0="40" dropindex1="2004" random1="40" dropindex2="3004" random2="10" dropindex3="3024" random3="10" dropindex4="1004" random4="0"  time="500" getgold="70" />
+		<level id="10" dropindex0="1004" random0="35" dropindex1="2004" random1="35" dropindex2="3004" random2="15" dropindex3="3024" random3="15" dropindex4="1004" random4="0"  time="510" getgold="75" />
+		<level id="11" dropindex0="1004" random0="30" dropindex1="2004" random1="30" dropindex2="1005" random2="10" dropindex3="2005" random3="10" dropindex4="3004" random4="20" time="520" getgold="80" />                                                                                                                                                                   
+		<level id="12" dropindex0="1004" random0="25" dropindex1="2004" random1="25" dropindex2="1005" random2="15" dropindex3="2005" random3="15" dropindex4="3024" random4="20" time="795" getgold="90" />  
+		<level id="13" dropindex0="1005" random0="20" dropindex1="2005" random1="20" dropindex2="3004" random2="25" dropindex3="3024" random3="25" dropindex4="3005" random4="10" time="540" getgold="85" />
+		<level id="14" dropindex0="1005" random0="20" dropindex1="2005" random1="20" dropindex2="3004" random2="25" dropindex3="3024" random3="25" dropindex4="3025" random4="10" time="550" getgold="90" />
+		<level id="15" dropindex0="1005" random0="30" dropindex1="2005" random1="30" dropindex2="1006" random2="10" dropindex3="2006" random3="10" dropindex4="3005" random4="20" time="560" getgold="95" />                                                                                                                                                           
+		<level id="16" dropindex0="1005" random0="30" dropindex1="2005" random1="30" dropindex2="1006" random2="10" dropindex3="2006" random3="10" dropindex4="3025" random4="20" time="855" getgold="105" />  
+
+		<level id="17" dropindex0="1007"  random0="35" dropindex1="1010"  random1="35" dropindex2="2007" random2="15" dropindex3="2010"  random3="15" dropindex4="1007" random4="0" time="700" getgold="110" />
+
+		<level id="18" dropindex0="1008" random0="40" dropindex1="2008" random1="40" dropindex2="3008" random2="10" dropindex3="3028" random3="10" dropindex4="1008" random4="0"  time="550" getgold="110" />
+		<level id="19" dropindex0="1008" random0="35" dropindex1="2008" random1="35" dropindex2="3008" random2="15" dropindex3="3028" random3="15" dropindex4="1008" random4="0"  time="560" getgold="115" />                                                                                                                                                      
+		<level id="20" dropindex0="1008" random0="30" dropindex1="2008" random1="30" dropindex2="1009" random2="10" dropindex3="2009" random3="10" dropindex4="3008" random4="20" time="570" getgold="120" />
+		<level id="21" dropindex0="1008" random0="25" dropindex1="2008" random1="25" dropindex2="1009" random2="15" dropindex3="2009" random3="15" dropindex4="3028" random4="20" time="870" getgold="130" />
+		<level id="22" dropindex0="1009" random0="20" dropindex1="2009" random1="20" dropindex2="3008" random2="25" dropindex3="3028" random3="25" dropindex4="3009" random4="10" time="590" getgold="125" />
+		<level id="23" dropindex0="1009" random0="20" dropindex1="2009" random1="20" dropindex2="3008" random2="25" dropindex3="3028" random3="25" dropindex4="3029" random4="10" time="600" getgold="130" />
+		<level id="24" dropindex0="1009" random0="30" dropindex1="2009" random1="30" dropindex2="1010" random2="10" dropindex3="2010" random3="10" dropindex4="3009" random4="20" time="610" getgold="135" />
+		<level id="25" dropindex0="1009" random0="30" dropindex1="2009" random1="30" dropindex2="1010" random2="10" dropindex3="2010" random3="10" dropindex4="3029" random4="20" time="930" getgold="145" />
+
+		<level id="26" dropindex0="1011"  random0="35" dropindex1="1014"  random1="35" dropindex2="2011" random2="15" dropindex3="2014"  random3="15" dropindex4="1011" random4="0" time="800" getgold="150" />
+
+		<level id="27" dropindex0="1012" random0="40" dropindex1="2012" random1="40" dropindex2="3012" random2="10" dropindex3="3032" random3="10" dropindex4="1012" random4="0"  time="550" getgold="150" />                                                                                                                                                             
+		<level id="28" dropindex0="1012" random0="35" dropindex1="2012" random1="35" dropindex2="3012" random2="15" dropindex3="3032" random3="15" dropindex4="1012" random4="0"  time="560" getgold="155" />   
+		<level id="29" dropindex0="1012" random0="30" dropindex1="2012" random1="30" dropindex2="1013" random2="10" dropindex3="2013" random3="10" dropindex4="3012" random4="20" time="570" getgold="160" />
+		<level id="30" dropindex0="1012" random0="25" dropindex1="2012" random1="25" dropindex2="1013" random2="15" dropindex3="2013" random3="15" dropindex4="3032" random4="20" time="870" getgold="170" />
+		<level id="31" dropindex0="1013" random0="20" dropindex1="2013" random1="20" dropindex2="3012" random2="25" dropindex3="3032" random3="25" dropindex4="3013" random4="10" time="590" getgold="165" />                                                                                                                                                            
+		<level id="32" dropindex0="1013" random0="20" dropindex1="2013" random1="20" dropindex2="3012" random2="25" dropindex3="3032" random3="25" dropindex4="3033" random4="10" time="600" getgold="170" />
+		<level id="33" dropindex0="3023" random0="30" dropindex1="3023" random1="30" dropindex2="1014" random2="10" dropindex3="2014" random3="10" dropindex4="3023" random4="20" time="610" getgold="175" />
+		<level id="34" dropindex0="1013" random0="30" dropindex1="2013" random1="30" dropindex2="1014" random2="10" dropindex3="2014" random3="10" dropindex4="3033" random4="20" time="930" getgold="185" />
+
+		<level id="35" dropindex0="1015"  random0="35" dropindex1="1018"  random1="35" dropindex2="2015" random2="15" dropindex3="2018"  random3="15" dropindex4="1015" random4="0" time="900" getgold="190"/>                                                                                                                                                                       
+
+		<level id="36" dropindex0="1016" random0="40" dropindex1="2016" random1="40" dropindex2="3016" random2="10" dropindex3="3036" random3="10" dropindex4="1016" random4="0"  time="600" getgold="190" />               
+		<level id="37" dropindex0="1016" random0="35" dropindex1="2016" random1="35" dropindex2="3016" random2="15" dropindex3="3036" random3="15" dropindex4="1016" random4="0"  time="610" getgold="195" />   
+		<level id="38" dropindex0="1016" random0="30" dropindex1="2016" random1="30" dropindex2="1017" random2="10" dropindex3="2017" random3="10" dropindex4="3016" random4="20" time="620" getgold="200" />
+		<level id="39" dropindex0="1016" random0="25" dropindex1="2016" random1="25" dropindex2="1017" random2="15" dropindex3="2017" random3="15" dropindex4="3036" random4="20" time="945" getgold="210" />                                                                                                                         
+		<level id="40" dropindex0="1017" random0="20" dropindex1="2017" random1="20" dropindex2="3016" random2="25" dropindex3="3036" random3="25" dropindex4="3023" random4="10" time="640" getgold="205" />               
+		<level id="41" dropindex0="1017" random0="20" dropindex1="2017" random1="20" dropindex2="3016" random2="25" dropindex3="3036" random3="25" dropindex4="3037" random4="10" time="650" getgold="210" />
+		<level id="42" dropindex0="1017" random0="30" dropindex1="2017" random1="30" dropindex2="1018" random2="10" dropindex3="2018" random3="10" dropindex4="3017" random4="20" time="660" getgold="215" />
+		<level id="43" dropindex0="1017" random0="30" dropindex1="2017" random1="30" dropindex2="1018" random2="10" dropindex3="2018" random3="10" dropindex4="3037" random4="20" time="1005" getgold="225" />                                                                                                                         
+
+		<level id="44" dropindex0="1018"  random0="35" dropindex1="2018"  random1="35" dropindex2="1019" random2="15" dropindex3="2019"  random3="15" dropindex4="1019" random4="0" time="1000" getgold="230" />
+		
+		<level id="45" dropindex0="1104"  random0="12"  dropindex1="2120"  random1="12"  dropindex2="3140" random2="12"  dropindex3="3144"  random3="12"  dropindex4="3008" random4="52" time="570"  getgold="135" />
+		<level id="46" dropindex0="1104"  random0="14" dropindex1="2120"  random1="14" dropindex2="3140" random2="14" dropindex3="3144"  random3="14" dropindex4="3028" random4="44" time="870"  getgold="140" />
+		<level id="47" dropindex0="1104"  random0="16" dropindex1="2120"  random1="16" dropindex2="3140" random2="16" dropindex3="3144"  random3="16" dropindex4="3009" random4="36" time="590"  getgold="145" />
+		<level id="48" dropindex0="1105"  random0="13"  dropindex1="2121"  random1="14"  dropindex2="3141" random2="14"  dropindex3="3028"  random3="14"  dropindex4="3029" random4="45" time="600"  getgold="155" />
+		<level id="49" dropindex0="1105"  random0="16"  dropindex1="2121"  random1="17"  dropindex2="3141" random2="16"  dropindex3="2010"  random3="16"  dropindex4="3009" random4="35" time="610"  getgold="150" />
+		<level id="50" dropindex0="1105"  random0="18" dropindex1="2121"  random1="19" dropindex2="3141" random2="19" dropindex3="2010"  random3="19" dropindex4="3029" random4="25" time="930"  getgold="155" />
+		<level id="51" dropindex0="1106"  random0="15"  dropindex1="2122"  random1="15"  dropindex2="3142" random2="15"  dropindex3="3032"  random3="15"  dropindex4="1012" random4="40" time="550"  getgold="160" />
+		<level id="52" dropindex0="1107"  random0="10"  dropindex1="2123"  random1="10"  dropindex2="3143" random2="10"  dropindex3="3032"  random3="10"  dropindex4="1012" random4="60" time="560"  getgold="170" />
+	</Levels>
+</drop>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<cgs>
+	<cg id="0"  name="Combat"  	 	playsound="xx.ogg" attacksound="xx.ogg" textid="sk_2.png"  costgold="100" attr="0"  delt="0"  value="20"  range="120"  describ="%a% attack twice"/>
+	<cg id="1"  name="Swift"   	 	playsound="xx.ogg" attacksound="xx.ogg" textid="sk_3.png"  costgold="100" attr="0"  delt="0"  value="20"  range="800"  describ="Increase %a% unit's move speed around"/>
+	<cg id="2"  name="Imprisonment"  	 	playsound="xx.ogg" attacksound="xx.ogg" textid="sk_4.png"  costgold="100" attr="1"  delt="10" value="2"   range="150"  describ="Durance %a seconds"/>
+	<cg id="3"  name="Violence"  	 	playsound="xx.ogg" attacksound="xx.ogg" textid="sk_5.png"  costgold="100" attr="0"  delt="0"  value="20"  range="800"  describ="%a% cause 150% damage"/>
+	<cg id="4"  name="Flame chop"	 	playsound="xx.ogg" attacksound="xx.ogg" textid="sk_6.png"  costgold="100" attr="1"  delt="15" value="120" range="280"  describ="Cause %a%damage"/>
+	<cg id="5"  name="Shield on"  	 	playsound="xx.ogg" attacksound="xx.ogg" textid="sk_7.png"  costgold="100" attr="0"  delt="0"  value="15"  range="800"  describ="Increase %a% defence"/>
+	<cg id="6"  name="Heal"  	 	playsound="xx.ogg" attacksound="xx.ogg" textid="sk_8.png"  costgold="100" attr="1"  delt="15" value="10"  range="400"  describ="Recovery %a% health of all units"/>
+	<cg id="7"  name="Defend"  	 	playsound="xx.ogg" attacksound="xx.ogg" textid="sk_9.png"  costgold="100" attr="0"  delt="0"  value="10"  range="800"  describ="Increase unit's %a% defence around"/>
+		
+	<cg id="8"  name="Flame"  	playsound="xx.ogg" attacksound="xx.ogg" textid="sk_10.png" costgold="100" attr="1"  delt="15" value="50"  range="250"  describ="Cause %a% damage"/>
+	<cg id="9"  name="Strong"  	playsound="xx.ogg" attacksound="xx.ogg" textid="sk_11.png" costgold="100" attr="0"  delt="0"  value="500" range="800"  describ="Increase %a health"/>
+	<cg id="10" name="Blizzard"  	playsound="xx.ogg" attacksound="xx.ogg" textid="sk_12.png" costgold="100" attr="1"  delt="20" value="150" range="150"  describ="Cause %a% damage to targets and slow down"/>
+	<cg id="11" name="Pray" 	 	playsound="xx.ogg" attacksound="xx.ogg" textid="sk_13.png" costgold="100" attr="0"  delt="0"  value="25"  range="800"  describ="%a% offset abnormal state"/>
+	<cg id="12" name="Hide" 	 	playsound="xx.ogg" attacksound="xx.ogg" textid="sk_14.png" costgold="100" attr="0"  delt="0"  value="20"  range="800"  describ="%a% avoid damage"/>
+	<cg id="13" name="Backstab" 	 	playsound="xx.ogg" attacksound="xx.ogg" textid="sk_15.png" costgold="100" attr="1"  delt="15" value="300" range="400"  describ="Backstab enemy and cause %a% damage"/>
+	<cg id="14" name="Shockwave"    	playsound="xx.ogg" attacksound="xx.ogg" textid="sk_16.png" costgold="100" attr="1"  delt="25" value="180" range="330"  describ="Rlease a shockwave,cause %a% damage"/>
+	<cg id="15" name="Stun" 	 	playsound="xx.ogg" attacksound="xx.ogg" textid="sk_17.png" costgold="100" attr="0"  delt="0"  value="20"  range="800"  describ="%a% stun the enemy while attack"/>
+		
+	<cg id="16" name="Repression"  	playsound="xx.ogg" attacksound="xx.ogg" textid="sk_18.png" costgold="100" attr="1"  delt="25" value="140" range="160"  describ="Cause %a% damage and beat back target"/>
+	<cg id="17" name="Fatal hit" 	 	playsound="xx.ogg" attacksound="xx.ogg" textid="sk_19.png" costgold="100" attr="0"  delt="0"  value="20"  range="800"  describ="%a% cause 200% damage "/>
+	<cg id="18" name="Wood Stick" 	 	playsound="xx.ogg" attacksound="xx.ogg" textid="sk_20.png" costgold="100" attr="1"  delt="20" value="200" range="250"  describ="Cause %a% damage"/>
+	<cg id="19" name="Intertwine" 	 	playsound="xx.ogg" attacksound="xx.ogg" textid="sk_21.png" costgold="100" attr="0"  delt="0"  value="20"  range="800"  describ="%a% interwine the enemy while attack"/>
+	<cg id="20" name="Frantic" 	 	playsound="xx.ogg" attacksound="xx.ogg" textid="sk_22.png" costgold="100" attr="0"  delt="0"  value="20"  range="145"  describ="Attack for several times,cause %a% damage"/>
+	<cg id="21" name="Earthquake" 	 	playsound="xx.ogg" attacksound="xx.ogg" textid="sk_23.png" costgold="100" attr="1"  delt="25" value="160" range="430"  describ="Cause %a% damage"/>
+		
+	<cg id="22" name="Styx Break"    	playsound="xx.ogg" attacksound="xx.ogg" textid="sk_0.png"  costgold="100" attr="1"  delt="20" value="200" range="500"  describ="Cause %a% damage in the area"/>
+	<cg id="23" name="Anger" 	 	playsound="xx.ogg" attacksound="xx.ogg" textid="sk_0.png"  costgold="100" attr="0"  delt="0"  value="10"  range="800"  describ="Increase %a% unit's attack around"/>
+	<cg id="24" name="Earth slash"    	playsound="xx.ogg" attacksound="xx.ogg" textid="sk_0.png"  costgold="100" attr="1"  delt="10" value="150" range="400"  describ="Cause %a% damage"/>
+	<cg id="25" name="Whack" 	 	playsound="xx.ogg" attacksound="xx.ogg" textid="sk_0.png"  costgold="100" attr="0"  delt="0"  value="20"  range="800"  describ="%a% cause 300% damage"/>
+	<cg id="26" name="Shadow slash"  	playsound="xx.ogg" attacksound="xx.ogg" textid="sk_0.png"  costgold="100" attr="0"  delt="0"  value="100" range="250"  describ="Creat three avatars to attack,cause %a% damage"/>
+	<cg id="27" name="Thunderclap"  	playsound="xx.ogg" attacksound="xx.ogg" textid="sk_0.png"  costgold="100" attr="1"  delt="25" value="250" range="390"  describ="Cause %a% damage to enemies around"/>
+		                                                                                      
+	<cg id="28"  name="Meteorite"   	playsound="xx.ogg" attacksound="xx.ogg" textid="sk_0.png"  costgold="100" attr="1"  delt="10" value="50"  range="400"  describ="Cause %a% damage"/>
+	<cg id="29" name="Heal" 	 	playsound="xx.ogg" attacksound="xx.ogg" textid="sk_1.png"  costgold="100" attr="0"  delt="10" value="20"  range="800"  describ="Recovery %a% health of all units"/>
+</cgs>

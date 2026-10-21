@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<state id="0"  mindifficulty="4"   maxdifficulty="20"   maxWave="5"  waveDelt="-1" stateDelt="150" msgActionid="-1"/>
+<state id="1"  mindifficulty="10"  maxdifficulty="30"   maxWave="5"  waveDelt="-1" stateDelt="150" msgActionid="0"/>
+<state id="2"  mindifficulty="20"  maxdifficulty="40"   maxWave="5"  waveDelt="30" stateDelt="150" msgActionid="0"/>
+<state id="3"  mindifficulty="30"  maxdifficulty="50"   maxWave="6"  waveDelt="25" stateDelt="150" msgActionid="0"/>
+<state id="4"  mindifficulty="40"  maxdifficulty="60"   maxWave="6"  waveDelt="25" stateDelt="150" msgActionid="0"/>
+<state id="5"  mindifficulty="50"  maxdifficulty="70"   maxWave="6"  waveDelt="25" stateDelt="150" msgActionid="0"/>
+<state id="6"  mindifficulty="60"  maxdifficulty="80"   maxWave="6"  waveDelt="25" stateDelt="150" msgActionid="0"/>
+<state id="7"  mindifficulty="70"  maxdifficulty="90"   maxWave="7"  waveDelt="20" stateDelt="150" msgActionid="0"/>
+<state id="8"  mindifficulty="80"  maxdifficulty="100"  maxWave="7"  waveDelt="20" stateDelt="150" msgActionid="0"/>
+<state id="9"  mindifficulty="90"  maxdifficulty="110"  maxWave="7"  waveDelt="20" stateDelt="150" msgActionid="0"/>
+<state id="10" mindifficulty="100" maxdifficulty="110"  maxWave="8"  waveDelt="20" stateDelt="150" msgActionid="0"/>
+<state id="11" mindifficulty="110" maxdifficulty="1000" maxWave="-1" waveDelt="15" stateDelt="-1"  msgActionid="-1"/>b
