@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<roadblock indexoffset="57">
+	<block id="0" damage="300" hiteffectid="125" showsound="xx.ogg" hitsound="xx.ogg" />
+	<block id="1" damage="150" hiteffectid="124" showsound="xx.ogg" hitsound="xx.ogg" />
+	<block id="2" damage="500" hiteffectid="123" showsound="xx.ogg" hitsound="xx.ogg" />
+	<block id="3" damage="300" hiteffectid="125" showsound="xx.ogg" hitsound="xx.ogg" />
+	<block id="4" damage="250" hiteffectid="123" showsound="xx.ogg" hitsound="xx.ogg" />
+	<block id="5" damage="800" hiteffectid="124" showsound="xx.ogg" hitsound="xx.ogg" />
+	<block id="6" damage="400" hiteffectid="123" showsound="xx.ogg" hitsound="xx.ogg" />
+	<block id="7" damage="450" hiteffectid="123" showsound="xx.ogg" hitsound="xx.ogg" />
+	<block id="8" damage="500" hiteffectid="123" showsound="xx.ogg" hitsound="xx.ogg" />
+	<block id="9" damage="550" hiteffectid="123" showsound="xx.ogg" hitsound="xx.ogg" />
+</roadblock>b
