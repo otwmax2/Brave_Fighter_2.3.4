@@ -1,0 +1,11 @@
+package com.facebook.ads;
+
+/* JADX INFO: loaded from: classes.dex */
+public interface RewardedVideoAdListener extends AdListener {
+    @Override // com.facebook.ads.AdListener
+    void onLoggingImpression(Ad ad);
+
+    void onRewardedVideoClosed();
+
+    void onRewardedVideoCompleted();
+}

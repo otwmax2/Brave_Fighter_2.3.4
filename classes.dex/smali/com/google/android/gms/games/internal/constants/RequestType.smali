@@ -1,0 +1,64 @@
+###### Class com.google.android.gms.games.internal.constants.RequestType (com.google.android.gms.games.internal.constants.RequestType)
+.class public final Lcom/google/android/gms/games/internal/constants/RequestType;
+.super Ljava/lang/Object;
+
+
+# direct methods
+.method private constructor <init>()V
+    .registers 1
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
+.method public static zzqs(I)Ljava/lang/String;
+    .registers 4
+
+    packed-switch p0, :pswitch_data_26
+
+    const-string v0, "RequestType"
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    const/16 v2, 0x21
+
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v2, "Unknown request type: "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Lcom/google/android/gms/games/internal/GamesLog;->zzag(Ljava/lang/String;Ljava/lang/String;)V
+
+    const-string v0, "UNKNOWN_TYPE"
+
+    :goto_1f
+    return-object v0
+
+    :pswitch_20
+    const-string v0, "GIFT"
+
+    goto :goto_1f
+
+    :pswitch_23
+    const-string v0, "WISH"
+
+    goto :goto_1f
+
+    :pswitch_data_26
+    .packed-switch 0x1
+        :pswitch_20
+        :pswitch_23
+    .end packed-switch
+.end method

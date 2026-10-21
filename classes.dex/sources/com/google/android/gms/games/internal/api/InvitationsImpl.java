@@ -1,0 +1,98 @@
+package com.google.android.gms.games.internal.api;
+
+import android.content.Intent;
+import android.os.RemoteException;
+import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.common.api.PendingResult;
+import com.google.android.gms.common.api.Status;
+import com.google.android.gms.common.data.DataHolder;
+import com.google.android.gms.games.Games;
+import com.google.android.gms.games.internal.GamesClientImpl;
+import com.google.android.gms.games.multiplayer.InvitationBuffer;
+import com.google.android.gms.games.multiplayer.Invitations;
+import com.google.android.gms.games.multiplayer.OnInvitationReceivedListener;
+
+/* JADX INFO: loaded from: classes.dex */
+public final class InvitationsImpl implements Invitations {
+
+    /* JADX INFO: renamed from: com.google.android.gms.games.internal.api.InvitationsImpl$2, reason: invalid class name */
+    class AnonymousClass2 extends LoadInvitationsImpl {
+        /* JADX INFO: Access modifiers changed from: protected */
+        @Override // com.google.android.gms.internal.zzpr.zza
+        public void zza(GamesClientImpl gamesClientImpl) throws RemoteException {
+            gamesClientImpl.zzf(this, (String) null, 0);
+        }
+    }
+
+    /* JADX INFO: renamed from: com.google.android.gms.games.internal.api.InvitationsImpl$3, reason: invalid class name */
+    class AnonymousClass3 extends LoadInvitationsImpl {
+        /* JADX INFO: Access modifiers changed from: protected */
+        @Override // com.google.android.gms.internal.zzpr.zza
+        public void zza(GamesClientImpl gamesClientImpl) throws RemoteException {
+            gamesClientImpl.zzm(this, null);
+        }
+    }
+
+    private static abstract class LoadInvitationsImpl extends Games.BaseGamesApiMethodImpl<Invitations.LoadInvitationsResult> {
+        private LoadInvitationsImpl(GoogleApiClient googleApiClient) {
+            super(googleApiClient);
+        }
+
+        @Override // com.google.android.gms.internal.zzpt
+        /* JADX INFO: renamed from: zzbs, reason: merged with bridge method [inline-methods] */
+        public Invitations.LoadInvitationsResult zzc(final Status status) {
+            return new Invitations.LoadInvitationsResult() { // from class: com.google.android.gms.games.internal.api.InvitationsImpl.LoadInvitationsImpl.1
+                @Override // com.google.android.gms.games.multiplayer.Invitations.LoadInvitationsResult
+                public InvitationBuffer getInvitations() {
+                    return new InvitationBuffer(DataHolder.zzfp(14));
+                }
+
+                @Override // com.google.android.gms.common.api.Result
+                public Status getStatus() {
+                    return status;
+                }
+
+                @Override // com.google.android.gms.common.api.Releasable
+                public void release() {
+                }
+            };
+        }
+    }
+
+    @Override // com.google.android.gms.games.multiplayer.Invitations
+    public Intent getInvitationInboxIntent(GoogleApiClient googleApiClient) {
+        return Games.zzi(googleApiClient).zzbii();
+    }
+
+    @Override // com.google.android.gms.games.multiplayer.Invitations
+    public PendingResult<Invitations.LoadInvitationsResult> loadInvitations(GoogleApiClient googleApiClient) {
+        return loadInvitations(googleApiClient, 0);
+    }
+
+    @Override // com.google.android.gms.games.multiplayer.Invitations
+    public PendingResult<Invitations.LoadInvitationsResult> loadInvitations(GoogleApiClient googleApiClient, final int i) {
+        return googleApiClient.zzc(new LoadInvitationsImpl(googleApiClient) { // from class: com.google.android.gms.games.internal.api.InvitationsImpl.1
+            /* JADX INFO: Access modifiers changed from: protected */
+            @Override // com.google.android.gms.internal.zzpr.zza
+            public void zza(GamesClientImpl gamesClientImpl) throws RemoteException {
+                gamesClientImpl.zza(this, i);
+            }
+        });
+    }
+
+    @Override // com.google.android.gms.games.multiplayer.Invitations
+    public void registerInvitationListener(GoogleApiClient googleApiClient, OnInvitationReceivedListener onInvitationReceivedListener) {
+        GamesClientImpl gamesClientImplZzb = Games.zzb(googleApiClient, false);
+        if (gamesClientImplZzb != null) {
+            gamesClientImplZzb.zza(googleApiClient.zzt(onInvitationReceivedListener));
+        }
+    }
+
+    @Override // com.google.android.gms.games.multiplayer.Invitations
+    public void unregisterInvitationListener(GoogleApiClient googleApiClient) {
+        GamesClientImpl gamesClientImplZzb = Games.zzb(googleApiClient, false);
+        if (gamesClientImplZzb != null) {
+            gamesClientImplZzb.zzbij();
+        }
+    }
+}

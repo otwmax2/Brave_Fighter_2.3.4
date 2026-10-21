@@ -1,0 +1,48 @@
+package com.vungle.publisher;
+
+import com.vungle.publisher.rz;
+import dagger.MembersInjector;
+import javax.inject.Provider;
+
+/* JADX INFO: compiled from: vungle */
+/* JADX INFO: loaded from: classes2.dex */
+public final class rt implements MembersInjector<rr> {
+    static final /* synthetic */ boolean a;
+    private final Provider<mv> b;
+    private final Provider<rb> c;
+    private final Provider<rz.a> d;
+
+    static {
+        a = !rt.class.desiredAssertionStatus();
+    }
+
+    public rt(Provider<mv> provider, Provider<rb> provider2, Provider<rz.a> provider3) {
+        if (!a && provider == null) {
+            throw new AssertionError();
+        }
+        this.b = provider;
+        if (!a && provider2 == null) {
+            throw new AssertionError();
+        }
+        this.c = provider2;
+        if (!a && provider3 == null) {
+            throw new AssertionError();
+        }
+        this.d = provider3;
+    }
+
+    public static MembersInjector<rr> a(Provider<mv> provider, Provider<rb> provider2, Provider<rz.a> provider3) {
+        return new rt(provider, provider2, provider3);
+    }
+
+    @Override // dagger.MembersInjector
+    /* JADX INFO: renamed from: a, reason: merged with bridge method [inline-methods] */
+    public void injectMembers(rr rrVar) {
+        if (rrVar == null) {
+            throw new NullPointerException("Cannot inject members into a null reference");
+        }
+        rrVar.a = this.b.get();
+        rrVar.b = this.c.get();
+        rrVar.c = this.d.get();
+    }
+}

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector>
+    <item
+        xmlns:android="http://schemas.android.com/apk/res/android" 
+        android:state_window_focused="false"
+        android:drawable="@drawable/egame_sdk_popup_btn_green_normal"/>
+    <item xmlns:android="http://schemas.android.com/apk/res/android"
+        android:state_focused="false"
+        android:state_pressed="true"
+        android:drawable="@drawable/egame_sdk_popup_btn_green_pressed"/>
+    <item
+        android:state_focused="false"
+        android:state_selected="true"
+        android:drawable="@drawable/egame_sdk_popup_btn_green_pressed"/>
+</selector>

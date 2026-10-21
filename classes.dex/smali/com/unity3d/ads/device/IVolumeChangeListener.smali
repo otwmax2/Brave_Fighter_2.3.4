@@ -1,0 +1,12 @@
+###### Class com.unity3d.ads.device.IVolumeChangeListener (com.unity3d.ads.device.IVolumeChangeListener)
+.class public interface abstract Lcom/unity3d/ads/device/IVolumeChangeListener;
+.super Ljava/lang/Object;
+.source "IVolumeChangeListener.java"
+
+
+# virtual methods
+.method public abstract getStreamType()I
+.end method
+
+.method public abstract onVolumeChanged(I)V
+.end method

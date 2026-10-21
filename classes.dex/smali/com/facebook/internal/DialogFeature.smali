@@ -1,0 +1,15 @@
+###### Class com.facebook.internal.DialogFeature (com.facebook.internal.DialogFeature)
+.class public interface abstract Lcom/facebook/internal/DialogFeature;
+.super Ljava/lang/Object;
+.source "DialogFeature.java"
+
+
+# virtual methods
+.method public abstract getAction()Ljava/lang/String;
+.end method
+
+.method public abstract getMinVersion()I
+.end method
+
+.method public abstract name()Ljava/lang/String;
+.end method

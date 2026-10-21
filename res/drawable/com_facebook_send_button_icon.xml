@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector>
+    <item
+        xmlns:android="http://schemas.android.com/apk/res/android" 
+        android:state_focused="true"
+        android:state_enabled="true"
+        android:drawable="@drawable/com_facebook_button_send_icon_blue"/>
+    <item xmlns:android="http://schemas.android.com/apk/res/android" android:drawable="@drawable/com_facebook_button_send_icon_white"/>
+</selector>

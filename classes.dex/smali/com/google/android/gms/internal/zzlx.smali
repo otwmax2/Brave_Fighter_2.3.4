@@ -1,0 +1,11 @@
+###### Class com.google.android.gms.internal.zzlx (com.google.android.gms.internal.zzlx)
+.class public interface abstract Lcom/google/android/gms/internal/zzlx;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Lcom/google/android/gms/ads/mediation/MediationInterstitialAdapter;
+
+
+# virtual methods
+.method public abstract getInterstitialAdapterInfo()Landroid/os/Bundle;
+.end method

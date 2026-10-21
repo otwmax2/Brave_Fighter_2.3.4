@@ -1,0 +1,395 @@
+###### Class rx.internal.subscriptions.SequentialSubscription (rx.internal.subscriptions.SequentialSubscription)
+.class public final Lrx/internal/subscriptions/SequentialSubscription;
+.super Ljava/util/concurrent/atomic/AtomicReference;
+.source "SequentialSubscription.java"
+
+# interfaces
+.implements Lrx/Subscription;
+
+
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Ljava/util/concurrent/atomic/AtomicReference",
+        "<",
+        "Lrx/Subscription;",
+        ">;",
+        "Lrx/Subscription;"
+    }
+.end annotation
+
+
+# static fields
+.field private static final serialVersionUID:J = 0xdcfadb4b3205d9dL
+
+
+# direct methods
+.method public constructor <init>()V
+    .registers 1
+
+    .prologue
+    .line 37
+    invoke-direct {p0}, Ljava/util/concurrent/atomic/AtomicReference;-><init>()V
+
+    .line 39
+    return-void
+.end method
+
+.method public constructor <init>(Lrx/Subscription;)V
+    .registers 2
+    .param p1, "initial"    # Lrx/Subscription;
+
+    .prologue
+    .line 45
+    invoke-direct {p0}, Ljava/util/concurrent/atomic/AtomicReference;-><init>()V
+
+    .line 46
+    invoke-virtual {p0, p1}, Lrx/internal/subscriptions/SequentialSubscription;->lazySet(Ljava/lang/Object;)V
+
+    .line 47
+    return-void
+.end method
+
+
+# virtual methods
+.method public current()Lrx/Subscription;
+    .registers 3
+
+    .prologue
+    .line 55
+    invoke-super {p0}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lrx/Subscription;
+
+    .line 56
+    .local v0, "current":Lrx/Subscription;
+    sget-object v1, Lrx/internal/subscriptions/Unsubscribed;->INSTANCE:Lrx/internal/subscriptions/Unsubscribed;
+
+    if-ne v0, v1, :cond_e
+
+    .line 57
+    invoke-static {}, Lrx/subscriptions/Subscriptions;->unsubscribed()Lrx/Subscription;
+
+    move-result-object v0
+
+    .line 59
+    .end local v0    # "current":Lrx/Subscription;
+    :cond_e
+    return-object v0
+.end method
+
+.method public isUnsubscribed()Z
+    .registers 3
+
+    .prologue
+    .line 187
+    invoke-virtual {p0}, Lrx/internal/subscriptions/SequentialSubscription;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    sget-object v1, Lrx/internal/subscriptions/Unsubscribed;->INSTANCE:Lrx/internal/subscriptions/Unsubscribed;
+
+    if-ne v0, v1, :cond_a
+
+    const/4 v0, 0x1
+
+    :goto_9
+    return v0
+
+    :cond_a
+    const/4 v0, 0x0
+
+    goto :goto_9
+.end method
+
+.method public replace(Lrx/Subscription;)Z
+    .registers 4
+    .param p1, "next"    # Lrx/Subscription;
+
+    .prologue
+    .line 98
+    :cond_0
+    invoke-virtual {p0}, Lrx/internal/subscriptions/SequentialSubscription;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lrx/Subscription;
+
+    .line 100
+    .local v0, "current":Lrx/Subscription;
+    sget-object v1, Lrx/internal/subscriptions/Unsubscribed;->INSTANCE:Lrx/internal/subscriptions/Unsubscribed;
+
+    if-ne v0, v1, :cond_11
+
+    .line 101
+    if-eqz p1, :cond_f
+
+    .line 102
+    invoke-interface {p1}, Lrx/Subscription;->unsubscribe()V
+
+    .line 104
+    :cond_f
+    const/4 v1, 0x0
+
+    .line 108
+    :goto_10
+    return v1
+
+    .line 107
+    :cond_11
+    invoke-virtual {p0, v0, p1}, Lrx/internal/subscriptions/SequentialSubscription;->compareAndSet(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    .line 108
+    const/4 v1, 0x1
+
+    goto :goto_10
+.end method
+
+.method public replaceWeak(Lrx/Subscription;)Z
+    .registers 6
+    .param p1, "next"    # Lrx/Subscription;
+
+    .prologue
+    const/4 v2, 0x1
+
+    const/4 v1, 0x0
+
+    .line 153
+    invoke-virtual {p0}, Lrx/internal/subscriptions/SequentialSubscription;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lrx/Subscription;
+
+    .line 154
+    .local v0, "current":Lrx/Subscription;
+    sget-object v3, Lrx/internal/subscriptions/Unsubscribed;->INSTANCE:Lrx/internal/subscriptions/Unsubscribed;
+
+    if-ne v0, v3, :cond_12
+
+    .line 155
+    if-eqz p1, :cond_11
+
+    .line 156
+    invoke-interface {p1}, Lrx/Subscription;->unsubscribe()V
+
+    .line 171
+    :cond_11
+    :goto_11
+    return v1
+
+    .line 160
+    :cond_12
+    invoke-virtual {p0, v0, p1}, Lrx/internal/subscriptions/SequentialSubscription;->compareAndSet(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v3
+
+    if-eqz v3, :cond_1a
+
+    move v1, v2
+
+    .line 161
+    goto :goto_11
+
+    .line 164
+    :cond_1a
+    invoke-virtual {p0}, Lrx/internal/subscriptions/SequentialSubscription;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    .end local v0    # "current":Lrx/Subscription;
+    check-cast v0, Lrx/Subscription;
+
+    .line 165
+    .restart local v0    # "current":Lrx/Subscription;
+    sget-object v3, Lrx/internal/subscriptions/Unsubscribed;->INSTANCE:Lrx/internal/subscriptions/Unsubscribed;
+
+    if-ne v0, v3, :cond_2a
+
+    .line 166
+    if-eqz p1, :cond_11
+
+    .line 167
+    invoke-interface {p1}, Lrx/Subscription;->unsubscribe()V
+
+    goto :goto_11
+
+    :cond_2a
+    move v1, v2
+
+    .line 171
+    goto :goto_11
+.end method
+
+.method public unsubscribe()V
+    .registers 3
+
+    .prologue
+    .line 176
+    invoke-virtual {p0}, Lrx/internal/subscriptions/SequentialSubscription;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lrx/Subscription;
+
+    .line 177
+    .local v0, "current":Lrx/Subscription;
+    sget-object v1, Lrx/internal/subscriptions/Unsubscribed;->INSTANCE:Lrx/internal/subscriptions/Unsubscribed;
+
+    if-eq v0, v1, :cond_1b
+
+    .line 178
+    sget-object v1, Lrx/internal/subscriptions/Unsubscribed;->INSTANCE:Lrx/internal/subscriptions/Unsubscribed;
+
+    invoke-virtual {p0, v1}, Lrx/internal/subscriptions/SequentialSubscription;->getAndSet(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    .end local v0    # "current":Lrx/Subscription;
+    check-cast v0, Lrx/Subscription;
+
+    .line 179
+    .restart local v0    # "current":Lrx/Subscription;
+    if-eqz v0, :cond_1b
+
+    sget-object v1, Lrx/internal/subscriptions/Unsubscribed;->INSTANCE:Lrx/internal/subscriptions/Unsubscribed;
+
+    if-eq v0, v1, :cond_1b
+
+    .line 180
+    invoke-interface {v0}, Lrx/Subscription;->unsubscribe()V
+
+    .line 183
+    :cond_1b
+    return-void
+.end method
+
+.method public update(Lrx/Subscription;)Z
+    .registers 4
+    .param p1, "next"    # Lrx/Subscription;
+
+    .prologue
+    .line 71
+    :cond_0
+    invoke-virtual {p0}, Lrx/internal/subscriptions/SequentialSubscription;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lrx/Subscription;
+
+    .line 73
+    .local v0, "current":Lrx/Subscription;
+    sget-object v1, Lrx/internal/subscriptions/Unsubscribed;->INSTANCE:Lrx/internal/subscriptions/Unsubscribed;
+
+    if-ne v0, v1, :cond_11
+
+    .line 74
+    if-eqz p1, :cond_f
+
+    .line 75
+    invoke-interface {p1}, Lrx/Subscription;->unsubscribe()V
+
+    .line 77
+    :cond_f
+    const/4 v1, 0x0
+
+    .line 84
+    :goto_10
+    return v1
+
+    .line 80
+    :cond_11
+    invoke-virtual {p0, v0, p1}, Lrx/internal/subscriptions/SequentialSubscription;->compareAndSet(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    .line 81
+    if-eqz v0, :cond_1c
+
+    .line 82
+    invoke-interface {v0}, Lrx/Subscription;->unsubscribe()V
+
+    .line 84
+    :cond_1c
+    const/4 v1, 0x1
+
+    goto :goto_10
+.end method
+
+.method public updateWeak(Lrx/Subscription;)Z
+    .registers 6
+    .param p1, "next"    # Lrx/Subscription;
+
+    .prologue
+    const/4 v1, 0x1
+
+    const/4 v2, 0x0
+
+    .line 123
+    invoke-virtual {p0}, Lrx/internal/subscriptions/SequentialSubscription;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lrx/Subscription;
+
+    .line 124
+    .local v0, "current":Lrx/Subscription;
+    sget-object v3, Lrx/internal/subscriptions/Unsubscribed;->INSTANCE:Lrx/internal/subscriptions/Unsubscribed;
+
+    if-ne v0, v3, :cond_13
+
+    .line 125
+    if-eqz p1, :cond_11
+
+    .line 126
+    invoke-interface {p1}, Lrx/Subscription;->unsubscribe()V
+
+    :cond_11
+    move v1, v2
+
+    .line 139
+    :cond_12
+    :goto_12
+    return v1
+
+    .line 130
+    :cond_13
+    invoke-virtual {p0, v0, p1}, Lrx/internal/subscriptions/SequentialSubscription;->compareAndSet(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v3
+
+    if-nez v3, :cond_12
+
+    .line 134
+    invoke-virtual {p0}, Lrx/internal/subscriptions/SequentialSubscription;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    .end local v0    # "current":Lrx/Subscription;
+    check-cast v0, Lrx/Subscription;
+
+    .line 136
+    .restart local v0    # "current":Lrx/Subscription;
+    if-eqz p1, :cond_24
+
+    .line 137
+    invoke-interface {p1}, Lrx/Subscription;->unsubscribe()V
+
+    .line 139
+    :cond_24
+    sget-object v3, Lrx/internal/subscriptions/Unsubscribed;->INSTANCE:Lrx/internal/subscriptions/Unsubscribed;
+
+    if-eq v0, v3, :cond_12
+
+    move v1, v2
+
+    goto :goto_12
+.end method

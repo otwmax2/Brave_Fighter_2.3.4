@@ -1,0 +1,219 @@
+###### Class com.vungle.publisher.gw (com.vungle.publisher.gw)
+.class public Lcom/vungle/publisher/gw;
+.super Lcom/vungle/publisher/da;
+.source "vungle"
+
+
+# annotations
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Lcom/vungle/publisher/gw$a;
+    }
+.end annotation
+
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Lcom/vungle/publisher/da",
+        "<",
+        "Lcom/vungle/publisher/gq;",
+        ">;"
+    }
+.end annotation
+
+
+# instance fields
+.field e:Lcom/vungle/publisher/gw$a;
+    .annotation runtime Ljavax/inject/Inject;
+    .end annotation
+.end field
+
+
+# direct methods
+.method constructor <init>()V
+    .registers 1
+    .annotation runtime Ljavax/inject/Inject;
+    .end annotation
+
+    .prologue
+    .line 15
+    invoke-direct {p0}, Lcom/vungle/publisher/da;-><init>()V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method protected synthetic b_()Lcom/vungle/publisher/dp$a;
+    .registers 2
+
+    .prologue
+    .line 11
+    invoke-virtual {p0}, Lcom/vungle/publisher/gw;->m()Lcom/vungle/publisher/gw$a;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method protected m()Lcom/vungle/publisher/gw$a;
+    .registers 2
+
+    .prologue
+    .line 20
+    iget-object v0, p0, Lcom/vungle/publisher/gw;->e:Lcom/vungle/publisher/gw$a;
+
+    return-object v0
+.end method
+
+###### Class com.vungle.publisher.gw.a (com.vungle.publisher.gw$a)
+.class public Lcom/vungle/publisher/gw$a;
+.super Lcom/vungle/publisher/da$a;
+.source "vungle"
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lcom/vungle/publisher/gw;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x9
+    name = "a"
+.end annotation
+
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Lcom/vungle/publisher/da$a",
+        "<",
+        "Lcom/vungle/publisher/gq;",
+        "Lcom/vungle/publisher/gw;",
+        ">;"
+    }
+.end annotation
+
+.annotation runtime Ljavax/inject/Singleton;
+.end annotation
+
+
+# instance fields
+.field a:Ljavax/inject/Provider;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljavax/inject/Provider",
+            "<",
+            "Lcom/vungle/publisher/gw;",
+            ">;"
+        }
+    .end annotation
+
+    .annotation runtime Ljavax/inject/Inject;
+    .end annotation
+.end field
+
+
+# direct methods
+.method constructor <init>()V
+    .registers 1
+    .annotation runtime Ljavax/inject/Inject;
+    .end annotation
+
+    .prologue
+    .line 28
+    invoke-direct {p0}, Lcom/vungle/publisher/da$a;-><init>()V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public bridge synthetic a(Ljava/util/List;)I
+    .registers 3
+
+    .prologue
+    .line 23
+    invoke-super {p0, p1}, Lcom/vungle/publisher/da$a;->a(Ljava/util/List;)I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method protected a()Lcom/vungle/publisher/gw;
+    .registers 2
+
+    .prologue
+    .line 32
+    iget-object v0, p0, Lcom/vungle/publisher/gw$a;->a:Ljavax/inject/Provider;
+
+    invoke-interface {v0}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/vungle/publisher/gw;
+
+    return-object v0
+.end method
+
+.method protected a(Landroid/database/Cursor;)Lcom/vungle/publisher/jf;
+    .registers 4
+
+    .prologue
+    .line 42
+    new-instance v0, Lcom/vungle/publisher/hf;
+
+    const-string v1, "event"
+
+    invoke-static {p1, v1}, Lcom/vungle/publisher/ce;->e(Landroid/database/Cursor;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Lcom/vungle/publisher/hf;-><init>(Ljava/lang/String;)V
+
+    return-object v0
+.end method
+
+.method public bridge synthetic a(Ljava/lang/String;[Ljava/lang/String;)Ljava/util/List;
+    .registers 4
+
+    .prologue
+    .line 23
+    invoke-super {p0, p1, p2}, Lcom/vungle/publisher/da$a;->a(Ljava/lang/String;[Ljava/lang/String;)Ljava/util/List;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method protected c(I)[Lcom/vungle/publisher/gw;
+    .registers 3
+
+    .prologue
+    .line 37
+    new-array v0, p1, [Lcom/vungle/publisher/gw;
+
+    return-object v0
+.end method
+
+.method protected synthetic d(I)[Lcom/vungle/publisher/dp;
+    .registers 3
+
+    .prologue
+    .line 23
+    invoke-virtual {p0, p1}, Lcom/vungle/publisher/gw$a;->c(I)[Lcom/vungle/publisher/gw;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method protected synthetic g_()Lcom/vungle/publisher/dp;
+    .registers 2
+
+    .prologue
+    .line 23
+    invoke-virtual {p0}, Lcom/vungle/publisher/gw$a;->a()Lcom/vungle/publisher/gw;
+
+    move-result-object v0
+
+    return-object v0
+.end method

@@ -1,0 +1,54 @@
+package com.google.android.gms.contextmanager.internal;
+
+import android.os.Parcel;
+import android.os.Parcelable;
+import com.google.android.gms.common.internal.safeparcel.zza;
+import com.google.android.gms.contextmanager.internal.RelationFilterImpl;
+import java.util.ArrayList;
+
+/* JADX INFO: loaded from: classes.dex */
+public class zzo implements Parcelable.Creator<RelationFilterImpl> {
+    static void zza(RelationFilterImpl relationFilterImpl, Parcel parcel, int i) {
+        int iZzcm = com.google.android.gms.common.internal.safeparcel.zzb.zzcm(parcel);
+        com.google.android.gms.common.internal.safeparcel.zzb.zzc(parcel, 1, relationFilterImpl.getVersionCode());
+        com.google.android.gms.common.internal.safeparcel.zzb.zzc(parcel, 2, relationFilterImpl.zzaxo(), false);
+        com.google.android.gms.common.internal.safeparcel.zzb.zza(parcel, 3, (Parcelable) relationFilterImpl.zzaxq(), i, false);
+        com.google.android.gms.common.internal.safeparcel.zzb.zzaj(parcel, iZzcm);
+    }
+
+    @Override // android.os.Parcelable.Creator
+    /* JADX INFO: renamed from: zzdv, reason: merged with bridge method [inline-methods] */
+    public RelationFilterImpl createFromParcel(Parcel parcel) {
+        QueryFilterParameters queryFilterParameters = null;
+        int iZzcl = com.google.android.gms.common.internal.safeparcel.zza.zzcl(parcel);
+        int iZzg = 0;
+        ArrayList arrayListZzc = null;
+        while (parcel.dataPosition() < iZzcl) {
+            int iZzck = com.google.android.gms.common.internal.safeparcel.zza.zzck(parcel);
+            switch (com.google.android.gms.common.internal.safeparcel.zza.zzgi(iZzck)) {
+                case 1:
+                    iZzg = com.google.android.gms.common.internal.safeparcel.zza.zzg(parcel, iZzck);
+                    break;
+                case 2:
+                    arrayListZzc = com.google.android.gms.common.internal.safeparcel.zza.zzc(parcel, iZzck, RelationFilterImpl.Inclusion.CREATOR);
+                    break;
+                case 3:
+                    queryFilterParameters = (QueryFilterParameters) com.google.android.gms.common.internal.safeparcel.zza.zza(parcel, iZzck, QueryFilterParameters.CREATOR);
+                    break;
+                default:
+                    com.google.android.gms.common.internal.safeparcel.zza.zzb(parcel, iZzck);
+                    break;
+            }
+        }
+        if (parcel.dataPosition() != iZzcl) {
+            throw new zza.C0071zza(new StringBuilder(37).append("Overread allowed size end=").append(iZzcl).toString(), parcel);
+        }
+        return new RelationFilterImpl(iZzg, arrayListZzc, queryFilterParameters);
+    }
+
+    @Override // android.os.Parcelable.Creator
+    /* JADX INFO: renamed from: zzib, reason: merged with bridge method [inline-methods] */
+    public RelationFilterImpl[] newArray(int i) {
+        return new RelationFilterImpl[i];
+    }
+}
