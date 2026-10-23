@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='utf-8' standalone='yes' ?>
+<map>
+    <string name="accountId">34d45c3c792353b48cd0fd50d5b104f84</string>
+    <int name="userLevel" value="0" />
+    <string name="gender">UNKNOW</string>
+    <string name="accountName"></string>
+    <string name="accountType">ANONYMOUS</string>
+    <long name="game_duration" value="327000" />
+    <int name="age" value="0" />
+</map>

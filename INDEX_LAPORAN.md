@@ -22,6 +22,7 @@ Semua laporan tersedia di repo ini. Baca sesuai urutan untuk pemahaman berlapis 
 | 6 | **`xml_decryp/README_ENGLISH.md`** | 6 KB | Ringkasan 21 XML Inggris yang sudah didekripsi: nama skill/weapon/shop yang sudah plain English, daftar harga crystal, pesan tutorial |
 | 7 | **`ASSETS_LAPORAN.md`** | 23 KB | 🎨 **Inventarisasi 2.472 file aset `assets/`**: klasifikasi 1.811 PNG, 388 BIN (anim/map/scn), 154 JSON UI CocoStudio, 48 OGG musik/SFX, 43 XML, 19 JPG, 8 plist; dua bahasa aset (Cina+Inggris) dengan folder mirror `english/` |
 | 8 | **`RES_MANIFEST_LAPORAN.md`** | 17 KB | 📱 **Analisis `AndroidManifest.xml` + `res/` + `META-INF/`**: 5 izin, 13 Activity, Facebook App ID, Google Play Achievement/Leaderboard IDs, sertifikat APK (RSA 1024-bit CN=yst), 650+ resource Android, layout kustom, temuan kredensial channel China (eGame) sisa build. **TABEL RINGKASAN SEMUA 15 KUNCI/ID yang ditemukan di APK** |
+| 9 | **`savegame_data/LAPORAN_SAVEGAME.md`** | 10 KB | 💾 **Analisis data save game perangkat nyata** (dari backup `/data/data/` perangkat pemain di Probolinggo): state pemain baru, nama "xxx", tutorial 7 step selesai (5 menit bermain), 305 record hero/monster di SQLite, 14 GA hits, 2 rewarded video AdMob, bahasa Inggris, tahun 2026, IP 180.184.65.49. **Penemuan kredensial BARU**: AdMob App ID `ca-app-pub-8189737659012568~6752345938`, GA Client UUID, TalkingData Device ID, IronSource UUID, dan interpretasi 24 obfuscated key `fuck*` di `Cocos2dxPrefsFile.xml` |
 
 ### Folder output dekripsi:
 - `xml_decryp/*.xml` — 22 XML Cina yang sudah dapat dibaca
@@ -70,6 +71,7 @@ Semua laporan tersedia di repo ini. Baca sesuai urutan untuk pemahaman berlapis 
 | Kunci/ID | Nilai |
 |---|---|
 | Google Play License Key (RSA 2048) | `MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAjDlHKssucTeeTJ9czwP1fuhbjeVOWZzEJ+sDO2MsUAvUuC7bVAqMv8FtYAgp/65wd4R1tP3KlLydXB+wVmOMzyRZwHk4I6rAC+TC8OLOPS5QiiFot0wSZK6MHYSRF4FuUn1EfZ1M2lXjUD5LdjRLF/IYNqc0iyf5kzHqvYvR1e6KfebXmGMWmChx90tQH2oSWzNqlv0HnUr6I7d1BJKDWZitdJsrO63crZjnXioegqe+269XlfXawnsSotGQ0CTa0ZR7oWfY/JtQFYo2cav/8Ilt5uaZ6bybNR5QsJVLycfJJOrFSZMKxvIVClAnWtCVEo0QYOUk5dzf9Xp2S9VMtQIDAQAB` |
+| **AdMob App ID** (baru dari save perangkat) | `ca-app-pub-8189737659012568~6752345938` (Publisher `pub-8189737659012568`) |
 | XML Encryption Key 1 (9 byte) | `hzkjhstgh` (enkripsi 14+ XML) |
 | XML Encryption Key 2 (9 byte) | `kmshtatsk` (khusus EnemyGroup.xml) |
 | XOR Asset Key (8 byte) | Dari Java parameter (untuk idata.bin) |

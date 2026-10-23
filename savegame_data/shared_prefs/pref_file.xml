@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='utf-8' standalone='yes' ?>
+<map>
+    <long name="TDGApref.session.start.key" value="1792769540309" />
+    <string name="pref.accountid.key">34d45c3c792353b48cd0fd50d5b104f84</string>
+    <string name="34d45c3c792353b48cd0fd50d5b104f84pref.accountgame.key">2.3.4</string>
+    <long name="pref.applisttime.key" value="1792769540188" />
+    <string name="TDGApref.activesessionid.key">c2cba687-7300-4e51-b1bd-3e1cce109cf2</string>
+    <long name="TDGApref.session.startsystem.key" value="1792769540320" />
+    <long name="pref.init.key5E5853774218FC6736ABEE2DF8403871" value="1792769540188" />
+    <long name="TDGApref.session.end.key" value="1792769867202" />
+</map>

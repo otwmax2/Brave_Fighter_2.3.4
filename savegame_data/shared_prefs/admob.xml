@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='utf-8' standalone='yes' ?>
+<map>
+    <int name="total_inflight_ad_limit" value="15" />
+    <int name="advertised_memory_tier" value="4" />
+    <int name="default_queue_capacity" value="2" />
+    <string name="app_settings_json">{&quot;status&quot;:1,&quot;app_id&quot;:&quot;ca-app-pub-8189737659012568~6752345938&quot;,&quot;auto_collect_location&quot;:false,&quot;cache_ttl_sec&quot;:259200,&quot;common_settings&quot;:{&quot;loeid&quot;:[44766145,&quot;318502621&quot;],&quot;app_id&quot;:&quot;ca-app-pub-8189737659012568~6752345938&quot;,&quot;eoid_opt_in&quot;:true},&quot;initializer_settings&quot;:{&quot;config&quot;:{}}}</string>
+    <long name="app_settings_last_update_ms" value="1792769543029" />
+    <int name="request_in_session_count" value="0" />
+    <boolean name="gad_idless" value="false" />
+    <long name="first_ad_req_time_ms" value="1792769541978" />
+    <long name="app_last_background_time_ms" value="1792769593558" />
+</map>
