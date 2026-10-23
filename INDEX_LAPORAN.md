@@ -153,3 +153,17 @@ Static analysis yang kami lakukan sudah menutupi 99% konten APK. Ada beberapa it
 ---
 
 *Semua file laporan dan hasil dekripsi tersimpan di repository ini dan sudah di-push ke GitHub branch `arena/51e89a0e-brave-fighter-2-3-4`.*
+
+---
+
+## 🔓 `xml_decryp/LAPORAN_LAPISAN2_PROGRES.md` — Progres Reverse Engineering Lapisan-2 RC4 XML
+
+**Status: 🟡 ALGORITMA TERIDENTIFIKASI (RC4), DEKRIPSI PENUH PERLU ANALISIS LANJUTAN**
+
+Berisi hasil pembongkaran `libcocos2dcpp.so` native library:
+- Teridentifikasi algoritma lapisan-2 = **RC4 (ARCFOUR)** dengan helper hex encode/decode uppercase
+- Alamat semua fungsi kunci (Encrypt, Decrypt, KSA, PRGA, gbkToUTF8, helper deskripsi peralatan/monster)
+- Key family yang di-hardcode di `.rodata` (kunci `akidbx` dan `fuck1..fuck17`)
+- Daftar 5 caller `Encrypt` dan 4 caller `Decrypt` di seluruh `.text`
+- Pola ciphertext, pasangan record CN↔EN yang tercocokkan, dan known-plaintext awal
+- Peta alamat (address map) dan langkah lanjutan untuk menyelesaikan dekripsi 100% dengan Ghidra/IDA
