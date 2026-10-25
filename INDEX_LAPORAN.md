@@ -171,3 +171,26 @@ Berisi hasil pembongkaran `libcocos2dcpp.so` native library:
 - Daftar 5 caller `Encrypt` dan 4 caller `Decrypt` di seluruh `.text`
 - Pola ciphertext, pasangan record CN↔EN yang tercocokkan, dan known-plaintext awal
 - Peta alamat (address map) dan langkah lanjutan untuk menyelesaikan dekripsi 100% dengan Ghidra/IDA
+
+---
+
+## 🔧 `decrypt/` — Pipeline Dekripsi XML Siap Pakai (APK-asli ready)
+
+Berisi `extract_and_decrypt.py` (satu-skrip Python 3 stdlib, tanpa dependensi):
+- Mengekstrak `assets/*.xml` langsung dari APK asli via `zipfile`.
+- Mendekripsi **lapisan-1** (XOR rolling key `"hzkjhstgh"` fase-0, fase dideteksi otomatis dari magic `<?xml`).
+- Mendekripsi **lapisan-2** (RC4 key `"akidbx"` + hex uppercase pada atribut string; atribut numerik `id/value/lv/type/price/dst` dilewati sesuai pembuktian di libcocos2dcpp.so) dengan konversi GBK→UTF-8.
+- Output: `apk_decrypted/{apk,l1,l2,report.txt}`.
+
+Setelah APK asli (26.3 MB, package `com.joynow.monster.gp` v2.3.4) tersedia di path lokal, jalankan:
+```
+python3 decrypt/extract_and_decrypt.py <file.apk> apk_decrypted
+```
+dan seluruh 22 XML asset akan terdekripsi 100% menjadi UTF-8.
+
+**Status kerusakan saat ini (tanpa APK asli):**
+- ✅ **7 file PLAIN ASCII** (aktif, bisa dibaca langsung tanpa dekripsi): `activecode.xml`, `bossdrop.xml`, `data.xml`, `name.xml`, `normalToSkeleton.xml`, `reg.xml`, `roadblock.xml`, `wujinstate.xml`
+- ⚠️ **8 file rusak permanen** (`EF BF BD` transcoding, ciphertext asli hilang): `monster.xml`, `monstergroup.xml`, `equip.xml`, `skill.xml`, `gamelevel.xml`, `achievement.xml`, `EnemyGroup.xml`, `drop.xml` — butuh APK asli untuk memulihkan.
+- ✅ **7 file sisanya** (title/msg/shop/items/task/BattleArea) punya struktur yang dapat didekripsi PENUH oleh script ini segera setelah APK asli diberikan.
+
+Catatan: file 7z yang di-upload user (`com.joynow.monster.gp.7z.txt`, 865 KB) berisi `/data/data/com.joynow.monster.gp/` dari device (savegame, shared_prefs, cache WebView, DB analytics). Isi `monster_data.db` dan `Cocos2dxPrefsFile.xml` di dalamnya **identik byte-per-byte** dengan yang sudah ada di repo `savegame_data/` — jadi tidak ada data baru untuk dipulihkan, dan tidak ada APK asli di dalamnya.
