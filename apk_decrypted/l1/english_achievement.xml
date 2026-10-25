@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<achives>
+	<achive id="0"  name="Pay day"            describ="Purchase 20 diamonds"           Crystals="0" reward="0"     exp="2000"   gold="0"    achiveType="0" values="20"      rewardname="2000 EXP"/>
+	<achive id="1"  name="Plenty deposit"     describ="Purchase 100 diamonds"          Crystals="0" reward="0"     exp="10000"  gold="0"    achiveType="0" values="100"     rewardname="10000 EXP"/>
+	<achive id="2"  name="Rich man"           describ="Purchase 500 diamonds"          Crystals="0" reward="0"     exp="50000"  gold="0"    achiveType="0" values="500"     rewardname="50000 EXP"/>
+	<achive id="3"  name="Plutocrat"          describ="Purchase 1000 diamonds"         Crystals="0" reward="0"     exp="100000" gold="0"    achiveType="0" values="1000"    rewardname="100000 EXP"/>
+                                                                                                  
+	<achive id="4"  name="Frist blood"        describ="Kill the frist beast"     Crystals="0" reward="0"     exp="0"      gold="100"  achiveType="1" values="1"      rewardname="100 Gold"/>
+	<achive id="5"  name="Beast hunter"       describ="Kill 50 beasts"           Crystals="0" reward="0"     exp="0"      gold="400"  achiveType="1" values="50"     rewardname="400 Gold"/>
+	<achive id="6"  name="Demon predators"    describ="Kill 300 beasts"          Crystals="0" reward="0"     exp="0"      gold="800"  achiveType="1" values="300"    rewardname="800 Gold"/>
+	<achive id="7"  name="Hitman"             describ="Kill 1000 beasts"         Crystals="10" reward="0"     exp="0"      gold="0" achiveType="1" values="1000"   rewardname="10 Diamonds"/>
+	<achive id="8"  name="Lord of war"        describ="Kill 3000 beasts"         Crystals="15" reward="0"     exp="0"      gold="0" achiveType="1" values="3000"   rewardname="15 Diamonds"/>
+	<achive id="9"  name="Terminator"         describ="Kill 10000 beasts"        Crystals="20" reward="0"     exp="0"      gold="0" achiveType="1" values="10000"  rewardname="20 Diamonds"/>
+                                                                                             
+	<achive id="10" name="save some coins"    describ="Have 2000 Gold"          Crystals="0" reward="0"     exp="1000"   gold="0"    achiveType="2" values="2000"   rewardname="1000 EXP"/>
+	<achive id="11" name="Middle class"       describ="Have 10000 Gold"         Crystals="0" reward="0"     exp="2000"   gold="0"    achiveType="2" values="10000"  rewardname="2000 EXP"/>
+	<achive id="12" name="Businessman"        describ="Have 50000 Gold"         Crystals="10" reward="0"     exp="0"   gold="0"    achiveType="2" values="50000"  rewardname="10 Diamonds"/>
+	<achive id="13" name="Magnate"            describ="Have 200000 Gold"        Crystals="15" reward="0"     exp="0"      gold="0"    achiveType="2" values="200000" rewardname="15 Diamonds"/>
+	<achive id="14" name="Business Emperor"   describ="Have 1000000 Gold"       Crystals="20" reward="0"     exp="0"      gold="0"    achiveType="2" values="1000000"rewardname="20 Diamonds"/>
+                                                                                              
+	<achive id="15" name="Outstanding"        describ="Reach level 5"            Crystals="0" reward="0"     exp="0"      gold="500"  achiveType="3" values="5"      rewardname="500 Gold"/>
+	<achive id="16" name="Warrior"            describ="Reach level 10"           Crystals="0" reward="0"     exp="0"      gold="1000" achiveType="3" values="10"     rewardname="1000 Gold"/>
+	<achive id="17" name="Knight"             describ="Reach level 25"           Crystals="10" reward="0"     exp="0"      gold="0"    achiveType="3" values="25"     rewardname="10 Diamonds"/>
+	<achive id="18" name="King Arthur"        describ="Reach level 50"           Crystals="15" reward="0"     exp="0"      gold="0"    achiveType="3" values="50"     rewardname="15 Diamonds"/>
+                                                                                             
+	<achive id="19" name="Revenge begin"      describ="Bring 1 mercenary"        Crystals="0" reward="0"     exp="0"      gold="200"  achiveType="4" values="1"      rewardname="200 Gold"/>
+	<achive id="20" name="For knights"        describ="Bring 2 mercenaries"      Crystals="0" reward="0"     exp="0"      gold="500"  achiveType="4" values="2"      rewardname="500 Gold"/>
+	<achive id="21" name="Prepare to go"      describ="Bring 3 mercenaries"      Crystals="0" reward="0"     exp="0"      gold="1000" achiveType="4" values="3"      rewardname="1000 Gold"/>
+	<achive id="22" name="A great army"       describ="Bring 4 mercenaries"      Crystals="0" reward="0"     exp="0"      gold="2000" achiveType="4" values="4"      rewardname="2000 Gold"/>
+	<achive id="23" name="March on"           describ="Bring 5 mercenaries"      Crystals="0" reward="0"     exp="0"      gold="3000" achiveType="4" values="5"      rewardname="3000 Gold"/>
+                                                                                             
+	<achive id="24" name="Upgrade weapon"     describ="Upgrade weapon once"      Crystals="0" reward="0"     exp="0"      gold="100"  achiveType="5" values="1"      rewardname="100 Gold"/>
+	<achive id="25" name="Dwarf's technique"  describ="Upgrade weapon to max"    Crystals="0" reward="0"     exp="0"      gold="1000" achiveType="5" values="10"     rewardname="1000 Gold"/>
+	                                                                                          
+	<achive id="26" name="Survivor"           describ="Reborn once"              Crystals="5" reward="0"     exp="0"      gold="0" achiveType="6" values="1"      rewardname="5 Diamonds"/>
+                                                                                              
+	<achive id="27" name="Initial victory"    describ="Frist time pass level"    Crystals="2" reward="0"     exp="0"    gold="0"    achiveType="7" values="1"      rewardname="2 Diamonds"/>
+	<achive id="28" name="Excellent debut"    describ="Pass the frist land"      Crystals="5" reward="0"     exp="0"   gold="0"    achiveType="7" values="8"      rewardname="5 Diamonds"/>
+	<achive id="29" name="Celebrated soldier" describ="Pass the second land"     Crystals="7" reward="0"     exp="0"   gold="0"    achiveType="7" values="16"     rewardname="7 Diamonds"/>
+	<achive id="30" name="Executioner"        describ="Pass the third land"      Crystals="9" reward="0"     exp="0"      gold="0"    achiveType="7" values="24"     rewardname="9 Diamonds"/>
+	<achive id="31" name="Dawn warroir"       describ="Pass the fourth land"     Crystals="12" reward="0"     exp="0"      gold="0"    achiveType="7" values="32"     rewardname="12 Diamonds"/>
+	<achive id="32" name="Legend"             describ="Pass the fifth land"      Crystals="15"reward="0"     exp="0"      gold="0"    achiveType="7" values="40"     rewardname="15 Diamonds"/>
+	                                                                                                                     
+	<achive id="33" name="Inhibit Leonhardt"  describ="Kill Leonhardt 1 times"   Crystals="3" reward="0"  exp="0"      gold="0"    achiveType="8" values="1"      rewardname="3 Diamonds"/>
+	<achive id="34" name="Slayer of Da Guda"  describ="Kill Da Guda 3 times"     Crystals="0" reward="2007"  exp="0"      gold="0"    achiveType="8" values="3"      rewardname="Golden Armor"/>
+	<achive id="35" name="Predators of Silf"  describ="Kill Silf 4 times"        Crystals="0" reward="3011"  exp="0"      gold="0"    achiveType="8" values="4"      rewardname="Burning Belt"/>
+	<achive id="36" name="Gu·Vano Destroyer"  describ="Kill Gu·Vano 5 times"     Crystals="0" reward="1015"  exp="0"      gold="0"    achiveType="8" values="5"      rewardname="Stella Sword"/>
+	<achive id="37" name="Inhibit Deal·Murdo" describ="Kill Deal·Murdo 6 times"  Crystals="0" reward="2019"  exp="0"      gold="0"    achiveType="8" values="6"      rewardname="LionHreat Armor"/>
+	<achive id="38" name="Defeat Beld"        describ="Kill Beld 7 times"        Crystals="0" reward="3039"  exp="0"      gold="0"    achiveType="8" values="7"      rewardname="Lord Stone"/>
+	                                                                                                                     
+	<achive id="39" name="Like a lion"        describ="Power arrive 2500"        Crystals="0" reward="0"     exp="0"      gold="400"  achiveType="9" values="2500"   rewardname="400 Gold"/>
+	<achive id="40" name="Unstoppable"        describ="Power arrive 5000"        Crystals="0" reward="0"     exp="0"      gold="1000" achiveType="9" values="5000"   rewardname="1000 Gold"/>
+	<achive id="41" name="Heroes"             describ="Power arrive 10000"       Crystals="0" reward="0"     exp="0"      gold="2000" achiveType="9" values="10000"  rewardname="2000 Gold"/>
+	<achive id="42" name="Conqueror"          describ="Power arrive 20000"       Crystals="0" reward="0"     exp="0"      gold="5000" achiveType="9" values="20000"  rewardname="5000 Gold"/>
+                                                                                                             
+	<achive id="43" name="Basic skill"        describ="Upgrade skill once"       Crystals="0" reward="0"     exp="200"    gold="0"    achiveType="10" values="1"     rewardname="200 EXP"/>
+	<achive id="44" name="Advanced skill"     describ="Upgrade a skill to 5"     Crystals="0" reward="0"     exp="2000"   gold="0"    achiveType="10" values="5"     rewardname="2000 EXP"/>
+	<achive id="45" name="Expert skill"       describ="Upgrade a skill to 10"    Crystals="0" reward="0"     exp="8000"   gold="0"    achiveType="10" values="10"    rewardname="8000 EXP"/>
+	<achive id="46" name="Skill master"       describ="Upgrade all skills to 10" Crystals="0" reward="0"     exp="20000"  gold="0"    achiveType="10" values="40"    rewardname="20000 EXP"/>
+                                                                                                 
+	<achive id="47" name="King of Shadow"     describ="Unlock all the trophys"   Crystals="0" reward="1019"  exp="0"      gold="0"    achiveType="11" values="11"    rewardname="Casely·Ann"/>
+</achives>

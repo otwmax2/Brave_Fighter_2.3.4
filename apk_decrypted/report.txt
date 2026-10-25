@@ -1,0 +1,46 @@
+APK: Brave_Fighter.apk
+Total XML: 43  OK: 43  PARTIAL: 0
+
+OK       BattleArea.xml                             8893B  L1+L2 key=hzkjhstgh phase=0 skip=0
+OK       EnemyGroup.xml                           171579B  L1+L2 key=kmshtatsk phase=0 skip=0
+OK       achievement.xml                            9217B  L1+L2 key=hzkjhstgh phase=3 skip=3
+OK       activecode.xml                            23038B  L1-OK key=hzkjhstgh phase=0 skip=0
+OK       bossdrop.xml                               1971B  L1-OK key=hzkjhstgh phase=0 skip=0
+OK       data.xml                                    737B  L1-OK key=hzkjhstgh phase=0 skip=0
+OK       drop.xml                                  12359B  L1-OK key=hzkjhstgh phase=3 skip=3
+OK       english/BattleArea.xml                     8893B  L1+L2 key=hzkjhstgh phase=0 skip=0
+OK       english/achievement.xml                   10249B  L1+L2 key=hzkjhstgh phase=3 skip=3
+OK       english/activecode.xml                    23038B  L1-OK key=hzkjhstgh phase=0 skip=0
+OK       english/bossdrop.xml                       1971B  L1-OK key=hzkjhstgh phase=0 skip=0
+OK       english/data.xml                            737B  L1-OK key=hzkjhstgh phase=0 skip=0
+OK       english/drop.xml                          12359B  L1-OK key=hzkjhstgh phase=3 skip=3
+OK       english/equip.xml                          2967B  L1+L2 key=hzkjhstgh phase=3 skip=3
+OK       english/gamelevel.xml                     15834B  L1+L2 key=hzkjhstgh phase=3 skip=3
+OK       english/items.xml                          8186B  L1+L2 key=hzkjhstgh phase=0 skip=0
+OK       english/monster.xml                       22888B  L1+L2 key=hzkjhstgh phase=0 skip=0
+OK       english/monstergroup.xml                  48020B  L1+L2 key=hzkjhstgh phase=0 skip=0
+OK       english/msg.xml                            4951B  L1+L2 key=hzkjhstgh phase=0 skip=0
+OK       english/name.xml                           4093B  PLAIN-UTF8
+OK       english/normalToSkeleton.xml                903B  PLAIN-UTF8
+OK       english/reg.xml                            2796B  L1-OK key=hzkjhstgh phase=0 skip=0
+OK       english/roadblock.xml                       953B  L1-OK key=hzkjhstgh phase=0 skip=0
+OK       english/shop.xml                           4351B  L1+L2 key=hzkjhstgh phase=0 skip=0
+OK       english/skill.xml                          5996B  L1-OK key=hzkjhstgh phase=3 skip=3
+OK       english/task.xml                           1248B  L1-OK key=hzkjhstgh phase=0 skip=0
+OK       english/title.xml                          3278B  L1+L2 key=hzkjhstgh phase=0 skip=0
+OK       english/wujinstate.xml                     1457B  L1-OK key=hzkjhstgh phase=0 skip=0
+OK       equip.xml                                  3141B  L1+L2 key=hzkjhstgh phase=3 skip=3
+OK       gamelevel.xml                             15834B  L1+L2 key=hzkjhstgh phase=3 skip=3
+OK       items.xml                                  8186B  L1+L2 key=hzkjhstgh phase=0 skip=0
+OK       monster.xml                               22919B  L1+L2 key=hzkjhstgh phase=0 skip=0
+OK       monstergroup.xml                          48020B  L1+L2 key=hzkjhstgh phase=0 skip=0
+OK       msg.xml                                    5558B  L1+L2 key=hzkjhstgh phase=0 skip=0
+OK       name.xml                                   1662B  PLAIN-UTF8
+OK       normalToSkeleton.xml                        903B  PLAIN-UTF8
+OK       reg.xml                                    2796B  L1-OK key=hzkjhstgh phase=0 skip=0
+OK       roadblock.xml                               953B  L1-OK key=hzkjhstgh phase=0 skip=0
+OK       shop.xml                                   4118B  L1+L2 key=hzkjhstgh phase=0 skip=0
+OK       skill.xml                                  6326B  L1+L2 key=hzkjhstgh phase=3 skip=3
+OK       task.xml                                   1249B  L1+L2 key=hzkjhstgh phase=0 skip=0
+OK       title.xml                                  3772B  L1+L2 key=hzkjhstgh phase=0 skip=0
+OK       wujinstate.xml                             1457B  L1-OK key=hzkjhstgh phase=0 skip=0

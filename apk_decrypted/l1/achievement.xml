@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<achives>
+	<achive id="0"  name="有點小錢"      describ="累計購買20鑽石"      Crystals="0" reward="0"     exp="2000"   gold="0"   achiveType="0" values="20"        rewardname="2000 经验"/>
+	<achive id="1"  name="財不露白"      describ="累計購買100鑽石"     Crystals="0" reward="0"     exp="10000"  gold="0"   achiveType="0" values="100"       rewardname="10000 经验"/>
+	<achive id="2"  name="財大氣粗"      describ="累計購買500鑽石"     Crystals="0" reward="0"     exp="50000" gold="0"   achiveType="0" values="500"       rewardname="50000 经验"/>
+	<achive id="3"  name="富二代"        describ="累計購買1000鑽石"    Crystals="0" reward="0"     exp="100000" gold="0"   achiveType="0" values="1000"      rewardname="100000 经验"/>
+
+	<achive id="4"  name="第一滴血"      describ="殺死第一隻怪物"       Crystals="0" reward="0"     exp="0"      gold="100"   achiveType="1" values="1"       rewardname="100 金幣"/>
+	<achive id="5"  name="怪物剋星"      describ="擊殺怪物50只"         Crystals="0" reward="0"     exp="0"      gold="400"  achiveType="1" values="50"      rewardname="400 金幣"/>
+	<achive id="6"  name="怪物獵人"      describ="擊殺怪物300只"        Crystals="0" reward="0"     exp="0"      gold="800"  achiveType="1" values="300"     rewardname="800 金幣"/>
+	<achive id="7"  name="精英殺手"      describ="擊殺怪物1000只"       Crystals="10" reward="0"     exp="0"      gold="0" achiveType="1" values="1000"     rewardname="10 鑽石"/>
+	<achive id="8"  name="戰場的支配者"  describ="擊殺怪物3000只"       Crystals="15" reward="0"     exp="0"      gold="0" achiveType="1" values="3000"    rewardname="15 鑽石"/>
+	<achive id="9"  name="怪物終結者"    describ="擊殺怪物10000只"      Crystals="20" reward="0"     exp="0"      gold="0" achiveType="1" values="10000"   rewardname="20 鑽石"/>
+
+	<achive id="10" name="小有積蓄"      describ="持有2000金幣"         Crystals="0" reward="0"      exp="1000"  gold="0"    achiveType="2" values="2000"   rewardname="1000 经验"/>
+	<achive id="11" name="小康水平"      describ="持有10000金幣"        Crystals="0" reward="0"      exp="2000"  gold="0"    achiveType="2" values="10000"   rewardname="2000 经验"/>
+	<achive id="12" name="大富豪"        describ="持有50000金幣"        Crystals="10" reward="0"      exp="0" gold="0"    achiveType="2" values="50000"  rewardname="10 鑽石"/>
+	<achive id="13" name="腰纏萬貫"      describ="持有200000金幣"       Crystals="15" reward="0"      exp="0" gold="0"    achiveType="2" values="200000"  rewardname="15 鑽石"/>
+	<achive id="14" name="富甲天下"      describ="持有1000000金幣"      Crystals="20" reward="0"      exp="0" gold="0"    achiveType="2" values="1000000" rewardname="20 鑽石"/>
+
+	<achive id="15" name="出類拔萃"      describ="英雄等級達到5級"      Crystals="0" reward="0"     exp="0"     gold="500"  achiveType="3" values="5"        rewardname="500 金幣"/>
+	<achive id="16" name="力挽狂瀾"      describ="英雄等級達到10級"     Crystals="0" reward="0"     exp="0"     gold="1000" achiveType="3" values="10"       rewardname="1000 金幣"/>
+	<achive id="17" name="蓋世無雙"      describ="英雄等級達到25級"     Crystals="10" reward="0"     exp="0"     gold="0" achiveType="3" values="25"       rewardname="10 鑽石"/>
+	<achive id="18" name="舉世無雙"      describ="英雄等級達到50級"     Crystals="15" reward="0"     exp="0"     gold="0" achiveType="3" values="50"       rewardname="15 鑽石"/>
+
+	<achive id="19" name="報仇的開始"    describ="1名隨從參戰"          Crystals="0" reward="0"     exp="0"     gold="200"  achiveType="4" values="1"        rewardname="200 金幣"/>
+	<achive id="20" name="為了騎士團"    describ="2名隨從參戰"          Crystals="0" reward="0"     exp="0"     gold="500"  achiveType="4" values="2"        rewardname="500 金幣"/>
+	<achive id="21" name="整裝待發"      describ="3名隨從參戰"          Crystals="0" reward="0"     exp="0"     gold="1000" achiveType="4" values="3"        rewardname="1000 金幣"/>
+	<achive id="22" name="人多勢眾"      describ="4名隨從參戰"          Crystals="0" reward="0"     exp="0"     gold="2000" achiveType="4" values="4"        rewardname="2000 金幣"/>
+	<achive id="23" name="全軍出擊"      describ="5名隨從參戰"          Crystals="0" reward="0"     exp="0"     gold="3000" achiveType="4" values="5"        rewardname="3000 金幣"/>
+
+	<achive id="24" name="裝備改造"      describ="升級一次裝備"         Crystals="0" reward="0"     exp="0"     gold="100"  achiveType="5" values="1"        rewardname="100 金幣"/>
+	<achive id="25" name="卓越工藝"      describ="將一件裝備升級至10級" Crystals="0" reward="0"     exp="0"     gold="1000"  achiveType="5" values="10"       rewardname="1000 金幣"/>
+	
+	<achive id="26" name="倖存者"        describ="英雄首次復活"         Crystals="5" reward="0"     exp="0"     gold="0" achiveType="6" values="1"       rewardname="5 鑽石"/>
+
+	<achive id="27" name="初戰告捷"      describ="第一次勝利"           Crystals="2" reward="0"     exp="0"   gold="0"   achiveType="7" values="1"        rewardname="2 鑽石"/>
+	<achive id="28" name="初露鋒芒"      describ="完成第一大陸關卡"     Crystals="5" reward="0"    exp="0"   gold="0"   achiveType="7" values="8"       rewardname="5 鑽石"/>
+	<achive id="29" name="嶄露頭角"      describ="完成第二大陸關卡"     Crystals="7" reward="0"    exp="0"   gold="0"   achiveType="7" values="16"      rewardname="7 鑽石"/>
+	<achive id="30" name="劊子手"        describ="完成第三大陸關卡"     Crystals="9" reward="0"    exp="0"   gold="0"   achiveType="7" values="24"      rewardname="9 鑽石"/>
+	<achive id="31" name="深淵的強者"    describ="完成第四大陸關卡"     Crystals="12" reward="0"    exp="0"   gold="0"   achiveType="7" values="32"      rewardname="12 鑽石"/>
+	<achive id="32" name="時代的英雄"    describ="完成第五大陸關卡"     Crystals="15" reward="0"    exp="0"  gold="0"   achiveType="7" values="40"      rewardname="15 鑽石"/>
+	
+	<achive id="33" name="制伏萊昂哈特"  describ="擊殺萊昂哈特1次"      Crystals="3" reward="0" exp="0"      gold="0"   achiveType="8" values="1"       rewardname="3 鑽石"/>
+	<achive id="34" name="達古達屠殺者"  describ="擊殺達古達3次"        Crystals="0" reward="2007" exp="0"      gold="0"   achiveType="8" values="3"       rewardname="紫金鎧甲"/>
+	<achive id="35" name="斯爾夫的天敵"  describ="擊殺斯爾夫4次"        Crystals="0" reward="3011" exp="0"      gold="0"   achiveType="8" values="4"       rewardname="烈日腰帶"/>
+	<achive id="36" name="古瓦諾屠殺者"  describ="擊殺古瓦諾5次"        Crystals="0" reward="1015" exp="0"      gold="0"   achiveType="8" values="5"       rewardname="斯泰拉巨劍"/>
+	<achive id="37" name="制伏迪爾姆多"  describ="擊殺迪爾姆多6次"      Crystals="0" reward="2019" exp="0"      gold="0"   achiveType="8" values="6"       rewardname="師心戰鬥甲"/>
+	<achive id="38" name="貝勒德的天敵"  describ="擊殺貝勒德7次"        Crystals="0" reward="3039" exp="0"      gold="0"   achiveType="8" values="7"       rewardname="統治者符石"/>
+	
+	<achive id="39" name="八面威風"      describ="戰鬥力達到2500"        Crystals="0" reward="0"     exp="0"     gold="400" achiveType="9" values="2500"   rewardname="400 金幣"/>
+	<achive id="40" name="勢不可當"      describ="戰鬥力達到5000"        Crystals="0" reward="0"     exp="0"     gold="1000" achiveType="9" values="5000"   rewardname="1000 金幣"/>
+	<achive id="41" name="英勇無敵"      describ="戰鬥力達到10000"       Crystals="0" reward="0"     exp="0"     gold="2000" achiveType="9" values="10000"  rewardname="2000 金幣"/>
+	<achive id="42" name="席捲天下"      describ="戰鬥力達到20000"       Crystals="0" reward="0"     exp="0"     gold="5000" achiveType="9" values="20000"  rewardname="5000 金幣"/>
+
+	<achive id="43" name="技能入門"      describ="升級一次技能"          Crystals="0" reward="0"     exp="200"   gold="0"    achiveType="10" values="1"     rewardname="200 经验"/>
+	<achive id="44" name="技能高手"      describ="任意技能升到5級"       Crystals="0" reward="0"     exp="2000"  gold="0"    achiveType="10" values="5"     rewardname="2000 经验"/>
+	<achive id="45" name="技能達人"      describ="任意技能升到10級"      Crystals="0" reward="0"     exp="8000"  gold="0"    achiveType="10" values="10"    rewardname="8000 经验"/>
+	<achive id="46" name="技能大師"      describ="所有技能升到10級"      Crystals="0" reward="0"     exp="20000" gold="0"    achiveType="10" values="40"    rewardname="20000 经验"/>
+
+	<achive id="47" name="暗影王者"      describ="達成所有成就"          Crystals="0" reward="1019"  exp="0"      gold="0"    achiveType="11" values="11"   rewardname="暗影之劍"/>
+</achives>

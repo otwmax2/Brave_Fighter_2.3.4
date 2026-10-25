@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<equip>
+	<weapons>
+		<weapon id="0" name="英雄戰劍" damage="100"   describ="攻擊 + %a" costgold="4"/>
+		<weapon id="1" name="君主劍" damage="180"  	describ="攻擊 + %a" costgold="8"/>
+		<weapon id="2" name="斬魔刀" damage="320"   describ="攻擊 + %a" costgold="12"/>
+		<weapon id="3" name="斯泰拉巨劍" damage="550"  describ="攻擊 + %a" costgold="18"/>
+		<weapon id="4" name="凱瑟利安" damage="1000" describ="攻擊 + %a" costgold="30"/>
+		<weapon id="5" name="暗影之劍" damage="1500" describ="攻擊 + %a" costgold="40"/>
+		<weapon id="6" name="殺戮巨劍" damage="900" describ="攻擊 + %a" costgold="25"/>
+	</weapons>
+
+	<clothes>
+		<cloth id="0" name="修煉大衣"  	 defense="1" hp="1000" 	describ="生命 + %c,防禦 + %b%" costgold="2"/>
+		<cloth id="1" name="紫金鎧甲"  	 defense="2"  hp="1800" 	describ="生命 + %c,防禦 + %b%" costgold="4"/>
+		<cloth id="2" name="紫暴風甲"  	 defense="3" hp="3200" 	describ="生命 + %c,防禦 + %b%" costgold="6"/>
+		<cloth id="3" name="龍紋鎖甲"  	 defense="4"  hp="5500"  describ="生命 + %c,防禦 + %b%" costgold="9"/>
+		<cloth id="4" name="師心戰鬥甲"    defense="5" hp="10000" describ="生命 + %c,防禦 + %b%" costgold="15"/>
+		<cloth id="5" name="惡魔裝甲"    defense="5" hp="8500" describ="生命 + %c,防禦 + %b%" costgold="12"/>
+	</clothes>
+	
+	<shipings>
+		<shiping id="0" name="勇氣之盾"   value="0" defense="0"  hp="200"   damage="30"  describ="生命 + %c,攻擊 + %a" costgold="6"/>
+		<shiping id="1" name="殘酷戒指"   value="0" defense="0"  hp="360"   damage="55"  describ="生命 + %c,攻擊 + %a" costgold="12"/>
+		<shiping id="2" name="烈日腰帶"   value="0" defense="0"  hp="640"   damage="100" describ="生命 + %c,攻擊 + %a" costgold="18"/>
+		<shiping id="3" name="阿爾泰耳環" value="0" defense="0"  hp="1100"  damage="180" describ="生命 + %c,攻擊 + %a" costgold="27"/>
+		<shiping id="4" name="統治者吊墜" value="0" defense="0"  hp="2000"  damage="300" describ="生命 + %c,攻擊 + %a" costgold="45"/>
+		<shiping id="5" name="守護符石"   value="10" defense="0"  hp="0"    damage="0"   describ="%d%機率攻擊擊退目標" costgold="8"/>
+		<shiping id="6" name="風暴符石"   value="1" defense="0"  hp="0"     damage="0"   describ="每4秒恢復%d%生命" costgold="16"/>
+		<shiping id="7" name="正義符石"   value="10" defense="0"  hp="0"    damage="0"   describ="%d%機率攻擊附加昏迷" costgold="24"/>
+		<shiping id="8" name="阿爾泰符石" value="10" defense="0"  hp="0"    damage="0"   describ="造成的傷害增加%d%" costgold="36"/>
+		<shiping id="9" name="統治者符石" value="10" defense="0"  hp="0"    damage="0"   describ="%d%機率使用技能無冷卻" costgold="60"/>
+		<shiping id="10" name="地獄吊墜" value="0" defense="0"  hp="1500"    damage="250"   describ="生命 + %c,攻擊 + %a" costgold="35"/>
+		<shiping id="11" name="地獄符石" value="1" defense="0"  hp="0"    damage="0"   describ="50%機率將%d%傷害變為生命" costgold="50"/>
+	</shipings>
+	
+</equip>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<cgs>
+	<cg id="0"  name="連擊"  	 	playsound="xx.ogg" attacksound="xx.ogg" textid="sk_2.png"  costgold="100" attr="0"  delt="0"  value="20"  range="120"  describ="攻擊時%a%機率發動2次攻擊"/>
+	<cg id="1"  name="迅捷"   	 	playsound="xx.ogg" attacksound="xx.ogg" textid="sk_3.png"  costgold="100" attr="0"  delt="0"  value="20"  range="800"  describ="提升周圍同伴%a點移動速度"/>
+	<cg id="2"  name="禁錮"  	 	playsound="xx.ogg" attacksound="xx.ogg" textid="sk_4.png"  costgold="100" attr="1"  delt="10" value="2"   range="150"  describ="纏住一個目標，在%a秒內不能移動"/>
+	<cg id="3"  name="暴力"  	 	playsound="xx.ogg" attacksound="xx.ogg" textid="sk_5.png"  costgold="100" attr="0"  delt="0"  value="20"  range="800"  describ="%a%的機率造成1.5倍傷害"/>
+	<cg id="4"  name="烈焰斬"	 	playsound="xx.ogg" attacksound="xx.ogg" textid="sk_6.png"  costgold="100" attr="1"  delt="15" value="120" range="280"  describ="投擲烈焰劍，造成%a%傷害"/>
+	<cg id="5"  name="盾防"  	 	playsound="xx.ogg" attacksound="xx.ogg" textid="sk_7.png"  costgold="100" attr="0"  delt="0"  value="15"  range="800"  describ="增加%a%防禦"/>
+	<cg id="6"  name="治療"  	 	playsound="xx.ogg" attacksound="xx.ogg" textid="sk_8.png"  costgold="100" attr="1"  delt="15" value="10"  range="400"  describ="恢復所有單位%a%生命"/>
+	<cg id="7"  name="守護"  	 	playsound="xx.ogg" attacksound="xx.ogg" textid="sk_9.png"  costgold="100" attr="0"  delt="0"  value="10"  range="800"  describ="使周圍同伴的防禦增加%a%"/>
+		
+	<cg id="8"  name="火焰噴射"  	playsound="xx.ogg" attacksound="xx.ogg" textid="sk_10.png" costgold="100" attr="1"  delt="15" value="50"  range="250"  describ="噴射火焰，造成%a%傷害"/>
+	<cg id="9"  name="生命強化"  	playsound="xx.ogg" attacksound="xx.ogg" textid="sk_11.png" costgold="100" attr="0"  delt="0"  value="500" range="800"  describ="增加%a點生命"/>
+	<cg id="10" name="落霜冰破"  	playsound="xx.ogg" attacksound="xx.ogg" textid="sk_12.png" costgold="100" attr="1"  delt="20" value="150" range="150"  describ="給多個目標造成%a%傷害，並減速"/>
+	<cg id="11" name="祈禱" 	 	playsound="xx.ogg" attacksound="xx.ogg" textid="sk_13.png" costgold="100" attr="0"  delt="0"  value="25"  range="800"  describ="%a%機率抵消異常狀態"/>
+	<cg id="12" name="遁形" 	 	playsound="xx.ogg" attacksound="xx.ogg" textid="sk_14.png" costgold="100" attr="0"  delt="0"  value="20"  range="800"  describ="受到攻擊時%a%的機率躲避"/>
+	<cg id="13" name="偷襲" 	 	playsound="xx.ogg" attacksound="xx.ogg" textid="sk_15.png" costgold="100" attr="1"  delt="15" value="300" range="400"  describ="瞬移到隨機的目標後面，造成%a%傷害"/>
+	<cg id="14" name="震動波"    	playsound="xx.ogg" attacksound="xx.ogg" textid="sk_16.png" costgold="100" attr="1"  delt="25" value="180" range="330"  describ="向前方揮砍並發出衝擊波，造成%a%傷害"/>
+	<cg id="15" name="眩暈" 	 	playsound="xx.ogg" attacksound="xx.ogg" textid="sk_17.png" costgold="100" attr="0"  delt="0"  value="20"  range="800"  describ="攻擊時%a%機率附加眩暈效果"/>
+		
+	<cg id="16" name="泰山壓頂"  	playsound="xx.ogg" attacksound="xx.ogg" textid="sk_18.png" costgold="100" attr="1"  delt="25" value="140" range="160"  describ="用身體撞地，造成%a%傷害，並擊退目標"/>
+	<cg id="17" name="暴擊" 	 	playsound="xx.ogg" attacksound="xx.ogg" textid="sk_19.png" costgold="100" attr="0"  delt="0"  value="20"  range="800"  describ="%a%機率造成2倍傷害"/>
+	<cg id="18" name="木刺" 	 	playsound="xx.ogg" attacksound="xx.ogg" textid="sk_20.png" costgold="100" attr="1"  delt="20" value="200" range="250"  describ="從目標腳下冒出木刺，造成%a%傷害"/>
+	<cg id="19" name="纏繞" 	 	playsound="xx.ogg" attacksound="xx.ogg" textid="sk_21.png" costgold="100" attr="0"  delt="0"  value="20"  range="800"  describ="攻擊時%a%機率用木刺纏住目標"/>
+	<cg id="20" name="狂暴" 	 	playsound="xx.ogg" attacksound="xx.ogg" textid="sk_22.png" costgold="100" attr="0"  delt="0"  value="20"  range="145"  describ="對單個目標進行連續刺戳，造成%a%傷害"/>
+	<cg id="21" name="地震" 	 	playsound="xx.ogg" attacksound="xx.ogg" textid="sk_23.png" costgold="100" attr="1"  delt="25" value="160" range="430"  describ="變幻出4隻手，捶地，造成%a%傷害"/>
+		
+	<cg id="22" name="冥河破"    	playsound="xx.ogg" attacksound="xx.ogg" textid="sk_0.png"  costgold="100" attr="1"  delt="20" value="200" range="500"  describ="發射超級激光，對范圍內單位造成%a%傷害"/>
+	<cg id="23" name="憤怒" 	 	playsound="xx.ogg" attacksound="xx.ogg" textid="sk_0.png"  costgold="100" attr="0"  delt="0"  value="10"  range="800"  describ="提升周圍單位%a%的攻擊力"/>
+	<cg id="24" name="裂地斬"    	playsound="xx.ogg" attacksound="xx.ogg" textid="sk_0.png"  costgold="100" attr="1"  delt="10" value="150" range="400"  describ="幻化出巨劍，砍出一條裂縫，造成%a%傷害"/>
+	<cg id="25" name="重擊" 	 	playsound="xx.ogg" attacksound="xx.ogg" textid="sk_0.png"  costgold="100" attr="0"  delt="0"  value="20"  range="800"  describ="%a%機率造成3倍傷害"/>
+	<cg id="26" name="幻影斬擊"  	playsound="xx.ogg" attacksound="xx.ogg" textid="sk_0.png"  costgold="100" attr="0"  delt="0"  value="100" range="250"  describ="幻化出3個分身進行攻擊，造成%a%傷害"/>
+	<cg id="27" name="雷霆萬擊"  	playsound="xx.ogg" attacksound="xx.ogg" textid="sk_0.png"  costgold="100" attr="1"  delt="25" value="250" range="390"  describ="降下高壓閃電，對周圍目標造成%a%傷害"/>
+		                                                                                      
+	<cg id="28"  name="火流星"   	playsound="xx.ogg" attacksound="xx.ogg" textid="sk_0.png"  costgold="100" attr="1"  delt="10" value="50"  range="400"  describ="召喚數顆火隕石砸向地面，造成%a%傷害"/>
+	<cg id="29"  name="恢復" 	 	playsound="xx.ogg" attacksound="xx.ogg" textid="sk_1.png"  costgold="100" attr="0"  delt="10" value="20"  range="800"  describ="恢復所有單位%a%生命"/>
+</cgs>	                                                                                      

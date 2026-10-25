@@ -27,31 +27,37 @@ from datetime import datetime, timedelta, timezone
 #  PATCH BINARY CLASSES2.DEX
 # ============================================================
 # Offset method code di classes2.dex (ditemukan via parsing DEX header):
-OFF_IABRESULT_ISSUCCESS  = 0x6de2c
-OFF_IABRESULT_ISFAILURE  = 0x6de50
-OFF_MONSTERHUNTER_SHOWADS = 0x712f8
+OFF_IABRESULT_ISFAILURE  = 0x6de2c   # isFailure()Z insns_size=10
+OFF_IABRESULT_ISSUCCESS  = 0x6de50   # isSuccess()Z insns_size=8
+OFF_MONSTERHUNTER_SHOWADS = 0x712f8  # showAds(I)V insns_size=12
 # showAdsList sudah return-void (code @ 0x71320 = 0E 00) — tidak perlu patch.
 
 def patch_classes2(dex: bytearray) -> bytearray:
     """Terapkan patch bytecode langsung pada classes2.dex yang sudah dimuat
-    sebagai bytearray (mutable)."""
-    # ---- Patch isSuccess: const/4 v0, 1; return v0; nop (sisanya) ----
+    sebagai bytearray (mutable). CATAT: opcode Dalvik (dalam 16-bit code unit LE):
+      - const/4 vA, #+B : op=0x12 byte layout [12, (B<<4)|A] (bukan [12,A, 00B0]!!!)
+          const/4 v0, 1  = 12 10
+          const/4 v0, 0  = 12 00
+      - return vAA     : op=0x0F  [0F, AA]
+      - return-void    : op=0x0E  [0E, 00]  !!! (bukan 0x0F spt di awal)
+    """
+    # ---- Patch isSuccess()Z (offs=0x6de50, insns_size=8): return true ----
     insns_off = OFF_IABRESULT_ISSUCCESS + 16
     insns_size = struct.unpack_from('<I', dex, OFF_IABRESULT_ISSUCCESS + 12)[0]
-    assert insns_size == 10, f"isSuccess insns_size expected 10, got {insns_size}"
+    assert insns_size == 8, f"isSuccess insns_size expected 8, got {insns_size}"
     patch = bytes.fromhex('12100f00') + b'\x00\x00'*(insns_size - 2)
     dex[insns_off:insns_off+2*insns_size] = patch
     print("[+] Patched IabResult.isSuccess() -> return true (free IAP)")
 
-    # ---- Patch isFailure: const/4 v0, 0; return v0; nop (sisanya) ----
+    # ---- Patch isFailure()Z (offs=0x6de2c, insns_size=10): return false ----
     insns_off = OFF_IABRESULT_ISFAILURE + 16
     insns_size = struct.unpack_from('<I', dex, OFF_IABRESULT_ISFAILURE + 12)[0]
-    assert insns_size == 8, f"isFailure insns_size expected 8, got {insns_size}"
+    assert insns_size == 10, f"isFailure insns_size expected 10, got {insns_size}"
     patch = bytes.fromhex('12000f00') + b'\x00\x00'*(insns_size - 2)
     dex[insns_off:insns_off+2*insns_size] = patch
     print("[+] Patched IabResult.isFailure() -> return false (free IAP)")
 
-    # ---- Patch showAds: return-void; nop (sisanya) ----
+    # ---- Patch showAds(I)V (offs=0x712f8, insns_size=12): return-void ----
     insns_off = OFF_MONSTERHUNTER_SHOWADS + 16
     insns_size = struct.unpack_from('<I', dex, OFF_MONSTERHUNTER_SHOWADS + 12)[0]
     assert insns_size == 12, f"showAds insns_size expected 12, got {insns_size}"
@@ -59,16 +65,11 @@ def patch_classes2(dex: bytearray) -> bytearray:
     dex[insns_off:insns_off+2*insns_size] = patch
     print("[+] Patched MonsterHunter.showAds() -> return-void (no interstitial/banner ads)")
 
-    # ---- Patch: nop-kan invoke-static ke IronSource.showInterstitial()V (method_idx 370) ----
-    # Pola: invoke-static {}, showInterstitial@370 = 71 00 72 01 00 00 (3 code units = 6 bytes)
-    pat_si = bytes([0x71, 0x00, 0x72, 0x01, 0x00, 0x00])
-    i = 0; cnt = 0
-    while True:
-        j = dex.find(pat_si, i)
-        if j < 0: break
-        dex[j:j+6] = b'\x00\x00'*3
-        cnt += 1; i = j+1
-    print(f"[+] Nop {cnt}x invoke showInterstitial() (no ads)")
+    # ---- Patch: nop-kan invoke showInterstitial TIDAK DILAKUKAN lewat pattern mentah ----
+    # Pattern 71 00 72 01 00 00 (invoke-static {}, method@0x172) FALSE-POSITIVE — jatuh di
+    # tengah instruksi const-string di MonsterHunter$1.handleMessage (memicu VerifyError
+    # & force close). Patch no-ads yang aman adalah return-void-kan showAds() saja.
+    print("[+] Menghilangkan nop pattern-mentah showInterstitial (false positive).")
 
     # showAdsList sudah return-void (code @ 0x71320 = 0E 00) — tidak perlu patch.
 

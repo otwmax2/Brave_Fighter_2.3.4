@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<equip>
+	<weapons>
+		<weapon id="0" name="Blade" damage="100"   describ="ATK + %a" costgold="4"/>
+		<weapon id="1" name="King sword" damage="180"  describ="ATK + %a" costgold="8"/>
+		<weapon id="2" name="Muramasa" damage="320"  describ="ATK + %a" costgold="12"/>
+		<weapon id="3" name="Stella Sword" damage="550"  describ="ATK + %a" costgold="18"/>
+		<weapon id="4" name="Casely·Ann" damage="1000" describ="ATK + %a" costgold="30"/>
+		<weapon id="5" name="Shadow Blade" damage="1500" describ="ATK + %a" costgold="40"/>
+		<weapon id="6" name="Slayer Blade" damage="900" describ="ATK + %a" costgold="25"/>
+	</weapons>
+
+	<clothes>
+		<cloth id="0" name="Cloak"  	 defense="1" hp="1000" 	describ="HP + %c defence + %b%" costgold="2"/>
+		<cloth id="1" name="Golden Armor"  	 defense="2"  hp="1800" 	describ="HP + %c defence + %b%" costgold="4"/>
+		<cloth id="2" name="Storm Armor"  	 defense="3" hp="3200" 	describ="HP + %c defence + %b%" costgold="6"/>
+		<cloth id="3" name="Dragon Chainmail"  	 defense="4"  hp="5500"  describ="HP + %c defence + %b%" costgold="9"/>
+		<cloth id="4" name="LionHreat Armor"    defense="5" hp="10000" describ="HP + %c defence + %b%" costgold="15"/>
+		<cloth id="5" name="Evil Armor"    defense="5" hp="8500" describ="HP + %c,defence + %b%" costgold="12"/>
+	</clothes>
+	
+	<shipings>
+		<shiping id="0" name="Brave Shield"   value="0" defense="0"  hp="200"   damage="30"describ="HP + %c,ATK + %a" costgold="6"/>
+		<shiping id="1" name="Cruel Ring"   value="0" defense="0"  hp="360"   damage="55"  describ="HP + %c,ATK + %a" costgold="12"/>
+		<shiping id="2" name="Burning Belt"   value="0" defense="0"  hp="640"  damage="100"describ="HP + %c,ATK + %a" costgold="18"/>
+		<shiping id="3" name="Altai dangler" value="0" defense="0"  hp="1100"  damage="180"describ="HP + %c,ATK + %a" costgold="27"/>
+		<shiping id="4" name="Lord dangler" value="0" defense="0"  hp="2000"  damage="300" describ="HP + %c,ATK + %a" costgold="45"/>
+		<shiping id="5" name="Guardian Stone"   value="10" defense="0"  hp="0"  damage="0" describ="%d% beat back target" costgold="8"/>
+		<shiping id="6" name="Storm Stone" value="1" defense="0"  hp="0"  damage="0"       describ="Recovery %d% HP per 4 sec" costgold="16"/>
+		<shiping id="7" name="Judge Stone"   value="10" defense="0"  hp="0"  damage="0"    describ="%d% stun target" costgold="24"/>
+		<shiping id="8" name="Altai Stone" value="10" defense="0"  hp="0"  damage="0"      describ="Damage + %d%" costgold="36"/>
+		<shiping id="9" name="Lord Stone" value="10" defense="0"  hp="0"  damage="0"       describ="%d% refresh skill" costgold="60"/>
+		<shiping id="10" name="Hell Necklace" value="0" defense="0"  hp="1500"    damage="250"   describ="HP + %c,ATK + %a" costgold="35"/>
+		<shiping id="11" name="Hell Rune" value="1" defense="0"  hp="0"    damage="0"   describ="%d% ATK become HP by 50%" costgold="50"/>
+
+	</shipings>
+	
+</equip>

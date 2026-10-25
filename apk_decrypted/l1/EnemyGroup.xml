@@ -1,0 +1,1697 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<EnemyGropus>
+  <!-- GroupId唯一编号 EnemyNum敌机数量 -->
+    <!-- EnemyId唯一编号  CharacterId敌机编号  WyPointId路径id  DelayTime敌机出现的延迟时间  StartOffsetPosX、Y  敌机的相对位置  needFlip是否翻转 speedScale速度倍数化 EnemyType [0:敌机 1:坦克(或者炮塔) 2:船 3:boss 4:boss船 5:漂浮物 6:海里的石头] -->
+
+  <EnemyGropu GroupId="0" EnemyNum="1" Des="预留">  
+  <!--【飞机一】【预留】-->
+    <Enemy EnemyId="0" CharacterId="0" WyPointId="0" shootBuleGroupId="-1" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="0.6" shootDelt="20.0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="1" EnemyNum="1" Des="上">  
+  <!--【飞机一●路径0●1个】【从上往下飞】【单个】-->
+    <Enemy EnemyId="0" CharacterId="0" WyPointId="0" shootBuleGroupId="-1" DelayTime="0.0"  StartOffsetPosX="0.0" StartOffsetPosY="0.0" statrShootTime="0" shootDelt="0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="2" EnemyNum="3" Des="上">  
+  <!--【飞机一●路径0●3个】【从上往下飞】【一字型】-->
+    <Enemy EnemyId="0" CharacterId="0" WyPointId="0" shootBuleGroupId="-1" DelayTime="0.0"  StartOffsetPosX="0.0" StartOffsetPosY="0.0" statrShootTime="0" shootDelt="0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="1" CharacterId="0" WyPointId="0" shootBuleGroupId="-1" DelayTime="0.3"  StartOffsetPosX="0.0" StartOffsetPosY="0.0" statrShootTime="0" shootDelt="0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="2" CharacterId="0" WyPointId="0" shootBuleGroupId="-1" DelayTime="0.6"  StartOffsetPosX="0.0" StartOffsetPosY="0.0" statrShootTime="0" shootDelt="0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="3" EnemyNum="3" Des="上">  
+  <!--【飞机一●路径0●3个】【从上往下飞】【三角形】-->
+    <Enemy EnemyId="0" CharacterId="0" WyPointId="0" shootBuleGroupId="-1" DelayTime="0.0"  StartOffsetPosX="0.0"   StartOffsetPosY="0.0" statrShootTime="0" shootDelt="0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="1" CharacterId="0" WyPointId="0" shootBuleGroupId="-1" DelayTime="0.3"  StartOffsetPosX="-60.0" StartOffsetPosY="0.0" statrShootTime="0" shootDelt="0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="2" CharacterId="0" WyPointId="0" shootBuleGroupId="-1" DelayTime="0.3"  StartOffsetPosX="60.0"  StartOffsetPosY="0.0" statrShootTime="0" shootDelt="0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="4" EnemyNum="3" Des="上">  
+  <!--【飞机一●路径0●3个】【从上往下飞】【斜一字型：右上】-->
+    <Enemy EnemyId="0" CharacterId="0" WyPointId="0" shootBuleGroupId="-1" DelayTime="0.0"  StartOffsetPosX="-60.0" StartOffsetPosY="0.0" statrShootTime="0" shootDelt="0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="1" CharacterId="0" WyPointId="0" shootBuleGroupId="-1" DelayTime="0.3"  StartOffsetPosX="0.0"   StartOffsetPosY="0.0" statrShootTime="0" shootDelt="0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="2" CharacterId="0" WyPointId="0" shootBuleGroupId="-1" DelayTime="0.6"  StartOffsetPosX="60.0"  StartOffsetPosY="0.0" statrShootTime="0" shootDelt="0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="5" EnemyNum="3" Des="上">  
+  <!--【飞机一●路径0●3个】【从上往下飞】【斜一字型：左上】-->
+    <Enemy EnemyId="0" CharacterId="0" WyPointId="0" shootBuleGroupId="-1" DelayTime="0.0"  StartOffsetPosX="60.0"  StartOffsetPosY="0.0" statrShootTime="0" shootDelt="0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="1" CharacterId="0" WyPointId="0" shootBuleGroupId="-1" DelayTime="0.3"  StartOffsetPosX="0.0"   StartOffsetPosY="0.0" statrShootTime="0" shootDelt="0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="2" CharacterId="0" WyPointId="0" shootBuleGroupId="-1" DelayTime="0.6"  StartOffsetPosX="-60.0" StartOffsetPosY="0.0" statrShootTime="0" shootDelt="0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="6" EnemyNum="1" Des="左">  
+  <!--【飞机一●路径1●1个】【从左往右飞】【单个】-->
+    <Enemy EnemyId="0" CharacterId="0" WyPointId="1" shootBuleGroupId="-1" DelayTime="0.0"  StartOffsetPosX="0.0" StartOffsetPosY="0.0" statrShootTime="0" shootDelt="0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="7" EnemyNum="3" Des="左">  
+  <!--【飞机一●路径1●3个】【从左往右飞】【一字型】-->
+    <Enemy EnemyId="0" CharacterId="0" WyPointId="1" shootBuleGroupId="-1" DelayTime="0.0"  StartOffsetPosX="0.0" StartOffsetPosY="0.0" statrShootTime="0" shootDelt="0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="1" CharacterId="0" WyPointId="1" shootBuleGroupId="-1" DelayTime="0.3"  StartOffsetPosX="0.0" StartOffsetPosY="0.0" statrShootTime="0" shootDelt="0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="2" CharacterId="0" WyPointId="1" shootBuleGroupId="-1" DelayTime="0.6"  StartOffsetPosX="0.0" StartOffsetPosY="0.0" statrShootTime="0" shootDelt="0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+ 
+  <EnemyGropu GroupId="8" EnemyNum="5" Des="左">  
+  <!--【飞机一●路径1●5个】【从左往右飞】【一字型】-->
+    <Enemy EnemyId="0" CharacterId="0" WyPointId="1" shootBuleGroupId="-1" DelayTime="0.0"  StartOffsetPosX="0.0" StartOffsetPosY="0.0" statrShootTime="0" shootDelt="0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="1" CharacterId="0" WyPointId="1" shootBuleGroupId="-1" DelayTime="0.3"  StartOffsetPosX="0.0" StartOffsetPosY="0.0" statrShootTime="0" shootDelt="0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="2" CharacterId="0" WyPointId="1" shootBuleGroupId="-1" DelayTime="0.6"  StartOffsetPosX="0.0" StartOffsetPosY="0.0" statrShootTime="0" shootDelt="0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+	<Enemy EnemyId="3" CharacterId="0" WyPointId="1" shootBuleGroupId="-1" DelayTime="0.9"  StartOffsetPosX="0.0" StartOffsetPosY="0.0" statrShootTime="0" shootDelt="0" needFlip="1" EnemyType="0" speedScale="1.0"/> 
+	<Enemy EnemyId="4" CharacterId="0" WyPointId="1" shootBuleGroupId="-1" DelayTime="1.2"  StartOffsetPosX="0.0" StartOffsetPosY="0.0" statrShootTime="0" shootDelt="0" needFlip="1" EnemyType="0" speedScale="1.0"/> 
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="9" EnemyNum="2" Des="左">  
+  <!--【飞机一●路径1●2个】【从左往右飞】【斜一字型：右上】-->
+    <Enemy EnemyId="0" CharacterId="0" WyPointId="1" shootBuleGroupId="-1" DelayTime="0.0"  StartOffsetPosX="0.0" StartOffsetPosY="80.0" statrShootTime="0" shootDelt="0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="1" CharacterId="0" WyPointId="1" shootBuleGroupId="-1" DelayTime="0.3"  StartOffsetPosX="0.0" StartOffsetPosY="0.0"  statrShootTime="0" shootDelt="0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="10" EnemyNum="4" Des="左">  
+  <!--【飞机一●路径1●4个】【从左往右飞】【斜一字型：右上】-->
+    <Enemy EnemyId="0" CharacterId="0" WyPointId="1" shootBuleGroupId="-1" DelayTime="0.0"  StartOffsetPosX="0.0" StartOffsetPosY="240.0" statrShootTime="0" shootDelt="0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="1" CharacterId="0" WyPointId="1" shootBuleGroupId="-1" DelayTime="0.3"  StartOffsetPosX="0.0" StartOffsetPosY="160.0" statrShootTime="0" shootDelt="0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="2" CharacterId="0" WyPointId="1" shootBuleGroupId="-1" DelayTime="0.6"  StartOffsetPosX="0.0" StartOffsetPosY="80.0"  statrShootTime="0" shootDelt="0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="3" CharacterId="0" WyPointId="1" shootBuleGroupId="-1" DelayTime="0.9"  StartOffsetPosX="0.0" StartOffsetPosY="0.0"   statrShootTime="0" shootDelt="0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="11" EnemyNum="1" Des="右">  
+  <!--【飞机一●路径1●1个】【从右往左飞】【单个】-->
+    <Enemy EnemyId="0" CharacterId="0" WyPointId="2" shootBuleGroupId="-1" DelayTime="0.0"  StartOffsetPosX="0.0" StartOffsetPosY="0.0" statrShootTime="0" shootDelt="0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="12" EnemyNum="3" Des="右">  
+  <!--【飞机一●路径2●3个】【从右往左飞】【一字型】-->
+    <Enemy EnemyId="0" CharacterId="0" WyPointId="2" shootBuleGroupId="-1" DelayTime="0.0"  StartOffsetPosX="0.0" StartOffsetPosY="0.0" statrShootTime="0" shootDelt="0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="1" CharacterId="0" WyPointId="2" shootBuleGroupId="-1" DelayTime="0.3"  StartOffsetPosX="0.0" StartOffsetPosY="0.0" statrShootTime="0" shootDelt="0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="2" CharacterId="0" WyPointId="2" shootBuleGroupId="-1" DelayTime="0.6"  StartOffsetPosX="0.0" StartOffsetPosY="0.0" statrShootTime="0" shootDelt="0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>                                                                                                                                                      
+                                                                                                                                                                     
+  <EnemyGropu GroupId="13" EnemyNum="5" Des="右">                                                                                                                    
+  <!--【飞机一●路径1●5个】【从右往左飞】【一字型】-->                                                                                                                
+    <Enemy EnemyId="0" CharacterId="0" WyPointId="2" shootBuleGroupId="-1" DelayTime="0.0"  StartOffsetPosX="0.0" StartOffsetPosY="0.0" statrShootTime="0" shootDelt="0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="1" CharacterId="0" WyPointId="2" shootBuleGroupId="-1" DelayTime="0.3"  StartOffsetPosX="0.0" StartOffsetPosY="0.0" statrShootTime="0" shootDelt="0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="2" CharacterId="0" WyPointId="2" shootBuleGroupId="-1" DelayTime="0.6"  StartOffsetPosX="0.0" StartOffsetPosY="0.0" statrShootTime="0" shootDelt="0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+	<Enemy EnemyId="3" CharacterId="0" WyPointId="2" shootBuleGroupId="-1" DelayTime="0.9"  StartOffsetPosX="0.0" StartOffsetPosY="0.0" statrShootTime="0" shootDelt="0" needFlip="1" EnemyType="0" speedScale="1.0"/> 
+	<Enemy EnemyId="4" CharacterId="0" WyPointId="2" shootBuleGroupId="-1" DelayTime="1.2"  StartOffsetPosX="0.0" StartOffsetPosY="0.0" statrShootTime="0" shootDelt="0" needFlip="1" EnemyType="0" speedScale="1.0"/> 
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="14" EnemyNum="2" Des="右">  
+  <!--【飞机一●路径2●2个】【从右往左飞】【斜一字型：左上】-->
+    <Enemy EnemyId="0" CharacterId="0" WyPointId="2" shootBuleGroupId="-1" DelayTime="0.0"  StartOffsetPosX="0.0" StartOffsetPosY="80.0" statrShootTime="0" shootDelt="0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="1" CharacterId="0" WyPointId="2" shootBuleGroupId="-1" DelayTime="0.3"  StartOffsetPosX="0.0" StartOffsetPosY="0.0"  statrShootTime="0" shootDelt="0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="15" EnemyNum="4" Des="右">  
+  <!--【飞机一●路径2●4个】【从右往左飞】【斜一字型：左上】-->
+    <Enemy EnemyId="0" CharacterId="0" WyPointId="2" shootBuleGroupId="-1" DelayTime="0.0"  StartOffsetPosX="0.0" StartOffsetPosY="240.0" statrShootTime="0" shootDelt="0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="1" CharacterId="0" WyPointId="2" shootBuleGroupId="-1" DelayTime="0.3"  StartOffsetPosX="0.0" StartOffsetPosY="160.0" statrShootTime="0" shootDelt="0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="2" CharacterId="0" WyPointId="2" shootBuleGroupId="-1" DelayTime="0.6"  StartOffsetPosX="0.0" StartOffsetPosY="80.0"  statrShootTime="0" shootDelt="0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="3" CharacterId="0" WyPointId="2" shootBuleGroupId="-1" DelayTime="0.9"  StartOffsetPosX="0.0" StartOffsetPosY="0.0"   statrShootTime="0" shootDelt="0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="16" EnemyNum="3" Des="左上">  
+  <!--【飞机一●路径3●3个】【从左上往右下飞行】【斜一字型：左上】-->
+    <Enemy EnemyId="0" CharacterId="0" WyPointId="3" shootBuleGroupId="-1" DelayTime="0.0"  StartOffsetPosX="0.0" StartOffsetPosY="200.0" statrShootTime="0" shootDelt="0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="1" CharacterId="0" WyPointId="3" shootBuleGroupId="-1" DelayTime="0.2"  StartOffsetPosX="0.0" StartOffsetPosY="100.0" statrShootTime="0" shootDelt="0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="2" CharacterId="0" WyPointId="3" shootBuleGroupId="-1" DelayTime="0.4"  StartOffsetPosX="0.0" StartOffsetPosY="0.0"   statrShootTime="0" shootDelt="0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="17" EnemyNum="3" Des="左上">  
+  <!--【飞机一●路径3●3个】【从左上往右下飞行】【三角形】-->
+    <Enemy EnemyId="0" CharacterId="0" WyPointId="3" shootBuleGroupId="-1" DelayTime="0.0"  StartOffsetPosX="0.0"   StartOffsetPosY="0.0"   statrShootTime="0" shootDelt="0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="1" CharacterId="0" WyPointId="3" shootBuleGroupId="-1" DelayTime="0.3"  StartOffsetPosX="-30.0" StartOffsetPosY="-30.0" statrShootTime="0" shootDelt="0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="2" CharacterId="0" WyPointId="3" shootBuleGroupId="-1" DelayTime="0.3"  StartOffsetPosX="30.0"  StartOffsetPosY="30.0"  statrShootTime="0" shootDelt="0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="18" EnemyNum="4" Des="左上">  
+  <!--【飞机一●路径3●4个】【从左上往右下飞行】【错一字型】-->
+    <Enemy EnemyId="0" CharacterId="0" WyPointId="3" shootBuleGroupId="-1" DelayTime="0.0"  StartOffsetPosX="-15.0"  StartOffsetPosY="-15.0" statrShootTime="0" shootDelt="0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="1" CharacterId="0" WyPointId="3" shootBuleGroupId="-1" DelayTime="0.2"  StartOffsetPosX="15.0"   StartOffsetPosY="15.0"  statrShootTime="0" shootDelt="0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="2" CharacterId="0" WyPointId="3" shootBuleGroupId="-1" DelayTime="0.5"  StartOffsetPosX="-15.0"  StartOffsetPosY="-15.0" statrShootTime="0" shootDelt="0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="3" CharacterId="0" WyPointId="3" shootBuleGroupId="-1" DelayTime="0.7"  StartOffsetPosX="-15.0"  StartOffsetPosY="15.0"  statrShootTime="0" shootDelt="0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="19" EnemyNum="3" Des="右上">  
+  <!--【飞机一●路径4●3个】【从右上往左下飞行】【斜一字型：右上】-->
+    <Enemy EnemyId="0" CharacterId="0" WyPointId="4" shootBuleGroupId="-1" DelayTime="0.0"  StartOffsetPosX="0.0" StartOffsetPosY="200.0" statrShootTime="0" shootDelt="0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="1" CharacterId="0" WyPointId="4" shootBuleGroupId="-1" DelayTime="0.2"  StartOffsetPosX="0.0" StartOffsetPosY="100.0" statrShootTime="0" shootDelt="0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="2" CharacterId="0" WyPointId="4" shootBuleGroupId="-1" DelayTime="0.4"  StartOffsetPosX="0.0" StartOffsetPosY="0.0"   statrShootTime="0" shootDelt="0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="20" EnemyNum="3" Des="左上">  
+  <!--【飞机一●路径4●3个】【从左上往右下飞行】【三角形】-->
+    <Enemy EnemyId="0" CharacterId="0" WyPointId="4" shootBuleGroupId="-1" DelayTime="0.0"  StartOffsetPosX="0.0"    StartOffsetPosY="0.0"   statrShootTime="0" shootDelt="0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="1" CharacterId="0" WyPointId="4" shootBuleGroupId="-1" DelayTime="0.3"  StartOffsetPosX="30.0"   StartOffsetPosY="-30.0" statrShootTime="0" shootDelt="0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="2" CharacterId="0" WyPointId="4" shootBuleGroupId="-1" DelayTime="0.3"  StartOffsetPosX="-30.0"  StartOffsetPosY="30.0"  statrShootTime="0" shootDelt="0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="21" EnemyNum="4" Des="左上">  
+  <!--【飞机一●路径4●4个】【从左上往右下飞行】【错一字型】-->
+    <Enemy EnemyId="0" CharacterId="0" WyPointId="4" shootBuleGroupId="-1" DelayTime="0.0"  StartOffsetPosX="30.0" StartOffsetPosY="-15.0" statrShootTime="0" shootDelt="0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="1" CharacterId="0" WyPointId="4" shootBuleGroupId="-1" DelayTime="0.2"  StartOffsetPosX="0.0"  StartOffsetPosY="15.0"  statrShootTime="0" shootDelt="0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="2" CharacterId="0" WyPointId="4" shootBuleGroupId="-1" DelayTime="0.5"  StartOffsetPosX="30.0" StartOffsetPosY="-15.0" statrShootTime="0" shootDelt="0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="3" CharacterId="0" WyPointId="4" shootBuleGroupId="-1" DelayTime="0.7"  StartOffsetPosX="0.0"  StartOffsetPosY="15.0"  statrShootTime="0" shootDelt="0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="22" EnemyNum="3" Des="左下">  
+  <!--【飞机一●路径5●3个】【从左下往右上飞行】【斜一字型：右上】-->
+    <Enemy EnemyId="0" CharacterId="0" WyPointId="5" shootBuleGroupId="-1" DelayTime="0.0"  StartOffsetPosX="0.0" StartOffsetPosY="200.0" statrShootTime="0" shootDelt="0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="1" CharacterId="0" WyPointId="5" shootBuleGroupId="-1" DelayTime="0.2"  StartOffsetPosX="0.0" StartOffsetPosY="100.0" statrShootTime="0" shootDelt="0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="2" CharacterId="0" WyPointId="5" shootBuleGroupId="-1" DelayTime="0.4"  StartOffsetPosX="0.0" StartOffsetPosY="0.0"   statrShootTime="0" shootDelt="0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="23" EnemyNum="3" Des="左下">  
+  <!--【飞机一●路径5●3个】【从左下往右上飞行】【三角形】-->
+    <Enemy EnemyId="0" CharacterId="0" WyPointId="5" shootBuleGroupId="-1" DelayTime="0.0"  StartOffsetPosX="0.0"   StartOffsetPosY="0.0"   statrShootTime="0" shootDelt="0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="1" CharacterId="0" WyPointId="5" shootBuleGroupId="-1" DelayTime="0.3"  StartOffsetPosX="-30.0" StartOffsetPosY="30.0"  statrShootTime="0" shootDelt="0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="2" CharacterId="0" WyPointId="5" shootBuleGroupId="-1" DelayTime="0.3"  StartOffsetPosX="30.0"  StartOffsetPosY="-30.0" statrShootTime="0" shootDelt="0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="24" EnemyNum="4" Des="左下">  
+  <!--【飞机一●路径5●4个】【从左下往右上飞行】【错一字型】-->
+    <Enemy EnemyId="0" CharacterId="0" WyPointId="5" shootBuleGroupId="-1" DelayTime="0.0"  StartOffsetPosX="-15.0" StartOffsetPosY="15.0"  statrShootTime="0" shootDelt="0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="1" CharacterId="0" WyPointId="5" shootBuleGroupId="-1" DelayTime="0.2"  StartOffsetPosX="15.0"  StartOffsetPosY="-15.0" statrShootTime="0" shootDelt="0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="2" CharacterId="0" WyPointId="5" shootBuleGroupId="-1" DelayTime="0.5"  StartOffsetPosX="-15.0" StartOffsetPosY="15.0"  statrShootTime="0" shootDelt="0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="3" CharacterId="0" WyPointId="5" shootBuleGroupId="-1" DelayTime="0.7"  StartOffsetPosX="15.0"  StartOffsetPosY="-15.0" statrShootTime="0" shootDelt="0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+
+  <EnemyGropu GroupId="25" EnemyNum="3" Des="右下">  
+  <!--【飞机一●路径6●3个】【从右下往左上飞行】【斜一字型：左上】-->
+    <Enemy EnemyId="0" CharacterId="0" WyPointId="6" shootBuleGroupId="-1" DelayTime="0.0"  StartOffsetPosX="0.0" StartOffsetPosY="200.0" statrShootTime="0" shootDelt="0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="1" CharacterId="0" WyPointId="6" shootBuleGroupId="-1" DelayTime="0.2"  StartOffsetPosX="0.0" StartOffsetPosY="100.0" statrShootTime="0" shootDelt="0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="2" CharacterId="0" WyPointId="6" shootBuleGroupId="-1" DelayTime="0.4"  StartOffsetPosX="0.0" StartOffsetPosY="0.0"   statrShootTime="0" shootDelt="0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="26" EnemyNum="3" Des="右下">  
+  <!--【飞机一●路径6●3个】【从右下往左上飞行】【三角形】-->
+    <Enemy EnemyId="0" CharacterId="0" WyPointId="6" shootBuleGroupId="-1" DelayTime="0.0"  StartOffsetPosX="0.0"    StartOffsetPosY="0.0"   statrShootTime="0" shootDelt="0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="1" CharacterId="0" WyPointId="6" shootBuleGroupId="-1" DelayTime="0.3"  StartOffsetPosX="30.0"   StartOffsetPosY="30.0"  statrShootTime="0" shootDelt="0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="2" CharacterId="0" WyPointId="6" shootBuleGroupId="-1" DelayTime="0.3"  StartOffsetPosX="-30.0"  StartOffsetPosY="-30.0" statrShootTime="0" shootDelt="0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="27" EnemyNum="4" Des="右下">  
+  <!--【飞机一●路径6●4个】【从右下往左上飞行】【错一字型】-->
+    <Enemy EnemyId="0" CharacterId="0" WyPointId="6" shootBuleGroupId="-1" DelayTime="0.0"  StartOffsetPosX="30.0" StartOffsetPosY="15.0"  statrShootTime="0" shootDelt="0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="1" CharacterId="0" WyPointId="6" shootBuleGroupId="-1" DelayTime="0.2"  StartOffsetPosX="0.0"  StartOffsetPosY="-15.0" statrShootTime="0" shootDelt="0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="2" CharacterId="0" WyPointId="6" shootBuleGroupId="-1" DelayTime="0.5"  StartOffsetPosX="30.0" StartOffsetPosY="15.0"  statrShootTime="0" shootDelt="0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="3" CharacterId="0" WyPointId="6" shootBuleGroupId="-1" DelayTime="0.7"  StartOffsetPosX="0.0"  StartOffsetPosY="-15.0" statrShootTime="0" shootDelt="0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="31" EnemyNum="1" Des="左">  
+  <!--【飞机二●路径11●1个】【从左往右偏下沿“S”型移动】【单个】-->
+    <Enemy EnemyId="0" CharacterId="1" WyPointId="11" shootBuleGroupId="-1" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="0" shootDelt="0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+
+  <EnemyGropu GroupId="32" EnemyNum="3" Des="左">  
+  <!--【飞机二●路径11●3个】【从左往右偏下沿“S”型移动】【一字型】-->
+    <Enemy EnemyId="0" CharacterId="1" WyPointId="11" shootBuleGroupId="-1" DelayTime="0.0"  StartOffsetPosX="-0.0"  StartOffsetPosY="0.0" statrShootTime="0" shootDelt="0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="1" CharacterId="1" WyPointId="11" shootBuleGroupId="-1" DelayTime="0.5"  StartOffsetPosX="-0.0"  StartOffsetPosY="0.0" statrShootTime="0" shootDelt="0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="2" CharacterId="1" WyPointId="11" shootBuleGroupId="-1" DelayTime="1.0"  StartOffsetPosX="-0.0"  StartOffsetPosY="0.0" statrShootTime="0" shootDelt="0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="33" EnemyNum="5" Des="左">  
+  <!--【飞机二●路径11●5个】【从左往右偏下沿“S”型移动】【一字型】-->
+    <Enemy EnemyId="0" CharacterId="1" WyPointId="11" shootBuleGroupId="-1" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="0" shootDelt="0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="1" CharacterId="1" WyPointId="11" shootBuleGroupId="-1" DelayTime="0.5"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="0" shootDelt="0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="2" CharacterId="1" WyPointId="11" shootBuleGroupId="-1" DelayTime="1.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="0" shootDelt="0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="3" CharacterId="1" WyPointId="11" shootBuleGroupId="-1" DelayTime="1.5"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="0" shootDelt="0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="4" CharacterId="1" WyPointId="11" shootBuleGroupId="-1" DelayTime="2.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="0" shootDelt="0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="34" EnemyNum="1" Des="右">  
+  <!--【飞机二●路径12●1个】【从右往左偏下沿“S”型移动】【单个】-->
+    <Enemy EnemyId="0" CharacterId="1" WyPointId="12" shootBuleGroupId="-1" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="0" shootDelt="0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+
+  <EnemyGropu GroupId="35" EnemyNum="3" Des="右">  
+  <!--【飞机二●路径12●3个】【从右往左偏下沿“S”型移动】【一字型】-->
+    <Enemy EnemyId="0" CharacterId="1" WyPointId="12" shootBuleGroupId="-1" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="0" shootDelt="0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="1" CharacterId="1" WyPointId="12" shootBuleGroupId="-1" DelayTime="0.5"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="0" shootDelt="0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="2" CharacterId="1" WyPointId="12" shootBuleGroupId="-1" DelayTime="1.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="0" shootDelt="0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="36" EnemyNum="5" Des="右">  
+  <!--【飞机二●路径12●5个】【从右往左偏下沿“S”型移动】【一字型】-->
+    <Enemy EnemyId="0" CharacterId="1" WyPointId="12" shootBuleGroupId="-1" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="0" shootDelt="0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="1" CharacterId="1" WyPointId="12" shootBuleGroupId="-1" DelayTime="0.5"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="0" shootDelt="0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="2" CharacterId="1" WyPointId="12" shootBuleGroupId="-1" DelayTime="1.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="0" shootDelt="0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="3" CharacterId="1" WyPointId="12" shootBuleGroupId="-1" DelayTime="1.5"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="0" shootDelt="0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="4" CharacterId="1" WyPointId="12" shootBuleGroupId="-1" DelayTime="2.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="0" shootDelt="0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="37" EnemyNum="1" Des="左">  
+  <!--【飞机二●路径13●1个】【从左往右偏上移动】【单个】-->
+    <Enemy EnemyId="0" CharacterId="1" WyPointId="13" shootBuleGroupId="-1" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="0" shootDelt="0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+
+  <EnemyGropu GroupId="38" EnemyNum="3" Des="左">  
+  <!--【飞机二●路径13●3个】【从左往右偏上移动】【一字型】-->
+    <Enemy EnemyId="0" CharacterId="1" WyPointId="13" shootBuleGroupId="-1" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="0" shootDelt="0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="1" CharacterId="1" WyPointId="13" shootBuleGroupId="-1" DelayTime="0.5"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="0" shootDelt="0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="2" CharacterId="1" WyPointId="13" shootBuleGroupId="-1" DelayTime="1.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="0" shootDelt="0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="39" EnemyNum="5" Des="左">  
+  <!--【飞机二●路径13●5个】【从左往右偏上移动】【一字型】-->
+    <Enemy EnemyId="0" CharacterId="1" WyPointId="13" shootBuleGroupId="-1" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="0" shootDelt="0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="1" CharacterId="1" WyPointId="13" shootBuleGroupId="-1" DelayTime="0.5"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="0" shootDelt="0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="2" CharacterId="1" WyPointId="13" shootBuleGroupId="-1" DelayTime="1.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="0" shootDelt="0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="3" CharacterId="1" WyPointId="13" shootBuleGroupId="-1" DelayTime="1.5"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="0" shootDelt="0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="4" CharacterId="1" WyPointId="13" shootBuleGroupId="-1" DelayTime="2.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="0" shootDelt="0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="40" EnemyNum="1" Des="右">  
+  <!--【飞机二●路径14●1个】【从右往左偏上移动】【单个】-->
+    <Enemy EnemyId="0" CharacterId="1" WyPointId="14" shootBuleGroupId="-1" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="0" shootDelt="0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>                                                                                                                                                        
+                                                                                                                                                                       
+  <EnemyGropu GroupId="41" EnemyNum="3" Des="右">                                                                                                                      
+  <!--【飞机二●路径14●3个】【从右往左偏上移动】【一字型】-->                                                                                                           
+    <Enemy EnemyId="0" CharacterId="1" WyPointId="14" shootBuleGroupId="-1" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="0" shootDelt="0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="1" CharacterId="1" WyPointId="14" shootBuleGroupId="-1" DelayTime="0.5"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="0" shootDelt="0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="2" CharacterId="1" WyPointId="14" shootBuleGroupId="-1" DelayTime="1.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="0" shootDelt="0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="42" EnemyNum="5" Des="右">  
+  <!--【飞机二●路径14●5个】【从右往左偏上移动】【一字型】-->
+    <Enemy EnemyId="0" CharacterId="1" WyPointId="14" shootBuleGroupId="-1" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="0.0" shootDelt="0.0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="1" CharacterId="1" WyPointId="14" shootBuleGroupId="-1" DelayTime="0.5"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="0.0" shootDelt="0.0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="2" CharacterId="1" WyPointId="14" shootBuleGroupId="-1" DelayTime="1.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="0.0" shootDelt="0.0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="3" CharacterId="1" WyPointId="14" shootBuleGroupId="-1" DelayTime="1.5"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="0.0" shootDelt="0.0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="4" CharacterId="1" WyPointId="14" shootBuleGroupId="-1" DelayTime="2.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="0.0" shootDelt="0.0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="43" EnemyNum="1" Des="上偏左">  
+  <!--【飞机二●路径15●1个】【从上往下偏右移动，再往上偏右移动】【单个】-->
+    <Enemy EnemyId="0" CharacterId="1" WyPointId="15" shootBuleGroupId="-1" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="0.0" shootDelt="0.0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+
+  <EnemyGropu GroupId="44" EnemyNum="3" Des="上偏左">  
+  <!--【飞机二●路径15●3个】【从上往下偏右移动，再往上偏右移动】【一字型】-->
+    <Enemy EnemyId="0" CharacterId="1" WyPointId="15" shootBuleGroupId="-1" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="0.0" shootDelt="0.0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="1" CharacterId="1" WyPointId="15" shootBuleGroupId="-1" DelayTime="0.5"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="0.0" shootDelt="0.0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="2" CharacterId="1" WyPointId="15" shootBuleGroupId="-1" DelayTime="1.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="0.0" shootDelt="0.0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="45" EnemyNum="5" Des="上偏左">  
+  <!--【飞机二●路径15●5个】【从上往下偏右移动，再往上偏右移动】【一字型】-->
+    <Enemy EnemyId="0" CharacterId="1" WyPointId="15" shootBuleGroupId="-1" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="0.0" shootDelt="0.0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="1" CharacterId="1" WyPointId="15" shootBuleGroupId="-1" DelayTime="0.5"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="0.0" shootDelt="0.0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="2" CharacterId="1" WyPointId="15" shootBuleGroupId="-1" DelayTime="1.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="0.0" shootDelt="0.0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="3" CharacterId="1" WyPointId="15" shootBuleGroupId="-1" DelayTime="1.5"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="0.0" shootDelt="0.0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="4" CharacterId="1" WyPointId="15" shootBuleGroupId="-1" DelayTime="2.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="0.0" shootDelt="0.0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="46" EnemyNum="1" Des="上偏右">  
+  <!--【飞机二●路径16●1个】【从上往下偏左移动，再往上偏左移动】【单个】-->
+    <Enemy EnemyId="0" CharacterId="1" WyPointId="16" shootBuleGroupId="-1" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="0.0" shootDelt="0.0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+
+  <EnemyGropu GroupId="47" EnemyNum="3" Des="上偏右">  
+  <!--【飞机二●路径16●3个】【从上往下偏左移动，再往上偏左移动】【一字型】-->
+    <Enemy EnemyId="0" CharacterId="1" WyPointId="16" shootBuleGroupId="-1" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="0.0" shootDelt="0.0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="1" CharacterId="1" WyPointId="16" shootBuleGroupId="-1" DelayTime="0.5"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="0.0" shootDelt="0.0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="2" CharacterId="1" WyPointId="16" shootBuleGroupId="-1" DelayTime="1.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="0.0" shootDelt="0.0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="48" EnemyNum="5" Des="上偏右">  
+  <!--【飞机二●路径16●5个】【从上往下偏左移动，再往上偏左移动】【一字型】-->
+    <Enemy EnemyId="0" CharacterId="1" WyPointId="16" shootBuleGroupId="-1" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="0.0" shootDelt="0.0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="1" CharacterId="1" WyPointId="16" shootBuleGroupId="-1" DelayTime="0.5"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="0.0" shootDelt="0.0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="2" CharacterId="1" WyPointId="16" shootBuleGroupId="-1" DelayTime="1.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="0.0" shootDelt="0.0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="3" CharacterId="1" WyPointId="16" shootBuleGroupId="-1" DelayTime="1.5"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="0.0" shootDelt="0.0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="4" CharacterId="1" WyPointId="16" shootBuleGroupId="-1" DelayTime="2.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="0.0" shootDelt="0.0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="51" EnemyNum="1" Des="左">  
+  <!--【飞机三●路径21●1个】【从左往右直线飞行,然后往左上折回】【弹幕一】-->
+    <Enemy EnemyId="0" CharacterId="2" WyPointId="21" shootBuleGroupId="7" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="1.5" shootDelt="8.0" needFlip="0" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="52" EnemyNum="1" Des="右">  
+  <!--【飞机三●路径22●1个】【从右往左直线飞行,然后往右上折回】【弹幕一】-->
+    <Enemy EnemyId="0" CharacterId="2" WyPointId="22" shootBuleGroupId="7" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="1.5" shootDelt="8.0" needFlip="0" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="53" EnemyNum="1" Des="上偏左">  
+  <!--【飞机三●路径23●1个】【从上往下直线飞行,然后往右上折回】【弹幕一】-->
+    <Enemy EnemyId="0" CharacterId="2" WyPointId="23" shootBuleGroupId="7" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="1.5" shootDelt="8.0" needFlip="0" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="54" EnemyNum="1" Des="上偏右">  
+  <!--【飞机三●路径24●1个】【从上往下直线飞行,然后往左上折回】【弹幕一】-->
+    <Enemy EnemyId="0" CharacterId="2" WyPointId="24" shootBuleGroupId="7" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="1.5" shootDelt="8.0" needFlip="0" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="55" EnemyNum="1" Des="左上">  
+  <!--【飞机三●路径25●1个】【从左上角飞进来，然后朝屏幕中心折回】【弹幕一】-->
+    <Enemy EnemyId="0" CharacterId="2" WyPointId="25" shootBuleGroupId="7" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="2.0" shootDelt="8.0" needFlip="0" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="56" EnemyNum="1" Des="右上">  
+  <!--【飞机三●路径26●1个】【从右上角飞进来，然后朝屏幕中心折回】【弹幕一】-->
+    <Enemy EnemyId="0" CharacterId="2" WyPointId="26" shootBuleGroupId="7" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="2.0" shootDelt="8.0" needFlip="0" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="61" EnemyNum="1" Des="左">  
+  <!--【飞机三●路径21●1个】【从左往右直线飞行,然后往左上折回】【弹幕二】-->
+    <Enemy EnemyId="0" CharacterId="2" WyPointId="21" shootBuleGroupId="8" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="1.5" shootDelt="6.0" needFlip="0" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="62" EnemyNum="1" Des="右">  
+  <!--【飞机三●路径22●1个】【从右往左直线飞行,然后往右上折回】【弹幕二】-->
+    <Enemy EnemyId="0" CharacterId="2" WyPointId="22" shootBuleGroupId="8" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="1.5" shootDelt="6.0" needFlip="0" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="63" EnemyNum="1" Des="上偏左">  
+  <!--【飞机三●路径23●1个】【从上往下直线飞行,然后往右上折回】【弹幕二】-->
+    <Enemy EnemyId="0" CharacterId="2" WyPointId="23" shootBuleGroupId="8" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="1.5" shootDelt="6.0" needFlip="0" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="64" EnemyNum="1" Des="上偏右">  
+  <!--【飞机三●路径24●1个】【从上往下直线飞行,然后往左上折回】【弹幕二】-->
+    <Enemy EnemyId="0" CharacterId="2" WyPointId="24" shootBuleGroupId="8" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="1.5" shootDelt="6.0" needFlip="0" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="65" EnemyNum="1" Des="左上">  
+  <!--【飞机三●路径25●1个】【从左上角飞进来，然后朝屏幕中心折回】【弹幕二】-->
+    <Enemy EnemyId="0" CharacterId="2" WyPointId="25" shootBuleGroupId="8" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="2.0" shootDelt="6.0" needFlip="0" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="66" EnemyNum="1" Des="右上">  
+  <!--【飞机三●路径26●1个】【从右上角飞进来，然后朝屏幕中心折回】【弹幕二】-->
+    <Enemy EnemyId="0" CharacterId="2" WyPointId="26" shootBuleGroupId="8" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="2.0" shootDelt="6.0" needFlip="0" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="71" EnemyNum="1" Des="左">  
+  <!--【飞机三●路径21●1个】【从左往右直线飞行,然后往左上折回】【弹幕三】-->
+    <Enemy EnemyId="0" CharacterId="2" WyPointId="21" shootBuleGroupId="9" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="1.5" shootDelt="6.0" needFlip="0" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="72" EnemyNum="1" Des="右">  
+  <!--【飞机三●路径22●1个】【从右往左直线飞行,然后往右上折回】【弹幕三】-->
+    <Enemy EnemyId="0" CharacterId="2" WyPointId="22" shootBuleGroupId="9" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="1.5" shootDelt="6.0" needFlip="0" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="73" EnemyNum="1" Des="上偏左">  
+  <!--【飞机三●路径23●1个】【从上往下直线飞行,然后往右上折回】【弹幕三】-->
+    <Enemy EnemyId="0" CharacterId="2" WyPointId="23" shootBuleGroupId="9" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="1.5" shootDelt="6.0" needFlip="0" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="74" EnemyNum="1" Des="上偏右">  
+  <!--【飞机三●路径24●1个】【从上往下直线飞行,然后往左上折回】【弹幕三】-->
+    <Enemy EnemyId="0" CharacterId="2" WyPointId="24" shootBuleGroupId="9" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="1.5" shootDelt="6.0" needFlip="0" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="75" EnemyNum="1" Des="左上">  
+  <!--【飞机三●路径25●1个】【从左上角飞进来，然后朝屏幕中心折回】【弹幕三】-->
+    <Enemy EnemyId="0" CharacterId="2" WyPointId="25" shootBuleGroupId="9" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="2.0" shootDelt="6.0" needFlip="0" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="76" EnemyNum="1" Des="右上">  
+  <!--【飞机三●路径26●1个】【从右上角飞进来，然后朝屏幕中心折回】【弹幕三】-->
+    <Enemy EnemyId="0" CharacterId="2" WyPointId="26" shootBuleGroupId="9" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="2.0" shootDelt="6.0" needFlip="0" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="81" EnemyNum="1" Des="上">  
+  <!--【飞机四●路径31●1个】【从上方飞进来，右左8字形来回移动】【弹幕一】-->
+    <Enemy EnemyId="0" CharacterId="3" WyPointId="31" shootBuleGroupId="10" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="2.0" shootDelt="7.0" needFlip="0" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="82" EnemyNum="1" Des="上">  
+  <!--【飞机四●路径32●1个】【从上方飞进来，左右8字形来回移动】【弹幕一】-->
+    <Enemy EnemyId="0" CharacterId="3" WyPointId="32" shootBuleGroupId="10" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="2.0" shootDelt="7.0" needFlip="0" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="83" EnemyNum="1" Des="左">  
+  <!--【飞机四●路径33●1个】【从左侧飞进来，上下8字形来回移动】【弹幕一】-->
+    <Enemy EnemyId="0" CharacterId="3" WyPointId="33" shootBuleGroupId="10" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="2.0" shootDelt="7.0" needFlip="0" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+
+  <EnemyGropu GroupId="84" EnemyNum="1" Des="右">  
+  <!--【飞机四●路径34●1个】【从右侧飞进来，上下8字形来回移动】【弹幕一】-->
+    <Enemy EnemyId="0" CharacterId="3" WyPointId="34" shootBuleGroupId="10" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="2.0" shootDelt="7.0" needFlip="0" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="86" EnemyNum="1" Des="上">  
+  <!--【飞机四●路径31●1个】【从上方飞进来，右左8字形来回移动】【弹幕二】-->
+    <Enemy EnemyId="0" CharacterId="3" WyPointId="31" shootBuleGroupId="11" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="2.0" shootDelt="7.0" needFlip="0" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="87" EnemyNum="1" Des="上">  
+  <!--【飞机四●路径32●1个】【从上方飞进来，左右8字形来回移动】【弹幕二】-->
+    <Enemy EnemyId="0" CharacterId="3" WyPointId="32" shootBuleGroupId="11" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="2.0" shootDelt="7.0" needFlip="0" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="88" EnemyNum="1" Des="左">  
+  <!--【飞机四●路径33●1个】【从左侧飞进来，上下8字形来回移动】【弹幕二】-->
+    <Enemy EnemyId="0" CharacterId="3" WyPointId="33" shootBuleGroupId="11" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="2.0" shootDelt="7.0" needFlip="0" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+
+  <EnemyGropu GroupId="89" EnemyNum="1" Des="右">  
+  <!--【飞机四●路径34●1个】【从右侧飞进来，上下8字形来回移动】【弹幕二】-->
+    <Enemy EnemyId="0" CharacterId="3" WyPointId="34" shootBuleGroupId="11" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="2.0" shootDelt="7.0" needFlip="0" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="91" EnemyNum="1" Des="上">  
+  <!--【飞机四●路径31●1个】【从上方飞进来，右左8字形来回移动】【弹幕三】-->
+    <Enemy EnemyId="0" CharacterId="3" WyPointId="31" shootBuleGroupId="12" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="2.0" shootDelt="7.0" needFlip="0" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="92" EnemyNum="1" Des="上">  
+  <!--【飞机四●路径32●1个】【从上方飞进来，左右8字形来回移动】【弹幕三】-->
+    <Enemy EnemyId="0" CharacterId="3" WyPointId="32" shootBuleGroupId="12" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="2.0" shootDelt="7.0" needFlip="0" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="93" EnemyNum="1" Des="左">  
+  <!--【飞机四●路径33●1个】【从左侧飞进来，上下8字形来回移动】【弹幕三】-->
+    <Enemy EnemyId="0" CharacterId="3" WyPointId="33" shootBuleGroupId="12" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="2.0" shootDelt="7.0" needFlip="0" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+
+  <EnemyGropu GroupId="94" EnemyNum="1" Des="右">  
+  <!--【飞机四●路径34●1个】【从右侧飞进来，上下8字形来回移动】【弹幕三】-->
+    <Enemy EnemyId="0" CharacterId="3" WyPointId="34" shootBuleGroupId="12" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="2.0" shootDelt="7.0" needFlip="0" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="101" EnemyNum="1" Des="上">  
+  <!--【飞机五●路径41●1个】【从上方进入屏幕，沿轻曲线左右来回移动】【弹幕一】-->
+    <Enemy EnemyId="0" CharacterId="4" WyPointId="41" shootBuleGroupId="13" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="2.5" shootDelt="7.0" needFlip="0" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="102" EnemyNum="1" Des="上">  
+  <!--【飞机五●路径42●1个】【从上方进入屏幕，沿轻曲线右左来回移动】【弹幕一】-->
+    <Enemy EnemyId="0" CharacterId="4" WyPointId="42" shootBuleGroupId="13" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="2.5" shootDelt="7.0" needFlip="0" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="103" EnemyNum="1" Des="左">  
+  <!--【飞机五●路径43●1个】【从左侧进入屏幕，沿轻曲线左右来回移动】【弹幕一】-->
+    <Enemy EnemyId="0" CharacterId="4" WyPointId="43" shootBuleGroupId="13" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="2.5" shootDelt="7.0" needFlip="0" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="104" EnemyNum="1" Des="右">  
+  <!--【飞机五●路径44●1个】【从右侧进入屏幕，沿轻曲线右左来回移动】【弹幕一】-->
+    <Enemy EnemyId="0" CharacterId="4" WyPointId="44" shootBuleGroupId="13" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="2.5" shootDelt="7.0" needFlip="0" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="106" EnemyNum="1" Des="上">  
+  <!--【飞机五●路径41●1个】【从上方进入屏幕，沿轻曲线左右来回移动】【弹幕二】-->
+    <Enemy EnemyId="0" CharacterId="4" WyPointId="41" shootBuleGroupId="14" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="2.5" shootDelt="7.0" needFlip="0" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="107" EnemyNum="1" Des="上">  
+  <!--【飞机五●路径42●1个】【从上方进入屏幕，沿轻曲线右左来回移动】【弹幕二】-->
+    <Enemy EnemyId="0" CharacterId="4" WyPointId="42" shootBuleGroupId="14" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="2.5" shootDelt="7.0" needFlip="0" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="108" EnemyNum="1" Des="左">  
+  <!--【飞机五●路径43●1个】【从左侧进入屏幕，沿轻曲线左右来回移动】【弹幕二】-->
+    <Enemy EnemyId="0" CharacterId="4" WyPointId="43" shootBuleGroupId="14" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="2.5" shootDelt="7.0" needFlip="0" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="109" EnemyNum="1" Des="右">  
+  <!--【飞机五●路径44●1个】【从右侧进入屏幕，沿轻曲线右左来回移动】【弹幕二】-->
+    <Enemy EnemyId="0" CharacterId="4" WyPointId="44" shootBuleGroupId="14" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="2.5" shootDelt="7.0" needFlip="0" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="111" EnemyNum="1" Des="上">  
+  <!--【飞机五●路径41●1个】【从上方进入屏幕，沿轻曲线左右来回移动】【弹幕三】-->
+    <Enemy EnemyId="0" CharacterId="4" WyPointId="41" shootBuleGroupId="15" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="2.5" shootDelt="7.0" needFlip="0" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="112" EnemyNum="1" Des="上">  
+  <!--【飞机五●路径42●1个】【从上方进入屏幕，沿轻曲线右左来回移动】【弹幕三】-->
+    <Enemy EnemyId="0" CharacterId="4" WyPointId="42" shootBuleGroupId="15" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="2.5" shootDelt="7.0" needFlip="0" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="113" EnemyNum="1" Des="左">  
+  <!--【飞机五●路径43●1个】【从左侧进入屏幕，沿轻曲线左右来回移动】【弹幕三】-->
+    <Enemy EnemyId="0" CharacterId="4" WyPointId="43" shootBuleGroupId="15" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="2.5" shootDelt="7.0" needFlip="0" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="114" EnemyNum="1" Des="右">  
+  <!--【飞机五●路径44●1个】【从右侧进入屏幕，沿轻曲线右左来回移动】【弹幕三】-->
+    <Enemy EnemyId="0" CharacterId="4" WyPointId="44" shootBuleGroupId="15" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="2.5" shootDelt="7.0" needFlip="0" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="121" EnemyNum="1" Des="左偏上">  
+  <!--【飞机六●路径51●1个】【从左侧偏上往右下方飞进来，在几个点间移动】【弹幕一】-->
+    <Enemy EnemyId="0" CharacterId="5" WyPointId="51" shootBuleGroupId="-1" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="0.0" shootDelt="0.0" needFlip="0" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="122" EnemyNum="1" Des="右偏上">  
+  <!--【飞机六●路径52●1个】【从右侧偏上往左下方飞进来，在几个点间移动】【弹幕一】-->
+    <Enemy EnemyId="0" CharacterId="5" WyPointId="52" shootBuleGroupId="-1" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="0.0" shootDelt="0.0" needFlip="0" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="123" EnemyNum="1" Des="左偏上">  
+  <!--【飞机六●路径53●1个】【从左侧偏上往右下方飞进来，在几个点间移动】【弹幕二】-->
+    <Enemy EnemyId="0" CharacterId="5" WyPointId="53" shootBuleGroupId="-1" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="0.0" shootDelt="0.0" needFlip="0" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="124" EnemyNum="1" Des="右偏上">  
+  <!--【飞机六●路径54●1个】【从右侧偏上往左下方飞进来，在几个点间移动】【弹幕二】-->
+    <Enemy EnemyId="0" CharacterId="5" WyPointId="54" shootBuleGroupId="-1" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="0.0" shootDelt="0.0" needFlip="0" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="125" EnemyNum="1" Des="左偏上">  
+  <!--【飞机六●路径55●1个】【从左侧偏上往右下方飞进来，在几个点间移动】【弹幕三】-->
+    <Enemy EnemyId="0" CharacterId="5" WyPointId="55" shootBuleGroupId="-1" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="0.0" shootDelt="0.0" needFlip="0" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="126" EnemyNum="1" Des="右偏上">  
+  <!--【飞机六●路径56●1个】【从右侧偏上往左下方飞进来，在几个点间移动】【弹幕三】-->
+    <Enemy EnemyId="0" CharacterId="5" WyPointId="56" shootBuleGroupId="-1" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="0.0" shootDelt="0.0" needFlip="0" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="131" EnemyNum="1" Des="上">  
+  <!--【飞机七●路径61●1个】【从上方飞进来，然后沿圆形逆时针移动】【弹幕一】-->
+    <Enemy EnemyId="0" CharacterId="6" WyPointId="61" shootBuleGroupId="28" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="3.5" shootDelt="6.0" needFlip="0" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="132" EnemyNum="1" Des="上">  
+  <!--【飞机七●路径62●1个】【从上方飞进来，然后沿圆形顺时针移动】【弹幕一】-->
+    <Enemy EnemyId="0" CharacterId="6" WyPointId="62" shootBuleGroupId="28" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="3.5" shootDelt="6.0" needFlip="0" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="133" EnemyNum="1" Des="上">  
+  <!--【飞机七●路径61●1个】【从上方飞进来，然后沿圆形逆时针移动】【弹幕二】-->
+    <Enemy EnemyId="0" CharacterId="6" WyPointId="61" shootBuleGroupId="29" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="3.5" shootDelt="6.0" needFlip="0" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="134" EnemyNum="1" Des="上">  
+  <!--【飞机七●路径62●1个】【从上方飞进来，然后沿圆形顺时针移动】【弹幕二】-->
+    <Enemy EnemyId="0" CharacterId="6" WyPointId="62" shootBuleGroupId="29" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="3.5" shootDelt="6.0" needFlip="0" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="135" EnemyNum="1" Des="上">  
+  <!--【飞机七●路径61●1个】【从上方飞进来，然后沿圆形逆时针移动】【弹幕三】-->
+    <Enemy EnemyId="0" CharacterId="6" WyPointId="61" shootBuleGroupId="30" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="3.5" shootDelt="6.0" needFlip="0" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="136" EnemyNum="1" Des="上">  
+  <!--【飞机七●路径62●1个】【从上方飞进来，然后沿圆形顺时针移动】【弹幕三】-->
+    <Enemy EnemyId="0" CharacterId="6" WyPointId="62" shootBuleGroupId="30" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="3.5" shootDelt="6.0" needFlip="0" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="141" EnemyNum="1" Des="上">  
+  <!--【飞机二一●路径201●1个】【从上往下移动】【弹幕一】-->
+    <Enemy EnemyId="0" CharacterId="0" WyPointId="201" shootBuleGroupId="31" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="4.0" shootDelt="4.0" needFlip="1" EnemyType="1" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="142" EnemyNum="1" Des="左">  
+  <!--【飞机二一●路径202●1个】【从左往右偏下移动】【弹幕一】-->
+    <Enemy EnemyId="0" CharacterId="0" WyPointId="202" shootBuleGroupId="31" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="4.0" shootDelt="4.0" needFlip="1" EnemyType="1" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="143" EnemyNum="1" Des="右">  
+  <!--【飞机二一●路径203●1个】【从右往左偏下移动】【弹幕一】-->
+    <Enemy EnemyId="0" CharacterId="0" WyPointId="203" shootBuleGroupId="31" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="4.0" shootDelt="4.0" needFlip="1" EnemyType="1" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="144" EnemyNum="1" Des="上">  
+  <!--【飞机二一●路径201●1个】【从上往下移动】【弹幕二】-->
+    <Enemy EnemyId="0" CharacterId="0" WyPointId="201" shootBuleGroupId="32" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="4.0" shootDelt="4.0" needFlip="1" EnemyType="1" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="145" EnemyNum="1" Des="左">  
+  <!--【飞机二一●路径202●1个】【从左往右偏下移动】【弹幕二】-->
+    <Enemy EnemyId="0" CharacterId="0" WyPointId="202" shootBuleGroupId="32" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="4.0" shootDelt="4.0" needFlip="1" EnemyType="1" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="146" EnemyNum="1" Des="右">  
+  <!--【飞机二一●路径203●1个】【从右往左偏下移动】【弹幕二】-->
+    <Enemy EnemyId="0" CharacterId="0" WyPointId="203" shootBuleGroupId="32" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="4.0" shootDelt="4.0" needFlip="1" EnemyType="1" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="147" EnemyNum="1" Des="上">  
+  <!--【飞机二一●路径201●1个】【从上往下移动】【弹幕三】-->
+    <Enemy EnemyId="0" CharacterId="0" WyPointId="201" shootBuleGroupId="33" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="4.0" shootDelt="4.0" needFlip="1" EnemyType="1" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="148" EnemyNum="1" Des="左">  
+  <!--【飞机二一●路径202●1个】【从左往右偏下移动】【弹幕三】-->
+    <Enemy EnemyId="0" CharacterId="0" WyPointId="202" shootBuleGroupId="33" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="4.0" shootDelt="4.0" needFlip="1" EnemyType="1" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="149" EnemyNum="1" Des="右">  
+  <!--【飞机二一●路径203●1个】【从右往左偏下移动】【弹幕三】-->
+    <Enemy EnemyId="0" CharacterId="0" WyPointId="203" shootBuleGroupId="33" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="4.0" shootDelt="4.0" needFlip="1" EnemyType="1" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="151" EnemyNum="1" Des="上">  
+  <!--【飞机二二●路径211●1个】【从上往下移动】【弹幕一】-->
+    <Enemy EnemyId="0" CharacterId="1" WyPointId="211" shootBuleGroupId="34" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="4.0" shootDelt="3.0" needFlip="1" EnemyType="1" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="152" EnemyNum="1" Des="左">  
+  <!--【飞机二二●路径212●1个】【从左往右偏下移动】【弹幕一】-->
+    <Enemy EnemyId="0" CharacterId="1" WyPointId="212" shootBuleGroupId="34" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="4.0" shootDelt="3.0" needFlip="1" EnemyType="1" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="153" EnemyNum="1" Des="右">  
+  <!--【飞机二二●路径213●1个】【从右往左偏下移动】【弹幕一】-->
+    <Enemy EnemyId="0" CharacterId="1" WyPointId="213" shootBuleGroupId="34" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="4.0" shootDelt="3.0" needFlip="1" EnemyType="1" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="154" EnemyNum="1" Des="上">  
+  <!--【飞机二二●路径211●1个】【从上往下移动】【弹幕二】-->
+    <Enemy EnemyId="0" CharacterId="1" WyPointId="211" shootBuleGroupId="35" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="4.0" shootDelt="3.0" needFlip="1" EnemyType="1" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="155" EnemyNum="1" Des="左">  
+  <!--【飞机二二●路径212●1个】【从左往右偏下移动】【弹幕二】-->
+    <Enemy EnemyId="0" CharacterId="1" WyPointId="212" shootBuleGroupId="35" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="4.0" shootDelt="3.0" needFlip="1" EnemyType="1" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="156" EnemyNum="1" Des="右">  
+  <!--【飞机二二●路径213●1个】【从右往左偏下移动】【弹幕二】-->
+    <Enemy EnemyId="0" CharacterId="1" WyPointId="213" shootBuleGroupId="35" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="4.0" shootDelt="3.0" needFlip="1" EnemyType="1" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="157" EnemyNum="1" Des="上">  
+  <!--【飞机二二●路径211●1个】【从上往下移动】【弹幕三】-->
+    <Enemy EnemyId="0" CharacterId="1" WyPointId="211" shootBuleGroupId="36" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="4.0" shootDelt="3.0" needFlip="1" EnemyType="1" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="158" EnemyNum="1" Des="左">  
+  <!--【飞机二二●路径212●1个】【从左往右偏下移动】【弹幕三】-->
+    <Enemy EnemyId="0" CharacterId="1" WyPointId="212" shootBuleGroupId="36" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="4.0" shootDelt="3.0" needFlip="1" EnemyType="1" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="159" EnemyNum="1" Des="右">  
+  <!--【飞机二二●路径213●1个】【从右往左偏下移动】【弹幕三】-->
+    <Enemy EnemyId="0" CharacterId="1" WyPointId="213" shootBuleGroupId="36" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="4.0" shootDelt="3.0" needFlip="1" EnemyType="1" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="161" EnemyNum="1" Des="上">  
+  <!--【飞机二三●路径221●1个】【原地不动】【弹幕一】-->
+    <Enemy EnemyId="0" CharacterId="2" WyPointId="221" shootBuleGroupId="37" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="6.0" shootDelt="3.0" needFlip="0" EnemyType="1" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="162" EnemyNum="1" Des="上">  
+  <!--【飞机二三●路径221●1个】【原地不动】【弹幕二】-->
+    <Enemy EnemyId="0" CharacterId="2" WyPointId="221" shootBuleGroupId="38" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="6.0" shootDelt="3.0" needFlip="0" EnemyType="1" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="163" EnemyNum="1" Des="上">  
+  <!--【飞机二三●路径221●1个】【原地不动】【弹幕三】-->
+    <Enemy EnemyId="0" CharacterId="2" WyPointId="221" shootBuleGroupId="39" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="6.0" shootDelt="3.0" needFlip="0" EnemyType="1" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="164" EnemyNum="1" Des="上">  
+  <!--【飞机二四●路径231●1个】【原地不动】【弹幕一】-->
+    <Enemy EnemyId="0" CharacterId="3" WyPointId="231" shootBuleGroupId="40" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="6.0" shootDelt="2.0" needFlip="0" EnemyType="1" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="165" EnemyNum="1" Des="上">  
+  <!--【飞机二四●路径231●1个】【原地不动】【弹幕二】-->
+    <Enemy EnemyId="0" CharacterId="3" WyPointId="231" shootBuleGroupId="41" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="6.0" shootDelt="2.0" needFlip="0" EnemyType="1" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="166" EnemyNum="1" Des="上">  
+  <!--【飞机二四●路径231●1个】【原地不动】【弹幕三】-->
+    <Enemy EnemyId="0" CharacterId="3" WyPointId="231" shootBuleGroupId="42" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="6.0" shootDelt="2.0" needFlip="0" EnemyType="1" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="171" EnemyNum="4" Des="上">  
+  <!--【大船●路径241●1个】【从上往下缓缓移动】【弹幕一】-->
+    <Enemy EnemyId="0" CharacterId="17" WyPointId="241" shootBuleGroupId="-1" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="-5.0" statrShootTime="0.0" shootDelt="0.0" needFlip="0" EnemyType="2" speedScale="1.2"/>
+    <Enemy EnemyId="1" CharacterId="4" WyPointId="241" shootBuleGroupId="43" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="20.0" statrShootTime="5.0" shootDelt="3.0" needFlip="0" EnemyType="1"  speedScale="1.2"/>
+    <Enemy EnemyId="2" CharacterId="6" WyPointId="241" shootBuleGroupId="49" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="-65.0" statrShootTime="5.0" shootDelt="4.0" needFlip="0" EnemyType="1" speedScale="1.2"/>
+    <Enemy EnemyId="3" CharacterId="6" WyPointId="241" shootBuleGroupId="49" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="100.0" statrShootTime="5.0" shootDelt="4.0" needFlip="0" EnemyType="1" speedScale="1.2"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="172" EnemyNum="4" Des="上">  
+  <!--【大船●路径241●1个】【从上往下缓缓移动】【弹幕二】-->
+    <Enemy EnemyId="0" CharacterId="17" WyPointId="241" shootBuleGroupId="-1" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="-5.0" statrShootTime="0.0" shootDelt="0.0" needFlip="0" EnemyType="2" speedScale="1.2"/>
+    <Enemy EnemyId="1" CharacterId="4" WyPointId="241" shootBuleGroupId="44" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="20.0" statrShootTime="5.0" shootDelt="3.0" needFlip="0" EnemyType="1"  speedScale="1.2"/>
+    <Enemy EnemyId="2" CharacterId="6" WyPointId="241" shootBuleGroupId="50" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="-65.0" statrShootTime="5.0" shootDelt="4.0" needFlip="0" EnemyType="1" speedScale="1.2"/>
+    <Enemy EnemyId="3" CharacterId="6" WyPointId="241" shootBuleGroupId="50" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="100.0" statrShootTime="5.0" shootDelt="4.0" needFlip="0" EnemyType="1" speedScale="1.2"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="173" EnemyNum="4" Des="上">  
+  <!--【大船●路径241●1个】【从上往下缓缓移动】【弹幕三】-->
+    <Enemy EnemyId="0" CharacterId="17" WyPointId="241" shootBuleGroupId="-1" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="-5.0" statrShootTime="0.0" shootDelt="0.0" needFlip="0" EnemyType="2" speedScale="1.2"/>
+    <Enemy EnemyId="1" CharacterId="4" WyPointId="241" shootBuleGroupId="45" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="20.0" statrShootTime="5.0" shootDelt="3.0" needFlip="0" EnemyType="1"  speedScale="1.2"/>
+    <Enemy EnemyId="2" CharacterId="6" WyPointId="241" shootBuleGroupId="51" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="-65.0" statrShootTime="5.0" shootDelt="4.0" needFlip="0" EnemyType="1" speedScale="1.2"/>
+    <Enemy EnemyId="3" CharacterId="6" WyPointId="241" shootBuleGroupId="51" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="100.0" statrShootTime="5.0" shootDelt="4.0" needFlip="0" EnemyType="1" speedScale="1.2"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="174" EnemyNum="2" Des="上">  
+  <!--【小船●路径241●1个】【从上往下缓缓移动】【弹幕一】-->
+    <Enemy EnemyId="0" CharacterId="18" WyPointId="241" shootBuleGroupId="-1" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="0.0" shootDelt="0.0" needFlip="0" EnemyType="2" speedScale="1.2"/>
+    <Enemy EnemyId="1" CharacterId="5" WyPointId="241" shootBuleGroupId="43" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="20.0" statrShootTime="5.0" shootDelt="3.0" needFlip="0" EnemyType="1" speedScale="1.2"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="175" EnemyNum="2" Des="上">  
+  <!--【小船●路径241●1个】【从上往下缓缓移动】【弹幕二】-->
+    <Enemy EnemyId="0" CharacterId="18" WyPointId="241" shootBuleGroupId="-1" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="0.0" shootDelt="0.0" needFlip="0" EnemyType="2" speedScale="1.2"/>
+    <Enemy EnemyId="1" CharacterId="5" WyPointId="241" shootBuleGroupId="44" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="20.0" statrShootTime="5.0" shootDelt="3.0" needFlip="0" EnemyType="1" speedScale="1.2"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="176" EnemyNum="2" Des="上">  
+  <!--【小船●路径241●1个】【从上往下缓缓移动】【弹幕三】-->
+    <Enemy EnemyId="0" CharacterId="18" WyPointId="241" shootBuleGroupId="-1" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="0.0" shootDelt="0.0" needFlip="0" EnemyType="2"  speedScale="1.2"/>
+    <Enemy EnemyId="1" CharacterId="5"  WyPointId="241" shootBuleGroupId="45" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="20.0" statrShootTime="5.0" shootDelt="3.0" needFlip="0" EnemyType="1" speedScale="1.2"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="181" EnemyNum="1" Des="上">  
+  <!--【BOSS1】【关卡X-X】-->
+    <Enemy EnemyId="0" CharacterId="26" WyPointId="251" shootBuleGroupId="-1" DelayTime="4.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="5.0" shootDelt="5.0" needFlip="0" EnemyType="3" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="182" EnemyNum="1" Des="上">  
+  <!--【BOSS2】【关卡X-X】-->
+    <Enemy EnemyId="0" CharacterId="27" WyPointId="253" shootBuleGroupId="-1" DelayTime="4.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="0.0" shootDelt="0.0" needFlip="0" EnemyType="3" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="183" EnemyNum="1" Des="上">  
+  <!--【BOSS3】【关卡X-X】-->
+    <Enemy EnemyId="0" CharacterId="28" WyPointId="255" shootBuleGroupId="-1" DelayTime="5.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="0.0" shootDelt="0.0" needFlip="0" EnemyType="3" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="184" EnemyNum="1" Des="上">  
+  <!--【BOSS4】【关卡X-X】-->
+    <Enemy EnemyId="0" CharacterId="29" WyPointId="257" shootBuleGroupId="-1" DelayTime="4.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="0.0" shootDelt="0.0" needFlip="0" EnemyType="3" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="185" EnemyNum="4" Des="上">  
+  <!--【BOSS5】【关卡X-X】-->
+    <Enemy EnemyId="0" CharacterId="30" WyPointId="259" shootBuleGroupId="-1"  DelayTime="4.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="0.0" shootDelt="0.0" needFlip="0" EnemyType="4" speedScale="1.0"/>
+    <Enemy EnemyId="1" CharacterId="12" WyPointId="299" shootBuleGroupId="181" DelayTime="4.0"  StartOffsetPosX="-80.0"  StartOffsetPosY="-80.0" statrShootTime="5.0" shootDelt="3.0" needFlip="0" EnemyType="1" speedScale="1.0"/>
+    <Enemy EnemyId="2" CharacterId="12" WyPointId="299" shootBuleGroupId="181" DelayTime="4.0"  StartOffsetPosX="80.0"  StartOffsetPosY="-80.0" statrShootTime="5.0" shootDelt="3.0" needFlip="0" EnemyType="1" speedScale="1.0"/>
+    <Enemy EnemyId="3" CharacterId="11" WyPointId="299" shootBuleGroupId="182" DelayTime="4.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="16.0" shootDelt="12.0" needFlip="0" EnemyType="1" speedScale="1.0"/>
+  </EnemyGropu>
+	
+  <EnemyGropu GroupId="186" EnemyNum="3" Des="上">  
+  <!--【BOSS6】【关卡X-X】-->
+    <Enemy EnemyId="0" CharacterId="31" WyPointId="261" shootBuleGroupId="-1" DelayTime="4.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="0.0" shootDelt="0.0" needFlip="0" EnemyType="4" speedScale="1.0"/>
+    <Enemy EnemyId="1" CharacterId="13" WyPointId="262" shootBuleGroupId="202" DelayTime="4.0"  StartOffsetPosX="0.0"  StartOffsetPosY="100.0" statrShootTime="15.0" shootDelt="5.0" needFlip="0" EnemyType="1" speedScale="1.0"/>
+    <Enemy EnemyId="2" CharacterId="13" WyPointId="263" shootBuleGroupId="201" DelayTime="4.0"  StartOffsetPosX="0.0"  StartOffsetPosY="20.0" statrShootTime="10.0" shootDelt="10.0" needFlip="0" EnemyType="1" speedScale="1.0"/>
+  </EnemyGropu>
+  <EnemyGropu GroupId="187" EnemyNum="1" Des="预留">  
+  <!--【BOSS7】【关卡X-X】-->
+    <Enemy EnemyId="0" CharacterId="32" WyPointId="265" shootBuleGroupId="-1" DelayTime="4.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="0.0" shootDelt="0.0" needFlip="0" EnemyType="3" speedScale="1.0"/>
+  </EnemyGropu>
+   <EnemyGropu GroupId="188" EnemyNum="1" Des="预留">  
+  <!--【BOSS8】【关卡X-X】-->
+    <Enemy EnemyId="0" CharacterId="33" WyPointId="267" shootBuleGroupId="-1" DelayTime="4.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="0.0" shootDelt="0.0" needFlip="0" EnemyType="4" speedScale="1.0"/>
+  </EnemyGropu>
+  <EnemyGropu GroupId="191" EnemyNum="1" Des="上">  
+  <!--【BOSS1】【关卡X-X】-->
+    <Enemy EnemyId="0" CharacterId="34" WyPointId="300" shootBuleGroupId="347" DelayTime="4.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="0.0" shootDelt="0.0" needFlip="0" EnemyType="3" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="192" EnemyNum="1" Des="上">  
+  <!--【BOSS2】【关卡X-X】-->
+    <Enemy EnemyId="0" CharacterId="35" WyPointId="302" shootBuleGroupId="-1" DelayTime="4.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="0.0" shootDelt="0.0" needFlip="0" EnemyType="3" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="193" EnemyNum="1" Des="上">  
+  <!--【BOSS3】【关卡X-X】-->
+    <Enemy EnemyId="0" CharacterId="36" WyPointId="304" shootBuleGroupId="-1" DelayTime="4.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="0.0" shootDelt="0.0" needFlip="0" EnemyType="3" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="194" EnemyNum="1" Des="上">  
+  <!--【BOSS4】【关卡X-X】-->
+    <Enemy EnemyId="0" CharacterId="37" WyPointId="306" shootBuleGroupId="-1" DelayTime="4.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="0.0" shootDelt="0.0" needFlip="0" EnemyType="3" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="195" EnemyNum="4" Des="上">  
+  <!--【BOSS5】【关卡X-X】-->
+    <Enemy EnemyId="0" CharacterId="38" WyPointId="308" shootBuleGroupId="-1" DelayTime="4.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="0.0" shootDelt="0.0" needFlip="0" EnemyType="4" speedScale="1.0"/>
+    <Enemy EnemyId="1" CharacterId="15" WyPointId="308" shootBuleGroupId="181" DelayTime="4.0"  StartOffsetPosX="-80.0"  StartOffsetPosY="-80.0" statrShootTime="5.0" shootDelt="3.0" needFlip="0" EnemyType="1" speedScale="1.0"/>
+    <Enemy EnemyId="2" CharacterId="15" WyPointId="308" shootBuleGroupId="181" DelayTime="4.0"  StartOffsetPosX="80.0"  StartOffsetPosY="-80.0" statrShootTime="5.0" shootDelt="3.0" needFlip="0" EnemyType="1" speedScale="1.0"/>
+    <Enemy EnemyId="3" CharacterId="14" WyPointId="308" shootBuleGroupId="182" DelayTime="4.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="6.0" shootDelt="8.0" needFlip="0" EnemyType="1" speedScale="1.0"/>
+  </EnemyGropu>
+	
+  <EnemyGropu GroupId="196" EnemyNum="3" Des="上">  
+  <!--【BOSS6】【关卡X-X】-->
+    <Enemy EnemyId="0" CharacterId="39" WyPointId="310" shootBuleGroupId="-1" DelayTime="4.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="0.0" shootDelt="0.0" needFlip="0" EnemyType="4" speedScale="1.0"/>
+    <Enemy EnemyId="1" CharacterId="16" WyPointId="262" shootBuleGroupId="202" DelayTime="4.0"  StartOffsetPosX="0.0"  StartOffsetPosY="100.0" statrShootTime="12.0" shootDelt="5.0" needFlip="0" EnemyType="1" speedScale="1.0"/>
+    <Enemy EnemyId="2" CharacterId="16" WyPointId="263" shootBuleGroupId="201" DelayTime="4.0"  StartOffsetPosX="0.0"  StartOffsetPosY="20.0" statrShootTime="10.0" shootDelt="2.0" needFlip="0" EnemyType="1" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="197" EnemyNum="1" Des="xx">  
+  <!--【BOSS7】【关卡X-X】-->
+    <Enemy EnemyId="0" CharacterId="40" WyPointId="312" shootBuleGroupId="-1" DelayTime="4.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="0.0" shootDelt="0.0" needFlip="0" EnemyType="3" speedScale="1.0"/>
+  </EnemyGropu>
+  
+ <EnemyGropu GroupId="198" EnemyNum="1" Des="xx">  
+  <!--【BOSS8】【关卡X-X】-->
+    <Enemy EnemyId="0" CharacterId="45" WyPointId="314" shootBuleGroupId="-1" DelayTime="4.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="10.0" shootDelt="20.0" needFlip="0" EnemyType="4" speedScale="1.0"/>
+ </EnemyGropu>
+<EnemyGropu GroupId="199" EnemyNum="1" Des="上">  
+  <!--【BOSS2】【教学关】-->
+    <Enemy EnemyId="0" CharacterId="47" WyPointId="251" shootBuleGroupId="-1" DelayTime="4.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="0.0" shootDelt="0.0" needFlip="0" EnemyType="3" speedScale="1.0"/>
+  </EnemyGropu>
+  
+ <EnemyGropu GroupId="201" EnemyNum="1" Des="上">  
+  <!--【飞机一●路径0●1个】【从上往下飞】【单个】-->
+    <Enemy EnemyId="0" CharacterId="7" WyPointId="0" shootBuleGroupId="1" DelayTime="0.0"  StartOffsetPosX="0.0" StartOffsetPosY="0.0" statrShootTime="0.6" shootDelt="20.0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="202" EnemyNum="3" Des="上">  
+  <!--【飞机一●路径0●3个】【从上往下飞】【一字型】-->
+    <Enemy EnemyId="0" CharacterId="7" WyPointId="0" shootBuleGroupId="1" DelayTime="0.0"  StartOffsetPosX="0.0" StartOffsetPosY="0.0" statrShootTime="0.6" shootDelt="20.0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="1" CharacterId="7" WyPointId="0" shootBuleGroupId="1" DelayTime="0.3"  StartOffsetPosX="0.0" StartOffsetPosY="0.0" statrShootTime="0.6" shootDelt="20.0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="2" CharacterId="7" WyPointId="0" shootBuleGroupId="1" DelayTime="0.6"  StartOffsetPosX="0.0" StartOffsetPosY="0.0" statrShootTime="0.6" shootDelt="20.0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="203" EnemyNum="3" Des="上">  
+  <!--【飞机一●路径0●3个】【从上往下飞】【三角形】-->
+    <Enemy EnemyId="0" CharacterId="7" WyPointId="0" shootBuleGroupId="1" DelayTime="0.0"  StartOffsetPosX="0.0" StartOffsetPosY="0.0" statrShootTime="0.6" shootDelt="20.0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="1" CharacterId="7" WyPointId="0" shootBuleGroupId="1" DelayTime="0.3"  StartOffsetPosX="-60.0" StartOffsetPosY="0.0" statrShootTime="0.6" shootDelt="20.0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="2" CharacterId="7" WyPointId="0" shootBuleGroupId="1" DelayTime="0.3"  StartOffsetPosX="60.0" StartOffsetPosY="0.0" statrShootTime="0.6" shootDelt="20.0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="204" EnemyNum="3" Des="上">  
+  <!--【飞机一●路径0●3个】【从上往下飞】【斜一字型：右上】-->
+    <Enemy EnemyId="0" CharacterId="7" WyPointId="0" shootBuleGroupId="1" DelayTime="0.0"  StartOffsetPosX="-60.0" StartOffsetPosY="0.0" statrShootTime="0.6" shootDelt="20.0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="1" CharacterId="7" WyPointId="0" shootBuleGroupId="1" DelayTime="0.3"  StartOffsetPosX="0.0" StartOffsetPosY="0.0" statrShootTime="0.6" shootDelt="20.0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="2" CharacterId="7" WyPointId="0" shootBuleGroupId="1" DelayTime="0.6"  StartOffsetPosX="60.0" StartOffsetPosY="0.0" statrShootTime="0.6" shootDelt="20.0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="205" EnemyNum="3" Des="上">  
+  <!--【飞机一●路径0●3个】【从上往下飞】【斜一字型：左上】-->
+    <Enemy EnemyId="0" CharacterId="7" WyPointId="0" shootBuleGroupId="1" DelayTime="0.0"  StartOffsetPosX="60.0" StartOffsetPosY="0.0" statrShootTime="0.6" shootDelt="20.0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="1" CharacterId="7" WyPointId="0" shootBuleGroupId="1" DelayTime="0.3"  StartOffsetPosX="0.0" StartOffsetPosY="0.0" statrShootTime="0.6" shootDelt="20.0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="2" CharacterId="7" WyPointId="0" shootBuleGroupId="1" DelayTime="0.6"  StartOffsetPosX="-60.0" StartOffsetPosY="0.0" statrShootTime="0.6" shootDelt="20.0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="206" EnemyNum="1" Des="左">  
+  <!--【飞机一●路径1●1个】【从左往右飞】【单个】-->
+    <Enemy EnemyId="0" CharacterId="7" WyPointId="1" shootBuleGroupId="1" DelayTime="0.0"  StartOffsetPosX="0.0" StartOffsetPosY="0.0" statrShootTime="0.6" shootDelt="20.0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="207" EnemyNum="3" Des="左">  
+  <!--【飞机一●路径1●3个】【从左往右飞】【一字型】-->
+    <Enemy EnemyId="0" CharacterId="7" WyPointId="1" shootBuleGroupId="1" DelayTime="0.0"  StartOffsetPosX="0.0" StartOffsetPosY="0.0" statrShootTime="0.6" shootDelt="20.0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="1" CharacterId="7" WyPointId="1" shootBuleGroupId="1" DelayTime="0.3"  StartOffsetPosX="0.0" StartOffsetPosY="0.0" statrShootTime="0.6" shootDelt="20.0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="2" CharacterId="7" WyPointId="1" shootBuleGroupId="1" DelayTime="0.6"  StartOffsetPosX="0.0" StartOffsetPosY="0.0" statrShootTime="0.6" shootDelt="20.0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+ 
+  <EnemyGropu GroupId="208" EnemyNum="5" Des="左">  
+  <!--【飞机一●路径1●5个】【从左往右飞】【一字型】-->
+    <Enemy EnemyId="0" CharacterId="7" WyPointId="1" shootBuleGroupId="1" DelayTime="0.0"  StartOffsetPosX="0.0" StartOffsetPosY="0.0" statrShootTime="0.6" shootDelt="20.0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="1" CharacterId="7" WyPointId="1" shootBuleGroupId="1" DelayTime="0.3"  StartOffsetPosX="0.0" StartOffsetPosY="0.0" statrShootTime="0.6" shootDelt="20.0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="2" CharacterId="7" WyPointId="1" shootBuleGroupId="1" DelayTime="0.6"  StartOffsetPosX="0.0" StartOffsetPosY="0.0" statrShootTime="0.6" shootDelt="20.0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+	<Enemy EnemyId="3" CharacterId="7" WyPointId="1" shootBuleGroupId="1" DelayTime="0.9"  StartOffsetPosX="0.0" StartOffsetPosY="0.0" statrShootTime="0.6" shootDelt="20.0" needFlip="1" EnemyType="0" speedScale="1.0"/> 
+	<Enemy EnemyId="4" CharacterId="7" WyPointId="1" shootBuleGroupId="1" DelayTime="1.2"  StartOffsetPosX="0.0" StartOffsetPosY="0.0" statrShootTime="0.6" shootDelt="20.0" needFlip="1" EnemyType="0" speedScale="1.0"/> 
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="209" EnemyNum="2" Des="左">  
+  <!--【飞机一●路径1●2个】【从左往右飞】【斜一字型：右上】-->
+    <Enemy EnemyId="0" CharacterId="7" WyPointId="1" shootBuleGroupId="1" DelayTime="0.0"  StartOffsetPosX="0.0" StartOffsetPosY="80.0" statrShootTime="0.6" shootDelt="20.0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="1" CharacterId="7" WyPointId="1" shootBuleGroupId="1" DelayTime="0.3"  StartOffsetPosX="0.0" StartOffsetPosY="0.0" statrShootTime="0.6" shootDelt="20.0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="210" EnemyNum="4" Des="左">  
+  <!--【飞机一●路径1●4个】【从左往右飞】【斜一字型：右上】-->
+    <Enemy EnemyId="0" CharacterId="7" WyPointId="1" shootBuleGroupId="1" DelayTime="0.0"  StartOffsetPosX="0.0" StartOffsetPosY="240.0" statrShootTime="0.6" shootDelt="20.0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="1" CharacterId="7" WyPointId="1" shootBuleGroupId="1" DelayTime="0.3"  StartOffsetPosX="0.0" StartOffsetPosY="160.0" statrShootTime="0.6" shootDelt="20.0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="2" CharacterId="7" WyPointId="1" shootBuleGroupId="1" DelayTime="0.6"  StartOffsetPosX="0.0" StartOffsetPosY="80.0" statrShootTime="0.6" shootDelt="20.0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="3" CharacterId="7" WyPointId="1" shootBuleGroupId="1" DelayTime="0.9"  StartOffsetPosX="0.0" StartOffsetPosY="0.0" statrShootTime="0.6" shootDelt="20.0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="211" EnemyNum="1" Des="右">  
+  <!--【飞机一●路径1●1个】【从右往左飞】【单个】-->
+    <Enemy EnemyId="0" CharacterId="7" WyPointId="2" shootBuleGroupId="1" DelayTime="0.0"  StartOffsetPosX="0.0" StartOffsetPosY="0.0" statrShootTime="0.6" shootDelt="20.0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="212" EnemyNum="3" Des="右">  
+  <!--【飞机一●路径2●3个】【从右往左飞】【一字型】-->
+    <Enemy EnemyId="0" CharacterId="7" WyPointId="2" shootBuleGroupId="1" DelayTime="0.0"  StartOffsetPosX="0.0" StartOffsetPosY="0.0" statrShootTime="0.6" shootDelt="20.0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="1" CharacterId="7" WyPointId="2" shootBuleGroupId="1" DelayTime="0.3"  StartOffsetPosX="0.0" StartOffsetPosY="0.0" statrShootTime="0.6" shootDelt="20.0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="2" CharacterId="7" WyPointId="2" shootBuleGroupId="1" DelayTime="0.6"  StartOffsetPosX="0.0" StartOffsetPosY="0.0" statrShootTime="0.6" shootDelt="20.0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+ 
+  <EnemyGropu GroupId="213" EnemyNum="5" Des="右">  
+  <!--【飞机一●路径1●5个】【从右往左飞】【一字型】-->
+    <Enemy EnemyId="0" CharacterId="7" WyPointId="2" shootBuleGroupId="1" DelayTime="0.0"  StartOffsetPosX="0.0" StartOffsetPosY="0.0" statrShootTime="0.6" shootDelt="20.0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="1" CharacterId="7" WyPointId="2" shootBuleGroupId="1" DelayTime="0.3"  StartOffsetPosX="0.0" StartOffsetPosY="0.0" statrShootTime="0.6" shootDelt="20.0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="2" CharacterId="7" WyPointId="2" shootBuleGroupId="1" DelayTime="0.6"  StartOffsetPosX="0.0" StartOffsetPosY="0.0" statrShootTime="0.6" shootDelt="20.0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+	<Enemy EnemyId="3" CharacterId="7" WyPointId="2" shootBuleGroupId="1" DelayTime="0.9"  StartOffsetPosX="0.0" StartOffsetPosY="0.0" statrShootTime="0.6" shootDelt="20.0" needFlip="1" EnemyType="0" speedScale="1.0"/> 
+	<Enemy EnemyId="4" CharacterId="7" WyPointId="2" shootBuleGroupId="1" DelayTime="1.2"  StartOffsetPosX="0.0" StartOffsetPosY="0.0" statrShootTime="0.6" shootDelt="20.0" needFlip="1" EnemyType="0" speedScale="1.0"/> 
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="214" EnemyNum="2" Des="右">  
+  <!--【飞机一●路径2●2个】【从右往左飞】【斜一字型：左上】-->
+    <Enemy EnemyId="0" CharacterId="7" WyPointId="2" shootBuleGroupId="1" DelayTime="0.0"  StartOffsetPosX="0.0" StartOffsetPosY="80.0" statrShootTime="0.6" shootDelt="20.0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="1" CharacterId="7" WyPointId="2" shootBuleGroupId="1" DelayTime="0.3"  StartOffsetPosX="0.0" StartOffsetPosY="0.0" statrShootTime="0.6" shootDelt="20.0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="215" EnemyNum="4" Des="右">  
+  <!--【飞机一●路径2●4个】【从右往左飞】【斜一字型：左上】-->
+    <Enemy EnemyId="0" CharacterId="7" WyPointId="2" shootBuleGroupId="1" DelayTime="0.0"  StartOffsetPosX="0.0" StartOffsetPosY="240.0" statrShootTime="0.6" shootDelt="20.0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="1" CharacterId="7" WyPointId="2" shootBuleGroupId="1" DelayTime="0.3"  StartOffsetPosX="0.0" StartOffsetPosY="160.0" statrShootTime="0.6" shootDelt="20.0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="2" CharacterId="7" WyPointId="2" shootBuleGroupId="1" DelayTime="0.6"  StartOffsetPosX="0.0" StartOffsetPosY="80.0" statrShootTime="0.6" shootDelt="20.0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="3" CharacterId="7" WyPointId="2" shootBuleGroupId="1" DelayTime="0.9"  StartOffsetPosX="0.0" StartOffsetPosY="0.0" statrShootTime="0.6" shootDelt="20.0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="216" EnemyNum="3" Des="左上">  
+  <!--【飞机一●路径3●3个】【从左上往右下飞行】【斜一字型：左上】-->
+    <Enemy EnemyId="0" CharacterId="7" WyPointId="3" shootBuleGroupId="1" DelayTime="0.0"  StartOffsetPosX="0.0" StartOffsetPosY="200.0" statrShootTime="0.6" shootDelt="20.0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="1" CharacterId="7" WyPointId="3" shootBuleGroupId="1" DelayTime="0.2"  StartOffsetPosX="0.0" StartOffsetPosY="100.0" statrShootTime="0.6" shootDelt="20.0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="2" CharacterId="7" WyPointId="3" shootBuleGroupId="1" DelayTime="0.4"  StartOffsetPosX="0.0" StartOffsetPosY="0.0" statrShootTime="0.6" shootDelt="20.0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="217" EnemyNum="3" Des="左上">  
+  <!--【飞机一●路径3●3个】【从左上往右下飞行】【三角形】-->
+    <Enemy EnemyId="0" CharacterId="7" WyPointId="3" shootBuleGroupId="1" DelayTime="0.0"  StartOffsetPosX="0.0" StartOffsetPosY="0.0" statrShootTime="0.6" shootDelt="20.0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="1" CharacterId="7" WyPointId="3" shootBuleGroupId="1" DelayTime="0.3"  StartOffsetPosX="-30.0" StartOffsetPosY="-30.0" statrShootTime="0.6" shootDelt="20.0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="2" CharacterId="7" WyPointId="3" shootBuleGroupId="1" DelayTime="0.3"  StartOffsetPosX="30.0"  StartOffsetPosY="30.0" statrShootTime="0.6" shootDelt="20.0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="218" EnemyNum="4" Des="左上">  
+  <!--【飞机一●路径3●4个】【从左上往右下飞行】【错一字型】-->
+    <Enemy EnemyId="0" CharacterId="7" WyPointId="3" shootBuleGroupId="1" DelayTime="0.0"  StartOffsetPosX="-15.0" StartOffsetPosY="-15.0" statrShootTime="0.6" shootDelt="20.0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="1" CharacterId="7" WyPointId="3" shootBuleGroupId="1" DelayTime="0.2"  StartOffsetPosX="15.0"  StartOffsetPosY="15.0" statrShootTime="0.6" shootDelt="20.0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="2" CharacterId="7" WyPointId="3" shootBuleGroupId="1" DelayTime="0.5"  StartOffsetPosX="-15.0" StartOffsetPosY="-15.0" statrShootTime="0.6" shootDelt="20.0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="3" CharacterId="7" WyPointId="3" shootBuleGroupId="1" DelayTime="0.7"  StartOffsetPosX="-15.0"  StartOffsetPosY="15.0" statrShootTime="0.6" shootDelt="20.0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="219" EnemyNum="3" Des="右上">  
+  <!--【飞机一●路径4●3个】【从右上往左下飞行】【斜一字型：右上】-->
+    <Enemy EnemyId="0" CharacterId="7" WyPointId="4" shootBuleGroupId="1" DelayTime="0.0"  StartOffsetPosX="0.0" StartOffsetPosY="200.0" statrShootTime="0.6" shootDelt="20.0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="1" CharacterId="7" WyPointId="4" shootBuleGroupId="1" DelayTime="0.2"  StartOffsetPosX="0.0" StartOffsetPosY="100.0" statrShootTime="0.6" shootDelt="20.0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="2" CharacterId="7" WyPointId="4" shootBuleGroupId="1" DelayTime="0.4"  StartOffsetPosX="0.0" StartOffsetPosY="0.0" statrShootTime="0.6" shootDelt="20.0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="220" EnemyNum="3" Des="左上">  
+  <!--【飞机一●路径4●3个】【从左上往右下飞行】【三角形】-->
+    <Enemy EnemyId="0" CharacterId="7" WyPointId="4" shootBuleGroupId="1" DelayTime="0.0"  StartOffsetPosX="0.0" StartOffsetPosY="0.0" statrShootTime="0.6" shootDelt="20.0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="1" CharacterId="7" WyPointId="4" shootBuleGroupId="1" DelayTime="0.3"  StartOffsetPosX="30.0" StartOffsetPosY="-30.0" statrShootTime="0.6" shootDelt="20.0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="2" CharacterId="7" WyPointId="4" shootBuleGroupId="1" DelayTime="0.3"  StartOffsetPosX="-30.0"  StartOffsetPosY="30.0" statrShootTime="0.6" shootDelt="20.0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="221" EnemyNum="4" Des="左上">  
+  <!--【飞机一●路径4●4个】【从左上往右下飞行】【错一字型】-->
+    <Enemy EnemyId="0" CharacterId="7" WyPointId="4" shootBuleGroupId="1" DelayTime="0.0"  StartOffsetPosX="30.0" StartOffsetPosY="-15.0" statrShootTime="0.6" shootDelt="20.0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="1" CharacterId="7" WyPointId="4" shootBuleGroupId="1" DelayTime="0.2"  StartOffsetPosX="0.0"  StartOffsetPosY="15.0" statrShootTime="0.6" shootDelt="20.0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="2" CharacterId="7" WyPointId="4" shootBuleGroupId="1" DelayTime="0.5"  StartOffsetPosX="30.0" StartOffsetPosY="-15.0" statrShootTime="0.6" shootDelt="20.0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="3" CharacterId="7" WyPointId="4" shootBuleGroupId="1" DelayTime="0.7"  StartOffsetPosX="0.0"  StartOffsetPosY="15.0" statrShootTime="0.6" shootDelt="20.0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="222" EnemyNum="3" Des="左下">  
+  <!--【飞机一●路径5●3个】【从左下往右上飞行】【斜一字型：右上】-->
+    <Enemy EnemyId="0" CharacterId="7" WyPointId="5" shootBuleGroupId="1" DelayTime="0.0"  StartOffsetPosX="0.0" StartOffsetPosY="200.0" statrShootTime="0.6" shootDelt="20.0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="1" CharacterId="7" WyPointId="5" shootBuleGroupId="1" DelayTime="0.2"  StartOffsetPosX="0.0" StartOffsetPosY="100.0" statrShootTime="0.6" shootDelt="20.0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="2" CharacterId="7" WyPointId="5" shootBuleGroupId="1" DelayTime="0.4"  StartOffsetPosX="0.0" StartOffsetPosY="0.0" statrShootTime="0.6" shootDelt="20.0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="223" EnemyNum="3" Des="左下">  
+  <!--【飞机一●路径5●3个】【从左下往右上飞行】【三角形】-->
+    <Enemy EnemyId="0" CharacterId="7" WyPointId="5" shootBuleGroupId="1" DelayTime="0.0"  StartOffsetPosX="0.0" StartOffsetPosY="0.0" statrShootTime="0.6" shootDelt="20.0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="1" CharacterId="7" WyPointId="5" shootBuleGroupId="1" DelayTime="0.3"  StartOffsetPosX="-30.0" StartOffsetPosY="30.0" statrShootTime="0.6" shootDelt="20.0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="2" CharacterId="7" WyPointId="5" shootBuleGroupId="1" DelayTime="0.3"  StartOffsetPosX="30.0"  StartOffsetPosY="-30.0" statrShootTime="0.6" shootDelt="20.0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="224" EnemyNum="4" Des="左下">  
+  <!--【飞机一●路径5●4个】【从左下往右上飞行】【错一字型】-->
+    <Enemy EnemyId="0" CharacterId="7" WyPointId="5" shootBuleGroupId="1" DelayTime="0.0"  StartOffsetPosX="-15.0" StartOffsetPosY="15.0" statrShootTime="0.6" shootDelt="20.0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="1" CharacterId="7" WyPointId="5" shootBuleGroupId="1" DelayTime="0.2"  StartOffsetPosX="15.0"  StartOffsetPosY="-15.0" statrShootTime="0.6" shootDelt="20.0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="2" CharacterId="7" WyPointId="5" shootBuleGroupId="1" DelayTime="0.5"  StartOffsetPosX="-15.0" StartOffsetPosY="15.0" statrShootTime="0.6" shootDelt="20.0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="3" CharacterId="7" WyPointId="5" shootBuleGroupId="1" DelayTime="0.7"  StartOffsetPosX="15.0"  StartOffsetPosY="-15.0" statrShootTime="0.6" shootDelt="20.0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+
+  <EnemyGropu GroupId="225" EnemyNum="3" Des="右下">  
+  <!--【飞机一●路径6●3个】【从右下往左上飞行】【斜一字型：左上】-->
+    <Enemy EnemyId="0" CharacterId="7" WyPointId="6" shootBuleGroupId="1" DelayTime="0.0"  StartOffsetPosX="0.0" StartOffsetPosY="200.0" statrShootTime="0.6" shootDelt="20.0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="1" CharacterId="7" WyPointId="6" shootBuleGroupId="1" DelayTime="0.2"  StartOffsetPosX="0.0" StartOffsetPosY="100.0" statrShootTime="0.6" shootDelt="20.0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="2" CharacterId="7" WyPointId="6" shootBuleGroupId="1" DelayTime="0.4"  StartOffsetPosX="0.0" StartOffsetPosY="0.0" statrShootTime="0.6" shootDelt="20.0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="226" EnemyNum="3" Des="右下">  
+  <!--【飞机一●路径6●3个】【从右下往左上飞行】【三角形】-->
+    <Enemy EnemyId="0" CharacterId="7" WyPointId="6" shootBuleGroupId="1" DelayTime="0.0"  StartOffsetPosX="0.0" StartOffsetPosY="0.0"      statrShootTime="0.6" shootDelt="20.0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="1" CharacterId="7" WyPointId="6" shootBuleGroupId="1" DelayTime="0.3"  StartOffsetPosX="30.0" StartOffsetPosY="30.0"    statrShootTime="0.6" shootDelt="20.0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="2" CharacterId="7" WyPointId="6" shootBuleGroupId="1" DelayTime="0.3"  StartOffsetPosX="-30.0"  StartOffsetPosY="-30.0" statrShootTime="0.6" shootDelt="20.0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="227" EnemyNum="4" Des="右下">  
+  <!--【飞机一●路径6●4个】【从右下往左上飞行】【错一字型】-->
+    <Enemy EnemyId="0" CharacterId="7" WyPointId="6" shootBuleGroupId="1" DelayTime="0.0"  StartOffsetPosX="30.0" StartOffsetPosY="15.0"  statrShootTime="0.6" shootDelt="20.0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="1" CharacterId="7" WyPointId="6" shootBuleGroupId="1" DelayTime="0.2"  StartOffsetPosX="0.0"  StartOffsetPosY="-15.0" statrShootTime="0.6" shootDelt="20.0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="2" CharacterId="7" WyPointId="6" shootBuleGroupId="1" DelayTime="0.5"  StartOffsetPosX="30.0" StartOffsetPosY="15.0"  statrShootTime="0.6" shootDelt="20.0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="3" CharacterId="7" WyPointId="6" shootBuleGroupId="1" DelayTime="0.7"  StartOffsetPosX="0.0"  StartOffsetPosY="-15.0" statrShootTime="0.6" shootDelt="20.0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="231" EnemyNum="1" Des="左">  
+  <!--【飞机二●路径11●1个】【从左往右偏下沿“S”型移动】【单个】-->
+    <Enemy EnemyId="0" CharacterId="8" WyPointId="11" shootBuleGroupId="1" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="0.6" shootDelt="20.0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+
+  <EnemyGropu GroupId="232" EnemyNum="3" Des="左">  
+  <!--【飞机二●路径11●3个】【从左往右偏下沿“S”型移动】【一字型】-->
+    <Enemy EnemyId="0" CharacterId="8" WyPointId="11" shootBuleGroupId="1" DelayTime="0.0"  StartOffsetPosX="-0.0"  StartOffsetPosY="0.0" statrShootTime="0.6" shootDelt="20.0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="1" CharacterId="8" WyPointId="11" shootBuleGroupId="1" DelayTime="0.5"  StartOffsetPosX="-0.0"  StartOffsetPosY="0.0" statrShootTime="0.6" shootDelt="20.0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="2" CharacterId="8" WyPointId="11" shootBuleGroupId="1" DelayTime="1.0"  StartOffsetPosX="-0.0"  StartOffsetPosY="0.0" statrShootTime="0.6" shootDelt="20.0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="233" EnemyNum="5" Des="左">  
+  <!--【飞机二●路径11●5个】【从左往右偏下沿“S”型移动】【一字型】-->
+    <Enemy EnemyId="0" CharacterId="8" WyPointId="11" shootBuleGroupId="1" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="0.6" shootDelt="20.0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="1" CharacterId="8" WyPointId="11" shootBuleGroupId="1" DelayTime="0.5"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="0.6" shootDelt="20.0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="2" CharacterId="8" WyPointId="11" shootBuleGroupId="1" DelayTime="1.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="0.6" shootDelt="20.0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="3" CharacterId="8" WyPointId="11" shootBuleGroupId="1" DelayTime="1.5"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="0.6" shootDelt="20.0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="4" CharacterId="8" WyPointId="11" shootBuleGroupId="1" DelayTime="2.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="0.6" shootDelt="20.0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="234" EnemyNum="1" Des="右">  
+  <!--【飞机二●路径12●1个】【从右往左偏下沿“S”型移动】【单个】-->
+    <Enemy EnemyId="0" CharacterId="8" WyPointId="12" shootBuleGroupId="1" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="0.6" shootDelt="20.0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+
+  <EnemyGropu GroupId="235" EnemyNum="3" Des="右">  
+  <!--【飞机二●路径12●3个】【从右往左偏下沿“S”型移动】【一字型】-->
+    <Enemy EnemyId="0" CharacterId="8" WyPointId="12" shootBuleGroupId="1" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="0.6" shootDelt="20.0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="1" CharacterId="8" WyPointId="12" shootBuleGroupId="1" DelayTime="0.5"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="0.6" shootDelt="20.0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="2" CharacterId="8" WyPointId="12" shootBuleGroupId="1" DelayTime="1.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="0.6" shootDelt="20.0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="236" EnemyNum="5" Des="右">  
+  <!--【飞机二●路径12●5个】【从右往左偏下沿“S”型移动】【一字型】-->
+    <Enemy EnemyId="0" CharacterId="8" WyPointId="12" shootBuleGroupId="1" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="0.6" shootDelt="20.0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="1" CharacterId="8" WyPointId="12" shootBuleGroupId="1" DelayTime="0.5"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="0.6" shootDelt="20.0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="2" CharacterId="8" WyPointId="12" shootBuleGroupId="1" DelayTime="1.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="0.6" shootDelt="20.0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="3" CharacterId="8" WyPointId="12" shootBuleGroupId="1" DelayTime="1.5"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="0.6" shootDelt="20.0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="4" CharacterId="8" WyPointId="12" shootBuleGroupId="1" DelayTime="2.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="0.6" shootDelt="20.0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="237" EnemyNum="1" Des="左">  
+  <!--【飞机二●路径13●1个】【从左往右偏上移动】【单个】-->
+    <Enemy EnemyId="0" CharacterId="8" WyPointId="13" shootBuleGroupId="1" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="0.6" shootDelt="20.0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+
+  <EnemyGropu GroupId="238" EnemyNum="3" Des="左">  
+  <!--【飞机二●路径13●3个】【从左往右偏上移动】【一字型】-->
+    <Enemy EnemyId="0" CharacterId="8" WyPointId="13" shootBuleGroupId="1" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="0.6" shootDelt="20.0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="1" CharacterId="8" WyPointId="13" shootBuleGroupId="1" DelayTime="0.5"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="0.6" shootDelt="20.0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="2" CharacterId="8" WyPointId="13" shootBuleGroupId="1" DelayTime="1.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="0.6" shootDelt="20.0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="239" EnemyNum="5" Des="左">  
+  <!--【飞机二●路径13●5个】【从左往右偏上移动】【一字型】-->
+    <Enemy EnemyId="0" CharacterId="8" WyPointId="13" shootBuleGroupId="1" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="0.6" shootDelt="20.0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="1" CharacterId="8" WyPointId="13" shootBuleGroupId="1" DelayTime="0.5"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="0.6" shootDelt="20.0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="2" CharacterId="8" WyPointId="13" shootBuleGroupId="1" DelayTime="1.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="0.6" shootDelt="20.0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="3" CharacterId="8" WyPointId="13" shootBuleGroupId="1" DelayTime="1.5"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="0.6" shootDelt="20.0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="4" CharacterId="8" WyPointId="13" shootBuleGroupId="1" DelayTime="2.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="0.6" shootDelt="20.0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="240" EnemyNum="1" Des="右">  
+  <!--【飞机二●路径14●1个】【从右往左偏上移动】【单个】-->
+    <Enemy EnemyId="0" CharacterId="8" WyPointId="14" shootBuleGroupId="1" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="0.6" shootDelt="20.0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+
+  <EnemyGropu GroupId="241" EnemyNum="3" Des="右">  
+  <!--【飞机二●路径14●3个】【从右往左偏上移动】【一字型】-->
+    <Enemy EnemyId="0" CharacterId="8" WyPointId="14" shootBuleGroupId="1" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="0.6" shootDelt="20.0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="1" CharacterId="8" WyPointId="14" shootBuleGroupId="1" DelayTime="0.5"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="0.6" shootDelt="20.0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="2" CharacterId="8" WyPointId="14" shootBuleGroupId="1" DelayTime="1.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="0.6" shootDelt="20.0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="242" EnemyNum="5" Des="右">  
+  <!--【飞机二●路径14●5个】【从右往左偏上移动】【一字型】-->
+    <Enemy EnemyId="0" CharacterId="8" WyPointId="14" shootBuleGroupId="1" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="0.6" shootDelt="20.0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="1" CharacterId="8" WyPointId="14" shootBuleGroupId="1" DelayTime="0.5"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="0.6" shootDelt="20.0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="2" CharacterId="8" WyPointId="14" shootBuleGroupId="1" DelayTime="1.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="0.6" shootDelt="20.0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="3" CharacterId="8" WyPointId="14" shootBuleGroupId="1" DelayTime="1.5"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="0.6" shootDelt="20.0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="4" CharacterId="8" WyPointId="14" shootBuleGroupId="1" DelayTime="2.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="0.6" shootDelt="20.0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="243" EnemyNum="1" Des="上偏左">  
+  <!--【飞机二●路径15●1个】【从上往下偏右移动，再往上偏右移动】【单个】-->
+    <Enemy EnemyId="0" CharacterId="8" WyPointId="15" shootBuleGroupId="-1" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="0.0" shootDelt="0.0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+
+  <EnemyGropu GroupId="244" EnemyNum="3" Des="上偏左">  
+  <!--【飞机二●路径15●3个】【从上往下偏右移动，再往上偏右移动】【一字型】-->
+    <Enemy EnemyId="0" CharacterId="8" WyPointId="15" shootBuleGroupId="-1" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="0.0" shootDelt="0.0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="1" CharacterId="8" WyPointId="15" shootBuleGroupId="-1" DelayTime="0.5"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="0.0" shootDelt="0.0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="2" CharacterId="8" WyPointId="15" shootBuleGroupId="-1" DelayTime="1.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="0.0" shootDelt="0.0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="245" EnemyNum="5" Des="上偏左">  
+  <!--【飞机二●路径15●5个】【从上往下偏右移动，再往上偏右移动】【一字型】-->
+    <Enemy EnemyId="0" CharacterId="8" WyPointId="15" shootBuleGroupId="-1" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="0.0" shootDelt="0.0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="1" CharacterId="8" WyPointId="15" shootBuleGroupId="-1" DelayTime="0.5"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="0.0" shootDelt="0.0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="2" CharacterId="8" WyPointId="15" shootBuleGroupId="-1" DelayTime="1.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="0.0" shootDelt="0.0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="3" CharacterId="8" WyPointId="15" shootBuleGroupId="-1" DelayTime="1.5"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="0.0" shootDelt="0.0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="4" CharacterId="8" WyPointId="15" shootBuleGroupId="-1" DelayTime="2.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="0.0" shootDelt="0.0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="246" EnemyNum="1" Des="上偏右">  
+  <!--【飞机二●路径16●1个】【从上往下偏左移动，再往上偏左移动】【单个】-->
+    <Enemy EnemyId="0" CharacterId="8" WyPointId="16" shootBuleGroupId="-1" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="0.0" shootDelt="0.0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+
+  <EnemyGropu GroupId="247" EnemyNum="3" Des="上偏右">  
+  <!--【飞机二●路径16●3个】【从上往下偏左移动，再往上偏左移动】【一字型】-->
+    <Enemy EnemyId="0" CharacterId="8" WyPointId="16" shootBuleGroupId="-1" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="0.0" shootDelt="0.0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="1" CharacterId="8" WyPointId="16" shootBuleGroupId="-1" DelayTime="0.5"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="0.0" shootDelt="0.0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="2" CharacterId="8" WyPointId="16" shootBuleGroupId="-1" DelayTime="1.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="0.0" shootDelt="0.0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="248" EnemyNum="5" Des="上偏右">  
+  <!--【飞机二●路径16●5个】【从上往下偏左移动，再往上偏左移动】【一字型】-->
+    <Enemy EnemyId="0" CharacterId="8" WyPointId="16" shootBuleGroupId="-1" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="0.0" shootDelt="0.0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="1" CharacterId="8" WyPointId="16" shootBuleGroupId="-1" DelayTime="0.5"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="0.0" shootDelt="0.0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="2" CharacterId="8" WyPointId="16" shootBuleGroupId="-1" DelayTime="1.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="0.0" shootDelt="0.0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="3" CharacterId="8" WyPointId="16" shootBuleGroupId="-1" DelayTime="1.5"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="0.0" shootDelt="0.0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="4" CharacterId="8" WyPointId="16" shootBuleGroupId="-1" DelayTime="2.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="0.0" shootDelt="0.0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="251" EnemyNum="1" Des="左">  
+  <!--【飞机三●路径21●1个】【从左往右直线飞行,然后往左上折回】【弹幕一】-->
+    <Enemy EnemyId="0" CharacterId="9" WyPointId="21" shootBuleGroupId="7" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="1.5" shootDelt="6.0" needFlip="0" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="252" EnemyNum="1" Des="右">  
+  <!--【飞机三●路径22●1个】【从右往左直线飞行,然后往右上折回】【弹幕一】-->
+    <Enemy EnemyId="0" CharacterId="9" WyPointId="22" shootBuleGroupId="7" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="1.5" shootDelt="6.0" needFlip="0" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="253" EnemyNum="1" Des="上偏左">  
+  <!--【飞机三●路径23●1个】【从上往下直线飞行,然后往右上折回】【弹幕一】-->
+    <Enemy EnemyId="0" CharacterId="9" WyPointId="23" shootBuleGroupId="7" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="1.5" shootDelt="6.0" needFlip="0" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="254" EnemyNum="1" Des="上偏右">  
+  <!--【飞机三●路径24●1个】【从上往下直线飞行,然后往左上折回】【弹幕一】-->
+    <Enemy EnemyId="0" CharacterId="9" WyPointId="24" shootBuleGroupId="7" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="1.5" shootDelt="6.0" needFlip="0" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="255" EnemyNum="1" Des="左上">  
+  <!--【飞机三●路径25●1个】【从左上角飞进来，然后朝屏幕中心折回】【弹幕一】-->
+    <Enemy EnemyId="0" CharacterId="9" WyPointId="25" shootBuleGroupId="7" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="1.5" shootDelt="6.0" needFlip="0" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="256" EnemyNum="1" Des="右上">  
+  <!--【飞机三●路径26●1个】【从右上角飞进来，然后朝屏幕中心折回】【弹幕一】-->
+    <Enemy EnemyId="0" CharacterId="9" WyPointId="26" shootBuleGroupId="7" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="1.5" shootDelt="6.0" needFlip="0" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="261" EnemyNum="1" Des="左">  
+  <!--【飞机三●路径21●1个】【从左往右直线飞行,然后往左上折回】【弹幕二】-->
+    <Enemy EnemyId="0" CharacterId="9" WyPointId="21" shootBuleGroupId="8" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="1.5" shootDelt="6.0" needFlip="0" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="262" EnemyNum="1" Des="右">  
+  <!--【飞机三●路径22●1个】【从右往左直线飞行,然后往右上折回】【弹幕二】-->
+    <Enemy EnemyId="0" CharacterId="9" WyPointId="22" shootBuleGroupId="8" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="1.5" shootDelt="6.0" needFlip="0" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="263" EnemyNum="1" Des="上偏左">  
+  <!--【飞机三●路径23●1个】【从上往下直线飞行,然后往右上折回】【弹幕二】-->
+    <Enemy EnemyId="0" CharacterId="9" WyPointId="23" shootBuleGroupId="8" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="1.5" shootDelt="6.0" needFlip="0" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="264" EnemyNum="1" Des="上偏右">  
+  <!--【飞机三●路径24●1个】【从上往下直线飞行,然后往左上折回】【弹幕二】-->
+    <Enemy EnemyId="0" CharacterId="9" WyPointId="24" shootBuleGroupId="8" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="1.5" shootDelt="6.0" needFlip="0" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="265" EnemyNum="1" Des="左上">  
+  <!--【飞机三●路径25●1个】【从左上角飞进来，然后朝屏幕中心折回】【弹幕二】-->
+    <Enemy EnemyId="0" CharacterId="9" WyPointId="25" shootBuleGroupId="8" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="1.5" shootDelt="6.0" needFlip="0" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="266" EnemyNum="1" Des="右上">  
+  <!--【飞机三●路径26●1个】【从右上角飞进来，然后朝屏幕中心折回】【弹幕二】-->
+    <Enemy EnemyId="0" CharacterId="9" WyPointId="26" shootBuleGroupId="8" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="1.5" shootDelt="6.0" needFlip="0" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="271" EnemyNum="1" Des="左">  
+  <!--【飞机三●路径21●1个】【从左往右直线飞行,然后往左上折回】【弹幕三】-->
+    <Enemy EnemyId="0" CharacterId="9" WyPointId="21" shootBuleGroupId="9" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="1.5" shootDelt="6.0" needFlip="0" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="272" EnemyNum="1" Des="右">  
+  <!--【飞机三●路径22●1个】【从右往左直线飞行,然后往右上折回】【弹幕三】-->
+    <Enemy EnemyId="0" CharacterId="9" WyPointId="22" shootBuleGroupId="9" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="1.5" shootDelt="6.0" needFlip="0" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="273" EnemyNum="1" Des="上偏左">  
+  <!--【飞机三●路径23●1个】【从上往下直线飞行,然后往右上折回】【弹幕三】-->
+    <Enemy EnemyId="0" CharacterId="9" WyPointId="23" shootBuleGroupId="9" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="1.5" shootDelt="6.0" needFlip="0" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="274" EnemyNum="1" Des="上偏右">  
+  <!--【飞机三●路径24●1个】【从上往下直线飞行,然后往左上折回】【弹幕三】-->
+    <Enemy EnemyId="0" CharacterId="9" WyPointId="24" shootBuleGroupId="9" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="1.5" shootDelt="6.0" needFlip="0" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="275" EnemyNum="1" Des="左上">  
+  <!--【飞机三●路径25●1个】【从左上角飞进来，然后朝屏幕中心折回】【弹幕三】-->
+    <Enemy EnemyId="0" CharacterId="9" WyPointId="25" shootBuleGroupId="9" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="1.5" shootDelt="6.0" needFlip="0" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="276" EnemyNum="1" Des="右上">  
+  <!--【飞机三●路径26●1个】【从右上角飞进来，然后朝屏幕中心折回】【弹幕三】-->
+    <Enemy EnemyId="0" CharacterId="9" WyPointId="26" shootBuleGroupId="9" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="1.5" shootDelt="6.0" needFlip="0" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="281" EnemyNum="1" Des="上">  
+  <!--【飞机四●路径31●1个】【从上方飞进来，右左8字形来回移动】【弹幕一】-->
+    <Enemy EnemyId="0" CharacterId="10" WyPointId="31" shootBuleGroupId="10" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="2.0" shootDelt="7.0" needFlip="0" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="282" EnemyNum="1" Des="上">  
+  <!--【飞机四●路径32●1个】【从上方飞进来，左右8字形来回移动】【弹幕一】-->
+    <Enemy EnemyId="0" CharacterId="10" WyPointId="32" shootBuleGroupId="10" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="2.0" shootDelt="7.0" needFlip="0" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="283" EnemyNum="1" Des="左">  
+  <!--【飞机四●路径33●1个】【从左侧飞进来，上下8字形来回移动】【弹幕一】-->
+    <Enemy EnemyId="0" CharacterId="10" WyPointId="33" shootBuleGroupId="10" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="2.0" shootDelt="7.0" needFlip="0" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+
+  <EnemyGropu GroupId="284" EnemyNum="1" Des="右">  
+  <!--【飞机四●路径34●1个】【从右侧飞进来，上下8字形来回移动】【弹幕一】-->
+    <Enemy EnemyId="0" CharacterId="10" WyPointId="34" shootBuleGroupId="10" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="2.0" shootDelt="7.0" needFlip="0" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="286" EnemyNum="1" Des="上">  
+  <!--【飞机四●路径31●1个】【从上方飞进来，右左8字形来回移动】【弹幕二】-->
+    <Enemy EnemyId="0" CharacterId="10" WyPointId="31" shootBuleGroupId="11" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="2.0" shootDelt="7.0" needFlip="0" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="287" EnemyNum="1" Des="上">  
+  <!--【飞机四●路径32●1个】【从上方飞进来，左右8字形来回移动】【弹幕二】-->
+    <Enemy EnemyId="0" CharacterId="10" WyPointId="32" shootBuleGroupId="11" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="2.0" shootDelt="7.0" needFlip="0" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="288" EnemyNum="1" Des="左">  
+  <!--【飞机四●路径33●1个】【从左侧飞进来，上下8字形来回移动】【弹幕二】-->
+    <Enemy EnemyId="0" CharacterId="10" WyPointId="33" shootBuleGroupId="11" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="2.0" shootDelt="7.0" needFlip="0" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+
+  <EnemyGropu GroupId="289" EnemyNum="1" Des="右">  
+  <!--【飞机四●路径34●1个】【从右侧飞进来，上下8字形来回移动】【弹幕二】-->
+    <Enemy EnemyId="0" CharacterId="10" WyPointId="34" shootBuleGroupId="11" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="2.0" shootDelt="7.0" needFlip="0" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="291" EnemyNum="1" Des="上">  
+  <!--【飞机四●路径31●1个】【从上方飞进来，右左8字形来回移动】【弹幕三】-->
+    <Enemy EnemyId="0" CharacterId="10" WyPointId="31" shootBuleGroupId="12" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="2.0" shootDelt="7.0" needFlip="0" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="292" EnemyNum="1" Des="上">  
+  <!--【飞机四●路径32●1个】【从上方飞进来，左右8字形来回移动】【弹幕三】-->
+    <Enemy EnemyId="0" CharacterId="10" WyPointId="32" shootBuleGroupId="12" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="2.0" shootDelt="7.0" needFlip="0" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="293" EnemyNum="1" Des="左">  
+  <!--【飞机四●路径33●1个】【从左侧飞进来，上下8字形来回移动】【弹幕三】-->
+    <Enemy EnemyId="0" CharacterId="10" WyPointId="33" shootBuleGroupId="12" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="2.0" shootDelt="7.0" needFlip="0" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+
+  <EnemyGropu GroupId="294" EnemyNum="1" Des="右">  
+  <!--【飞机四●路径34●1个】【从右侧飞进来，上下8字形来回移动】【弹幕三】-->
+    <Enemy EnemyId="0" CharacterId="10" WyPointId="34" shootBuleGroupId="12" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="2.0" shootDelt="7.0" needFlip="0" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="301" EnemyNum="1" Des="上">  
+  <!--【飞机五●路径41●1个】【从上方进入屏幕，沿轻曲线左右来回移动】【弹幕一】-->
+    <Enemy EnemyId="0" CharacterId="11" WyPointId="41" shootBuleGroupId="13" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="2.0" shootDelt="7.0" needFlip="0" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="302" EnemyNum="1" Des="上">  
+  <!--【飞机五●路径42●1个】【从上方进入屏幕，沿轻曲线右左来回移动】【弹幕一】-->
+    <Enemy EnemyId="0" CharacterId="11" WyPointId="42" shootBuleGroupId="13" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="2.0" shootDelt="7.0" needFlip="0" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="303" EnemyNum="1" Des="左">  
+  <!--【飞机五●路径43●1个】【从左侧进入屏幕，沿轻曲线左右来回移动】【弹幕一】-->
+    <Enemy EnemyId="0" CharacterId="11" WyPointId="43" shootBuleGroupId="13" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="2.0" shootDelt="7.0" needFlip="0" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="304" EnemyNum="1" Des="右">  
+  <!--【飞机五●路径44●1个】【从右侧进入屏幕，沿轻曲线右左来回移动】【弹幕一】-->
+    <Enemy EnemyId="0" CharacterId="11" WyPointId="44" shootBuleGroupId="13" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="2.0" shootDelt="7.0" needFlip="0" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="306" EnemyNum="1" Des="上">  
+  <!--【飞机五●路径41●1个】【从上方进入屏幕，沿轻曲线左右来回移动】【弹幕二】-->
+    <Enemy EnemyId="0" CharacterId="11" WyPointId="41" shootBuleGroupId="14" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="2.0" shootDelt="7.0" needFlip="0" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="307" EnemyNum="1" Des="上">  
+  <!--【飞机五●路径42●1个】【从上方进入屏幕，沿轻曲线右左来回移动】【弹幕二】-->
+    <Enemy EnemyId="0" CharacterId="11" WyPointId="42" shootBuleGroupId="14" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="2.0" shootDelt="7.0" needFlip="0" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="308" EnemyNum="1" Des="左">  
+  <!--【飞机五●路径43●1个】【从左侧进入屏幕，沿轻曲线左右来回移动】【弹幕二】-->
+    <Enemy EnemyId="0" CharacterId="11" WyPointId="43" shootBuleGroupId="14" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="2.0" shootDelt="7.0" needFlip="0" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="309" EnemyNum="1" Des="右">  
+  <!--【飞机五●路径44●1个】【从右侧进入屏幕，沿轻曲线右左来回移动】【弹幕二】-->
+    <Enemy EnemyId="0" CharacterId="11" WyPointId="44" shootBuleGroupId="14" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="2.0" shootDelt="7.0" needFlip="0" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="311" EnemyNum="1" Des="上">  
+  <!--【飞机五●路径41●1个】【从上方进入屏幕，沿轻曲线左右来回移动】【弹幕三】-->
+    <Enemy EnemyId="0" CharacterId="11" WyPointId="41" shootBuleGroupId="15" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="2.0" shootDelt="7.0" needFlip="0" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="312" EnemyNum="1" Des="上">  
+  <!--【飞机五●路径42●1个】【从上方进入屏幕，沿轻曲线右左来回移动】【弹幕三】-->
+    <Enemy EnemyId="0" CharacterId="11" WyPointId="42" shootBuleGroupId="15" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="2.0" shootDelt="7.0" needFlip="0" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="313" EnemyNum="1" Des="左">  
+  <!--【飞机五●路径43●1个】【从左侧进入屏幕，沿轻曲线左右来回移动】【弹幕三】-->
+    <Enemy EnemyId="0" CharacterId="11" WyPointId="43" shootBuleGroupId="15" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="2.0" shootDelt="7.0" needFlip="0" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="314" EnemyNum="1" Des="右">  
+  <!--【飞机五●路径44●1个】【从右侧进入屏幕，沿轻曲线右左来回移动】【弹幕三】-->
+    <Enemy EnemyId="0" CharacterId="11" WyPointId="44" shootBuleGroupId="14" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="2.0" shootDelt="7.0" needFlip="0" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="321" EnemyNum="1" Des="左偏上">  
+  <!--【飞机六●路径51●1个】【从左侧偏上往右下方飞进来，在几个点间移动】【弹幕一】-->
+    <Enemy EnemyId="0" CharacterId="12" WyPointId="51" shootBuleGroupId="-1" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="0.0" shootDelt="0.0" needFlip="0" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="322" EnemyNum="1" Des="右偏上">  
+  <!--【飞机六●路径52●1个】【从右侧偏上往左下方飞进来，在几个点间移动】【弹幕一】-->
+    <Enemy EnemyId="0" CharacterId="12" WyPointId="52" shootBuleGroupId="-1" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="0.0" shootDelt="0.0" needFlip="0" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="323" EnemyNum="1" Des="左偏上">  
+  <!--【飞机六●路径53●1个】【从左侧偏上往右下方飞进来，在几个点间移动】【弹幕二】-->
+    <Enemy EnemyId="0" CharacterId="12" WyPointId="53" shootBuleGroupId="-1" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="0.0" shootDelt="0.0" needFlip="0" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="324" EnemyNum="1" Des="右偏上">  
+  <!--【飞机六●路径54●1个】【从右侧偏上往左下方飞进来，在几个点间移动】【弹幕二】-->
+    <Enemy EnemyId="0" CharacterId="12" WyPointId="54" shootBuleGroupId="-1" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="0.0" shootDelt="0.0" needFlip="0" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="325" EnemyNum="1" Des="左偏上">  
+  <!--【飞机六●路径55●1个】【从左侧偏上往右下方飞进来，在几个点间移动】【弹幕三】-->
+    <Enemy EnemyId="0" CharacterId="12" WyPointId="55" shootBuleGroupId="-1" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="0.0" shootDelt="0.0" needFlip="0" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="326" EnemyNum="1" Des="右偏上">  
+  <!--【飞机六●路径56●1个】【从右侧偏上往左下方飞进来，在几个点间移动】【弹幕三】-->
+    <Enemy EnemyId="0" CharacterId="12" WyPointId="56" shootBuleGroupId="-1" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="0.0" shootDelt="0.0" needFlip="0" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  
+  
+  <EnemyGropu GroupId="331" EnemyNum="1" Des="上">  
+  <!--【飞机七●路径61●1个】【从上方飞进来，然后沿圆形逆时针移动】【弹幕一】-->
+    <Enemy EnemyId="0" CharacterId="13" WyPointId="61" shootBuleGroupId="28" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="2.0" shootDelt="5.0" needFlip="0" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="332" EnemyNum="1" Des="上">  
+  <!--【飞机七●路径62●1个】【从上方飞进来，然后沿圆形顺时针移动】【弹幕一】-->
+    <Enemy EnemyId="0" CharacterId="13" WyPointId="62" shootBuleGroupId="28" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="2.0" shootDelt="5.0" needFlip="0" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="333" EnemyNum="1" Des="上">  
+  <!--【飞机七●路径61●1个】【从上方飞进来，然后沿圆形逆时针移动】【弹幕二】-->
+    <Enemy EnemyId="0" CharacterId="13" WyPointId="61" shootBuleGroupId="29" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="2.0" shootDelt="5.0" needFlip="0" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="334" EnemyNum="1" Des="上">  
+  <!--【飞机七●路径62●1个】【从上方飞进来，然后沿圆形顺时针移动】【弹幕二】-->
+    <Enemy EnemyId="0" CharacterId="13" WyPointId="62" shootBuleGroupId="29" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="2.0" shootDelt="5.0" needFlip="0" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="335" EnemyNum="1" Des="上">  
+  <!--【飞机七●路径61●1个】【从上方飞进来，然后沿圆形逆时针移动】【弹幕三】-->
+    <Enemy EnemyId="0" CharacterId="13" WyPointId="61" shootBuleGroupId="30" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="2.0" shootDelt="5.0" needFlip="0" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="336" EnemyNum="1" Des="上">  
+  <!--【飞机七●路径62●1个】【从上方飞进来，然后沿圆形顺时针移动】【弹幕三】-->
+    <Enemy EnemyId="0" CharacterId="13" WyPointId="62" shootBuleGroupId="30" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="2.0" shootDelt="5.0" needFlip="0" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="341" EnemyNum="12" Des="BOSS8导弹">  
+  <!--【BOSS8导弹】【预留】-->
+    <Enemy EnemyId="0" CharacterId="41" WyPointId="283" shootBuleGroupId="-1" DelayTime="0.0"   StartOffsetPosX="-71.0"  StartOffsetPosY="-39.0" statrShootTime="0.0" shootDelt="0.0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="1" CharacterId="41" WyPointId="284" shootBuleGroupId="-1" DelayTime="0.05"  StartOffsetPosX="-73.0"  StartOffsetPosY="-37.0" statrShootTime="0.0" shootDelt="0.0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="2" CharacterId="41" WyPointId="286" shootBuleGroupId="-1" DelayTime="0.1"   StartOffsetPosX="-77.0"  StartOffsetPosY="-33.0" statrShootTime="0.0" shootDelt="0.0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="3" CharacterId="41" WyPointId="283" shootBuleGroupId="-1" DelayTime="0.1"   StartOffsetPosX="-68.0"  StartOffsetPosY="-42.0" statrShootTime="0.0" shootDelt="0.0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="4" CharacterId="41" WyPointId="284" shootBuleGroupId="-1" DelayTime="0.15"  StartOffsetPosX="-65.0"  StartOffsetPosY="-45.0" statrShootTime="0.0" shootDelt="0.0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="5" CharacterId="41" WyPointId="285" shootBuleGroupId="-1" DelayTime="0.15"  StartOffsetPosX="-75.0"  StartOffsetPosY="-35.0" statrShootTime="0.0" shootDelt="0.0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+
+    <Enemy EnemyId="6" CharacterId="41" WyPointId="288" shootBuleGroupId="-1" DelayTime="0.0"   StartOffsetPosX="71.0"  StartOffsetPosY="-39.0" statrShootTime="0.0" shootDelt="0.0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="7" CharacterId="41" WyPointId="289" shootBuleGroupId="-1" DelayTime="0.05"  StartOffsetPosX="73.0"  StartOffsetPosY="-37.0" statrShootTime="0.0" shootDelt="0.0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="8" CharacterId="41" WyPointId="291" shootBuleGroupId="-1" DelayTime="0.1"   StartOffsetPosX="77.0"  StartOffsetPosY="-33.0" statrShootTime="0.0" shootDelt="0.0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="9" CharacterId="41" WyPointId="292" shootBuleGroupId="-1" DelayTime="0.1"   StartOffsetPosX="79.0"  StartOffsetPosY="-31.0" statrShootTime="0.0" shootDelt="0.0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="10" CharacterId="41" WyPointId="289" shootBuleGroupId="-1" DelayTime="0.15"  StartOffsetPosX="65.0"  StartOffsetPosY="-45.0" statrShootTime="0.0" shootDelt="0.0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="11" CharacterId="41" WyPointId="290" shootBuleGroupId="-1" DelayTime="0.15"  StartOffsetPosX="75.0"  StartOffsetPosY="-35.0" statrShootTime="0.0" shootDelt="0.0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+ </EnemyGropu>
+  
+  <EnemyGropu GroupId="342" EnemyNum="2" Des="BOSS8炮塔">  
+    <!--【BOSS8炮塔】【往左下角移动】-->
+    <Enemy EnemyId="0" CharacterId="3" WyPointId="281" shootBuleGroupId="42" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="165.0" statrShootTime="6.0" shootDelt="2.0" needFlip="0" EnemyType="1" speedScale="1.0"/>
+
+    <!--【BOSS8炮塔】【往右下角移动】-->
+    <Enemy EnemyId="1" CharacterId="3" WyPointId="282" shootBuleGroupId="42" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="165.0" statrShootTime="6.0" shootDelt="2.0" needFlip="0" EnemyType="1" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="343" EnemyNum="1" Des="陨石1">  
+  <!--陨石1-->
+    <Enemy EnemyId="0" CharacterId="14" WyPointId="293" shootBuleGroupId="-1" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="0.0" shootDelt="0.0" needFlip="1" EnemyType="5" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="344" EnemyNum="1" Des="陨石2">  
+  <!--陨石1-->
+    <Enemy EnemyId="0" CharacterId="15" WyPointId="293" shootBuleGroupId="-1" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="0.0" shootDelt="0.0" needFlip="1" EnemyType="5" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="345" EnemyNum="1" Des="陨石3">  
+  <!--陨石1-->
+    <Enemy EnemyId="0" CharacterId="16" WyPointId="293" shootBuleGroupId="-1" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="0.0" shootDelt="0.0" needFlip="1" EnemyType="5" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="346" EnemyNum="1" Des="云1">  
+  <!--云1-->
+    <Enemy EnemyId="0" CharacterId="24" WyPointId="293" shootBuleGroupId="-1" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="0.0" shootDelt="0.0" needFlip="1" EnemyType="5" speedScale="1.0"/>
+  </EnemyGropu>
+
+  <EnemyGropu GroupId="347" EnemyNum="1" Des="云2">  
+  <!--云2-->
+    <Enemy EnemyId="0" CharacterId="25" WyPointId="293" shootBuleGroupId="-1" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="0.0" shootDelt="0.0" needFlip="1" EnemyType="5" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="348" EnemyNum="1" Des="海中石头1">  
+  <!--海中石头1-->
+    <Enemy EnemyId="0" CharacterId="21" WyPointId="293" shootBuleGroupId="-1" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="0.0" shootDelt="0.0" needFlip="1" EnemyType="6" speedScale="0.5"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="349" EnemyNum="1" Des="海中石头2">  
+  <!--海中石头2-->
+    <Enemy EnemyId="0" CharacterId="22" WyPointId="293" shootBuleGroupId="-1" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="0.0" shootDelt="0.0" needFlip="1" EnemyType="6" speedScale="0.5"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="350" EnemyNum="1" Des="海中石头3">  
+  <!--海中石头3-->
+    <Enemy EnemyId="0" CharacterId="23" WyPointId="293" shootBuleGroupId="-1" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="0.0" shootDelt="0.0" needFlip="1" EnemyType="6" speedScale="0.5"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="351" EnemyNum="1" Des="漂浮石头">  
+  <!--漂浮石头-->
+    <Enemy EnemyId="0" CharacterId="20" WyPointId="293" shootBuleGroupId="-1" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="0.0" shootDelt="0.0" needFlip="1" EnemyType="5" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="352" EnemyNum="1" Des="漂浮星河">  
+  <!--漂浮星河-->
+    <Enemy EnemyId="0" CharacterId="19" WyPointId="293" shootBuleGroupId="-1" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="0.0" shootDelt="0.0" needFlip="1" EnemyType="5" speedScale="1.0"/>
+  </EnemyGropu>
+  
+ <EnemyGropu GroupId="353" EnemyNum="12" Des="小飞机阵形1">  
+    <Enemy EnemyId="0"  CharacterId="1" WyPointId="298" shootBuleGroupId="1" DelayTime="0.0"  StartOffsetPosX="0.0"   StartOffsetPosY="0.0"   statrShootTime="0.6" shootDelt="20.0" needFlip="0" EnemyType="0" speedScale="1.0"/>
+	<Enemy EnemyId="1"  CharacterId="1" WyPointId="298" shootBuleGroupId="1" DelayTime="0.0"  StartOffsetPosX="72.0"  StartOffsetPosY="0.0"   statrShootTime="0.6" shootDelt="20.0" needFlip="0" EnemyType="0" speedScale="1.0"/>
+	<Enemy EnemyId="2"  CharacterId="1" WyPointId="298" shootBuleGroupId="1" DelayTime="0.0"  StartOffsetPosX="144.0" StartOffsetPosY="0.0"   statrShootTime="0.6" shootDelt="20.0" needFlip="0" EnemyType="0" speedScale="1.0"/>
+	<Enemy EnemyId="3"  CharacterId="1" WyPointId="298" shootBuleGroupId="1" DelayTime="0.0"  StartOffsetPosX="216.0" StartOffsetPosY="0.0"   statrShootTime="0.6" shootDelt="20.0" needFlip="0" EnemyType="0" speedScale="1.0"/>
+	<Enemy EnemyId="4"  CharacterId="1" WyPointId="298" shootBuleGroupId="1" DelayTime="0.0"  StartOffsetPosX="56.0"  StartOffsetPosY="75.0"  statrShootTime="0.6" shootDelt="20.0" needFlip="0" EnemyType="0" speedScale="1.0"/>
+	<Enemy EnemyId="5"  CharacterId="1" WyPointId="298" shootBuleGroupId="1" DelayTime="0.0"  StartOffsetPosX="128.0" StartOffsetPosY="75.0"  statrShootTime="0.6" shootDelt="20.0" needFlip="0" EnemyType="0" speedScale="1.0"/>
+	<Enemy EnemyId="6"  CharacterId="1" WyPointId="298" shootBuleGroupId="1" DelayTime="0.0"  StartOffsetPosX="200.0" StartOffsetPosY="75.0"  statrShootTime="0.6" shootDelt="20.0" needFlip="0" EnemyType="0" speedScale="1.0"/>
+	<Enemy EnemyId="7"  CharacterId="1" WyPointId="298" shootBuleGroupId="1" DelayTime="0.0"  StartOffsetPosX="272.0" StartOffsetPosY="75.0"  statrShootTime="0.6" shootDelt="20.0" needFlip="0" EnemyType="0" speedScale="1.0"/>
+	<Enemy EnemyId="8"  CharacterId="1" WyPointId="298" shootBuleGroupId="1" DelayTime="0.0"  StartOffsetPosX="0.0"   StartOffsetPosY="142.0" statrShootTime="0.6" shootDelt="20.0" needFlip="0" EnemyType="0" speedScale="1.0"/>	
+	<Enemy EnemyId="9"  CharacterId="1" WyPointId="298" shootBuleGroupId="1" DelayTime="0.0"  StartOffsetPosX="72.0"  StartOffsetPosY="142.0" statrShootTime="0.6" shootDelt="20.0" needFlip="0" EnemyType="0" speedScale="1.0"/>
+	<Enemy EnemyId="10" CharacterId="1" WyPointId="298" shootBuleGroupId="1" DelayTime="0.0"  StartOffsetPosX="144.0" StartOffsetPosY="142.0" statrShootTime="0.6" shootDelt="20.0" needFlip="0" EnemyType="0" speedScale="1.0"/>
+	<Enemy EnemyId="11" CharacterId="1" WyPointId="298" shootBuleGroupId="1" DelayTime="0.0"  StartOffsetPosX="216.0" StartOffsetPosY="142.0" statrShootTime="0.6" shootDelt="20.0" needFlip="0" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="354" EnemyNum="6" Des="小飞机阵形2">  
+    <Enemy EnemyId="0"  CharacterId="1" WyPointId="298" shootBuleGroupId="1" DelayTime="0.0"  StartOffsetPosX="0.0"   StartOffsetPosY="142.0"   statrShootTime="0.6" shootDelt="20.0" needFlip="0" EnemyType="0" speedScale="1.0"/>
+	<Enemy EnemyId="1"  CharacterId="1" WyPointId="298" shootBuleGroupId="1" DelayTime="0.0"  StartOffsetPosX="72.0"  StartOffsetPosY="142.0"   statrShootTime="0.6" shootDelt="20.0" needFlip="0" EnemyType="0" speedScale="1.0"/>
+	<Enemy EnemyId="2"  CharacterId="1" WyPointId="298" shootBuleGroupId="1" DelayTime="0.0"  StartOffsetPosX="144.0" StartOffsetPosY="142.0"   statrShootTime="0.6" shootDelt="20.0" needFlip="0" EnemyType="0" speedScale="1.0"/>
+	<Enemy EnemyId="3"  CharacterId="1" WyPointId="298" shootBuleGroupId="1" DelayTime="0.0"  StartOffsetPosX="36.0"  StartOffsetPosY="72.0"    statrShootTime="0.6" shootDelt="20.0" needFlip="0" EnemyType="0" speedScale="1.0"/>
+	<Enemy EnemyId="4"  CharacterId="1" WyPointId="298" shootBuleGroupId="1" DelayTime="0.0"  StartOffsetPosX="108.0" StartOffsetPosY="72.0"    statrShootTime="0.6" shootDelt="20.0" needFlip="0" EnemyType="0" speedScale="1.0"/>
+	<Enemy EnemyId="5"  CharacterId="1" WyPointId="298" shootBuleGroupId="1" DelayTime="0.0"  StartOffsetPosX="72.0"  StartOffsetPosY="0.0"     statrShootTime="0.6" shootDelt="20.0" needFlip="0" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+ 
+  <EnemyGropu GroupId="355" EnemyNum="1" Des="小飞1机左下曲线到左上">  
+    <Enemy EnemyId="0" CharacterId="0" WyPointId="295" shootBuleGroupId="1" DelayTime="0.0"  StartOffsetPosX="0.0" StartOffsetPosY="0.0" statrShootTime="0.6" shootDelt="20.0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="356" EnemyNum="1" Des="小飞1机左上曲线到左下">  
+    <Enemy EnemyId="0" CharacterId="0" WyPointId="294" shootBuleGroupId="1" DelayTime="0.0"  StartOffsetPosX="0.0" StartOffsetPosY="0.0" statrShootTime="0.6" shootDelt="20.0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="357" EnemyNum="1" Des="小飞1机右下曲线到右上">  
+    <Enemy EnemyId="0" CharacterId="0" WyPointId="297" shootBuleGroupId="1" DelayTime="0.0"  StartOffsetPosX="0.0" StartOffsetPosY="0.0" statrShootTime="0.6" shootDelt="20.0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="358" EnemyNum="1" Des="小飞1机右上曲线到右下">  
+    <Enemy EnemyId="0" CharacterId="0" WyPointId="296" shootBuleGroupId="1" DelayTime="0.0"  StartOffsetPosX="0.0" StartOffsetPosY="0.0" statrShootTime="0.6" shootDelt="20.0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="359" EnemyNum="1" Des="小飞2机左下曲线到左上">  
+    <Enemy EnemyId="0" CharacterId="1" WyPointId="295" shootBuleGroupId="1" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="0.6" shootDelt="20.0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="360" EnemyNum="1" Des="小飞2机左上曲线到左下">  
+    <Enemy EnemyId="0" CharacterId="1" WyPointId="294" shootBuleGroupId="1" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="0.6" shootDelt="20.0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="361" EnemyNum="1" Des="小飞2机右下曲线到右上">  
+    <Enemy EnemyId="0" CharacterId="1" WyPointId="297" shootBuleGroupId="1" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="0.6" shootDelt="20.0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="362" EnemyNum="1" Des="小飞2机右上曲线到右下">  
+    <Enemy EnemyId="0" CharacterId="1" WyPointId="296" shootBuleGroupId="1" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="0.6" shootDelt="20.0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  
+  <EnemyGropu GroupId="363" EnemyNum="1" Des="小飞机11左下曲线到左上">  
+    <Enemy EnemyId="0" CharacterId="7" WyPointId="295" shootBuleGroupId="1" DelayTime="0.0"  StartOffsetPosX="0.0" StartOffsetPosY="0.0" statrShootTime="0.6" shootDelt="20.0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="364" EnemyNum="1" Des="小飞机11左上曲线到左下">  
+    <Enemy EnemyId="0" CharacterId="7" WyPointId="294" shootBuleGroupId="1" DelayTime="0.0"  StartOffsetPosX="0.0" StartOffsetPosY="0.0" statrShootTime="0.6" shootDelt="20.0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="365" EnemyNum="1" Des="小飞机11右下曲线到右上">  
+    <Enemy EnemyId="0" CharacterId="7" WyPointId="297" shootBuleGroupId="1" DelayTime="0.0"  StartOffsetPosX="0.0" StartOffsetPosY="0.0" statrShootTime="0.6" shootDelt="20.0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="366" EnemyNum="1" Des="小飞机11右上曲线到右下">  
+    <Enemy EnemyId="0" CharacterId="7" WyPointId="296" shootBuleGroupId="1" DelayTime="0.0"  StartOffsetPosX="0.0" StartOffsetPosY="0.0" statrShootTime="0.6" shootDelt="20.0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="367" EnemyNum="1" Des="小飞机12左下曲线到左上">  
+    <Enemy EnemyId="0" CharacterId="8" WyPointId="295" shootBuleGroupId="1" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="0.6" shootDelt="20.0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+ 
+ <EnemyGropu GroupId="368" EnemyNum="1" Des="小飞机12左上曲线到左下">  
+    <Enemy EnemyId="0" CharacterId="8" WyPointId="294" shootBuleGroupId="1" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="0.6" shootDelt="20.0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="369" EnemyNum="1" Des="小飞机12右下曲线到右上">  
+    <Enemy EnemyId="0" CharacterId="8" WyPointId="297" shootBuleGroupId="1" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="0.6" shootDelt="20.0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="370" EnemyNum="1" Des="小飞机12右上曲线到右下">  
+    <Enemy EnemyId="0" CharacterId="8" WyPointId="296" shootBuleGroupId="1" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="0.6" shootDelt="20.0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  <EnemyGropu GroupId="371" EnemyNum="1" Des="护盾教学专用">  
+  <!--【飞机三●路径21●1个】【从左往右直线飞行,然后往左上折回】【弹幕二】-->
+	<Enemy EnemyId="0" CharacterId="44" WyPointId="21" shootBuleGroupId="8" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="1.5" shootDelt="60.0" needFlip="0" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  
+  <EnemyGropu GroupId="372" EnemyNum="1" Des="护盾教学专用">  
+  <!--【飞机三●路径22●1个】【从右往左直线飞行,然后往右上折回】【弹幕二】-->
+    <Enemy EnemyId="0" CharacterId="44" WyPointId="22" shootBuleGroupId="8" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="1.5" shootDelt="60.0" needFlip="0" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  <EnemyGropu GroupId="373" EnemyNum="1" Des="漂浮物星球">  
+  <!--漂浮物星球-->
+    <Enemy EnemyId="0" CharacterId="42" WyPointId="293" shootBuleGroupId="-1" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="0" shootDelt="0.0" needFlip="0" EnemyType="5" speedScale="1.0"/>
+  </EnemyGropu>
+  <EnemyGropu GroupId="374" EnemyNum="1" Des="漂浮物海里石头">  
+  <!--漂浮物海里石头-->
+    <Enemy EnemyId="0" CharacterId="43" WyPointId="293" shootBuleGroupId="-1" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="0" shootDelt="0.0" needFlip="0" EnemyType="6" speedScale="0.5"/>
+  </EnemyGropu>
+  <EnemyGropu GroupId="375" EnemyNum="1" Des="城市背景的房子">  
+  <!--房子-->
+    <Enemy EnemyId="0" CharacterId="46" WyPointId="293" shootBuleGroupId="-1" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="0" shootDelt="0.0" needFlip="0" EnemyType="5" speedScale="1.0"/>
+  </EnemyGropu>
+  <EnemyGropu GroupId="376" EnemyNum="1" Des="上">  
+  <!--【飞机五●路径41●1个】【从上方进入屏幕，沿轻曲线左右来回移动】【弹幕一】-->
+    <Enemy EnemyId="0" CharacterId="48" WyPointId="41" shootBuleGroupId="13" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="2.5" shootDelt="7.0" needFlip="0" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  <EnemyGropu GroupId="377" EnemyNum="1" Des="上">  
+  <!--【飞机五●路径41●1个】【从上方进入屏幕，沿轻曲线左右来回移动】【弹幕一】-->
+    <Enemy EnemyId="0" CharacterId="49" WyPointId="41" shootBuleGroupId="13" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="2.5" shootDelt="7.0" needFlip="0" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  <EnemyGropu GroupId="378" EnemyNum="1" Des="爆炸">  
+  <!--爆炸-->
+    <Enemy EnemyId="0" CharacterId="50" WyPointId="293" shootBuleGroupId="-1" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="0.0" shootDelt="0.0" needFlip="1" EnemyType="5" speedScale="1.0"/>
+  </EnemyGropu>
+  <EnemyGropu GroupId="379" EnemyNum="1" Des="boss场景用云1">  
+  <!--boss场景用云1-->
+    <Enemy EnemyId="0" CharacterId="24" WyPointId="293" shootBuleGroupId="-1" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="0.0" shootDelt="0.0" needFlip="1" EnemyType="5" speedScale="10.0"/>
+  </EnemyGropu>
+  <EnemyGropu GroupId="380" EnemyNum="1" Des="上方掉落火力">  
+  <!--【飞机一●路径0●1个】【从上往下飞】【单个】【特殊掉落1】-->
+    <Enemy EnemyId="0" CharacterId="51" WyPointId="0" shootBuleGroupId="1" DelayTime="0.0"  StartOffsetPosX="0.0" StartOffsetPosY="0.0" statrShootTime="0.6" shootDelt="20.0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  <EnemyGropu GroupId="381" EnemyNum="1" Des="上方掉落暴走">  
+  <!--【飞机一●路径0●1个】【从上往下飞】【单个】【特殊掉落2】-->
+    <Enemy EnemyId="0" CharacterId="52" WyPointId="0" shootBuleGroupId="1" DelayTime="0.0"  StartOffsetPosX="0.0" StartOffsetPosY="0.0" statrShootTime="0.6" shootDelt="20.0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  <EnemyGropu GroupId="382" EnemyNum="1" Des="上方掉落核弹">  
+  <!--【飞机一●路径0●1个】【从上往下飞】【单个】【特殊掉落3】-->
+    <Enemy EnemyId="0" CharacterId="54" WyPointId="0" shootBuleGroupId="1" DelayTime="0.0"  StartOffsetPosX="0.0" StartOffsetPosY="0.0" statrShootTime="0.6" shootDelt="20.0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  <EnemyGropu GroupId="383" EnemyNum="1" Des="上方掉落护盾">  
+  <!--【飞机一●路径0●1个】【从上往下飞】【单个】【特殊掉落4】-->
+    <Enemy EnemyId="0" CharacterId="53" WyPointId="0" shootBuleGroupId="1" DelayTime="0.0"  StartOffsetPosX="0.0" StartOffsetPosY="0.0" statrShootTime="0.6" shootDelt="20.0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  <EnemyGropu GroupId="384" EnemyNum="1" Des="xxxxx">  
+  <!--【全屏金币】-->
+    <Enemy EnemyId="0" CharacterId="0" WyPointId="0" shootBuleGroupId="1" DelayTime="0.0"  StartOffsetPosX="0.0" StartOffsetPosY="0.0" statrShootTime="0.6" shootDelt="20.0" needFlip="1" EnemyType="7" speedScale="1.0"/>
+  </EnemyGropu>
+  <EnemyGropu GroupId="385" EnemyNum="3" Des="右">  
+  <!--【飞机一●路径2●3个】【从右往左飞】【一字型】-->
+    <Enemy EnemyId="0" CharacterId="0" WyPointId="2" shootBuleGroupId="-1" DelayTime="0.0"  StartOffsetPosX="0.0" StartOffsetPosY="0.0" statrShootTime="0" shootDelt="0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="1" CharacterId="0" WyPointId="2" shootBuleGroupId="-1" DelayTime="0.3"  StartOffsetPosX="0.0" StartOffsetPosY="0.0" statrShootTime="0" shootDelt="0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="2" CharacterId="0" WyPointId="2" shootBuleGroupId="-1" DelayTime="0.6"  StartOffsetPosX="0.0" StartOffsetPosY="0.0" statrShootTime="0" shootDelt="0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  <EnemyGropu GroupId="386" EnemyNum="3" Des="左">  
+  <!--【飞机一●路径1●3个】【从左往右飞】【一字型】-->
+    <Enemy EnemyId="0" CharacterId="0" WyPointId="1" shootBuleGroupId="-1" DelayTime="0.0"  StartOffsetPosX="0.0" StartOffsetPosY="0.0" statrShootTime="0" shootDelt="0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="1" CharacterId="0" WyPointId="1" shootBuleGroupId="-1" DelayTime="0.3"  StartOffsetPosX="0.0" StartOffsetPosY="0.0" statrShootTime="0" shootDelt="0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="2" CharacterId="0" WyPointId="1" shootBuleGroupId="-1" DelayTime="0.6"  StartOffsetPosX="0.0" StartOffsetPosY="0.0" statrShootTime="0" shootDelt="0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  <EnemyGropu GroupId="387" EnemyNum="5" Des="左">  
+  <!--【飞机二●路径11●5个】【从左往右偏下沿“S”型移动】【一字型】-->
+    <Enemy EnemyId="0" CharacterId="1" WyPointId="11" shootBuleGroupId="-1" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="0" shootDelt="0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="1" CharacterId="1" WyPointId="11" shootBuleGroupId="-1" DelayTime="0.5"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="0" shootDelt="0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="2" CharacterId="1" WyPointId="11" shootBuleGroupId="-1" DelayTime="1.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="0" shootDelt="0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="3" CharacterId="1" WyPointId="11" shootBuleGroupId="-1" DelayTime="1.5"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="0" shootDelt="0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="4" CharacterId="1" WyPointId="11" shootBuleGroupId="-1" DelayTime="2.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="0" shootDelt="0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  <EnemyGropu GroupId="388" EnemyNum="5" Des="右">  
+  <!--【飞机二●路径12●5个】【从右往左偏下沿“S”型移动】【一字型】-->
+    <Enemy EnemyId="0" CharacterId="1" WyPointId="12" shootBuleGroupId="-1" DelayTime="0.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="0" shootDelt="0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="1" CharacterId="1" WyPointId="12" shootBuleGroupId="-1" DelayTime="0.5"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="0" shootDelt="0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="2" CharacterId="1" WyPointId="12" shootBuleGroupId="-1" DelayTime="1.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="0" shootDelt="0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="3" CharacterId="1" WyPointId="12" shootBuleGroupId="-1" DelayTime="1.5"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="0" shootDelt="0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+    <Enemy EnemyId="4" CharacterId="1" WyPointId="12" shootBuleGroupId="-1" DelayTime="2.0"  StartOffsetPosX="0.0"  StartOffsetPosY="0.0" statrShootTime="0" shootDelt="0" needFlip="1" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+  <EnemyGropu GroupId="389" EnemyNum="6" Des="小飞机阵形2">  
+    <Enemy EnemyId="0"  CharacterId="1" WyPointId="298" shootBuleGroupId="-1" DelayTime="0.0"  StartOffsetPosX="0.0"   StartOffsetPosY="142.0"   statrShootTime="0" shootDelt="0" needFlip="0" EnemyType="0" speedScale="1.0"/>
+	<Enemy EnemyId="1"  CharacterId="1" WyPointId="298" shootBuleGroupId="-1" DelayTime="0.0"  StartOffsetPosX="72.0"  StartOffsetPosY="142.0"   statrShootTime="0" shootDelt="0" needFlip="0" EnemyType="0" speedScale="1.0"/>
+	<Enemy EnemyId="2"  CharacterId="1" WyPointId="298" shootBuleGroupId="-1" DelayTime="0.0"  StartOffsetPosX="144.0" StartOffsetPosY="142.0"   statrShootTime="0" shootDelt="0" needFlip="0" EnemyType="0" speedScale="1.0"/>
+	<Enemy EnemyId="3"  CharacterId="1" WyPointId="298" shootBuleGroupId="-1" DelayTime="0.0"  StartOffsetPosX="36.0"  StartOffsetPosY="72.0"    statrShootTime="0" shootDelt="0" needFlip="0" EnemyType="0" speedScale="1.0"/>
+	<Enemy EnemyId="4"  CharacterId="1" WyPointId="298" shootBuleGroupId="-1" DelayTime="0.0"  StartOffsetPosX="108.0" StartOffsetPosY="72.0"    statrShootTime="0" shootDelt="0" needFlip="0" EnemyType="0" speedScale="1.0"/>
+	<Enemy EnemyId="5"  CharacterId="1" WyPointId="298" shootBuleGroupId="-1" DelayTime="0.0"  StartOffsetPosX="72.0"  StartOffsetPosY="0.0"     statrShootTime="0" shootDelt="0" needFlip="0" EnemyType="0" speedScale="1.0"/>
+  </EnemyGropu>
+</EnemyGropus>

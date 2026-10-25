@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Levels>
+	<!-- 第一大陆第1关 -->	
+	<level id="0" expMol="1.0" goldMol="1.0" battleValue="600" musicName="music_battle.ogg" >
+		<data id="0" scnid="1" mapid="1" maptexid="78" nextid="1" />
+		<data id="1" scnid="2"  mapid="2"  maptexid="78" nextid="-1" />
+	</level>
+	<!-- 第一大陆第2关 -->	
+	<level id="1" expMol="1.0" goldMol="1.0" battleValue="1000" musicName="music_battle.ogg">
+		<data id="0" scnid="3"  mapid="3"  maptexid="78" nextid="1" />
+		<data id="1" scnid="4"  mapid="4"  maptexid="78" nextid="-1" />
+	</level>     
+	<!-- 第一大陆第3关 -->		
+	<level id="2" expMol="1.0" goldMol="1.0" battleValue="1400" musicName="music_battle_1.ogg">                    
+		<data id="0" scnid="5"  mapid="5"  maptexid="68" nextid="-1" />
+	</level>    
+	<!-- 第一大陆第4关 -->		
+	<level id="3" expMol="1.0" goldMol="1.0" battleValue="2400" musicName="music_battle_1.ogg">                    
+		<data id="0" scnid="7"  mapid="7"  maptexid="91" nextid="1"  />
+		<data id="1" scnid="8"  mapid="8"  maptexid="91" nextid="-1" />
+	</level>    
+	<!-- 第一大陆第5关 -->		
+	<level id="4" expMol="1.0" goldMol="1.0" battleValue="1800" musicName="music_battle.ogg">                    
+		<data id="0" scnid="9"  mapid="9"  maptexid="78" nextid="1"  />
+		<data id="1" scnid="10" mapid="10" maptexid="78" nextid="-1" />
+	</level>    
+	<!-- 第一大陆第6关 -->	
+	<level id="5" expMol="1.0" goldMol="1.0" battleValue="2200" musicName="music_battle.ogg">                    
+		<data id="0" scnid="11" mapid="11" maptexid="78" nextid="1" />
+		<data id="1" scnid="12" mapid="12" maptexid="78" nextid="-1"/>
+	</level>  
+	<!-- 第一大陆第7关 -->	
+	<level id="6" expMol="1.0" goldMol="1.0" battleValue="2600" musicName="music_battle_1.ogg">                    
+		<data id="0" scnid="13" mapid="13" maptexid="78" nextid="1" />
+		<data id="1" scnid="14" mapid="14" maptexid="68" nextid="-1"/>
+	</level> 
+	<!-- 第一大陆第8关 -->		
+	<level id="7" expMol="1.0" goldMol="1.0" battleValue="3500" musicName="music_battle_1.ogg">                    
+		<data id="0" scnid="15" mapid="15" maptexid="68" nextid="1" />
+		<data id="1" scnid="16" mapid="16" maptexid="68" nextid="-1"/>
+	</level>  
+	<!-- 第一大陆隐藏关 -->	
+	<level id="8" expMol="1.5" goldMol="1.5" battleValue="2800" musicName="music_battle_1.ogg">                    
+		<data id="0" scnid="17"  mapid="17"  maptexid="101" nextid="-1"  />
+	</level>   
+	<!-- 第二大陆第1关 -->	
+	<level id="9" expMol="1.0" goldMol="1.0" battleValue="3000" musicName="music_battle.ogg">                    
+		<data id="0" scnid="18" mapid="18" maptexid="68" nextid="1" />
+		<data id="1" scnid="19" mapid="19" maptexid="68" nextid="-1"/>
+	</level>  
+	<!-- 第二大陆第2关 -->	
+	<level id="10" expMol="1.0" goldMol="1.0" battleValue="3400" musicName="music_battle.ogg">                    
+		<data id="0" scnid="20" mapid="20" maptexid="101" nextid="1" />
+		<data id="1" scnid="21" mapid="21" maptexid="101" nextid="-1"/>
+	</level>       
+	<!-- 第二大陆第3关 -->		
+	<level id="11" expMol="1.0" goldMol="1.0" battleValue="3800" musicName="music_battle.ogg">                   
+		<data id="0" scnid="22" mapid="22" maptexid="101" nextid="1" />
+		<data id="1" scnid="23" mapid="23" maptexid="101" nextid="-1"/>
+	</level>    
+	<!-- 第二大陆第4关 -->		
+	<level id="12" expMol="1.0" goldMol="1.0" battleValue="4400" musicName="music_battle_1.ogg">                   
+		<data id="0" scnid="24" mapid="24" maptexid="14" nextid="1"  />
+		<data id="1" scnid="25" mapid="25" maptexid="14" nextid="-1" />
+	</level>   
+	<!-- 第二大陆第5关 -->	
+	<level id="13" expMol="1.0" goldMol="1.0" battleValue="4200" musicName="music_battle.ogg">                   
+		<data id="0" scnid="26" mapid="26" maptexid="101" nextid="1"  />
+		<data id="1" scnid="27" mapid="27" maptexid="101" nextid="-1" />
+	</level>  
+	<!-- 第二大陆第6关 -->	
+	<level id="14" expMol="1.0" goldMol="1.0" battleValue="4600" musicName="music_battle.ogg">                   
+		<data id="0" scnid="28" mapid="28" maptexid="14" nextid="1" />
+		<data id="1" scnid="29" mapid="29" maptexid="14" nextid="-1"/>
+	</level>     
+	<!-- 第二大陆第7关 -->	
+	<level id="15" expMol="1.0" goldMol="1.0" battleValue="5000" musicName="music_battle.ogg">                   
+		<data id="0" scnid="30" mapid="30" maptexid="14" nextid="1" />
+		<data id="1" scnid="31" mapid="31" maptexid="14" nextid="-1"/>
+	</level>    
+	<!-- 第二大陆第8关 -->	
+	<level id="16" expMol="1.0" goldMol="1.0" battleValue="6000" musicName="music_battle_1.ogg">                   
+		<data id="0" scnid="32" mapid="32" maptexid="91" nextid="1" />
+		<data id="1" scnid="33" mapid="33" maptexid="91" nextid="-1"/>
+	</level>
+	<!-- 第二大陆隐藏关 -->		
+	<level id="17" expMol="1.5" goldMol="1.5" battleValue="5200" musicName="music_battle_1.ogg">                    
+		<data id="0" scnid="34"  mapid="34"  maptexid="174" nextid="-1"  />
+	</level>
+	<!-- 第三大陆第1关 -->	
+	<level id="18" expMol="1.0" goldMol="1.0" battleValue="5500" musicName="music_battle.ogg">                   
+		<data id="0" scnid="35" mapid="35" maptexid="78" nextid="1" />
+		<data id="1" scnid="36" mapid="36" maptexid="78" nextid="-1"/>
+	</level> 
+	<!-- 第三大陆第2关 -->	
+	<level id="19" expMol="1.0" goldMol="1.0" battleValue="6000" musicName="music_battle_1.ogg">                   
+		<data id="0" scnid="37" mapid="37" maptexid="78" nextid="1" />
+		<data id="1" scnid="38" mapid="38" maptexid="78" nextid="-1"/>
+	</level>   
+	<!-- 第三大陆第3关 -->	
+	<level id="20" expMol="1.0" goldMol="1.0" battleValue="6500" musicName="music_battle.ogg">                   
+		<data id="0" scnid="39" mapid="39" maptexid="78" nextid="1" />
+		<data id="1" scnid="40" mapid="40" maptexid="78" nextid="-1"/>
+	</level>  
+	<!-- 第三大陆第4关 -->	
+	<level id="21" expMol="1.0" goldMol="1.0" battleValue="7250" musicName="music_battle_1.ogg">                   
+		<data id="0" scnid="41" mapid="41" maptexid="14" nextid="1" />
+		<data id="1" scnid="42" mapid="42" maptexid="14" nextid="-1"/>
+	</level>  
+	<!-- 第三大陆第5关 -->		
+	<level id="22" expMol="1.0" goldMol="1.0" battleValue="7000" musicName="music_battle.ogg">                   
+		<data id="0" scnid="43" mapid="43" maptexid="91" nextid="1" />
+		<data id="1" scnid="44" mapid="44" maptexid="91" nextid="-1"/>
+	</level>
+	<!-- 第三大陆第6关 -->	
+	<level id="23" expMol="1.0" goldMol="1.0" battleValue="7500" musicName="music_battle.ogg">                   
+		<data id="0" scnid="45" mapid="45" maptexid="91" nextid="1" />
+		<data id="1" scnid="46" mapid="46" maptexid="91" nextid="-1"/>
+	</level> 
+	<!-- 第三大陆第7关 -->	
+	<level id="24" expMol="1.0" goldMol="1.0" battleValue="8000" musicName="music_battle_1.ogg">                   
+		<data id="0" scnid="47" mapid="47" maptexid="91" nextid="1" />
+		<data id="1" scnid="48" mapid="48" maptexid="91" nextid="-1"/>
+	</level>  
+	<!-- 第三大陆第8关 -->		
+	<level id="25" expMol="1.0" goldMol="1.0" battleValue="9000" musicName="music_battle_1.ogg">                  
+		<data id="0" scnid="49" mapid="49" maptexid="14" nextid="1" />
+		<data id="1" scnid="50" mapid="50" maptexid="14" nextid="-1"/>
+	</level>
+	<!-- 第三大陆隐藏关 -->	
+	<level id="26" expMol="1.5" goldMol="1.5" battleValue="8250" musicName="music_battle_1.ogg">                    
+		<data id="0" scnid="51"  mapid="51"  maptexid="91" nextid="-1"  />
+	</level>
+	<!-- 第四大陆第1关 -->	
+	<level id="27" expMol="1.0" goldMol="1.0" battleValue="8800" musicName="music_battle.ogg">                   
+		<data id="0" scnid="52" mapid="52" maptexid="174" nextid="1" />
+		<data id="1" scnid="53" mapid="53" maptexid="174" nextid="-1"/>
+	</level>
+	<!-- 第四大陆第2关 -->
+	<level id="28" expMol="1.0" goldMol="1.0" battleValue="9600" musicName="music_battle.ogg">                   
+		<data id="0" scnid="54" mapid="54" maptexid="174" nextid="1" />
+		<data id="1" scnid="55" mapid="55" maptexid="174" nextid="-1"/>
+	</level>
+	<!-- 第四大陆第3关 -->
+	<level id="29" expMol="1.0" goldMol="1.0" battleValue="10400" musicName="music_battle_1.ogg">                   
+		<data id="0" scnid="56" mapid="56" maptexid="68" nextid="-1" />
+	</level>
+	<!-- 第四大陆第4关 -->
+	<level id="30" expMol="1.0" goldMol="1.0" battleValue="11600" musicName="music_battle_1.ogg">                   
+		<data id="0" scnid="58" mapid="58" maptexid="68" nextid="1" />
+		<data id="1" scnid="59" mapid="59" maptexid="68" nextid="-1" />
+	</level>
+	<!-- 第四大陆第5关 -->
+	<level id="31" expMol="1.0" goldMol="1.0" battleValue="11200" musicName="music_battle.ogg">                   
+		<data id="0" scnid="60" mapid="60" maptexid="174" nextid="1" />
+		<data id="1" scnid="61" mapid="61" maptexid="174" nextid="-1"/>
+	</level>
+	<!-- 第四大陆第6关 -->
+	<level id="32" expMol="1.0" goldMol="1.0" battleValue="12000" musicName="music_battle.ogg">                   
+		<data id="0" scnid="62" mapid="62" maptexid="174" nextid="1" />
+		<data id="1" scnid="63" mapid="63" maptexid="174" nextid="-1"/>
+	</level>
+	<!-- 第四大陆第7关 -->
+	<level id="33" expMol="1.0" goldMol="1.0" battleValue="12800" musicName="music_battle.ogg">                   
+		<data id="0" scnid="64" mapid="64" maptexid="174" nextid="1" />
+		<data id="1" scnid="65" mapid="65" maptexid="174" nextid="-1"/>
+	</level>
+	<!-- 第四大陆第8关 -->
+	<level id="34" expMol="1.0" goldMol="1.0" battleValue="15000" musicName="music_battle_1.ogg">                   
+		<data id="0" scnid="66" mapid="66" maptexid="14" nextid="1" />
+		<data id="1" scnid="67" mapid="67" maptexid="14" nextid="-1"/>
+	</level>
+	<!-- 第四大陆隐藏关 -->
+	<level id="35" expMol="1.5" goldMol="1.5" battleValue="12400" musicName="music_battle_1.ogg">                    
+		<data id="0" scnid="68"  mapid="68"  maptexid="68" nextid="-1"  />
+	</level>
+	<!-- 第五大陆第1关 -->	
+	<level id="36" expMol="1.0" goldMol="1.0" battleValue="14000" musicName="music_battle.ogg">                   
+		<data id="0" scnid="69" mapid="69" maptexid="14" nextid="1" />
+		<data id="1" scnid="70" mapid="70" maptexid="14" nextid="-1"/>
+	</level>
+	<!-- 第五大陆第2关 -->	
+	<level id="37" expMol="1.0" goldMol="1.0" battleValue="15000" musicName="music_battle_1.ogg">                   
+		<data id="0" scnid="71" mapid="71" maptexid="14" nextid="1" />
+		<data id="1" scnid="72" mapid="72" maptexid="14" nextid="-1"/>
+	</level>
+	<!-- 第五大陆第3关 -->
+	<level id="38" expMol="1.0" goldMol="1.0" battleValue="16000" musicName="music_battle.ogg">                   
+		<data id="0" scnid="73" mapid="73" maptexid="14" nextid="-1" />
+	</level>
+	<!-- 第五大陆第4关 -->
+	<level id="39" expMol="1.0" goldMol="1.0" battleValue="17500" musicName="music_battle_1.ogg">                   
+		<data id="0" scnid="75" mapid="75" maptexid="91" nextid="1" />
+		<data id="1" scnid="76" mapid="76" maptexid="91" nextid="-1"/>
+	</level>
+	<!-- 第五大陆第5关 -->
+	<level id="40" expMol="1.0" goldMol="1.0" battleValue="17000" musicName="music_battle.ogg">                   
+		<data id="0" scnid="77" mapid="77" maptexid="14" nextid="1" />
+		<data id="1" scnid="78" mapid="78" maptexid="14" nextid="-1"/>
+	</level>
+	<!-- 第五大陆第6关 -->
+	<level id="41" expMol="1.0" goldMol="1.0" battleValue="18000" musicName="music_battle_1.ogg">                   
+		<data id="0" scnid="79" mapid="79" maptexid="14" nextid="1" />
+		<data id="1" scnid="80" mapid="80" maptexid="14" nextid="-1"/>
+	</level>
+	<!-- 第五大陆第7关 -->
+	<level id="42" expMol="1.0" goldMol="1.0" battleValue="19000" musicName="music_battle.ogg">                   
+		<data id="0" scnid="81" mapid="81" maptexid="14" nextid="1" />
+		<data id="1" scnid="82" mapid="82" maptexid="14" nextid="-1"/>
+	</level>
+	<!-- 第五大陆第8关 -->
+	<level id="43" expMol="1.0" goldMol="1.0" battleValue="25000" musicName="music_battle_1.ogg">                   
+		<data id="0" scnid="83" mapid="83" maptexid="91" nextid="1" />
+		<data id="1" scnid="84" mapid="84" maptexid="91" nextid="-1"/>
+	</level>
+	<!-- 第五大陆隐藏关 -->
+	<level id="44" expMol="1.5" goldMol="1.5" battleValue="20000" musicName="music_battle_1.ogg">                    
+		<data id="0" scnid="85"  mapid="85"  maptexid="14" nextid="-1"  />
+	</level>  	
+	<!-- 后面的是竞技场配置 -->
+	<level id="45" expMol="1.0" goldMol="1.0" battleValue="1000" musicName="music_battle_1.ogg">                   
+		<data id="0" scnid="86" mapid="86" maptexid="68" nextid="-1" />
+	</level>                           
+	<level id="46" expMol="1.0" goldMol="1.0" battleValue="1000" musicName="music_battle_1.ogg">                      
+		<data id="0" scnid="87" mapid="87" maptexid="91" nextid="-1" />
+	</level>                           
+	<level id="47" expMol="1.0" goldMol="1.0" battleValue="1000" musicName="music_battle_1.ogg">                      
+		<data id="0" scnid="88" mapid="88" maptexid="14" nextid="-1" />
+	</level>                           
+	<level id="48" expMol="1.0" goldMol="1.0" battleValue="1000" musicName="music_battle_1.ogg">                      
+		<data id="0" scnid="89" mapid="89" maptexid="78" nextid="-1" />
+	</level>                           
+	<level id="49" expMol="1.0" goldMol="1.0" battleValue="1000" musicName="music_battle_1.ogg">                       
+		<data id="0" scnid="90" mapid="90" maptexid="101" nextid="-1" />
+	</level>
+	<!-- 以下为暗黑大陆关卡 -->	
+	<level id="50" expMol="1.0" goldMol="1.0" battleValue="4500" musicName="music_battle_1.ogg">                   
+		<data id="0" scnid="24" mapid="24" maptexid="14" nextid="1"  />
+		<data id="1" scnid="25" mapid="25" maptexid="14" nextid="-1" />
+	</level>  
+	
+	<level id="51" expMol="1.0" goldMol="1.0" battleValue="7500" musicName="music_battle.ogg">                    
+		<data id="0" scnid="28" mapid="28" maptexid="14" nextid="1" />
+		<data id="1" scnid="29" mapid="29" maptexid="14" nextid="-1"/>
+	</level>  
+
+	<level id="52" expMol="1.0" goldMol="1.0" battleValue="8500" musicName="music_battle.ogg">                   
+		<data id="0" scnid="43" mapid="43" maptexid="91" nextid="1" />
+		<data id="1" scnid="44" mapid="44" maptexid="91" nextid="-1"/>
+	</level> 
+
+	<level id="53" expMol="1.0" goldMol="1.0" battleValue="10100" musicName="music_battle_1.ogg">                  
+		<data id="0" scnid="49" mapid="49" maptexid="14" nextid="1" />
+		<data id="1" scnid="50" mapid="50" maptexid="14" nextid="-1"/>
+	</level>
+
+	<level id="54" expMol="1.0" goldMol="1.0" battleValue="9800" musicName="music_battle_1.ogg">                   
+		<data id="0" scnid="52" mapid="52" maptexid="174" nextid="1" />
+		<data id="1" scnid="53" mapid="53" maptexid="174" nextid="-1"/>
+	</level>
+
+	<level id="55" expMol="1.0" goldMol="1.0" battleValue="10600" musicName="music_battle.ogg">                   
+		<data id="0" scnid="64" mapid="64" maptexid="174" nextid="1" />
+		<data id="1" scnid="65" mapid="65" maptexid="174" nextid="-1"/>
+	</level>
+
+	<level id="56" expMol="1.0" goldMol="1.0" battleValue="11400" musicName="music_battle_1.ogg">                   
+		<data id="0" scnid="75" mapid="75" maptexid="91" nextid="1" />
+		<data id="1" scnid="76" mapid="76" maptexid="91" nextid="-1"/>
+	</level>
+
+	<level id="57" expMol="1.0" goldMol="1.0" battleValue="12800" musicName="music_battle.ogg">                   
+		<data id="0" scnid="77" mapid="77" maptexid="14" nextid="1" />
+		<data id="1" scnid="78" mapid="78" maptexid="14" nextid="-1"/>
+	</level>	
+</Levels>

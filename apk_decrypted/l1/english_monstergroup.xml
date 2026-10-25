@@ -1,0 +1,942 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Monsters>
+	<!-- posrandom确定这组怪物出现位子是否2边随机：0表示随机;1表示确定    difficulty 这组敌人的难度系数-->
+	<group id="0" posrandom="0" difficulty="20">
+	<!-- postype 代表位置信息：0左边;1右边(posrandom值为0则无效) -->
+		<monster id="0" monsterid="37" num="2" postype="0"/>
+		<monster id="1" monsterid="38" num="2" postype="0"/>
+	</group>
+	<group id="1" posrandom="0" difficulty="20">
+	<!-- postype 代表位置信息：0左边;1右边(posrandom值为0则无效) -->
+		<monster id="0" monsterid="37" num="2" postype="0"/>
+		<monster id="1" monsterid="26" num="2" postype="0"/>
+	</group>
+	<group id="2" posrandom="1" difficulty="18">
+	<!-- postype 代表位置信息：0左边;1右边(posrandom值为0则无效) -->
+		<monster id="0" monsterid="34" num="2" postype="0"/>
+		<monster id="1" monsterid="36" num="2" postype="0"/>
+	</group>
+	<group id="3" posrandom="1" difficulty="20">
+	<!-- postype 代表位置信息：0左边;1右边(posrandom值为0则无效) -->
+		<monster id="0" monsterid="35" num="2" postype="1"/>
+		<monster id="1" monsterid="36" num="1" postype="1"/>
+	</group>
+	<group id="4" posrandom="0" difficulty="18">
+	<!-- postype 代表位置信息：0左边;1右边(posrandom值为0则无效) -->
+		<monster id="0" monsterid="27" num="2" postype="0"/>
+	</group>
+	<group id="5" posrandom="0" difficulty="20">
+	<!-- postype 代表位置信息：0左边;1右边(posrandom值为0则无效) -->
+		<monster id="0" monsterid="27" num="2" postype="0"/>
+		<monster id="1" monsterid="28" num="2" postype="0"/>
+	</group>
+	<group id="6" posrandom="0" difficulty="20">
+	<!-- postype 代表位置信息：0左边;1右边(posrandom值为0则无效) -->
+		<monster id="0" monsterid="26" num="1" postype="0"/>
+		<monster id="1" monsterid="35" num="2" postype="0"/>
+	</group>
+	<group id="7" posrandom="0" difficulty="16">
+	<!-- postype 代表位置信息：0左边;1右边(posrandom值为0则无效) -->
+		<monster id="0" monsterid="39" num="2" postype="0"/>
+	</group>
+	<group id="8" posrandom="0" difficulty="20">
+	<!-- postype 代表位置信息：0左边;1右边(posrandom值为0则无效) -->
+		<monster id="0" monsterid="34" num="4" postype="0"/>
+	</group>
+	<group id="9" posrandom="0" difficulty="19">
+	<!-- postype 代表位置信息：0左边;1右边(posrandom值为0则无效) -->
+		<monster id="0" monsterid="26" num="3" postype="0"/>
+	</group>
+	<group id="10" posrandom="0" difficulty="27">
+	<!-- postype 代表位置信息：0左边;1右边(posrandom值为0则无效) -->
+		<monster id="0" monsterid="26" num="4" postype="0"/>
+	</group>
+	<group id="11" posrandom="1" difficulty="26">
+	<!-- postype 代表位置信息：0左边;1右边(posrandom值为0则无效) -->
+		<monster id="0" monsterid="34" num="2" postype="0"/>
+		<monster id="1" monsterid="35" num="1" postype="0"/>
+		<monster id="2" monsterid="36" num="2" postype="0"/>
+	</group>
+	<group id="12" posrandom="0" difficulty="30">
+	<!-- postype 代表位置信息：0左边;1右边(posrandom值为0则无效) -->
+		<monster id="0" monsterid="34" num="6" postype="0"/>
+	</group>
+	<group id="13" posrandom="0" difficulty="28">
+	<!-- postype 代表位置信息：0左边;1右边(posrandom值为0则无效) -->
+		<monster id="0" monsterid="27" num="2" postype="0"/>
+		<monster id="1" monsterid="37" num="3" postype="0"/>
+	</group>
+	<group id="14" posrandom="0" difficulty="28">
+	<!-- postype 代表位置信息：0左边;1右边(posrandom值为0则无效) -->
+		<monster id="0" monsterid="35" num="2" postype="0"/>
+		<monster id="1" monsterid="38" num="2" postype="0"/>
+	</group>
+	<group id="15" posrandom="1" difficulty="26">
+	<!-- postype 代表位置信息：0左边;1右边(posrandom值为0则无效) -->
+		<monster id="0" monsterid="34" num="2" postype="1"/>
+		<monster id="1" monsterid="35" num="1" postype="1"/>
+		<monster id="2" monsterid="36" num="2" postype="1"/>
+	</group>
+	<group id="16" posrandom="1" difficulty="18">
+	<!-- postype 代表位置信息：0左边;1右边(posrandom值为0则无效) -->
+		<monster id="0" monsterid="34" num="2" postype="1"/>
+		<monster id="1" monsterid="36" num="2" postype="1"/>
+	</group>
+	<group id="17" posrandom="1" difficulty="20">
+	<!-- postype 代表位置信息：0左边;1右边(posrandom值为0则无效) -->
+		<monster id="0" monsterid="35" num="2" postype="1"/>
+		<monster id="1" monsterid="36" num="1" postype="1"/>
+	</group>
+	<group id="18" posrandom="1" difficulty="30">
+	<!-- postype 代表位置信息：0左边;1右边(posrandom值为0则无效) -->
+		<monster id="0" monsterid="36" num="3" postype="0"/>
+		<monster id="1" monsterid="38" num="1" postype="0"/>
+		<monster id="2" monsterid="34" num="1" postype="0"/>
+	</group>
+	<group id="19" posrandom="1" difficulty="30">
+	<!-- postype 代表位置信息：0左边;1右边(posrandom值为0则无效) -->
+		<monster id="0" monsterid="36" num="3" postype="1"/>
+		<monster id="1" monsterid="38" num="1" postype="1"/>
+		<monster id="2" monsterid="34" num="1" postype="1"/>
+	</group>
+	<group id="20" posrandom="0" difficulty="30">
+	<!-- postype 代表位置信息：0左边;1右边(posrandom值为0则无效) -->
+		<monster id="0" monsterid="35" num="3" postype="0"/>
+	</group>
+	<group id="21" posrandom="0" difficulty="24">
+	<!-- postype 代表位置信息：0左边;1右边(posrandom值为0则无效) -->
+		<monster id="0" monsterid="39" num="3" postype="0"/>
+		<monster id="1" monsterid="38" num="1" postype="0"/>
+	</group>
+	<group id="22" posrandom="0" difficulty="30">
+	<!-- postype 代表位置信息：0左边;1右边(posrandom值为0则无效) -->
+		<monster id="0" monsterid="26" num="3" postype="0"/>
+		<monster id="1" monsterid="34" num="3" postype="0"/>
+	</group>
+	<group id="23" posrandom="0" difficulty="30">
+	<!-- postype 代表位置信息：0左边;1右边(posrandom值为0则无效) -->
+		<monster id="0" monsterid="28" num="2" postype="0"/>
+		<monster id="1" monsterid="35" num="2" postype="0"/>
+	</group>
+	<group id="24" posrandom="0" difficulty="36">
+	<!-- postype 代表位置信息：0左边;1右边(posrandom值为0则无效) -->
+		<monster id="0" monsterid="27" num="4" postype="0"/>
+	</group>
+	<group id="25" posrandom="1" difficulty="40">
+	<!-- postype 代表位置信息：0左边;1右边(posrandom值为0则无效) -->
+		<monster id="0" monsterid="29" num="2" postype="0"/>
+		<monster id="1" monsterid="26" num="2" postype="0"/>
+	</group>
+	<group id="26" posrandom="1" difficulty="40">
+	<!-- postype 代表位置信息：0左边;1右边(posrandom值为0则无效) -->
+		<monster id="0" monsterid="29" num="2" postype="1"/>
+		<monster id="1" monsterid="26" num="2" postype="1"/>
+	</group>
+	<group id="27" posrandom="1" difficulty="40">
+	<!-- postype 代表位置信息：0左边;1右边(posrandom值为0则无效) -->
+		<monster id="0" monsterid="35" num="3" postype="0"/>
+		<monster id="1" monsterid="36" num="4" postype="0"/>
+	</group>
+	<group id="28" posrandom="1" difficulty="40">
+	<!-- postype 代表位置信息：0左边;1右边(posrandom值为0则无效) -->
+		<monster id="0" monsterid="35" num="4" postype="1"/>
+		<monster id="1" monsterid="36" num="3" postype="1"/>
+	</group>
+	<group id="29" posrandom="0" difficulty="40">
+	<!-- postype 代表位置信息：0左边;1右边(posrandom值为0则无效) -->
+		<monster id="0" monsterid="26" num="4" postype="0"/>
+		<monster id="1" monsterid="37" num="4" postype="0"/>
+	</group>
+	<group id="30" posrandom="0" difficulty="40">
+	<!-- postype 代表位置信息：0左边;1右边(posrandom值为0则无效) -->
+		<monster id="0" monsterid="27" num="4" postype="0"/>
+		<monster id="1" monsterid="31" num="1" postype="0"/>
+	</group>
+	<group id="31" posrandom="0" difficulty="38">
+	<!-- postype 代表位置信息：0左边;1右边(posrandom值为0则无效) -->
+		<monster id="0" monsterid="39" num="4" postype="0"/>
+		<monster id="1" monsterid="38" num="1" postype="0"/>
+	</group>
+	<group id="32" posrandom="0" difficulty="40">
+	<!-- postype 代表位置信息：0左边;1右边(posrandom值为0则无效) -->
+		<monster id="0" monsterid="32" num="1" postype="0"/>
+		<monster id="1" monsterid="31" num="1" postype="0"/>
+	</group>
+	<group id="33" posrandom="0" difficulty="39">
+	<!-- postype 代表位置信息：0左边;1右边(posrandom值为0则无效) -->
+		<monster id="0" monsterid="28" num="3" postype="0"/>
+		<monster id="1" monsterid="38" num="1" postype="0"/>
+	</group>
+	<group id="34" posrandom="0" difficulty="39">
+	<!-- postype 代表位置信息：0左边;1右边(posrandom值为0则无效) -->
+		<monster id="0" monsterid="13" num="2" postype="0"/>
+		<monster id="1" monsterid="27" num="1" postype="0"/>
+	</group>
+	<group id="35" posrandom="0" difficulty="40">
+	<!-- postype 代表位置信息：0左边;1右边(posrandom值为0则无效) -->
+		<monster id="0" monsterid="27" num="2" postype="0"/>
+		<monster id="1" monsterid="28" num="2" postype="0"/>
+	</group>
+	<group id="36" posrandom="0" difficulty="40">
+	<!-- postype 代表位置信息：0左边;1右边(posrandom值为0则无效) -->
+		<monster id="0" monsterid="29" num="2" postype="0"/>
+		<monster id="1" monsterid="37" num="2" postype="0"/>
+	</group>
+	<group id="37" posrandom="0" difficulty="49">
+	<!-- postype 代表位置信息：0左边;1右边(posrandom值为0则无效) -->
+		<monster id="0" monsterid="28" num="4" postype="0"/>
+		<monster id="1" monsterid="34" num="1" postype="0"/>
+	</group>
+	<group id="38" posrandom="1" difficulty="50">
+	<!-- postype 代表位置信息：0左边;1右边(posrandom值为0则无效) -->
+		<monster id="0" monsterid="29" num="2" postype="0"/>
+		<monster id="1" monsterid="27" num="2" postype="0"/>
+	</group>
+	<group id="39" posrandom="1" difficulty="50">
+	<!-- postype 代表位置信息：0左边;1右边(posrandom值为0则无效) -->
+		<monster id="0" monsterid="29" num="2" postype="1"/>
+		<monster id="1" monsterid="13" num="2" postype="1"/>
+	</group>
+	<group id="40" posrandom="0" difficulty="50">
+	<!-- postype 代表位置信息：0左边;1右边(posrandom值为0则无效) -->
+		<monster id="0" monsterid="12" num="2" postype="0"/>
+		<monster id="1" monsterid="14" num="2" postype="0"/>
+		<monster id="1" monsterid="13" num="3" postype="0"/>
+	</group>
+	<group id="41" posrandom="1" difficulty="50">
+	<!-- postype 代表位置信息：0左边;1右边(posrandom值为0则无效) -->
+		<monster id="0" monsterid="29" num="2" postype="0"/>
+		<monster id="1" monsterid="14" num="2" postype="0"/>
+	</group>
+	<group id="42" posrandom="1" difficulty="50">
+	<!-- postype 代表位置信息：0左边;1右边(posrandom值为0则无效) -->
+		<monster id="0" monsterid="29" num="2" postype="1"/>
+		<monster id="1" monsterid="14" num="2" postype="1"/>
+	</group>
+	<group id="43" posrandom="0" difficulty="50">
+	<!-- postype 代表位置信息：0左边;1右边(posrandom值为0则无效) -->
+		<monster id="0" monsterid="28" num="3" postype="0"/>
+		<monster id="1" monsterid="27" num="3" postype="0"/>
+	</group>
+	<group id="44" posrandom="0" difficulty="50">
+	<!-- postype 代表位置信息：0左边;1右边(posrandom值为0则无效) -->
+		<monster id="0" monsterid="12" num="3" postype="0"/>
+		<monster id="1" monsterid="26" num="3" postype="0"/>
+		<monster id="2" monsterid="28" num="1" postype="0"/>
+	</group>
+	<group id="45" posrandom="0" difficulty="50">
+	<!-- postype 代表位置信息：0左边;1右边(posrandom值为0则无效) -->
+		<monster id="0" monsterid="12" num="4" postype="0"/>
+		<monster id="1" monsterid="13" num="2" postype="0"/>
+		<monster id="2" monsterid="29" num="3" postype="0"/>
+	</group>
+	<group id="46" posrandom="0" difficulty="50">
+	<!-- postype 代表位置信息：0左边;1右边(posrandom值为0则无效) -->
+		<monster id="0" monsterid="14" num="2" postype="0"/>
+		<monster id="1" monsterid="15" num="2" postype="0"/>
+		<monster id="2" monsterid="30" num="2" postype="0"/>
+	</group>
+	<group id="47" posrandom="0" difficulty="48">
+	<!-- postype 代表位置信息：0左边;1右边(posrandom值为0则无效) -->
+		<monster id="0" monsterid="30" num="1" postype="0"/>
+		<monster id="1" monsterid="12" num="4" postype="0"/>
+		<monster id="2" monsterid="15" num="1" postype="0"/>
+	</group>
+	<group id="48" posrandom="0" difficulty="50">
+	<!-- postype 代表位置信息：0左边;1右边(posrandom值为0则无效) -->
+		<monster id="0" monsterid="15" num="2" postype="0"/>
+		<monster id="1" monsterid="12" num="2" postype="0"/>
+		<monster id="2" monsterid="30" num="2" postype="0"/>
+	</group>
+	<group id="49" posrandom="0" difficulty="50">
+	<!-- postype 代表位置信息：0左边;1右边(posrandom值为0则无效) -->
+		<monster id="0" monsterid="12" num="3" postype="0"/>
+		<monster id="1" monsterid="40" num="1" postype="0"/>
+		<monster id="2" monsterid="26" num="2" postype="0"/>
+	</group>
+	<group id="50" posrandom="1" difficulty="60">
+	<!-- postype 代表位置信息：0左边;1右边(posrandom值为0则无效) -->
+		<monster id="0" monsterid="28" num="2" postype="0"/>
+		<monster id="1" monsterid="29" num="2" postype="0"/>
+		<monster id="2" monsterid="15" num="2" postype="0"/>
+		<monster id="3" monsterid="30" num="2" postype="0"/>
+	</group>
+	<group id="51" posrandom="1" difficulty="60">
+	<!-- postype 代表位置信息：0左边;1右边(posrandom值为0则无效) -->
+		<monster id="0" monsterid="28" num="2" postype="1"/>
+		<monster id="1" monsterid="29" num="2" postype="1"/>
+		<monster id="2" monsterid="15" num="2" postype="1"/>
+		<monster id="3" monsterid="30" num="2" postype="1"/>
+	</group>
+	<group id="52" posrandom="0" difficulty="60">
+	<!-- postype 代表位置信息：0左边;1右边(posrandom值为0则无效) -->
+		<monster id="0" monsterid="15" num="2" postype="0"/>
+		<monster id="1" monsterid="30" num="2" postype="0"/>
+		<monster id="2" monsterid="12" num="2" postype="0"/>
+	</group>
+	<group id="53" posrandom="1" difficulty="60">
+	<!-- postype 代表位置信息：0左边;1右边(posrandom值为0则无效) -->
+		<monster id="0" monsterid="12" num="2" postype="0"/>
+		<monster id="1" monsterid="15" num="2" postype="0"/>
+		<monster id="2" monsterid="29" num="2" postype="0"/>
+	</group>
+	<group id="54" posrandom="1" difficulty="60">
+	<!-- postype 代表位置信息：0左边;1右边(posrandom值为0则无效) -->
+		<monster id="0" monsterid="12" num="2" postype="1"/>
+		<monster id="1" monsterid="15" num="2" postype="1"/>
+		<monster id="2" monsterid="29" num="2" postype="1"/>
+	</group>
+	<group id="55" posrandom="0" difficulty="60">
+	<!-- postype 代表位置信息：0左边;1右边(posrandom值为0则无效) -->
+		<monster id="0" monsterid="30" num="2" postype="0"/>
+		<monster id="1" monsterid="14" num="2" postype="0"/>
+		<monster id="2" monsterid="12" num="4" postype="0"/>
+	</group>
+	<group id="56" posrandom="0" difficulty="60">
+	<!-- postype 代表位置信息：0左边;1右边(posrandom值为0则无效) -->
+		<monster id="0" monsterid="29" num="2" postype="0"/>
+		<monster id="1" monsterid="30" num="2" postype="0"/>
+	</group>
+	<group id="57" posrandom="0" difficulty="60">
+	<!-- postype 代表位置信息：0左边;1右边(posrandom值为0则无效) -->
+		<monster id="0" monsterid="28" num="2" postype="0"/>
+		<monster id="1" monsterid="29" num="1" postype="0"/>
+		<monster id="2" monsterid="31" num="1" postype="0"/>
+	</group>
+	<group id="58" posrandom="0" difficulty="60">
+	<!-- postype 代表位置信息：0左边;1右边(posrandom值为0则无效) -->
+		<monster id="0" monsterid="29" num="2" postype="0"/>
+		<monster id="1" monsterid="35" num="4" postype="0"/>
+	</group>
+	<group id="59" posrandom="0" difficulty="60">
+	<!-- postype 代表位置信息：0左边;1右边(posrandom值为0则无效) -->
+		<monster id="0" monsterid="26" num="3" postype="0"/>
+		<monster id="1" monsterid="30" num="2" postype="0"/>
+	</group>
+	<group id="60" posrandom="0" difficulty="60">
+	<!-- postype 代表位置信息：0左边;1右边(posrandom值为0则无效) -->
+		<monster id="0" monsterid="13" num="3" postype="0"/>
+		<monster id="1" monsterid="14" num="3" postype="0"/>
+	</group>
+	<group id="61" posrandom="0" difficulty="60">
+	<!-- postype 代表位置信息：0左边;1右边(posrandom值为0则无效) -->
+		<monster id="0" monsterid="40" num="1" postype="0"/>
+		<monster id="1" monsterid="14" num="2" postype="0"/>
+		<monster id="2" monsterid="13" num="2" postype="0"/>
+		<monster id="3" monsterid="29" num="2" postype="0"/>
+		<monster id="4" monsterid="30" num="2" postype="0"/>
+	</group>
+	<group id="62" posrandom="0" difficulty="60">
+	<!-- postype 代表位置信息：0左边;1右边(posrandom值为0则无效) -->
+		<monster id="0" monsterid="31" num="2" postype="0"/>
+		<monster id="1" monsterid="12" num="2" postype="0"/>
+		<monster id="2" monsterid="14" num="1" postype="0"/>
+		<monster id="3" monsterid="30" num="3" postype="0"/>
+	</group>
+	<group id="63" posrandom="0" difficulty="60">
+	<!-- postype 代表位置信息：0左边;1右边(posrandom值为0则无效) -->
+		<monster id="0" monsterid="12" num="3" postype="0"/>
+		<monster id="1" monsterid="13" num="3" postype="0"/>
+		<monster id="2" monsterid="29" num="3" postype="0"/>
+		<monster id="3" monsterid="30" num="1" postype="0"/>
+	</group>
+	<group id="64" posrandom="1" difficulty="70">
+	<!-- postype 代表位置信息：0左边;1右边(posrandom值为0则无效) -->
+		<monster id="0" monsterid="12" num="2" postype="0"/>
+		<monster id="1" monsterid="14" num="2" postype="0"/>
+		<monster id="2" monsterid="29" num="2" postype="0"/>
+	</group>
+	<group id="65" posrandom="1" difficulty="70">
+	<!-- postype 代表位置信息：0左边;1右边(posrandom值为0则无效) -->
+		<monster id="0" monsterid="12" num="2" postype="1"/>
+		<monster id="1" monsterid="14" num="2" postype="1"/>
+		<monster id="2" monsterid="29" num="2" postype="1"/>
+	</group>
+	<group id="66" posrandom="1" difficulty="70">
+	<!-- postype 代表位置信息：0左边;1右边(posrandom值为0则无效) -->
+		<monster id="0" monsterid="12" num="2" postype="0"/>
+		<monster id="1" monsterid="14" num="2" postype="0"/>
+		<monster id="2" monsterid="30" num="2" postype="0"/>
+	</group>
+	<group id="67" posrandom="1" difficulty="70">
+	<!-- postype 代表位置信息：0左边;1右边(posrandom值为0则无效) -->
+		<monster id="0" monsterid="12" num="2" postype="1"/>
+		<monster id="1" monsterid="14" num="2" postype="1"/>
+		<monster id="2" monsterid="30" num="2" postype="1"/>
+	</group>
+	<group id="68" posrandom="0" difficulty="70">
+	<!-- postype 代表位置信息：0左边;1右边(posrandom值为0则无效) -->
+		<monster id="0" monsterid="13" num="2" postype="0"/>
+		<monster id="1" monsterid="32" num="2" postype="0"/>
+		<monster id="2" monsterid="31" num="2" postype="0"/>
+	</group>
+	<group id="69" posrandom="0" difficulty="70">
+	<!-- postype 代表位置信息：0左边;1右边(posrandom值为0则无效) -->
+		<monster id="0" monsterid="14" num="2" postype="0"/>
+		<monster id="1" monsterid="33" num="2" postype="0"/>
+		<monster id="2" monsterid="12" num="3" postype="0"/>
+		<monster id="3" monsterid="13" num="3" postype="0"/>
+	</group>
+	<group id="70" posrandom="0" difficulty="70">
+	<!-- postype 代表位置信息：0左边;1右边(posrandom值为0则无效) -->
+		<monster id="0" monsterid="14" num="2" postype="0"/>
+		<monster id="1" monsterid="31" num="2" postype="0"/>
+		<monster id="2" monsterid="33" num="3" postype="0"/>
+	</group>
+	<group id="71" posrandom="0" difficulty="70">
+	<!-- postype 代表位置信息：0左边;1右边(posrandom值为0则无效) -->
+		<monster id="0" monsterid="12" num="2" postype="0"/>
+		<monster id="1" monsterid="31" num="2" postype="0"/>
+		<monster id="2" monsterid="29" num="2" postype="0"/>
+	</group>
+	<group id="72" posrandom="0" difficulty="70">
+	<!-- postype 代表位置信息：0左边;1右边(posrandom值为0则无效) -->
+		<monster id="0" monsterid="12" num="3" postype="0"/>
+		<monster id="1" monsterid="32" num="2" postype="0"/>
+	</group>
+	<group id="73" posrandom="0" difficulty="70">
+	<!-- postype 代表位置信息：0左边;1右边(posrandom值为0则无效) -->
+		<monster id="0" monsterid="13" num="2" postype="0"/>
+		<monster id="1" monsterid="32" num="2" postype="0"/>
+	</group>
+	<group id="74" posrandom="0" difficulty="70">
+	<!-- postype 代表位置信息：0左边;1右边(posrandom值为0则无效) -->
+		<monster id="0" monsterid="28" num="2" postype="0"/>
+		<monster id="1" monsterid="30" num="2" postype="0"/>
+		<monster id="2" monsterid="32" num="4" postype="0"/>
+	</group>
+	<group id="75" posrandom="0" difficulty="70">
+	<!-- postype 代表位置信息：0左边;1右边(posrandom值为0则无效) -->
+		<monster id="0" monsterid="42" num="1" postype="0"/>
+		<monster id="1" monsterid="19" num="1" postype="0"/>
+	</group>
+	<group id="76" posrandom="0" difficulty="70">
+	<!-- postype 代表位置信息：0左边;1右边(posrandom值为0则无效) -->
+		<monster id="0" monsterid="40" num="3" postype="0"/>
+		<monster id="1" monsterid="31" num="2" postype="0"/>
+	</group>
+	<group id="77" posrandom="1" difficulty="80">
+	<!-- postype 代表位置信息：0左边;1右边(posrandom值为0则无效) -->
+		<monster id="0" monsterid="15" num="1" postype="0"/>
+		<monster id="1" monsterid="31" num="2" postype="0"/>
+		<monster id="2" monsterid="33" num="2" postype="0"/>
+	</group>
+	<group id="78" posrandom="1" difficulty="80">
+	<!-- postype 代表位置信息：0左边;1右边(posrandom值为0则无效) -->
+		<monster id="0" monsterid="15" num="2" postype="1"/>
+		<monster id="1" monsterid="31" num="2" postype="1"/>
+		<monster id="2" monsterid="33" num="2" postype="1"/>
+	</group>
+	<group id="79" posrandom="1" difficulty="80">
+	<!-- postype 代表位置信息：0左边;1右边(posrandom值为0则无效) -->
+		<monster id="0" monsterid="17" num="2" postype="0"/>
+		<monster id="1" monsterid="31" num="2" postype="0"/>
+		<monster id="2" monsterid="33" num="2" postype="0"/>
+	</group>
+	<group id="80" posrandom="1" difficulty="80">
+	<!-- postype 代表位置信息：0左边;1右边(posrandom值为0则无效) -->
+		<monster id="0" monsterid="17" num="2" postype="1"/>
+		<monster id="1" monsterid="31" num="2" postype="1"/>
+		<monster id="2" monsterid="33" num="2" postype="1"/>
+	</group>
+	<group id="81" posrandom="0" difficulty="80">
+	<!-- postype 代表位置信息：0左边;1右边(posrandom值为0则无效) -->
+		<monster id="0" monsterid="18" num="2" postype="0"/>
+		<monster id="1" monsterid="33" num="2" postype="0"/>
+	</group>
+	<group id="82" posrandom="0" difficulty="80">
+	<!-- postype 代表位置信息：0左边;1右边(posrandom值为0则无效) -->
+		<monster id="0" monsterid="31" num="4" postype="0"/>
+		<monster id="1" monsterid="32" num="4" postype="0"/>
+		<monster id="2" monsterid="14" num="4" postype="0"/>
+	</group>
+	<group id="83" posrandom="0" difficulty="80">
+	<!-- postype 代表位置信息：0左边;1右边(posrandom值为0则无效) -->
+		<monster id="0" monsterid="28" num="4" postype="0"/>
+		<monster id="1" monsterid="14" num="2" postype="0"/>
+		<monster id="2" monsterid="33" num="2" postype="0"/>
+	</group>
+	<group id="84" posrandom="0" difficulty="80">
+	<!-- postype 代表位置信息：0左边;1右边(posrandom值为0则无效) -->
+		<monster id="0" monsterid="30" num="2" postype="0"/>
+		<monster id="1" monsterid="14" num="4" postype="0"/>
+		<monster id="2" monsterid="12" num="2" postype="0"/>
+		<monster id="3" monsterid="33" num="2" postype="0"/>
+	</group>
+	<group id="85" posrandom="0" difficulty="80">
+	<!-- postype 代表位置信息：0左边;1右边(posrandom值为0则无效) -->
+		<monster id="0" monsterid="33" num="2" postype="0"/>
+		<monster id="1" monsterid="12" num="2" postype="0"/>
+		<monster id="2" monsterid="14" num="4" postype="0"/>
+	</group>
+	<group id="86" posrandom="0" difficulty="80">
+	<!-- postype 代表位置信息：0左边;1右边(posrandom值为0则无效) -->
+		<monster id="0" monsterid="14" num="2" postype="0"/>
+		<monster id="1" monsterid="28" num="4" postype="0"/>
+	</group>
+	<group id="87" posrandom="0" difficulty="80">
+	<!-- postype 代表位置信息：0左边;1右边(posrandom值为0则无效) -->
+		<monster id="0" monsterid="12" num="4" postype="0"/>
+		<monster id="1" monsterid="13" num="4" postype="0"/>
+		<monster id="2" monsterid="14" num="4" postype="0"/>
+	</group>
+	<group id="88" posrandom="0" difficulty="80">
+	<!-- postype 代表位置信息：0左边;1右边(posrandom值为0则无效) -->
+		<monster id="0" monsterid="22" num="1" postype="0"/>
+		<monster id="1" monsterid="13" num="2" postype="0"/>
+		<monster id="2" monsterid="27" num="2" postype="0"/>
+	</group>
+	<group id="89" posrandom="0" difficulty="80">
+	<!-- postype 代表位置信息：0左边;1右边(posrandom值为0则无效) -->
+		<monster id="0" monsterid="19" num="2" postype="0"/>
+		<monster id="1" monsterid="14" num="2" postype="0"/>
+		<monster id="2" monsterid="27" num="3" postype="0"/>
+	</group>
+	<group id="90" posrandom="0" difficulty="80">
+	<!-- postype 代表位置信息：0左边;1右边(posrandom值为0则无效) -->
+		<monster id="0" monsterid="21" num="2" postype="0"/>
+		<monster id="1" monsterid="15" num="2" postype="0"/>
+	</group>
+	<group id="91" posrandom="1" difficulty="90">
+	<!-- postype 代表位置信息：0左边;1右边(posrandom值为0则无效) -->
+		<monster id="0" monsterid="17" num="2" postype="0"/>
+		<monster id="1" monsterid="36" num="2" postype="0"/>
+		<monster id="2" monsterid="28" num="2" postype="0"/>
+	</group>
+	<group id="92" posrandom="1" difficulty="90">
+	<!-- postype 代表位置信息：0左边;1右边(posrandom值为0则无效) -->
+		<monster id="0" monsterid="17" num="2" postype="1"/>
+		<monster id="1" monsterid="31" num="2" postype="1"/>
+		<monster id="2" monsterid="14" num="2" postype="1"/>
+	</group>
+	<group id="93" posrandom="1" difficulty="90">
+	<!-- postype 代表位置信息：0左边;1右边(posrandom值为0则无效) -->
+		<monster id="0" monsterid="15" num="2" postype="0"/>
+		<monster id="1" monsterid="17" num="2" postype="0"/>
+		<monster id="2" monsterid="18" num="2" postype="0"/>
+	</group>
+	<group id="94" posrandom="1" difficulty="90">
+	<!-- postype 代表位置信息：0左边;1右边(posrandom值为0则无效) -->
+		<monster id="0" monsterid="15" num="2" postype="1"/>
+		<monster id="1" monsterid="48" num="2" postype="1"/>
+		<monster id="2" monsterid="14" num="2" postype="1"/>
+	</group>
+	<group id="95" posrandom="0" difficulty="90">
+	<!-- postype 代表位置信息：0左边;1右边(posrandom值为0则无效) -->
+		<monster id="0" monsterid="12" num="2" postype="0"/>
+		<monster id="1" monsterid="13" num="2" postype="0"/>
+		<monster id="2" monsterid="15" num="3" postype="0"/>
+		<monster id="3" monsterid="17" num="3" postype="0"/>
+	</group>
+	<group id="96" posrandom="0" difficulty="90">
+	<!-- postype 代表位置信息：0左边;1右边(posrandom值为0则无效) -->
+		<monster id="0" monsterid="18" num="2" postype="0"/>
+		<monster id="1" monsterid="16" num="4" postype="0"/>
+	</group>
+	<group id="97" posrandom="0" difficulty="90">
+	<!-- postype 代表位置信息：0左边;1右边(posrandom值为0则无效) -->
+		<monster id="0" monsterid="16" num="2" postype="0"/>
+		<monster id="1" monsterid="30" num="2" postype="0"/>
+		<monster id="2" monsterid="14" num="2" postype="0"/>
+	</group>
+	<group id="98" posrandom="0" difficulty="90">
+	<!-- postype 代表位置信息：0左边;1右边(posrandom值为0则无效) -->
+		<monster id="0" monsterid="14" num="3" postype="0"/>
+		<monster id="1" monsterid="47" num="3" postype="0"/>
+	</group>
+	<group id="99" posrandom="0" difficulty="90">
+	<!-- postype 代表位置信息：0左边;1右边(posrandom值为0则无效) -->
+		<monster id="0" monsterid="19" num="2" postype="0"/>
+		<monster id="1" monsterid="14" num="2" postype="0"/>
+		<monster id="2" monsterid="26" num="2" postype="0"/>
+	</group>
+	<group id="100" posrandom="0" difficulty="90">
+	<!-- postype 代表位置信息：0左边;1右边(posrandom值为0则无效) -->
+		<monster id="0" monsterid="18" num="2" postype="0"/>
+		<monster id="1" monsterid="13" num="2" postype="0"/>
+		<monster id="2" monsterid="14" num="2" postype="0"/>
+		<monster id="3" monsterid="15" num="2" postype="0"/>
+	</group>
+	<group id="101" posrandom="0" difficulty="90">
+	<!-- postype 代表位置信息：0左边;1右边(posrandom值为0则无效) -->
+		<monster id="0" monsterid="14" num="2" postype="0"/>
+		<monster id="1" monsterid="17" num="2" postype="0"/>
+		<monster id="2" monsterid="13" num="2" postype="0"/>
+		<monster id="3" monsterid="46" num="2" postype="0"/>
+	</group>
+	<group id="102" posrandom="0" difficulty="90">
+	<!-- postype 代表位置信息：0左边;1右边(posrandom值为0则无效) -->
+		<monster id="0" monsterid="18" num="2" postype="0"/>
+		<monster id="1" monsterid="36" num="2" postype="0"/>
+		<monster id="2" monsterid="12" num="2" postype="0"/>
+		<monster id="3" monsterid="14" num="2" postype="0"/>
+	</group>
+	<group id="103" posrandom="0" difficulty="90">
+	<!-- postype 代表位置信息：0左边;1右边(posrandom值为0则无效) -->
+		<monster id="0" monsterid="14" num="2" postype="0"/>
+		<monster id="1" monsterid="47" num="2" postype="0"/>
+		<monster id="2" monsterid="17" num="2" postype="0"/>
+		<monster id="3" monsterid="18" num="2" postype="0"/>
+		<monster id="4" monsterid="19" num="2" postype="0"/>
+	</group>
+	<group id="104" posrandom="0" difficulty="90">
+	<!-- postype 代表位置信息：0左边;1右边(posrandom值为0则无效) -->
+		<monster id="0" monsterid="23" num="2" postype="0"/>
+		<monster id="1" monsterid="18" num="2" postype="0"/>
+		<monster id="2" monsterid="19" num="2" postype="0"/>
+	</group>
+	<group id="105" posrandom="0" difficulty="90">
+	<!-- postype 代表位置信息：0左边;1右边(posrandom值为0则无效) -->
+		<monster id="0" monsterid="22" num="2" postype="0"/>
+		<monster id="1" monsterid="14" num="2" postype="0"/>
+	</group>
+	<group id="106" posrandom="1" difficulty="100">
+	<!-- postype 代表位置信息：0左边;1右边(posrandom值为0则无效) -->
+		<monster id="0" monsterid="15" num="2" postype="0"/>
+		<monster id="1" monsterid="17" num="2" postype="0"/>
+		<monster id="2" monsterid="13" num="2" postype="0"/>
+		<monster id="3" monsterid="14" num="2" postype="0"/>
+	</group>
+	<group id="107" posrandom="1" difficulty="100">
+	<!-- postype 代表位置信息：0左边;1右边(posrandom值为0则无效) -->
+		<monster id="0" monsterid="15" num="2" postype="1"/>
+		<monster id="1" monsterid="17" num="2" postype="1"/>
+		<monster id="2" monsterid="13" num="2" postype="1"/>
+		<monster id="3" monsterid="14" num="2" postype="1"/>
+	</group>
+	<group id="108" posrandom="1" difficulty="100">
+	<!-- postype 代表位置信息：0左边;1右边(posrandom值为0则无效) -->
+		<monster id="0" monsterid="17" num="1" postype="0"/>
+		<monster id="1" monsterid="49" num="2" postype="0"/>
+		<monster id="2" monsterid="14" num="3" postype="0"/>
+	</group>
+	<group id="109" posrandom="1" difficulty="100">
+	<!-- postype 代表位置信息：0左边;1右边(posrandom值为0则无效) -->
+		<monster id="0" monsterid="17" num="1" postype="1"/>
+		<monster id="1" monsterid="49" num="2" postype="1"/>
+		<monster id="2" monsterid="14" num="3" postype="1"/>
+	</group>
+	<group id="110" posrandom="0" difficulty="100">
+	<!-- postype 代表位置信息：0左边;1右边(posrandom值为0则无效) -->
+		<monster id="0" monsterid="48" num="2" postype="0"/>
+		<monster id="1" monsterid="15" num="2" postype="0"/>
+		<monster id="2" monsterid="12" num="3" postype="0"/>
+		<monster id="3" monsterid="13" num="2" postype="0"/>
+	</group>
+	<group id="111" posrandom="0" difficulty="100">
+	<!-- postype 代表位置信息：0左边;1右边(posrandom值为0则无效) -->
+		<monster id="0" monsterid="19" num="2" postype="0"/>
+		<monster id="1" monsterid="18" num="2" postype="0"/>
+		<monster id="2" monsterid="17" num="2" postype="0"/>
+	</group>
+	<group id="112" posrandom="0" difficulty="100">
+	<!-- postype 代表位置信息：0左边;1右边(posrandom值为0则无效) -->
+		<monster id="0" monsterid="19" num="2" postype="0"/>
+		<monster id="1" monsterid="16" num="2" postype="0"/>
+		<monster id="2" monsterid="18" num="2" postype="0"/>
+	</group>
+	<group id="113" posrandom="0" difficulty="100">
+	<!-- postype 代表位置信息：0左边;1右边(posrandom值为0则无效) -->
+		<monster id="0" monsterid="19" num="2" postype="0"/>
+		<monster id="1" monsterid="16" num="4" postype="0"/>
+		<monster id="2" monsterid="18" num="2" postype="0"/>
+	</group>
+	<group id="114" posrandom="0" difficulty="100">
+	<!-- postype 代表位置信息：0左边;1右边(posrandom值为0则无效) -->
+		<monster id="0" monsterid="12" num="2" postype="0"/>
+		<monster id="1" monsterid="13" num="2" postype="0"/>
+		<monster id="2" monsterid="14" num="2" postype="0"/>
+		<monster id="3" monsterid="15" num="2" postype="0"/>
+		<monster id="4" monsterid="16" num="2" postype="0"/>
+	</group>
+	<group id="115" posrandom="0" difficulty="100">
+	<!-- postype 代表位置信息：0左边;1右边(posrandom值为0则无效) -->
+		<monster id="0" monsterid="13" num="2" postype="0"/>
+		<monster id="1" monsterid="14" num="2" postype="0"/>
+		<monster id="2" monsterid="15" num="2" postype="0"/>
+		<monster id="3" monsterid="17" num="2" postype="0"/>
+	</group>
+	<group id="116" posrandom="0" difficulty="100">
+	<!-- postype 代表位置信息：0左边;1右边(posrandom值为0则无效) -->
+		<monster id="0" monsterid="24" num="2" postype="0"/>
+		<monster id="1" monsterid="17" num="2" postype="0"/>
+	</group>
+	<group id="117" posrandom="0" difficulty="100">
+	<!-- postype 代表位置信息：0左边;1右边(posrandom值为0则无效) -->
+		<monster id="0" monsterid="23" num="2" postype="0"/>
+		<monster id="1" monsterid="19" num="4" postype="0"/>
+	</group>
+	<group id="118" posrandom="1" difficulty="110">
+	<!-- postype 代表位置信息：0左边;1右边(posrandom值为0则无效) -->
+		<monster id="0" monsterid="49" num="2" postype="0"/>
+		<monster id="1" monsterid="48" num="2" postype="0"/>
+		<monster id="2" monsterid="12" num="1" postype="0"/>
+	</group>
+	<group id="119" posrandom="1" difficulty="110">
+	<!-- postype 代表位置信息：0左边;1右边(posrandom值为0则无效) -->
+		<monster id="0" monsterid="49" num="2" postype="1"/>
+		<monster id="1" monsterid="48" num="2" postype="1"/>
+		<monster id="2" monsterid="12" num="1" postype="1"/>
+	</group>
+	<group id="120" posrandom="1" difficulty="110">
+	<!-- postype 代表位置信息：0左边;1右边(posrandom值为0则无效) -->
+		<monster id="0" monsterid="12" num="2" postype="0"/>
+		<monster id="1" monsterid="48" num="2" postype="0"/>
+		<monster id="2" monsterid="49" num="2" postype="0"/>
+		<monster id="3" monsterid="47" num="2" postype="0"/>
+		<monster id="4" monsterid="46" num="2" postype="0"/>
+	</group>
+	<group id="121" posrandom="1" difficulty="110">
+	<!-- postype 代表位置信息：0左边;1右边(posrandom值为0则无效) -->
+		<monster id="0" monsterid="12" num="2" postype="1"/>
+		<monster id="1" monsterid="48" num="2" postype="1"/>
+		<monster id="2" monsterid="49" num="2" postype="1"/>
+		<monster id="3" monsterid="47" num="2" postype="1"/>
+		<monster id="4" monsterid="46" num="2" postype="1"/>
+	</group>
+	<group id="122" posrandom="0" difficulty="110">
+	<!-- postype 代表位置信息：0左边;1右边(posrandom值为0则无效) -->
+		<monster id="0" monsterid="19" num="3" postype="0"/>
+		<monster id="1" monsterid="50" num="2" postype="0"/>
+		<monster id="2" monsterid="18" num="2" postype="0"/>
+	</group>
+	<group id="123" posrandom="0" difficulty="110">
+	<!-- postype 代表位置信息：0左边;1右边(posrandom值为0则无效) -->
+		<monster id="0" monsterid="12" num="2" postype="0"/>
+		<monster id="1" monsterid="46" num="2" postype="0"/>
+		<monster id="2" monsterid="47" num="2" postype="0"/>
+		<monster id="1" monsterid="12" num="2" postype="0"/>
+		<monster id="2" monsterid="13" num="2" postype="0"/>
+	</group>
+	<group id="124" posrandom="0" difficulty="110">
+	<!-- postype 代表位置信息：0左边;1右边(posrandom值为0则无效) -->
+		<monster id="0" monsterid="18" num="2" postype="0"/>
+		<monster id="1" monsterid="18" num="2" postype="0"/>
+	</group>
+	<group id="125" posrandom="0" difficulty="110">
+	<!-- postype 代表位置信息：0左边;1右边(posrandom值为0则无效) -->
+		<monster id="0" monsterid="19" num="2" postype="0"/>
+		<monster id="1" monsterid="47" num="2" postype="0"/>
+		<monster id="2" monsterid="16" num="2" postype="0"/>
+	</group>
+	<group id="126" posrandom="0" difficulty="110">
+	<!-- postype 代表位置信息：0左边;1右边(posrandom值为0则无效) -->
+		<monster id="0" monsterid="19" num="1" postype="0"/>
+		<monster id="1" monsterid="47" num="2" postype="0"/>
+		<monster id="2" monsterid="16" num="2" postype="0"/>
+	</group>
+	<group id="127" posrandom="0" difficulty="110">
+	<!-- postype 代表位置信息：0左边;1右边(posrandom值为0则无效) -->
+		<monster id="0" monsterid="20" num="4" postype="0"/>
+		<monster id="1" monsterid="12" num="2" postype="0"/>
+		<monster id="2" monsterid="46" num="2" postype="0"/>
+	</group>
+	<group id="128" posrandom="0" difficulty="110">
+	<!-- postype 代表位置信息：0左边;1右边(posrandom值为0则无效) -->
+		<monster id="0" monsterid="21" num="3" postype="0"/>
+		<monster id="1" monsterid="48" num="2" postype="0"/>
+	</group>
+	<group id="129" posrandom="0" difficulty="110">
+	<!-- postype 代表位置信息：0左边;1右边(posrandom值为0则无效) -->
+		<monster id="0" monsterid="24" num="2" postype="0"/>
+		<monster id="1" monsterid="47" num="2" postype="0"/>
+		<monster id="2" monsterid="48" num="2" postype="0"/>
+	</group>
+	<group id="130" posrandom="0" difficulty="110">
+	<!-- postype 代表位置信息：0左边;1右边(posrandom值为0则无效) -->
+		<monster id="0" monsterid="25" num="1" postype="0"/>
+		<monster id="1" monsterid="20" num="2" postype="0"/>
+		<monster id="2" monsterid="47" num="2" postype="0"/>
+	</group>
+	<group id="131" posrandom="0" difficulty="110">
+	<!-- postype 代表位置信息：0左边;1右边(posrandom值为0则无效) -->
+		<monster id="0" monsterid="25" num="2" postype="0"/>
+		<monster id="1" monsterid="19" num="4" postype="0"/>
+	</group>
+	<group id="132" posrandom="0" difficulty="60">
+	<!-- postype 代表位置信息：0左边;1右边(posrandom值为0则无效) -->
+		<monster id="0" monsterid="40" num="1" postype="0"/>
+		<monster id="1" monsterid="14" num="2" postype="0"/>
+		<monster id="2" monsterid="12" num="1" postype="0"/>
+	</group>
+	<group id="133" posrandom="0" difficulty="60">
+	<!-- postype 代表位置信息：0左边;1右边(posrandom值为0则无效) -->
+		<monster id="0" monsterid="41" num="1" postype="0"/>
+		<monster id="1" monsterid="14" num="2" postype="0"/>
+	</group>
+	<group id="134" posrandom="0" difficulty="70">
+	<!-- postype 代表位置信息：0左边;1右边(posrandom值为0则无效) -->
+		<monster id="0" monsterid="40" num="1" postype="0"/>
+		<monster id="1" monsterid="12" num="2" postype="0"/>
+		<monster id="2" monsterid="13" num="2" postype="0"/>
+	</group>
+	<group id="135" posrandom="0" difficulty="70">
+	<!-- postype 代表位置信息：0左边;1右边(posrandom值为0则无效) -->
+		<monster id="0" monsterid="41" num="1" postype="0"/>
+		<monster id="1" monsterid="14" num="3" postype="0"/>
+		<monster id="2" monsterid="15" num="3" postype="0"/>
+	</group>
+	<group id="136" posrandom="0" difficulty="70">
+	<!-- postype 代表位置信息：0左边;1右边(posrandom值为0则无效) -->
+		<monster id="0" monsterid="42" num="1" postype="0"/>
+		<monster id="1" monsterid="13" num="1" postype="0"/>
+		<monster id="2" monsterid="13" num="3" postype="0"/>
+	</group>
+	<group id="137" posrandom="0" difficulty="80">
+	<!-- postype 代表位置信息：0左边;1右边(posrandom值为0则无效) -->
+		<monster id="0" monsterid="40" num="1" postype="0"/>
+		<monster id="1" monsterid="15" num="2" postype="0"/>
+		<monster id="2" monsterid="13" num="1" postype="0"/>
+	</group>
+	<group id="138" posrandom="0" difficulty="80">
+	<!-- postype 代表位置信息：0左边;1右边(posrandom值为0则无效) -->
+		<monster id="0" monsterid="41" num="1" postype="0"/>
+		<monster id="1" monsterid="15" num="2" postype="0"/>
+	</group>
+	<group id="139" posrandom="0" difficulty="80">
+	<!-- postype 代表位置信息：0左边;1右边(posrandom值为0则无效) -->
+		<monster id="0" monsterid="42" num="1" postype="0"/>
+		<monster id="1" monsterid="15" num="2" postype="0"/>
+	</group>
+	<group id="140" posrandom="0" difficulty="90">
+	<!-- postype 代表位置信息：0左边;1右边(posrandom值为0则无效) -->
+		<monster id="0" monsterid="20" num="2" postype="0"/>
+		<monster id="1" monsterid="16" num="2" postype="0"/>
+	</group>
+	<group id="141" posrandom="0" difficulty="90">
+	<!-- postype 代表位置信息：0左边;1右边(posrandom值为0则无效) -->
+		<monster id="0" monsterid="21" num="2" postype="0"/>
+		<monster id="1" monsterid="15" num="2" postype="0"/>
+	</group>
+	<group id="142" posrandom="0" difficulty="90">
+	<!-- postype 代表位置信息：0左边;1右边(posrandom值为0则无效) -->
+		<monster id="0" monsterid="22" num="2" postype="0"/>
+		<monster id="1" monsterid="15" num="2" postype="0"/>
+	</group>
+	<group id="143" posrandom="0" difficulty="90">
+	<!-- postype 代表位置信息：0左边;1右边(posrandom值为0则无效) -->
+		<monster id="0" monsterid="24" num="1" postype="0"/>
+		<monster id="1" monsterid="19" num="2" postype="0"/>
+		<monster id="2" monsterid="18" num="2" postype="0"/>
+	</group>
+	<group id="144" posrandom="0" difficulty="100">
+	<!-- postype 代表位置信息：0左边;1右边(posrandom值为0则无效) -->
+		<monster id="0" monsterid="20" num="2" postype="0"/>
+		<monster id="1" monsterid="17" num="2" postype="0"/>
+	</group>
+	<group id="145" posrandom="0" difficulty="100">
+	<!-- postype 代表位置信息：0左边;1右边(posrandom值为0则无效) -->
+		<monster id="0" monsterid="21" num="2" postype="0"/>
+		<monster id="1" monsterid="19" num="2" postype="0"/>
+	</group>
+	<group id="146" posrandom="0" difficulty="100">
+	<!-- postype 代表位置信息：0左边;1右边(posrandom值为0则无效) -->
+		<monster id="0" monsterid="22" num="2" postype="0"/>
+		<monster id="1" monsterid="16" num="2" postype="0"/>
+	</group>
+	<group id="147" posrandom="0" difficulty="100">
+	<!-- postype 代表位置信息：0左边;1右边(posrandom值为0则无效) -->
+		<monster id="0" monsterid="24" num="1" postype="0"/>
+		<monster id="1" monsterid="14" num="2" postype="0"/>
+		<monster id="2" monsterid="13" num="2" postype="0"/>
+	</group>
+	<group id="148" posrandom="0" difficulty="100">
+	<!-- postype 代表位置信息：0左边;1右边(posrandom值为0则无效) -->
+		<monster id="0" monsterid="23" num="1" postype="0"/>
+		<monster id="1" monsterid="18" num="2" postype="0"/>
+	</group>
+	<group id="149" posrandom="0" difficulty="110">
+	<!-- postype 代表位置信息：0左边;1右边(posrandom值为0则无效) -->
+		<monster id="0" monsterid="20" num="3" postype="0"/>
+		<monster id="1" monsterid="49" num="2" postype="0"/>
+	</group>
+	<group id="150" posrandom="0" difficulty="110">
+	<!-- postype 代表位置信息：0左边;1右边(posrandom值为0则无效) -->
+		<monster id="0" monsterid="21" num="3" postype="0"/>
+		<monster id="1" monsterid="47" num="1" postype="0"/>
+		<monster id="2" monsterid="48" num="1" postype="0"/>
+	</group>
+	<group id="151" posrandom="0" difficulty="110">
+	<!-- postype 代表位置信息：0左边;1右边(posrandom值为0则无效) -->
+		<monster id="0" monsterid="22" num="2" postype="0"/>
+		<monster id="1" monsterid="12" num="2" postype="0"/>
+	</group>
+	<group id="152" posrandom="0" difficulty="110">
+	<!-- postype 代表位置信息：0左边;1右边(posrandom值为0则无效) -->
+		<monster id="0" monsterid="24" num="1" postype="0"/>
+		<monster id="1" monsterid="50" num="2" postype="0"/>
+	</group>
+	<group id="153" posrandom="0" difficulty="110">
+	<!-- postype 代表位置信息：0左边;1右边(posrandom值为0则无效) -->
+		<monster id="0" monsterid="23" num="1" postype="0"/>
+		<monster id="1" monsterid="46" num="2" postype="0"/>
+		<monster id="2" monsterid="15" num="2" postype="0"/>
+	</group>
+	<group id="154" posrandom="0" difficulty="110">
+	<!-- postype 代表位置信息：0左边;1右边(posrandom值为0则无效) -->
+		<monster id="0" monsterid="25" num="1" postype="0"/>
+		<monster id="1" monsterid="12" num="2" postype="0"/>
+		<monster id="2" monsterid="49" num="2" postype="0"/>
+	</group>
+	<group id="155" posrandom="0" difficulty="2000">
+	<!-- postype 代表位置信息：0左边;1右边(posrandom值为0则无效) -->
+		<monster id="0" monsterid="12" num="4" postype="0"/>
+	</group>
+	<group id="156" posrandom="0" difficulty="2001">
+	<!-- postype 代表位置信息：0左边;1右边(posrandom值为0则无效) -->
+		<monster id="0" monsterid="13" num="4" postype="0"/>
+	</group>
+	<group id="157" posrandom="0" difficulty="2002">
+	<!-- postype 代表位置信息：0左边;1右边(posrandom值为0则无效) -->
+		<monster id="0" monsterid="14" num="4" postype="0"/>
+	</group>
+	<group id="158" posrandom="0" difficulty="2003">
+	<!-- postype 代表位置信息：0左边;1右边(posrandom值为0则无效) -->
+		<monster id="0" monsterid="20" num="1" postype="0"/>
+		<monster id="1" monsterid="14" num="2" postype="0"/>
+	</group>
+	<group id="159" posrandom="0" difficulty="2004">
+	<!-- postype 代表位置信息：0左边;1右边(posrandom值为0则无效) -->
+		<monster id="0" monsterid="21" num="1" postype="0"/>
+		<monster id="1" monsterid="15" num="2" postype="0"/>
+	</group>
+	<group id="160" posrandom="0" difficulty="2005">
+	<!-- postype 代表位置信息：0左边;1右边(posrandom值为0则无效) -->
+		<monster id="0" monsterid="22" num="1" postype="0"/>
+		<monster id="1" monsterid="16" num="2" postype="0"/>
+	</group>
+	<group id="161" posrandom="0" difficulty="2006">
+	<!-- postype 代表位置信息：0左边;1右边(posrandom值为0则无效) -->
+		<monster id="0" monsterid="20" num="1" postype="0"/>
+		<monster id="1" monsterid="21" num="1" postype="0"/>
+		<monster id="2" monsterid="22" num="1" postype="0"/>
+	</group>
+	<group id="162" posrandom="0" difficulty="2007">
+	<!-- postype 代表位置信息：0左边;1右边(posrandom值为0则无效) -->
+		<monster id="0" monsterid="24" num="1" postype="0"/>
+		<monster id="1" monsterid="47" num="2" postype="0"/>
+		<monster id="2" monsterid="17" num="1" postype="0"/>
+	</group>
+	<group id="163" posrandom="0" difficulty="2008">
+	<!-- postype 代表位置信息：0左边;1右边(posrandom值为0则无效) -->
+		<monster id="0" monsterid="23" num="1" postype="0"/>
+		<monster id="1" monsterid="48" num="2" postype="0"/>
+		<monster id="2" monsterid="18" num="1" postype="0"/>
+	</group>
+	<group id="164" posrandom="0" difficulty="2009">
+	<!-- postype 代表位置信息：0左边;1右边(posrandom值为0则无效) -->
+		<monster id="0" monsterid="25" num="1" postype="0"/>
+		<monster id="1" monsterid="49" num="2" postype="0"/>
+		<monster id="2" monsterid="19" num="1" postype="0"/>
+	</group>
+	
+	
+	
+	
+	
+	
+	
+	
+
+
+</Monsters>

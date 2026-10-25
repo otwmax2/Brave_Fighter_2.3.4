@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<bossdrop>
+	<boss id="0" item1="1002" item2="2002" item3="3001" item4="3021" item5="1003" item6="2003" item7="3002" item8="3022" item9="10002" item10="10001" item1random="40" item2random="40" item3random="30" item4random="30" item5random="15" item6random="15" item7random="10" item8random="10" item9random="50" item10random="5"/>
+	<boss id="1" item1="1003" item2="2003" item3="3002" item4="3022" item5="1006" item6="2006" item7="3005" item8="3025" item9="10002" item10="10001" item1random="20" item2random="20" item3random="15" item4random="15" item5random="12" item6random="12" item7random="10" item8random="10" item9random="50" item10random="5"/>
+	<boss id="2" item1="1007" item2="2007" item3="3006" item4="3026" item5="1010" item6="2010" item7="3009" item8="3029" item9="10002" item10="10001" item1random="15" item2random="15" item3random="12" item4random="12" item5random="10" item6random="10" item7random="8" item8random="8" item9random="50" item10random="5"/>
+	<boss id="3" item1="1015" item2="2015" item3="3014" item4="3034" item5="1018" item6="2018" item7="3017" item8="3037" item9="10002" item10="10001" item1random="10" item2random="10" item3random="8" item4random="8" item5random="6" item6random="6" item7random="4" item8random="4" item9random="50" item10random="5"/>
+	<boss id="4" item1="1011" item2="2011" item3="3010" item4="3030" item5="1014" item6="2014" item7="3013" item8="3033" item9="10002" item10="10001" item1random="12" item2random="12" item3random="10" item4random="10" item5random="8" item6random="8" item7random="6" item8random="6" item9random="50" item10random="5"/>
+	<boss id="5" item1="1019" item2="2019" item3="3018" item4="3038" item5="10002" item6="10002" item7="10002" item8="10002" item9="10001" item10="10001" item1random="8" item2random="8" item3random="6" item4random="6" item5random="50" item6random="40" item7random="30" item8random="20" item9random="5" item10random="5"/>
+</bossdrop>
