@@ -146,82 +146,44 @@ def sign_apk_entries(entries: dict) -> bytes:
         sf += f"Name: {n}\r\nSHA-256-Digest: {b64sha(entry_block)}\r\n\r\n"
     sf_bytes = sf.encode('utf-8')
 
-    # ---- Build PKCS#7 signature secara manual (DER minimal yang diterima Android) ----
-    # Referensi: https://github.com/fornwall/apksigner/blob/master/apksigner-v1.py
-    # Kita bangun DER secara langsung untuk menghindari perbedaan API asn1crypto.
-    import struct as _s
-    from asn1crypto import core as _core, x509 as asn1x509
-
-    # Helper ASN.1 DER
-    def der_int(n: int) -> bytes:
-        if n == 0: return b'\x02\x01\x00'
-        bl = n.to_bytes((n.bit_length()+7)//8, 'big')
-        if bl[0] & 0x80: bl = b'\x00' + bl
-        return b'\x02' + der_len(len(bl)) + bl
-    def der_len(l: int) -> bytes:
-        if l < 0x80: return bytes([l])
-        enc = l.to_bytes((l.bit_length()+7)//8,'big')
-        return bytes([0x80|len(enc)]) + enc
-    def der_seq(*parts: bytes) -> bytes:
-        body = b''.join(parts); return b'\x30' + der_len(len(body)) + body
-    def der_set(*parts: bytes) -> bytes:
-        body = b''.join(parts); return b'\x31' + der_len(len(body)) + body
-    def der_oid(oid: str) -> bytes:
-        # encode OID DER
-        nums = [int(x) for x in oid.split('.')]
-        enc = [0x28*nums[0]+nums[1]]
-        for n in nums[2:]:
-            if n < 0x80: enc.append(n)
-            else:
-                parts=[]
-                while n>0: parts.append(n&0x7f); n>>=7
-                for i in range(len(parts)-1,0,-1): enc.append(parts[i]|0x80)
-                enc.append(parts[0])
-        body = bytes(enc)
-        return b'\x06' + der_len(len(body)) + body
-    def der_octet(b: bytes) -> bytes:
-        return b'\x04' + der_len(len(b)) + b
-    def der_null() -> bytes: return b'\x05\x00'
-    def der_explicit(tag: int, content: bytes) -> bytes:
-        """[tag] EXPLICIT (constructed)"""
-        return bytes([0xa0|tag]) + der_len(len(content)) + content
-
-    # OIDs
-    OID_DATA             = '1.2.840.113549.1.7.1'
-    OID_SIGNED_DATA      = '1.2.840.113549.1.7.2'
-    OID_SHA256           = '2.16.840.1.101.3.4.2.1'
-    OID_SHA256_RSA       = '1.2.840.113549.1.1.11'
+    # ---- Build PKCS#7 signature (RSA-2048 dengan asn1crypto yang diverifikasi) ----
+    from asn1crypto import cms as _cms, x509 as _x509
 
     signature = key.sign(sf_bytes, padding.PKCS1v15(), hashes.SHA256())
+    cert_asn1 = _x509.Certificate.load(cert_der)
 
-    # Parse issuer dan serial dari cert DER
-    cert_asn1 = asn1x509.Certificate.load(cert_der)
-    issuer_der = cert_asn1['tbs_certificate']['issuer'].dump()
-    serial_int = cert_asn1['tbs_certificate']['serial_number'].native
+    ias = _cms.IssuerAndSerialNumber({
+        'issuer': cert_asn1['tbs_certificate']['issuer'],
+        'serial_number': cert_asn1['tbs_certificate']['serial_number'],
+    })
+    si = _cms.SignerInfo({
+        'version': 'v1',
+        'sid': ('issuer_and_serial_number', ias),
+        'digest_algorithm': {'algorithm': 'sha256', 'parameters': None},
+        'signature_algorithm': {'algorithm': 'sha256_rsa', 'parameters': None},
+        'signature': signature,
+    })
+    cc = _cms.CertificateChoices(name='certificate', value=cert_asn1)
+    sd = _cms.SignedData({
+        'version': 'v1',
+        'digest_algorithms': [{'algorithm': 'sha256', 'parameters': None}],
+        'encap_content_info': {'content_type': 'data'},
+        'certificates': _cms.CertificateSet([cc]),
+        'signer_infos': [si],
+    })
+    ci = _cms.ContentInfo({'content_type': 'signed_data', 'content': sd})
+    rsa_bytes = ci.dump()
 
-    # SignerInfo
-    signer_info = der_seq(
-        der_int(1),  # version v1
-        der_seq(issuer_der, der_int(serial_int)),  # sid: issuer+serial
-        der_seq(der_oid(OID_SHA256), der_null()),  # digest algorithm
-        der_seq(der_oid(OID_SHA256_RSA), der_null()),  # sig algorithm
-        der_octet(signature),  # signature
-    )
-
-    # SignedData
-    signed_data = der_seq(
-        der_int(1),  # version
-        der_set(der_seq(der_oid(OID_SHA256), der_null())),  # digest algorithms
-        der_seq(der_oid(OID_DATA)),  # encap content info (data, no econtent)
-        der_explicit(0, der_seq(cert_der)),  # certificates SET
-        der_set(signer_info),
-    )
-
-    # Outer ContentInfo
-    rsa_bytes = der_seq(
-        der_oid(OID_SIGNED_DATA),
-        der_explicit(0, signed_data),
-    )
+    # Verifikasi round-trip (memastikan signature benar)
+    _verify = _cms.ContentInfo.load(rsa_bytes)
+    _cert2 = _x509.Certificate.load(_verify['content']['certificates'][0].chosen.dump())
+    # Parse public key ke cryptography untuk verifikasi
+    from cryptography.hazmat.primitives.serialization import load_der_public_key
+    import cryptography.x509 as _cx
+    _c_obj = _cx.load_der_x509_certificate(_cert2.dump())
+    _c_obj.public_key().verify(
+        _verify['content']['signer_infos'][0]['signature'].native,
+        sf_bytes, padding.PKCS1v15(), hashes.SHA256())
     return manifest_bytes, sf_bytes, rsa_bytes
 
 
@@ -249,22 +211,120 @@ def main():
     else:
         print("[!] classes2.dex tidak ditemukan; IAP/ads patch dilewati.")
 
-    # ---- Repack APK + sign ----
-    print(f"[+] Menulis APK baru ke: {apk_out}")
-    with zipfile.ZipFile(apk_out,'w',zipfile.ZIP_DEFLATED) as zout:
-        for name, data in entries.items():
-            if name.startswith('META-INF/') and (name.endswith('.SF') or
-                name.endswith('.RSA') or name.endswith('.DSA') or
-                name in ('META-INF/MANIFEST.MF',)):
-                continue  # hapus signature lama
-            zout.writestr(name, data)
+    # ---- Repack + zipalign 4-byte + sign v1 ----
+    print("[+] Zipalign 4-byte + v1 sign (pure-python)...")
+    import zlib as _zlib, struct as _s, base64 as _b64
+    ALIGN = 4
+    def _make_lfh(nb, crc, cs, us, xl, ct):
+        return _s.pack('<IHHHHHIIIHH',0x04034b50,20,0,ct,0,0,crc,cs,us,len(nb),xl)+nb
+    def _make_cdh(nb,crc,cs,us,lo,xl,ct):
+        return _s.pack('<IHHHHHHIIIHHHHHII',0x02014b50,20,20,0,ct,0,0,crc,cs,us,len(nb),xl,0,0,0,0,lo)+nb
+    def _make_eocd(n,cds,cdo):
+        return _s.pack('<IHHHHIIH',0x06054b50,0,0,n,n,cds,cdo,0)
+    def _b64sha(d): return _b64.b64encode(hashlib.sha256(d).digest()).decode('ascii')
 
-        # Tambahkan META-INF signature baru
-        manifest, sf, rsa = sign_apk_entries(entries)
-        zout.writestr('META-INF/MANIFEST.MF', manifest)
-        zout.writestr('META-INF/CERT.SF', sf)
-        zout.writestr('META-INF/CERT.RSA', rsa)
-        # Tambahkan CERT.SF + CERT.RSA di atas
+    # Hapus META-INF signature original
+    entries_to_pack = {n: entries[n] for n in entries if not (n.startswith('META-INF/') and (n.endswith('.SF') or n.endswith('.RSA') or n.endswith('.DSA') or n == 'META-INF/MANIFEST.MF'))}
+    # Siapkan metadata per file (2 pass: pertama zipaligned tanpa META-INF sign, tambah di pass kedua)
+    from cryptography.hazmat.primitives import hashes, serialization
+    from cryptography.hazmat.primitives.asymmetric import rsa, padding
+    from cryptography import x509
+    from cryptography.x509.oid import NameOID
+    key = rsa.generate_private_key(public_exponent=65537, key_size=2048)
+    dn = x509.Name([
+        x509.NameAttribute(NameOID.COUNTRY_NAME, "US"),
+        x509.NameAttribute(NameOID.ORGANIZATION_NAME, "Brave Fighter MOD"),
+        x509.NameAttribute(NameOID.COMMON_NAME, "MOD Debug"),
+    ])
+    now = datetime.now(timezone.utc)
+    cert = (x509.CertificateBuilder()
+        .subject_name(dn).issuer_name(dn)
+        .public_key(key.public_key())
+        .serial_number(x509.random_serial_number())
+        .not_valid_before(now - timedelta(days=1))
+        .not_valid_after(now + timedelta(days=365*10))
+        .sign(key, hashes.SHA256()))
+    cert_der = cert.public_bytes(serialization.Encoding.DER)
+    # Pass 1: tulis file non-META-INF
+    tmp1 = apk_out + '.aligned'
+    file_meta = []
+    for n in sorted(entries_to_pack.keys()):
+        d = entries_to_pack[n]
+        if n in ('AndroidManifest.xml','classes.dex','classes2.dex','resources.arsc'):
+            ct = 0; cd = d
+        else:
+            ct = 8
+            co = _zlib.compressobj(6, _zlib.DEFLATED, -15); cd = co.compress(d)+co.flush()
+        file_meta.append((n, cd, ct, len(cd), len(d), _zlib.crc32(d)&0xFFFFFFFF))
+    with open(tmp1,'wb') as f:
+        written = []
+        for n, cd, ct, cs, us, crc in file_meta:
+            nb = n.encode('utf-8'); hl = 30+len(nb); pos=f.tell()
+            ex = ((ALIGN-((pos+hl)%ALIGN))%ALIGN) if ct==0 else 0
+            f.write(_make_lfh(nb,crc,cs,us,ex,ct)); f.write(b'\x00'*ex)
+            lo = f.tell() - hl - ex
+            f.write(cd); written.append((n,nb,crc,cs,us,lo,ct,ex))
+        cds_pos = f.tell()
+        for n,nb,crc,cs,us,lo,ct,ex in written:
+            f.write(_make_cdh(nb,crc,cs,us,lo,ex,ct)+b'\x00'*ex)
+        cde_pos = f.tell()
+        f.write(_make_eocd(len(written), cde_pos-cds_pos, cds_pos))
+    # Baca kembali & build manifest+sf
+    import zipfile as _zf
+    with _zf.ZipFile(tmp1,'r') as za:
+        data_map = {nm: za.read(nm) for nm in za.namelist()}
+    mbuf = "Manifest-Version: 1.0\r\nCreated-By: Brave Fighter MOD 1.0\r\n\r\n"
+    for n in sorted(data_map):
+        if n.startswith('META-INF/'): continue
+        mbuf += f"Name: {n}\r\nSHA-256-Digest: {_b64sha(data_map[n])}\r\n\r\n"
+    mf = mbuf.encode()
+    sf = f"Signature-Version: 1.0\r\nCreated-By: Brave Fighter MOD 1.0\r\nSHA-256-Digest-Manifest: {_b64sha(mf)}\r\n\r\n"
+    for n in sorted(data_map):
+        if n.startswith('META-INF/'): continue
+        blk = f"Name: {n}\r\nSHA-256-Digest: {_b64sha(data_map[n])}\r\n\r\n".encode()
+        sf += f"Name: {n}\r\nSHA-256-Digest: {_b64sha(blk)}\r\n\r\n"
+    sf_bytes = sf.encode()
+    # Tanda tangani
+    signature = key.sign(sf_bytes, padding.PKCS1v15(), hashes.SHA256())
+    from asn1crypto import cms as _cms, x509 as _x509
+    ca = _x509.Certificate.load(cert_der)
+    ias = _cms.IssuerAndSerialNumber({'issuer': ca['tbs_certificate']['issuer'],'serial_number': ca['tbs_certificate']['serial_number']})
+    si = _cms.SignerInfo({'version':'v1','sid':('issuer_and_serial_number',ias),
+        'digest_algorithm':{'algorithm':'sha256','parameters':None},
+        'signature_algorithm':{'algorithm':'sha256_rsa','parameters':None},'signature':signature})
+    cc = _cms.CertificateChoices(name='certificate', value=ca)
+    sd = _cms.SignedData({'version':'v1','digest_algorithms':[{'algorithm':'sha256','parameters':None}],
+        'encap_content_info':{'content_type':'data'},'certificates':_cms.CertificateSet([cc]),'signer_infos':[si]})
+    rsa_bytes = _cms.ContentInfo({'content_type':'signed_data','content':sd}).dump()
+
+    # Pass 2: tulis final APK dengan META-INF signature
+    final_entries = dict(entries_to_pack)
+    final_entries['META-INF/MANIFEST.MF'] = mf
+    final_entries['META-INF/CERT.SF'] = sf_bytes
+    final_entries['META-INF/CERT.RSA'] = rsa_bytes
+    file_meta2 = []
+    for n in sorted(final_entries.keys()):
+        d = final_entries[n]
+        if n in ('AndroidManifest.xml','classes.dex','classes2.dex','resources.arsc') or (n.startswith('META-INF/') and n.endswith('.RSA')):
+            ct = 0; cd = d
+        else:
+            ct = 8
+            co = _zlib.compressobj(6, _zlib.DEFLATED, -15); cd = co.compress(d)+co.flush()
+        file_meta2.append((n, cd, ct, len(cd), len(d), _zlib.crc32(d)&0xFFFFFFFF))
+    with open(apk_out,'wb') as f:
+        written = []
+        for n, cd, ct, cs, us, crc in file_meta2:
+            nb = n.encode('utf-8'); hl = 30+len(nb); pos=f.tell()
+            ex = ((ALIGN-((pos+hl)%ALIGN))%ALIGN) if ct==0 else 0
+            f.write(_make_lfh(nb,crc,cs,us,ex,ct)); f.write(b'\x00'*ex)
+            lo = f.tell() - hl - ex
+            f.write(cd); written.append((n,nb,crc,cs,us,lo,ct,ex))
+        cds_pos = f.tell()
+        for n,nb,crc,cs,us,lo,ct,ex in written:
+            f.write(_make_cdh(nb,crc,cs,us,lo,ex,ct)+b'\x00'*ex)
+        cde_pos = f.tell()
+        f.write(_make_eocd(len(written), cde_pos-cds_pos, cds_pos))
+    os.unlink(tmp1)
     sz = os.path.getsize(apk_out)
     print(f"[+] APK mod berhasil dibuat: {apk_out} ({sz:,} bytes)")
     print("")
