@@ -194,3 +194,36 @@ dan seluruh 22 XML asset akan terdekripsi 100% menjadi UTF-8.
 - ✅ **7 file sisanya** (title/msg/shop/items/task/BattleArea) punya struktur yang dapat didekripsi PENUH oleh script ini segera setelah APK asli diberikan.
 
 Catatan: file 7z yang di-upload user (`com.joynow.monster.gp.7z.txt`, 865 KB) berisi `/data/data/com.joynow.monster.gp/` dari device (savegame, shared_prefs, cache WebView, DB analytics). Isi `monster_data.db` dan `Cocos2dxPrefsFile.xml` di dalamnya **identik byte-per-byte** dengan yang sudah ada di repo `savegame_data/` — jadi tidak ada data baru untuk dipulihkan, dan tidak ada APK asli di dalamnya.
+
+---
+
+## ✅ `assets_decrypted/` — SEMUA 43 XML asset BERHASIL DIDEKRIPSI PENUH
+
+Setelah APK asli `Brave_Fighter_2.3.4.apk` (27 MB, package `com.joynow.monster.gp`)
+tersedia dari upload user, pipeline `decrypt/extract_and_decrypt.py` mengekstrak
+dan mendekripsi seluruh 43 file XML di dalam `assets/`:
+
+**Temuan kunci lapisan-1 (revisi dari analisis statis):**
+Terdapat **3 variasi** XOR lapisan-1 yang dipakai game (bukan cuma satu kunci+satu fase):
+
+| Var | Konfigurasi | File yang memakai |
+|---|---|---|
+| A | key=`hzkjhstgh`, phase=0, no prefix | BattleArea, items, msg, shop, task, title, monster, monstergroup, english/* terenkripsi |
+| B | key=`kmshtatsk`, phase=0, no prefix | EnemyGroup |
+| C | key=`hzkjhstgh`, phase=3, 3-byte prefix `\x87\xC1\xD4` | equip, skill, drop, achievement, gamelevel |
+
+Deteksi varian dilakukan otomatis dengan brute force atas (2 kunci) × (9 fase) ×
+(0..4 prefix byte) yang menghasilkan magic `<?xml`.
+
+**Hasil:**
+- ✅ **43/43 file** terdekripsi menjadi UTF-8 yang dapat dibaca (Tionghoa Tradisional untuk versi CN, English untuk versi `english/`).
+- ❌ **0 file tersisa rusak** (semua byte EF BFBD transcoding dari repo lama tergantikan oleh ciphertext asli dari APK).
+- 📦 **Total**: 43 file, 620 KB teks XML bersih.
+- 🔑 **25 kode redeem/cheat** (`77F574bB`, `t42nyp0F`, dll.) terungkap di `activecode.xml`.
+- 🗡️ Data monster (nama, deskripsi, HP/damage/defense/speed/gold cost), senjata
+  (英雄戰劍, 君主劍, 斬魔刀, ...), armor, skill, achievement, level/map, pesan UI,
+  dan shop item semuanya dapat dibaca utuh dalam Bahasa Tionghoa Tradisional.
+
+File `Brave_Fighter.apk` (APK asli yang sudah diekstrak dari ZIP luar) tersimpan di
+root repo untuk referensi; folder `apk_decrypted/` berisi tiga tahap: `apk/` (raw
+ciphertext), `l1/` (setelah XOR), `l2/` (setelah RC4+hex-decrypt + GBK→UTF-8).

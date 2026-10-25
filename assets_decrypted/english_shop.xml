@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<goods>
+	<!-- index: 0第一页，1第二页，2第三页 type: 0真实货币购买，1金币购买，2水晶购买 -->
+	<good id="23" name="Epic Mercenary" 	        describ="Get 3 BOSS and 10000 gold"        price="119"   	index="0" type="2" texturename="english/shop_goods_28.png" />
+	<good id="2"  name="Legendary weapon"   describ="Including 4 epic equipments"	  price="1499"    index="0" type="0" texturename="english/shop_goods_0.png" />
+	<good id="25" name="Hot sale"   		describ="50 diamonds 10000 gold 2 Potion 2 scroll and a blade"	  price="499"    index="0" type="0" texturename="english/shop_goods_new.png" />
+	<good id="0"  name="Potion" 		    describ="12 potions can recovery your health."        price="24"   index="0" type="2" texturename="english/shop_goods_10.png" />
+	<good id="1"  name="Reborn Scroll"   	describ="12 scrolls which can revive mercenary."	      price="20"   index="0" type="2" texturename="english/shop_goods_9.png" />
+	<good id="3"  name="Rapid cooldown"     describ="Reduce 50% of your skill‘s cooling time."  price="40"  index="0" type="2" texturename="english/shop_goods_3.png" />              
+	<good id="4"  name="Team expansion"     describ="Providing you another two room in your team."	  price="40"  index="0" type="2" texturename="english/shop_goods_1.png" />
+	<good id="5"  name="Self-regeneration"  describ="Recovery 5% of your health per 4 seconds."   price="20"  index="0" type="2" texturename="english/shop_goods_4.png" />
+	<good id="6"  name="Double loot rate"   describ="Increase loot chance when you open the chest."	  price="20"  index="0" type="2" texturename="english/shop_goods_6.png" />
+	
+	<good id="24" name="Gold Bonus"  	    describ="Get 100000 gold and 20 potions"		price="99"  index="1" type="2" texturename="english/shop_goods_29.png" />		 
+	<good id="7"  name="10000 Gold" 	describ="Purchase 10000 Gold."		price="20"  index="1" type="2" texturename="english/shop_goods_11.png" />
+	<good id="8"  name="30000 Gold"     describ="Purchase 25000 Gold.Get 5000 for free!"	 	price="50"  index="1" type="2" texturename="english/shop_goods_12.png" />
+	<good id="9"  name="60000 Gold"      describ="Purchase 45000 Gold.Get 15000 for free!"	    price="90"  index="1" type="2" texturename="english/shop_goods_13.png" />
+	<good id="10" name="120000 Gold"    describ="Purchase 80000 Gold.Get 40000 for free!"	    price="160" index="1" type="2" texturename="english/shop_goods_16.png" />
+	<good id="11" name="180000 Gold"    describ="Purchase 100000 Gold.Get 80000 for free!"	    price="200" index="1" type="2" texturename="english/shop_goods_17.png" />
+
+	<good id="22"  name="Diamonds Bonus" describ="Get 350 diamonds,7000 gold,14 potions in 7 days"   price="999"   index="2" type="0" texturename="english/shop_goods_27.png" />
+	<good id="12"  name="20 Diamonds" 	 describ="Get 20 diamonds"   price="199"   index="2" type="0" texturename="english/shop_goods_18.png" />
+	<good id="13"  name="55 Diamonds" 	 describ="Get 55 diamonds"   price="499"   index="2" type="0" texturename="english/shop_goods_19.png" />
+	<good id="14"  name="120 Diamonds"    describ="Get 120 diamonds"  price="999"   index="2" type="0" texturename="english/shop_goods_20.png" />
+	<good id="15"  name="270 Diamonds"   describ="Get 270 diamonds"  price="1999"  index="2" type="0" texturename="english/shop_goods_21.png" />
+	<good id="16"  name="840 Diamonds"   describ="Get 480 diamonds"  price="4999"  index="2" type="0" texturename="english/shop_goods_24.png" />
+	<good id="17"  name="2000 Diamonds"  describ="Get 2000 diamonds" price="9999"  index="2" type="0" texturename="english/shop_goods_25.png" />
+	<good id="18"  name="5000 Diamonds"  describ="Get 5000 diamonds" price="19299"  index="2" type="0" texturename="english/shop_goods_26.png" />
+	
+	<good id="19"  name="Reborn"  describ="Cost 5 diamonds to revive"     price="5"   index="-1" type="2" texturename="english/shop_goods_14.png" />
+	<good id="20"  name="16 bags"  describ="Cost 10 diamonds to expand 16 grids in your bag"     price="10"    index="-1" type="2" texturename="english/shop_goods_7.png" />
+	<good id="21"  name="Stamina recovery"  describ="Cost 10 diamonds to recovery all your stamina"     price="10"    index="-1" type="2" texturename="english/shop_goods_30.png" />
+</goods>
