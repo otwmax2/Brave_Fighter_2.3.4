@@ -1,0 +1,1038 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"/>
+<title>Brave Fighter HTML5 — 萌兽獵人 Web Port</title>
+<style>
+* { margin:0; padding:0; box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
+html, body { width:100%; height:100%; background:#000; overflow:hidden; font-family:-apple-system,BlinkMacSystemFont,"PingFang TC","Microsoft JhengHei",sans-serif; color:#fff; user-select:none; touch-action:manipulation; }
+#wrap { position:fixed; inset:0; display:flex; align-items:center; justify-content:center; background:#0b0814; }
+canvas { background:linear-gradient(#2b4f8b 0%, #5a9ed3 60%, #9cc780 61%, #3c7a28 100%); display:block; image-rendering:pixelated; box-shadow:0 0 30px rgba(0,0,0,0.8); }
+#ui { position:absolute; inset:0; pointer-events:none; }
+.screen { position:absolute; inset:0; display:flex; flex-direction:column; pointer-events:auto; }
+.hidden { display:none !important; }
+.panel { background:rgba(10,10,30,0.85); backdrop-filter:blur(4px); border:2px solid #f2c744; border-radius:12px; padding:12px; overflow-y:auto; }
+button { background:linear-gradient(#ffd95a,#e09612); border:2px solid #8b5a00; color:#3b1e00; font-weight:bold; padding:8px 14px; border-radius:8px; font-size:14px; cursor:pointer; pointer-events:auto; box-shadow:0 2px 0 #6b4600; transition:transform .05s; }
+button:active { transform:translateY(2px); box-shadow:0 0 0 #6b4600; }
+button:disabled { background:#666; border-color:#333; color:#aaa; box-shadow:none; }
+.btn-red { background:linear-gradient(#ff7979,#c62828); border-color:#600; color:#fff; box-shadow:0 2px 0 #600; }
+.btn-blue { background:linear-gradient(#6ec8ff,#1565c0); border-color:#0d3b70; color:#fff; box-shadow:0 2px 0 #0d3b70; }
+.btn-green { background:linear-gradient(#86e074,#2e7d32); border-color:#1b4010; color:#fff; box-shadow:0 2px 0 #1b4010; }
+h1,h2,h3 { text-shadow:2px 2px 0 #000, -1px -1px 0 #000; }
+.title { text-align:center; font-size:32px; color:#ffd95a; margin-bottom:6px; text-shadow:3px 3px 0 #600, -2px -2px 0 #600; letter-spacing:2px; }
+.subtitle { text-align:center; color:#ccc; margin-bottom:12px; font-size:13px; }
+.col { display:flex; flex-direction:column; gap:8px; }
+.row { display:flex; flex-direction:row; gap:8px; flex-wrap:wrap; align-items:center; justify-content:center; }
+.bar { height:20px; background:#222; border:1px solid #000; border-radius:10px; overflow:hidden; position:relative; }
+.bar > .fill { height:100%; background:linear-gradient(#ff3030,#b50000); transition:width .2s; }
+.bar.mp > .fill { background:linear-gradient(#30d8ff,#0062b5); }
+.bar > .lbl { position:absolute; inset:0; display:flex; align-items:center; justify-content:center; font-size:11px; color:#fff; text-shadow:1px 1px 0 #000; }
+.card { background:rgba(0,0,0,0.5); border:2px solid #777; border-radius:8px; padding:8px; }
+.card.owned { border-color:#4CAF50; }
+.card.selected { border-color:#ffd95a; box-shadow:0 0 8px #ffd95a; }
+.chip { display:inline-block; padding:2px 6px; border-radius:6px; font-size:11px; background:#222; border:1px solid #444; margin:1px; }
+.chip.hero { background:#1b5e20; border-color:#4CAF50; color:#b9f6ca; }
+.chip.cost { background:#7a4f00; border-color:#ffc107; color:#fff176; }
+.modal-bg { position:absolute; inset:0; background:rgba(0,0,0,0.7); display:flex; align-items:center; justify-content:center; z-index:999; pointer-events:auto; }
+.modal { background:#1a1020; border:3px solid #f2c744; border-radius:14px; padding:16px; max-width:90%; max-height:80%; overflow-y:auto; }
+.flash { animation:flash .3s; }
+@keyframes flash { 0%{background:rgba(255,255,100,0.5);} 100%{background:transparent;} }
+.dmg-txt { position:absolute; color:#fff; font-weight:bold; font-size:14px; text-shadow:1px 1px 0 #000; pointer-events:none; }
+.tab { padding:6px 12px; background:#222; color:#aaa; border:1px solid #444; border-radius:6px 6px 0 0; cursor:pointer; font-size:13px; pointer-events:auto; }
+.tab.active { background:#1a1020; color:#ffd95a; border-color:#f2c744; border-bottom-color:#1a1020; }
+#hud { position:absolute; top:0; left:0; right:0; padding:6px; display:flex; justify-content:space-between; align-items:flex-start; pointer-events:none; }
+#hud .stats { display:flex; gap:8px; flex-direction:column; }
+.stat { background:rgba(0,0,0,0.55); border:1px solid #f2c744; border-radius:6px; padding:2px 8px; font-size:13px; }
+.stat b { color:#ffd95a; }
+#skillBar { position:absolute; bottom:0; left:0; right:0; padding:6px; display:flex; gap:6px; justify-content:center; pointer-events:none; }
+.skill-btn { width:56px; height:56px; border-radius:50%; background:radial-gradient(circle,#5e8ef2,#1a2b70); border:3px solid #ffd95a; position:relative; pointer-events:auto; cursor:pointer; display:flex; align-items:center; justify-content:center; color:#fff; font-size:10px; text-align:center; font-weight:bold; }
+.skill-btn.cd::after { content:''; position:absolute; inset:0; border-radius:50%; background:rgba(0,0,0,0.6); }
+.skill-btn .cd-t { position:absolute; font-size:16px; text-shadow:1px 1px 0 #000; z-index:2; }
+.skill-btn.ready { box-shadow:0 0 12px #6ec8ff; }
+#battleLog { position:absolute; left:6px; bottom:80px; max-height:100px; overflow:hidden; font-size:11px; color:#fff; text-shadow:1px 1px 0 #000; pointer-events:none; }
+</style>
+</head>
+<body>
+<div id="wrap">
+  <canvas id="game" width="960" height="540"></canvas>
+  <div id="ui">
+
+    <!-- =============== MAIN MENU =============== -->
+    <div id="screen-menu" class="screen">
+      <div style="flex:1; display:flex; flex-direction:column; align-items:center; justify-content:center; padding:20px;">
+        <div class="title">⚔ 萌兽獵人 Brave Fighter ⚔</div>
+        <div class="subtitle">HTML5 Web Port — side-scroll auto battler</div>
+        <div class="col" style="width:min(320px,90%); margin-top:20px;">
+          <button id="btn-start" class="btn-green" style="font-size:18px; padding:14px;">▶ 開始冒險</button>
+          <button id="btn-continue" class="btn-blue">▶ 繼續存檔</button>
+          <button id="btn-reset" class="btn-red">🗑 清除存檔重玩</button>
+          <button id="btn-how">📖 玩法說明</button>
+        </div>
+        <div id="saveinfo" class="subtitle" style="margin-top:20px;"></div>
+      </div>
+    </div>
+
+    <!-- =============== STAGE SELECT =============== -->
+    <div id="screen-stage" class="screen hidden">
+      <div style="padding:10px; display:flex; justify-content:space-between; align-items:center;">
+        <h2 style="color:#ffd95a;">🗺 關卡選擇</h2>
+        <div>
+          <span class="stat">💰 <b id="s-gold">0</b></span>
+          <span class="stat">💎 <b id="s-gem">0</b></span>
+          <button id="btn-to-town" class="btn-blue" style="margin-left:6px;">🏠 城鎮</button>
+        </div>
+      </div>
+      <div style="flex:1; overflow-y:auto; padding:8px;" id="levelList"></div>
+    </div>
+
+    <!-- =============== TOWN (team + shop + skills) =============== -->
+    <div id="screen-town" class="screen hidden">
+      <div style="padding:8px; display:flex; gap:6px;">
+        <div class="tab active" data-tab="team">隊伍</div>
+        <div class="tab" data-tab="shop">商店</div>
+        <div class="tab" data-tab="skills">技能</div>
+        <div style="flex:1;"></div>
+        <span class="stat">💰 <b id="t-gold">0</b></span>
+        <span class="stat">💎 <b id="t-gem">0</b></span>
+        <button id="btn-to-stage" class="btn-green">⚔ 出征</button>
+      </div>
+
+      <!-- TEAM -->
+      <div id="tab-team" class="tab-pane" style="flex:1; padding:8px; overflow-y:auto;">
+        <h3 style="margin-bottom:6px;">你的隊伍 (最多5位)</h3>
+        <div class="row" id="teamSlots" style="margin-bottom:10px;"></div>
+        <h3 style="margin:8px 0 6px;">英雄圖鑑（點擊招募/升級）</h3>
+        <div class="row" id="heroList"></div>
+      </div>
+
+      <!-- SHOP -->
+      <div id="tab-shop" class="tab-pane hidden" style="flex:1; padding:8px; overflow-y:auto;">
+        <h3 style="margin-bottom:6px;">商店（點擊購買）</h3>
+        <div class="row" id="shopList"></div>
+      </div>
+
+      <!-- SKILLS -->
+      <div id="tab-skills" class="tab-pane hidden" style="flex:1; padding:8px; overflow-y:auto;">
+        <h3 style="margin-bottom:6px;">技能配置（戰鬥中手動施放，3個快捷欄）</h3>
+        <div class="row" id="skillSlots" style="margin-bottom:8px;"></div>
+        <h3 style="margin:8px 0 6px;">已學習</h3>
+        <div class="row" id="skillList"></div>
+      </div>
+    </div>
+
+    <!-- =============== BATTLE =============== -->
+    <div id="screen-battle" class="screen hidden">
+      <div id="hud">
+        <div class="stats">
+          <div class="stat">第 <b id="b-level">1</b> 關 · Wave <b id="b-wave">1</b>/<b id="b-waves">2</b></div>
+          <div class="stat">💰 <b id="b-gold">0</b></div>
+        </div>
+        <div style="text-align:right;">
+          <button id="btn-quit" class="btn-red" style="padding:4px 8px; font-size:12px;">逃跑</button>
+          <button id="btn-speed" class="btn-blue" style="padding:4px 8px; font-size:12px;">1×</button>
+        </div>
+      </div>
+      <div id="battleLog"></div>
+      <div id="skillBar"></div>
+    </div>
+
+    <!-- =============== MODAL =============== -->
+    <div id="modal" class="modal-bg hidden">
+      <div class="modal">
+        <h2 id="modal-title" style="color:#ffd95a; margin-bottom:8px;">Title</h2>
+        <div id="modal-body" style="margin-bottom:12px; line-height:1.6; font-size:14px;"></div>
+        <div id="modal-btns" class="row"></div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+/* ===========================================================
+   BRAVE FIGHTER HTML5 — single-file port
+   Game data embedded below (parsed from APK assets XML)
+   =========================================================== */
+
+// ---------- GAME DATA ----------
+const GAMEDATA = {"heroes": [{"name": "麗蒂雅", "id": 0, "defaultscale": 1.0, "quality": 2, "type": 2, "hp": 2000.0, "damage": 450.0, "defense": 10, "movespeed": 160.0, "attackDelt": 2.5, "cgindex0": 28, "cgindex1": 29, "opengold": 0, "uplevelgold": 500, "getpercent": 100, "getlevel": -1, "dropexp": 0, "attackrange": 400, "dropgold": 0, "hitsound": "xx.ogg", "hiteffectid": 124, "attacksound": "hit_1.ogg", "texName": "img_name_1.png", "Height": 120, "Width": 50, "describ": "偶爾任性的小公主，天性善良，從小和亞瑟青梅竹馬！"}, {"name": "血牙", "id": 1, "defaultscale": 0.8, "quality": 0, "type": 1, "hp": 3500.0, "damage": 200.0, "defense": 15, "movespeed": 155.0, "attackDelt": 2.5, "cgindex0": 0, "cgindex1": 1, "opengold": 1000, "uplevelgold": 250, "getpercent": 100, "getlevel": 1, "dropexp": 0, "attackrange": 120, "dropgold": 0, "hitsound": "xx.ogg", "hiteffectid": 125, "attacksound": "atk_mon_1.ogg", "texName": "img_name_5.png", "Height": 115, "Width": 70, "describ": "敏捷型，被黑暗力量所控制，對鮮血的嗜好使它們濫殺成性。"}, {"name": "艾諾", "id": 2, "defaultscale": 1.0, "quality": 0, "type": 2, "hp": 1320.0, "damage": 420.0, "defense": 5, "movespeed": 150.0, "attackDelt": 3.5, "cgindex0": 2, "cgindex1": 3, "opengold": 3000, "uplevelgold": 400, "getpercent": 75, "getlevel": 4, "dropexp": 0, "attackrange": 250, "dropgold": 0, "hitsound": "xx.ogg", "hiteffectid": 124, "attacksound": "atk_mon_2.ogg", "texName": "img_name_6.png", "Height": 135, "Width": 45, "describ": "控制型，棲息於森林深處，受黑暗力量影響常襲擊附近村民。"}, {"name": "庫格", "id": 3, "defaultscale": 0.8, "quality": 1, "type": 0, "hp": 5000.0, "damage": 525.0, "defense": 30, "movespeed": 130.0, "attackDelt": 3.5, "cgindex0": 4, "cgindex1": 5, "opengold": 5000, "uplevelgold": 650, "getpercent": 50, "getlevel": 9, "dropexp": 0, "attackrange": 80, "dropgold": 0, "hitsound": "xx.ogg", "hiteffectid": 123, "attacksound": "atk_mon_3.ogg", "texName": "img_name_7.png", "Height": 150, "Width": 55, "describ": "肉盾型，格雷爾最忠實可靠的部下，其精湛的劍術讓無數人驚嘆。"}, {"name": "伊莉娜", "id": 4, "defaultscale": 0.8, "quality": 0, "type": 4, "hp": 1450.0, "damage": 380.0, "defense": 5, "movespeed": 140.0, "attackDelt": 4.0, "cgindex0": 6, "cgindex1": 7, "opengold": 8000, "uplevelgold": 800, "getpercent": 25, "getlevel": 12, "dropexp": 0, "attackrange": 300, "dropgold": 0, "hitsound": "xx.ogg", "hiteffectid": 124, "attacksound": "atk_mon_4.ogg", "texName": "img_name_8.png", "Height": 130, "Width": 40, "describ": "輔助型，有著一顆溫柔善良的心，經常救助他人。"}, {"name": "薩斯", "id": 5, "defaultscale": 1.0, "quality": 1, "type": 3, "hp": 1700.0, "damage": 660.0, "defense": 10, "movespeed": 155.0, "attackDelt": 3.0, "cgindex0": 8, "cgindex1": 9, "opengold": 12000, "uplevelgold": 700, "getpercent": 40, "getlevel": 15, "dropexp": 0, "attackrange": 250, "dropgold": 0, "hitsound": "xx.ogg", "hiteffectid": 124, "attacksound": "atk_mon_5.ogg", "texName": "img_name_9.png", "Height": 160, "Width": 60, "describ": "遠攻型，比較弱小的龍族，中了黑暗力量後變的殘暴無比。"}, {"name": "伊莉婭", "id": 6, "defaultscale": 1.0, "quality": 1, "type": 2, "hp": 1880.0, "damage": 1040.0, "defense": 5, "movespeed": 160.0, "attackDelt": 4.0, "cgindex0": 10, "cgindex1": 11, "opengold": 16000, "uplevelgold": 850, "getpercent": 30, "getlevel": 21, "dropexp": 0, "attackrange": 350, "dropgold": 0, "hitsound": "xx.ogg", "hiteffectid": 124, "attacksound": "atk_mon_6.ogg", "texName": "img_name_10.png", "Height": 110, "Width": 45, "describ": "群攻型，掌控強大的冰雷魔法，充滿了正義感的愛之女神。"}, {"name": "夏那姆", "id": 7, "defaultscale": 1.0, "quality": 2, "type": 1, "hp": 4100.0, "damage": 290.0, "defense": 15, "movespeed": 180.0, "attackDelt": 2.0, "cgindex0": 12, "cgindex1": 13, "opengold": 20000, "uplevelgold": 900, "getpercent": 20, "getlevel": 27, "dropexp": 0, "attackrange": 160, "dropgold": 0, "hitsound": "xx.ogg", "hiteffectid": 123, "attacksound": "atk_mon_7.ogg", "texName": "img_name_11.png", "Height": 110, "Width": 65, "describ": "敏捷型，孤傲的流浪劍客，劍法超群，卻又過著到處流浪的生活。"}, {"name": "布雷茲", "id": 8, "defaultscale": 1.2, "quality": 2, "type": 2, "hp": 5800.0, "damage": 1155.0, "defense": 20, "movespeed": 150.0, "attackDelt": 3.5, "cgindex0": 14, "cgindex1": 15, "opengold": 25000, "uplevelgold": 1000, "getpercent": 10, "getlevel": 30, "dropexp": 0, "attackrange": 200, "dropgold": 0, "hitsound": "xx.ogg", "hiteffectid": 123, "attacksound": "atk_mon_8.ogg", "texName": "img_name_12.png", "Height": 115, "Width": 60, "describ": "強攻型，作為大陸最高級的守衛，幾千年來一直堅守自己的職責！"}, {"name": "萊昂哈特", "id": 9, "defaultscale": 1.0, "quality": 3, "type": 0, "hp": 7000.0, "damage": 1350.0, "defense": 30, "movespeed": 150.0, "attackDelt": 4.5, "cgindex0": 16, "cgindex1": 17, "opengold": 80, "uplevelgold": 1200, "getpercent": 1, "getlevel": 3, "dropexp": 0, "attackrange": 250, "dropgold": 0, "hitsound": "xx.ogg", "hiteffectid": 123, "attacksound": "hit_0.ogg", "texName": "img_name_13.png", "Height": 135, "Width": 95, "describ": "肉盾型，皮糙肉厚，其龐大的身軀令人畏懼。"}, {"name": "達古達", "id": 10, "defaultscale": 1.0, "quality": 3, "type": 1, "hp": 4900.0, "damage": 2200.0, "defense": 20, "movespeed": 130.0, "attackDelt": 5.5, "cgindex0": 20, "cgindex1": 21, "opengold": 100, "uplevelgold": 1500, "getpercent": 1, "getlevel": 7, "dropexp": 0, "attackrange": 150, "dropgold": 0, "hitsound": "xx.ogg", "hiteffectid": 125, "attacksound": "hit_2.ogg", "texName": "img_name_14.png", "Height": 170, "Width": 80, "describ": "近攻型，易暴怒。巨大的體型及強大的力量讓人難以招架！"}, {"name": "斯爾夫", "id": 11, "defaultscale": 1.0, "quality": 3, "type": 3, "hp": 3800.0, "damage": 2500.0, "defense": 15, "movespeed": 170.0, "attackDelt": 5.0, "cgindex0": 18, "cgindex1": 19, "opengold": 120, "uplevelgold": 1800, "getpercent": 1, "getlevel": 16, "dropexp": 0, "attackrange": 330, "dropgold": 0, "hitsound": "xx.ogg", "hiteffectid": 124, "attacksound": "hit_1.ogg", "texName": "img_name_15.png", "Height": 145, "Width": 150, "describ": "控制型，被黑暗力量影響而變異，常常襲擊誤入洞穴的人！"}], "enemies": [{"name": "血牙", "id": 12, "defaultscale": 0.8, "quality": 0, "type": 1, "hp": 2100.0, "damage": 225.0, "defense": 15, "movespeed": 125.0, "attackDelt": 5.0, "cgindex0": 0, "cgindex1": -1, "opengold": 0, "uplevelgold": 0, "getpercent": 0, "getlevel": -1, "dropexp": 180, "attackrange": 96, "dropgold": 12, "hitsound": "xx.ogg", "hiteffectid": 125, "attacksound": "atk_mon_1.ogg", "texName": "img_name_5.png", "Height": 115, "Width": 70, "describ": 0}, {"name": "艾諾", "id": 13, "defaultscale": 1.0, "quality": 0, "type": 2, "hp": 1980.0, "damage": 473.0, "defense": 5, "movespeed": 120.0, "attackDelt": 7.0, "cgindex0": -1, "cgindex1": 3, "opengold": 0, "uplevelgold": 0, "getpercent": 0, "getlevel": -1, "dropexp": 270, "attackrange": 200, "dropgold": 18, "hitsound": "xx.ogg", "hiteffectid": 124, "attacksound": "atk_mon_2.ogg", "texName": "img_name_6.png", "Height": 135, "Width": 45, "describ": 0}, {"name": "庫格", "id": 14, "defaultscale": 0.8, "quality": 1, "type": 0, "hp": 2400.0, "damage": 495.0, "defense": 30, "movespeed": 100.0, "attackDelt": 7.0, "cgindex0": 4, "cgindex1": -1, "opengold": 0, "uplevelgold": 0, "getpercent": 0, "getlevel": -1, "dropexp": 360, "attackrange": 64, "dropgold": 22, "hitsound": "xx.ogg", "hiteffectid": 123, "attacksound": "atk_mon_3.ogg", "texName": "img_name_7.png", "Height": 150, "Width": 55, "describ": 0}, {"name": "伊莉娜", "id": 15, "defaultscale": 0.8, "quality": 0, "type": 4, "hp": 2175.0, "damage": 420.0, "defense": 5, "movespeed": 110.0, "attackDelt": 8.0, "cgindex0": 6, "cgindex1": -1, "opengold": 0, "uplevelgold": 0, "getpercent": 0, "getlevel": -1, "dropexp": 540, "attackrange": 240, "dropgold": 28, "hitsound": "xx.ogg", "hiteffectid": 124, "attacksound": "atk_mon_4.ogg", "texName": "img_name_8.png", "Height": 130, "Width": 40, "describ": 0}, {"name": "薩斯", "id": 16, "defaultscale": 1.0, "quality": 1, "type": 3, "hp": 2550.0, "damage": 720.0, "defense": 10, "movespeed": 125.0, "attackDelt": 6.0, "cgindex0": 8, "cgindex1": -1, "opengold": 0, "uplevelgold": 0, "getpercent": 0, "getlevel": -1, "dropexp": 810, "attackrange": 200, "dropgold": 32, "hitsound": "xx.ogg", "hiteffectid": 124, "attacksound": "atk_mon_5.ogg", "texName": "img_name_9.png", "Height": 160, "Width": 60, "describ": 0}, {"name": "伊莉婭", "id": 17, "defaultscale": 1.0, "quality": 1, "type": 2, "hp": 2820.0, "damage": 1140.0, "defense": 5, "movespeed": 130.0, "attackDelt": 8.0, "cgindex0": 10, "cgindex1": -1, "opengold": 0, "uplevelgold": 0, "getpercent": 0, "getlevel": -1, "dropexp": 1080, "attackrange": 280, "dropgold": 38, "hitsound": "xx.ogg", "hiteffectid": 124, "attacksound": "atk_mon_6.ogg", "texName": "img_name_10.png", "Height": 110, "Width": 45, "describ": 0}, {"name": "夏那姆", "id": 18, "defaultscale": 1.0, "quality": 2, "type": 1, "hp": 3300.0, "damage": 315.0, "defense": 15, "movespeed": 150.0, "attackDelt": 4.0, "cgindex0": -1, "cgindex1": 13, "opengold": 0, "uplevelgold": 0, "getpercent": 0, "getlevel": -1, "dropexp": 1440, "attackrange": 128, "dropgold": 42, "hitsound": "xx.ogg", "hiteffectid": 123, "attacksound": "atk_mon_7.ogg", "texName": "img_name_11.png", "Height": 110, "Width": 65, "describ": 0}, {"name": "布雷茲", "id": 19, "defaultscale": 1.2, "quality": 2, "type": 2, "hp": 4200.0, "damage": 1260.0, "defense": 20, "movespeed": 120.0, "attackDelt": 7.0, "cgindex0": 14, "cgindex1": -1, "opengold": 0, "uplevelgold": 0, "getpercent": 0, "getlevel": -1, "dropexp": 1800, "attackrange": 160, "dropgold": 48, "hitsound": "xx.ogg", "hiteffectid": 123, "attacksound": "atk_mon_8.ogg", "texName": "img_name_12.png", "Height": 115, "Width": 60, "describ": 0}, {"name": "萊昂哈特", "id": 20, "defaultscale": 1.2, "quality": 3, "type": 0, "hp": 2500.0, "damage": 750.0, "defense": 30, "movespeed": 120.0, "attackDelt": 9.0, "cgindex0": 16, "cgindex1": 17, "opengold": 0, "uplevelgold": 0, "getpercent": 0, "getlevel": -1, "dropexp": 500, "attackrange": 250, "dropgold": 250, "hitsound": "xx.ogg", "hiteffectid": 123, "attacksound": "hit_0.ogg", "texName": "img_name_13.png", "Height": 135, "Width": 95, "describ": 0}, {"name": "達古達", "id": 21, "defaultscale": 1.0, "quality": 3, "type": 1, "hp": 6800.0, "damage": 820.0, "defense": 20, "movespeed": 100.0, "attackDelt": 11.0, "cgindex0": 20, "cgindex1": 21, "opengold": 0, "uplevelgold": 0, "getpercent": 0, "getlevel": -1, "dropexp": 1500, "attackrange": 150, "dropgold": 375, "hitsound": "xx.ogg", "hiteffectid": 125, "attacksound": "hit_2.ogg", "texName": "img_name_15.png", "Height": 170, "Width": 80, "describ": 0}, {"name": "斯爾夫", "id": 22, "defaultscale": 1.0, "quality": 3, "type": 3, "hp": 11800.0, "damage": 1037.0, "defense": 15, "movespeed": 140.0, "attackDelt": 10.0, "cgindex0": 18, "cgindex1": 19, "opengold": 0, "uplevelgold": 0, "getpercent": 0, "getlevel": -1, "dropexp": 4000, "attackrange": 330, "dropgold": 500, "hitsound": "xx.ogg", "hiteffectid": 124, "attacksound": "hit_1.ogg", "texName": "img_name_14.png", "Height": 145, "Width": 150, "describ": 0}, {"name": "迪爾姆多", "id": 23, "defaultscale": 1.0, "quality": 3, "type": 1, "hp": 25000.0, "damage": 2100.0, "defense": 30, "movespeed": 80.0, "attackDelt": 12.0, "cgindex0": 22, "cgindex1": 23, "opengold": 0, "uplevelgold": 0, "getpercent": 0, "getlevel": -1, "dropexp": 25000, "attackrange": 240, "dropgold": 750, "hitsound": "xx.ogg", "hiteffectid": 123, "attacksound": "hit_0.ogg", "texName": "img_name_16.png", "Height": 215, "Width": 170, "describ": 0}, {"name": "古瓦諾", "id": 24, "defaultscale": 1.0, "quality": 3, "type": 2, "hp": 20000.0, "damage": 1050.0, "defense": 20, "movespeed": 180.0, "attackDelt": 7.0, "cgindex0": 24, "cgindex1": 25, "opengold": 0, "uplevelgold": 0, "getpercent": 0, "getlevel": -1, "dropexp": 10000, "attackrange": 300, "dropgold": 625, "hitsound": "xx.ogg", "hiteffectid": 125, "attacksound": "hit_2.ogg", "texName": "img_name_4.png", "Height": 245, "Width": 150, "describ": 0}, {"name": "貝勒德", "id": 25, "defaultscale": 1.0, "quality": 3, "type": 3, "hp": 30000.0, "damage": 2200.0, "defense": 40, "movespeed": 130.0, "attackDelt": 11.0, "cgindex0": 26, "cgindex1": 27, "opengold": 0, "uplevelgold": 0, "getpercent": 0, "getlevel": -1, "dropexp": 60000, "attackrange": 250, "dropgold": 1000, "hitsound": "xx.ogg", "hiteffectid": 123, "attacksound": "hit_0.ogg", "texName": "img_name_3.png", "Height": 280, "Width": 230, "describ": 0}, {"name": "嘍囉", "id": 26, "defaultscale": 0.8, "quality": 0, "type": 1, "hp": 1400.0, "damage": 150.0, "defense": 8, "movespeed": 125.0, "attackDelt": 5.0, "cgindex0": -1, "cgindex1": -1, "opengold": 0, "uplevelgold": 0, "getpercent": 0, "getlevel": -1, "dropexp": 60, "attackrange": 96, "dropgold": 6, "hitsound": "xx.ogg", "hiteffectid": 125, "attacksound": "atk_mon_1.ogg", "texName": "img_name_17.png", "Height": 115, "Width": 70, "describ": 0}, {"name": "嘍囉", "id": 27, "defaultscale": 1.0, "quality": 0, "type": 2, "hp": 1320.0, "damage": 315.0, "defense": 3, "movespeed": 120.0, "attackDelt": 7.0, "cgindex0": -1, "cgindex1": -1, "opengold": 0, "uplevelgold": 0, "getpercent": 0, "getlevel": -1, "dropexp": 90, "attackrange": 200, "dropgold": 9, "hitsound": "xx.ogg", "hiteffectid": 124, "attacksound": "atk_mon_2.ogg", "texName": "img_name_17.png", "Height": 95, "Width": 45, "describ": 0}, {"name": "嘍囉", "id": 28, "defaultscale": 0.8, "quality": 0, "type": 0, "hp": 1600.0, "damage": 330.0, "defense": 15, "movespeed": 100.0, "attackDelt": 7.0, "cgindex0": -1, "cgindex1": -1, "opengold": 0, "uplevelgold": 0, "getpercent": 0, "getlevel": -1, "dropexp": 120, "attackrange": 64, "dropgold": 11, "hitsound": "xx.ogg", "hiteffectid": 123, "attacksound": "atk_mon_3.ogg", "texName": "img_name_17.png", "Height": 150, "Width": 55, "describ": 0}, {"name": "嘍囉", "id": 29, "defaultscale": 0.8, "quality": 0, "type": 4, "hp": 1450.0, "damage": 280.0, "defense": 3, "movespeed": 110.0, "attackDelt": 8.0, "cgindex0": -1, "cgindex1": -1, "opengold": 0, "uplevelgold": 0, "getpercent": 0, "getlevel": -1, "dropexp": 180, "attackrange": 240, "dropgold": 14, "hitsound": "xx.ogg", "hiteffectid": 124, "attacksound": "atk_mon_4.ogg", "texName": "img_name_17.png", "Height": 130, "Width": 40, "describ": 0}, {"name": "嘍囉", "id": 30, "defaultscale": 1.0, "quality": 0, "type": 3, "hp": 1700.0, "damage": 480.0, "defense": 5, "movespeed": 125.0, "attackDelt": 6.0, "cgindex0": -1, "cgindex1": -1, "opengold": 0, "uplevelgold": 0, "getpercent": 0, "getlevel": -1, "dropexp": 270, "attackrange": 200, "dropgold": 16, "hitsound": "xx.ogg", "hiteffectid": 124, "attacksound": "atk_mon_5.ogg", "texName": "img_name_17.png", "Height": 160, "Width": 60, "describ": 0}, {"name": "嘍囉", "id": 31, "defaultscale": 1.0, "quality": 0, "type": 2, "hp": 1880.0, "damage": 760.0, "defense": 3, "movespeed": 130.0, "attackDelt": 8.0, "cgindex0": -1, "cgindex1": -1, "opengold": 0, "uplevelgold": 0, "getpercent": 0, "getlevel": -1, "dropexp": 360, "attackrange": 280, "dropgold": 19, "hitsound": "xx.ogg", "hiteffectid": 124, "attacksound": "atk_mon_6.ogg", "texName": "img_name_17.png", "Height": 110, "Width": 45, "describ": 0}, {"name": "嘍囉", "id": 32, "defaultscale": 1.0, "quality": 0, "type": 1, "hp": 2200.0, "damage": 210.0, "defense": 8, "movespeed": 150.0, "attackDelt": 4.0, "cgindex0": -1, "cgindex1": -1, "opengold": 0, "uplevelgold": 0, "getpercent": 0, "getlevel": -1, "dropexp": 480, "attackrange": 128, "dropgold": 21, "hitsound": "xx.ogg", "hiteffectid": 123, "attacksound": "atk_mon_7.ogg", "texName": "img_name_17.png", "Height": 110, "Width": 65, "describ": 0}, {"name": "嘍囉", "id": 33, "defaultscale": 1.2, "quality": 0, "type": 2, "hp": 2800.0, "damage": 840.0, "defense": 10, "movespeed": 120.0, "attackDelt": 7.0, "cgindex0": -1, "cgindex1": -1, "opengold": 0, "uplevelgold": 0, "getpercent": 0, "getlevel": -1, "dropexp": 600, "attackrange": 160, "dropgold": 24, "hitsound": "xx.ogg", "hiteffectid": 123, "attacksound": "atk_mon_8.ogg", "texName": "img_name_17.png", "Height": 120, "Width": 60, "describ": 0}, {"name": "爪牙", "id": 34, "defaultscale": 1.0, "quality": 0, "type": 1, "hp": 1200.0, "damage": 210.0, "defense": 8, "movespeed": 100.0, "attackDelt": 6.0, "cgindex0": -1, "cgindex1": -1, "opengold": 0, "uplevelgold": 0, "getpercent": 0, "getlevel": -1, "dropexp": 55, "attackrange": 76, "dropgold": 5, "hitsound": "xx.ogg", "hiteffectid": 123, "attacksound": "hit_0.ogg", "texName": "img_name_17.png", "Height": 115, "Width": 50, "describ": 0}, {"name": "爪牙", "id": 35, "defaultscale": 1.0, "quality": 0, "type": 1, "hp": 1100.0, "damage": 400.0, "defense": 5, "movespeed": 120.0, "attackDelt": 8.0, "cgindex0": -1, "cgindex1": -1, "opengold": 0, "uplevelgold": 0, "getpercent": 0, "getlevel": -1, "dropexp": 80, "attackrange": 114, "dropgold": 8, "hitsound": "xx.ogg", "hiteffectid": 123, "attacksound": "hit_0.ogg", "texName": "img_name_17.png", "Height": 115, "Width": 50, "describ": 0}, {"name": "爪牙", "id": 36, "defaultscale": 1.0, "quality": 0, "type": 3, "hp": 1000.0, "damage": 210.0, "defense": 3, "movespeed": 110.0, "attackDelt": 7.0, "cgindex0": -1, "cgindex1": -1, "opengold": 0, "uplevelgold": 0, "getpercent": 0, "getlevel": -1, "dropexp": 45, "attackrange": 280, "dropgold": 4, "hitsound": "xx.ogg", "hiteffectid": 123, "attacksound": "hit_0.ogg", "texName": "img_name_17.png", "Height": 115, "Width": 50, "describ": 0}, {"name": "爪牙", "id": 37, "defaultscale": 1.0, "quality": 0, "type": 1, "hp": 700.0, "damage": 225.0, "defense": 5, "movespeed": 90.0, "attackDelt": 9.0, "cgindex0": -1, "cgindex1": -1, "opengold": 0, "uplevelgold": 0, "getpercent": 0, "getlevel": -1, "dropexp": 40, "attackrange": 64, "dropgold": 4, "hitsound": "xx.ogg", "hiteffectid": 125, "attacksound": "hit_2.ogg", "texName": "img_name_17.png", "Height": 70, "Width": 90, "describ": 0}, {"name": "爪牙", "id": 38, "defaultscale": 1.0, "quality": 0, "type": 1, "hp": 800.0, "damage": 175.0, "defense": 3, "movespeed": 140.0, "attackDelt": 5.0, "cgindex0": -1, "cgindex1": -1, "opengold": 0, "uplevelgold": 0, "getpercent": 0, "getlevel": -1, "dropexp": 50, "attackrange": 32, "dropgold": 6, "hitsound": "xx.ogg", "hiteffectid": 125, "attacksound": "hit_2.ogg", "texName": "img_name_17.png", "Height": 125, "Width": 60, "describ": 0}, {"name": "爪牙", "id": 39, "defaultscale": 1.0, "quality": 0, "type": 1, "hp": 900.0, "damage": 315.0, "defense": 3, "movespeed": 140.0, "attackDelt": 7.0, "cgindex0": -1, "cgindex1": -1, "opengold": 0, "uplevelgold": 0, "getpercent": 0, "getlevel": -1, "dropexp": 70, "attackrange": 114, "dropgold": 8, "hitsound": "xx.ogg", "hiteffectid": 124, "attacksound": "hit_1.ogg", "texName": "img_name_17.png", "Height": 125, "Width": 60, "describ": 0}, {"name": "萊昂哈特", "id": 40, "defaultscale": 1.0, "quality": 3, "type": 0, "hp": 5000.0, "damage": 900.0, "defense": 30, "movespeed": 120.0, "attackDelt": 9.0, "cgindex0": 16, "cgindex1": 17, "opengold": 0, "uplevelgold": 0, "getpercent": 0, "getlevel": -1, "dropexp": 250, "attackrange": 250, "dropgold": 125, "hitsound": "xx.ogg", "hiteffectid": 123, "attacksound": "hit_0.ogg", "texName": "img_name_13.png", "Height": 135, "Width": 95, "describ": 0}, {"name": "達古達", "id": 41, "defaultscale": 1.0, "quality": 3, "type": 1, "hp": 10000.0, "damage": 1375.0, "defense": 20, "movespeed": 100.0, "attackDelt": 11.0, "cgindex0": 20, "cgindex1": 21, "opengold": 0, "uplevelgold": 0, "getpercent": 0, "getlevel": -1, "dropexp": 750, "attackrange": 150, "dropgold": 185, "hitsound": "xx.ogg", "hiteffectid": 125, "attacksound": "hit_2.ogg", "texName": "img_name_15.png", "Height": 170, "Width": 80, "describ": 0}, {"name": "斯爾夫", "id": 42, "defaultscale": 1.0, "quality": 3, "type": 3, "hp": 15000.0, "damage": 1500.0, "defense": 15, "movespeed": 140.0, "attackDelt": 10.0, "cgindex0": 18, "cgindex1": 19, "opengold": 0, "uplevelgold": 0, "getpercent": 0, "getlevel": -1, "dropexp": 2000, "attackrange": 330, "dropgold": 250, "hitsound": "xx.ogg", "hiteffectid": 124, "attacksound": "hit_1.ogg", "texName": "img_name_14.png", "Height": 145, "Width": 150, "describ": 0}, {"name": "迪爾姆多", "id": 43, "defaultscale": 1.0, "quality": 3, "type": 1, "hp": 25000.0, "damage": 2100.0, "defense": 30, "movespeed": 80.0, "attackDelt": 12.0, "cgindex0": 22, "cgindex1": 23, "opengold": 0, "uplevelgold": 0, "getpercent": 0, "getlevel": -1, "dropexp": 12500, "attackrange": 240, "dropgold": 375, "hitsound": "xx.ogg", "hiteffectid": 123, "attacksound": "hit_0.ogg", "texName": "img_name_16.png", "Height": 215, "Width": 170, "describ": 0}, {"name": "古瓦諾", "id": 44, "defaultscale": 1.0, "quality": 3, "type": 2, "hp": 20000.0, "damage": 1050.0, "defense": 20, "movespeed": 180.0, "attackDelt": 7.0, "cgindex0": 24, "cgindex1": 25, "opengold": 0, "uplevelgold": 0, "getpercent": 0, "getlevel": -1, "dropexp": 5000, "attackrange": 300, "dropgold": 310, "hitsound": "xx.ogg", "hiteffectid": 125, "attacksound": "hit_2.ogg", "texName": "img_name_4.png", "Height": 245, "Width": 150, "describ": 0}, {"name": "貝勒德", "id": 45, "defaultscale": 1.0, "quality": 3, "type": 3, "hp": 30000.0, "damage": 2200.0, "defense": 40, "movespeed": 130.0, "attackDelt": 11.0, "cgindex0": 26, "cgindex1": 27, "opengold": 0, "uplevelgold": 0, "getpercent": 0, "getlevel": -1, "dropexp": 30000, "attackrange": 250, "dropgold": 500, "hitsound": "xx.ogg", "hiteffectid": 123, "attacksound": "hit_0.ogg", "texName": "img_name_3.png", "Height": 280, "Width": 230, "describ": 0}, {"name": "艾諾", "id": 46, "defaultscale": 1.0, "quality": 0, "type": 2, "hp": 2640.0, "damage": 630.0, "defense": 5, "movespeed": 120.0, "attackDelt": 7.0, "cgindex0": 2, "cgindex1": 3, "opengold": 0, "uplevelgold": 0, "getpercent": 0, "getlevel": -1, "dropexp": 540, "attackrange": 200, "dropgold": 27, "hitsound": "xx.ogg", "hiteffectid": 124, "attacksound": "atk_mon_2.ogg", "texName": "img_name_6.png", "Height": 135, "Width": 45, "describ": 0}, {"name": "庫格", "id": 47, "defaultscale": 0.8, "quality": 1, "type": 0, "hp": 3200.0, "damage": 660.0, "defense": 30, "movespeed": 100.0, "attackDelt": 7.0, "cgindex0": 4, "cgindex1": 5, "opengold": 0, "uplevelgold": 0, "getpercent": 0, "getlevel": -1, "dropexp": 720, "attackrange": 64, "dropgold": 33, "hitsound": "xx.ogg", "hiteffectid": 123, "attacksound": "atk_mon_3.ogg", "texName": "img_name_7.png", "Height": 150, "Width": 55, "describ": 0}, {"name": "伊莉娜", "id": 48, "defaultscale": 0.8, "quality": 0, "type": 4, "hp": 2900.0, "damage": 560.0, "defense": 5, "movespeed": 110.0, "attackDelt": 8.0, "cgindex0": 6, "cgindex1": 7, "opengold": 0, "uplevelgold": 0, "getpercent": 0, "getlevel": -1, "dropexp": 1080, "attackrange": 240, "dropgold": 42, "hitsound": "xx.ogg", "hiteffectid": 124, "attacksound": "atk_mon_4.ogg", "texName": "img_name_8.png", "Height": 130, "Width": 40, "describ": 0}, {"name": "伊莉婭", "id": 49, "defaultscale": 1.0, "quality": 1, "type": 3, "hp": 3760.0, "damage": 1520.0, "defense": 5, "movespeed": 130.0, "attackDelt": 8.0, "cgindex0": 10, "cgindex1": 11, "opengold": 0, "uplevelgold": 0, "getpercent": 0, "getlevel": -1, "dropexp": 2160, "attackrange": 280, "dropgold": 57, "hitsound": "xx.ogg", "hiteffectid": 124, "attacksound": "atk_mon_6.ogg", "texName": "img_name_9.png", "Height": 110, "Width": 45, "describ": 0}, {"name": "布雷茲", "id": 50, "defaultscale": 1.2, "quality": 2, "type": 2, "hp": 5600.0, "damage": 1680.0, "defense": 20, "movespeed": 120.0, "attackDelt": 7.0, "cgindex0": 14, "cgindex1": 15, "opengold": 0, "uplevelgold": 0, "getpercent": 0, "getlevel": -1, "dropexp": 3600, "attackrange": 160, "dropgold": 72, "hitsound": "xx.ogg", "hiteffectid": 123, "attacksound": "atk_mon_8.ogg", "texName": "img_name_12.png", "Height": 115, "Width": 60, "describ": 0}], "skills": [{"id": 0, "name": "連擊", "playsound": "xx.ogg", "attacksound": "xx.ogg", "textid": "sk_2.png", "costgold": 100, "attr": 0, "delt": 0, "value": 20, "range": 120, "describ": "攻擊時%a%機率發動2次攻擊"}, {"id": 1, "name": "迅捷", "playsound": "xx.ogg", "attacksound": "xx.ogg", "textid": "sk_3.png", "costgold": 100, "attr": 0, "delt": 0, "value": 20, "range": 800, "describ": "提升周圍同伴%a點移動速度"}, {"id": 2, "name": "禁錮", "playsound": "xx.ogg", "attacksound": "xx.ogg", "textid": "sk_4.png", "costgold": 100, "attr": 1, "delt": 10, "value": 2, "range": 150, "describ": "纏住一個目標，在%a秒內不能移動"}, {"id": 3, "name": "暴力", "playsound": "xx.ogg", "attacksound": "xx.ogg", "textid": "sk_5.png", "costgold": 100, "attr": 0, "delt": 0, "value": 20, "range": 800, "describ": "%a%的機率造成1.5倍傷害"}, {"id": 4, "name": "烈焰斬", "playsound": "xx.ogg", "attacksound": "xx.ogg", "textid": "sk_6.png", "costgold": 100, "attr": 1, "delt": 15, "value": 120, "range": 280, "describ": "投擲烈焰劍，造成%a%傷害"}, {"id": 5, "name": "盾防", "playsound": "xx.ogg", "attacksound": "xx.ogg", "textid": "sk_7.png", "costgold": 100, "attr": 0, "delt": 0, "value": 15, "range": 800, "describ": "增加%a%防禦"}, {"id": 6, "name": "治療", "playsound": "xx.ogg", "attacksound": "xx.ogg", "textid": "sk_8.png", "costgold": 100, "attr": 1, "delt": 15, "value": 10, "range": 400, "describ": "恢復所有單位%a%生命"}, {"id": 7, "name": "守護", "playsound": "xx.ogg", "attacksound": "xx.ogg", "textid": "sk_9.png", "costgold": 100, "attr": 0, "delt": 0, "value": 10, "range": 800, "describ": "使周圍同伴的防禦增加%a%"}, {"id": 8, "name": "火焰噴射", "playsound": "xx.ogg", "attacksound": "xx.ogg", "textid": "sk_10.png", "costgold": 100, "attr": 1, "delt": 15, "value": 50, "range": 250, "describ": "噴射火焰，造成%a%傷害"}, {"id": 9, "name": "生命強化", "playsound": "xx.ogg", "attacksound": "xx.ogg", "textid": "sk_11.png", "costgold": 100, "attr": 0, "delt": 0, "value": 500, "range": 800, "describ": "增加%a點生命"}, {"id": 10, "name": "落霜冰破", "playsound": "xx.ogg", "attacksound": "xx.ogg", "textid": "sk_12.png", "costgold": 100, "attr": 1, "delt": 20, "value": 150, "range": 150, "describ": "給多個目標造成%a%傷害，並減速"}, {"id": 11, "name": "祈禱", "playsound": "xx.ogg", "attacksound": "xx.ogg", "textid": "sk_13.png", "costgold": 100, "attr": 0, "delt": 0, "value": 25, "range": 800, "describ": "%a%機率抵消異常狀態"}, {"id": 12, "name": "遁形", "playsound": "xx.ogg", "attacksound": "xx.ogg", "textid": "sk_14.png", "costgold": 100, "attr": 0, "delt": 0, "value": 20, "range": 800, "describ": "受到攻擊時%a%的機率躲避"}, {"id": 13, "name": "偷襲", "playsound": "xx.ogg", "attacksound": "xx.ogg", "textid": "sk_15.png", "costgold": 100, "attr": 1, "delt": 15, "value": 300, "range": 400, "describ": "瞬移到隨機的目標後面，造成%a%傷害"}, {"id": 14, "name": "震動波", "playsound": "xx.ogg", "attacksound": "xx.ogg", "textid": "sk_16.png", "costgold": 100, "attr": 1, "delt": 25, "value": 180, "range": 330, "describ": "向前方揮砍並發出衝擊波，造成%a%傷害"}, {"id": 15, "name": "眩暈", "playsound": "xx.ogg", "attacksound": "xx.ogg", "textid": "sk_17.png", "costgold": 100, "attr": 0, "delt": 0, "value": 20, "range": 800, "describ": "攻擊時%a%機率附加眩暈效果"}, {"id": 16, "name": "泰山壓頂", "playsound": "xx.ogg", "attacksound": "xx.ogg", "textid": "sk_18.png", "costgold": 100, "attr": 1, "delt": 25, "value": 140, "range": 160, "describ": "用身體撞地，造成%a%傷害，並擊退目標"}, {"id": 17, "name": "暴擊", "playsound": "xx.ogg", "attacksound": "xx.ogg", "textid": "sk_19.png", "costgold": 100, "attr": 0, "delt": 0, "value": 20, "range": 800, "describ": "%a%機率造成2倍傷害"}, {"id": 18, "name": "木刺", "playsound": "xx.ogg", "attacksound": "xx.ogg", "textid": "sk_20.png", "costgold": 100, "attr": 1, "delt": 20, "value": 200, "range": 250, "describ": "從目標腳下冒出木刺，造成%a%傷害"}, {"id": 19, "name": "纏繞", "playsound": "xx.ogg", "attacksound": "xx.ogg", "textid": "sk_21.png", "costgold": 100, "attr": 0, "delt": 0, "value": 20, "range": 800, "describ": "攻擊時%a%機率用木刺纏住目標"}, {"id": 20, "name": "狂暴", "playsound": "xx.ogg", "attacksound": "xx.ogg", "textid": "sk_22.png", "costgold": 100, "attr": 0, "delt": 0, "value": 20, "range": 145, "describ": "對單個目標進行連續刺戳，造成%a%傷害"}, {"id": 21, "name": "地震", "playsound": "xx.ogg", "attacksound": "xx.ogg", "textid": "sk_23.png", "costgold": 100, "attr": 1, "delt": 25, "value": 160, "range": 430, "describ": "變幻出4隻手，捶地，造成%a%傷害"}, {"id": 22, "name": "冥河破", "playsound": "xx.ogg", "attacksound": "xx.ogg", "textid": "sk_0.png", "costgold": 100, "attr": 1, "delt": 20, "value": 200, "range": 500, "describ": "發射超級激光，對范圍內單位造成%a%傷害"}, {"id": 23, "name": "憤怒", "playsound": "xx.ogg", "attacksound": "xx.ogg", "textid": "sk_0.png", "costgold": 100, "attr": 0, "delt": 0, "value": 10, "range": 800, "describ": "提升周圍單位%a%的攻擊力"}, {"id": 24, "name": "裂地斬", "playsound": "xx.ogg", "attacksound": "xx.ogg", "textid": "sk_0.png", "costgold": 100, "attr": 1, "delt": 10, "value": 150, "range": 400, "describ": "幻化出巨劍，砍出一條裂縫，造成%a%傷害"}, {"id": 25, "name": "重擊", "playsound": "xx.ogg", "attacksound": "xx.ogg", "textid": "sk_0.png", "costgold": 100, "attr": 0, "delt": 0, "value": 20, "range": 800, "describ": "%a%機率造成3倍傷害"}, {"id": 26, "name": "幻影斬擊", "playsound": "xx.ogg", "attacksound": "xx.ogg", "textid": "sk_0.png", "costgold": 100, "attr": 0, "delt": 0, "value": 100, "range": 250, "describ": "幻化出3個分身進行攻擊，造成%a%傷害"}, {"id": 27, "name": "雷霆萬擊", "playsound": "xx.ogg", "attacksound": "xx.ogg", "textid": "sk_0.png", "costgold": 100, "attr": 1, "delt": 25, "value": 250, "range": 390, "describ": "降下高壓閃電，對周圍目標造成%a%傷害"}, {"id": 28, "name": "火流星", "playsound": "xx.ogg", "attacksound": "xx.ogg", "textid": "sk_0.png", "costgold": 100, "attr": 1, "delt": 10, "value": 50, "range": 400, "describ": "召喚數顆火隕石砸向地面，造成%a%傷害"}, {"id": 29, "name": "恢復", "playsound": "xx.ogg", "attacksound": "xx.ogg", "textid": "sk_1.png", "costgold": 100, "attr": 0, "delt": 10, "value": 20, "range": 800, "describ": "恢復所有單位%a%生命"}], "levels": [{"id": 0, "battleValue": 600.0, "music": "music_battle.ogg", "waves": [{"id": 0, "scnid": 1, "mapid": 1, "maptexid": 78, "nextid": 1}, {"id": 1, "scnid": 2, "mapid": 2, "maptexid": 78, "nextid": -1}]}, {"id": 1, "battleValue": 1000.0, "music": "music_battle.ogg", "waves": [{"id": 0, "scnid": 3, "mapid": 3, "maptexid": 78, "nextid": 1}, {"id": 1, "scnid": 4, "mapid": 4, "maptexid": 78, "nextid": -1}]}, {"id": 2, "battleValue": 1400.0, "music": "music_battle_1.ogg", "waves": [{"id": 0, "scnid": 5, "mapid": 5, "maptexid": 68, "nextid": -1}]}, {"id": 3, "battleValue": 2400.0, "music": "music_battle_1.ogg", "waves": [{"id": 0, "scnid": 7, "mapid": 7, "maptexid": 91, "nextid": 1}, {"id": 1, "scnid": 8, "mapid": 8, "maptexid": 91, "nextid": -1}]}, {"id": 4, "battleValue": 1800.0, "music": "music_battle.ogg", "waves": [{"id": 0, "scnid": 9, "mapid": 9, "maptexid": 78, "nextid": 1}, {"id": 1, "scnid": 10, "mapid": 10, "maptexid": 78, "nextid": -1}]}, {"id": 5, "battleValue": 2200.0, "music": "music_battle.ogg", "waves": [{"id": 0, "scnid": 11, "mapid": 11, "maptexid": 78, "nextid": 1}, {"id": 1, "scnid": 12, "mapid": 12, "maptexid": 78, "nextid": -1}]}, {"id": 6, "battleValue": 2600.0, "music": "music_battle_1.ogg", "waves": [{"id": 0, "scnid": 13, "mapid": 13, "maptexid": 78, "nextid": 1}, {"id": 1, "scnid": 14, "mapid": 14, "maptexid": 68, "nextid": -1}]}, {"id": 7, "battleValue": 3500.0, "music": "music_battle_1.ogg", "waves": [{"id": 0, "scnid": 15, "mapid": 15, "maptexid": 68, "nextid": 1}, {"id": 1, "scnid": 16, "mapid": 16, "maptexid": 68, "nextid": -1}]}, {"id": 8, "battleValue": 2800.0, "music": "music_battle_1.ogg", "waves": [{"id": 0, "scnid": 17, "mapid": 17, "maptexid": 101, "nextid": -1}]}, {"id": 9, "battleValue": 3000.0, "music": "music_battle.ogg", "waves": [{"id": 0, "scnid": 18, "mapid": 18, "maptexid": 68, "nextid": 1}, {"id": 1, "scnid": 19, "mapid": 19, "maptexid": 68, "nextid": -1}]}, {"id": 10, "battleValue": 3400.0, "music": "music_battle.ogg", "waves": [{"id": 0, "scnid": 20, "mapid": 20, "maptexid": 101, "nextid": 1}, {"id": 1, "scnid": 21, "mapid": 21, "maptexid": 101, "nextid": -1}]}, {"id": 11, "battleValue": 3800.0, "music": "music_battle.ogg", "waves": [{"id": 0, "scnid": 22, "mapid": 22, "maptexid": 101, "nextid": 1}, {"id": 1, "scnid": 23, "mapid": 23, "maptexid": 101, "nextid": -1}]}, {"id": 12, "battleValue": 4400.0, "music": "music_battle_1.ogg", "waves": [{"id": 0, "scnid": 24, "mapid": 24, "maptexid": 14, "nextid": 1}, {"id": 1, "scnid": 25, "mapid": 25, "maptexid": 14, "nextid": -1}]}, {"id": 13, "battleValue": 4200.0, "music": "music_battle.ogg", "waves": [{"id": 0, "scnid": 26, "mapid": 26, "maptexid": 101, "nextid": 1}, {"id": 1, "scnid": 27, "mapid": 27, "maptexid": 101, "nextid": -1}]}, {"id": 14, "battleValue": 4600.0, "music": "music_battle.ogg", "waves": [{"id": 0, "scnid": 28, "mapid": 28, "maptexid": 14, "nextid": 1}, {"id": 1, "scnid": 29, "mapid": 29, "maptexid": 14, "nextid": -1}]}, {"id": 15, "battleValue": 5000.0, "music": "music_battle.ogg", "waves": [{"id": 0, "scnid": 30, "mapid": 30, "maptexid": 14, "nextid": 1}, {"id": 1, "scnid": 31, "mapid": 31, "maptexid": 14, "nextid": -1}]}, {"id": 16, "battleValue": 6000.0, "music": "music_battle_1.ogg", "waves": [{"id": 0, "scnid": 32, "mapid": 32, "maptexid": 91, "nextid": 1}, {"id": 1, "scnid": 33, "mapid": 33, "maptexid": 91, "nextid": -1}]}, {"id": 17, "battleValue": 5200.0, "music": "music_battle_1.ogg", "waves": [{"id": 0, "scnid": 34, "mapid": 34, "maptexid": 174, "nextid": -1}]}, {"id": 18, "battleValue": 5500.0, "music": "music_battle.ogg", "waves": [{"id": 0, "scnid": 35, "mapid": 35, "maptexid": 78, "nextid": 1}, {"id": 1, "scnid": 36, "mapid": 36, "maptexid": 78, "nextid": -1}]}, {"id": 19, "battleValue": 6000.0, "music": "music_battle_1.ogg", "waves": [{"id": 0, "scnid": 37, "mapid": 37, "maptexid": 78, "nextid": 1}, {"id": 1, "scnid": 38, "mapid": 38, "maptexid": 78, "nextid": -1}]}, {"id": 20, "battleValue": 6500.0, "music": "music_battle.ogg", "waves": [{"id": 0, "scnid": 39, "mapid": 39, "maptexid": 78, "nextid": 1}, {"id": 1, "scnid": 40, "mapid": 40, "maptexid": 78, "nextid": -1}]}, {"id": 21, "battleValue": 7250.0, "music": "music_battle_1.ogg", "waves": [{"id": 0, "scnid": 41, "mapid": 41, "maptexid": 14, "nextid": 1}, {"id": 1, "scnid": 42, "mapid": 42, "maptexid": 14, "nextid": -1}]}, {"id": 22, "battleValue": 7000.0, "music": "music_battle.ogg", "waves": [{"id": 0, "scnid": 43, "mapid": 43, "maptexid": 91, "nextid": 1}, {"id": 1, "scnid": 44, "mapid": 44, "maptexid": 91, "nextid": -1}]}, {"id": 23, "battleValue": 7500.0, "music": "music_battle.ogg", "waves": [{"id": 0, "scnid": 45, "mapid": 45, "maptexid": 91, "nextid": 1}, {"id": 1, "scnid": 46, "mapid": 46, "maptexid": 91, "nextid": -1}]}, {"id": 24, "battleValue": 8000.0, "music": "music_battle_1.ogg", "waves": [{"id": 0, "scnid": 47, "mapid": 47, "maptexid": 91, "nextid": 1}, {"id": 1, "scnid": 48, "mapid": 48, "maptexid": 91, "nextid": -1}]}, {"id": 25, "battleValue": 9000.0, "music": "music_battle_1.ogg", "waves": [{"id": 0, "scnid": 49, "mapid": 49, "maptexid": 14, "nextid": 1}, {"id": 1, "scnid": 50, "mapid": 50, "maptexid": 14, "nextid": -1}]}, {"id": 26, "battleValue": 8250.0, "music": "music_battle_1.ogg", "waves": [{"id": 0, "scnid": 51, "mapid": 51, "maptexid": 91, "nextid": -1}]}, {"id": 27, "battleValue": 8800.0, "music": "music_battle.ogg", "waves": [{"id": 0, "scnid": 52, "mapid": 52, "maptexid": 174, "nextid": 1}, {"id": 1, "scnid": 53, "mapid": 53, "maptexid": 174, "nextid": -1}]}, {"id": 28, "battleValue": 9600.0, "music": "music_battle.ogg", "waves": [{"id": 0, "scnid": 54, "mapid": 54, "maptexid": 174, "nextid": 1}, {"id": 1, "scnid": 55, "mapid": 55, "maptexid": 174, "nextid": -1}]}, {"id": 29, "battleValue": 10400.0, "music": "music_battle_1.ogg", "waves": [{"id": 0, "scnid": 56, "mapid": 56, "maptexid": 68, "nextid": -1}]}, {"id": 30, "battleValue": 11600.0, "music": "music_battle_1.ogg", "waves": [{"id": 0, "scnid": 58, "mapid": 58, "maptexid": 68, "nextid": 1}, {"id": 1, "scnid": 59, "mapid": 59, "maptexid": 68, "nextid": -1}]}, {"id": 31, "battleValue": 11200.0, "music": "music_battle.ogg", "waves": [{"id": 0, "scnid": 60, "mapid": 60, "maptexid": 174, "nextid": 1}, {"id": 1, "scnid": 61, "mapid": 61, "maptexid": 174, "nextid": -1}]}, {"id": 32, "battleValue": 12000.0, "music": "music_battle.ogg", "waves": [{"id": 0, "scnid": 62, "mapid": 62, "maptexid": 174, "nextid": 1}, {"id": 1, "scnid": 63, "mapid": 63, "maptexid": 174, "nextid": -1}]}, {"id": 33, "battleValue": 12800.0, "music": "music_battle.ogg", "waves": [{"id": 0, "scnid": 64, "mapid": 64, "maptexid": 174, "nextid": 1}, {"id": 1, "scnid": 65, "mapid": 65, "maptexid": 174, "nextid": -1}]}, {"id": 34, "battleValue": 15000.0, "music": "music_battle_1.ogg", "waves": [{"id": 0, "scnid": 66, "mapid": 66, "maptexid": 14, "nextid": 1}, {"id": 1, "scnid": 67, "mapid": 67, "maptexid": 14, "nextid": -1}]}, {"id": 35, "battleValue": 12400.0, "music": "music_battle_1.ogg", "waves": [{"id": 0, "scnid": 68, "mapid": 68, "maptexid": 68, "nextid": -1}]}, {"id": 36, "battleValue": 14000.0, "music": "music_battle.ogg", "waves": [{"id": 0, "scnid": 69, "mapid": 69, "maptexid": 14, "nextid": 1}, {"id": 1, "scnid": 70, "mapid": 70, "maptexid": 14, "nextid": -1}]}, {"id": 37, "battleValue": 15000.0, "music": "music_battle_1.ogg", "waves": [{"id": 0, "scnid": 71, "mapid": 71, "maptexid": 14, "nextid": 1}, {"id": 1, "scnid": 72, "mapid": 72, "maptexid": 14, "nextid": -1}]}, {"id": 38, "battleValue": 16000.0, "music": "music_battle.ogg", "waves": [{"id": 0, "scnid": 73, "mapid": 73, "maptexid": 14, "nextid": -1}]}, {"id": 39, "battleValue": 17500.0, "music": "music_battle_1.ogg", "waves": [{"id": 0, "scnid": 75, "mapid": 75, "maptexid": 91, "nextid": 1}, {"id": 1, "scnid": 76, "mapid": 76, "maptexid": 91, "nextid": -1}]}, {"id": 40, "battleValue": 17000.0, "music": "music_battle.ogg", "waves": [{"id": 0, "scnid": 77, "mapid": 77, "maptexid": 14, "nextid": 1}, {"id": 1, "scnid": 78, "mapid": 78, "maptexid": 14, "nextid": -1}]}, {"id": 41, "battleValue": 18000.0, "music": "music_battle_1.ogg", "waves": [{"id": 0, "scnid": 79, "mapid": 79, "maptexid": 14, "nextid": 1}, {"id": 1, "scnid": 80, "mapid": 80, "maptexid": 14, "nextid": -1}]}, {"id": 42, "battleValue": 19000.0, "music": "music_battle.ogg", "waves": [{"id": 0, "scnid": 81, "mapid": 81, "maptexid": 14, "nextid": 1}, {"id": 1, "scnid": 82, "mapid": 82, "maptexid": 14, "nextid": -1}]}, {"id": 43, "battleValue": 25000.0, "music": "music_battle_1.ogg", "waves": [{"id": 0, "scnid": 83, "mapid": 83, "maptexid": 91, "nextid": 1}, {"id": 1, "scnid": 84, "mapid": 84, "maptexid": 91, "nextid": -1}]}, {"id": 44, "battleValue": 20000.0, "music": "music_battle_1.ogg", "waves": [{"id": 0, "scnid": 85, "mapid": 85, "maptexid": 14, "nextid": -1}]}, {"id": 45, "battleValue": 1000.0, "music": "music_battle_1.ogg", "waves": [{"id": 0, "scnid": 86, "mapid": 86, "maptexid": 68, "nextid": -1}]}, {"id": 46, "battleValue": 1000.0, "music": "music_battle_1.ogg", "waves": [{"id": 0, "scnid": 87, "mapid": 87, "maptexid": 91, "nextid": -1}]}, {"id": 47, "battleValue": 1000.0, "music": "music_battle_1.ogg", "waves": [{"id": 0, "scnid": 88, "mapid": 88, "maptexid": 14, "nextid": -1}]}, {"id": 48, "battleValue": 1000.0, "music": "music_battle_1.ogg", "waves": [{"id": 0, "scnid": 89, "mapid": 89, "maptexid": 78, "nextid": -1}]}, {"id": 49, "battleValue": 1000.0, "music": "music_battle_1.ogg", "waves": [{"id": 0, "scnid": 90, "mapid": 90, "maptexid": 101, "nextid": -1}]}, {"id": 50, "battleValue": 4500.0, "music": "music_battle_1.ogg", "waves": [{"id": 0, "scnid": 24, "mapid": 24, "maptexid": 14, "nextid": 1}, {"id": 1, "scnid": 25, "mapid": 25, "maptexid": 14, "nextid": -1}]}, {"id": 51, "battleValue": 7500.0, "music": "music_battle.ogg", "waves": [{"id": 0, "scnid": 28, "mapid": 28, "maptexid": 14, "nextid": 1}, {"id": 1, "scnid": 29, "mapid": 29, "maptexid": 14, "nextid": -1}]}, {"id": 52, "battleValue": 8500.0, "music": "music_battle.ogg", "waves": [{"id": 0, "scnid": 43, "mapid": 43, "maptexid": 91, "nextid": 1}, {"id": 1, "scnid": 44, "mapid": 44, "maptexid": 91, "nextid": -1}]}, {"id": 53, "battleValue": 10100.0, "music": "music_battle_1.ogg", "waves": [{"id": 0, "scnid": 49, "mapid": 49, "maptexid": 14, "nextid": 1}, {"id": 1, "scnid": 50, "mapid": 50, "maptexid": 14, "nextid": -1}]}, {"id": 54, "battleValue": 9800.0, "music": "music_battle_1.ogg", "waves": [{"id": 0, "scnid": 52, "mapid": 52, "maptexid": 174, "nextid": 1}, {"id": 1, "scnid": 53, "mapid": 53, "maptexid": 174, "nextid": -1}]}, {"id": 55, "battleValue": 10600.0, "music": "music_battle.ogg", "waves": [{"id": 0, "scnid": 64, "mapid": 64, "maptexid": 174, "nextid": 1}, {"id": 1, "scnid": 65, "mapid": 65, "maptexid": 174, "nextid": -1}]}, {"id": 56, "battleValue": 11400.0, "music": "music_battle_1.ogg", "waves": [{"id": 0, "scnid": 75, "mapid": 75, "maptexid": 91, "nextid": 1}, {"id": 1, "scnid": 76, "mapid": 76, "maptexid": 91, "nextid": -1}]}, {"id": 57, "battleValue": 12800.0, "music": "music_battle.ogg", "waves": [{"id": 0, "scnid": 77, "mapid": 77, "maptexid": 14, "nextid": 1}, {"id": 1, "scnid": 78, "mapid": 78, "maptexid": 14, "nextid": -1}]}], "shop": [{"id": 23, "name": "boss禮包", "describ": "立即擁有三大boss及10000金幣", "price": 119, "index": 0, "type": 2, "texturename": "shop_goods_28.png"}, {"id": 2, "name": "史詩套裝", "describ": "最頂級的史詩裝備四件套!強化你的戰鬥力!", "price": 1499, "index": 0, "type": 0, "texturename": "shop_goods_0.png"}, {"id": 25, "name": "新手礼包", "describ": "超值特惠!包含钻石,金币,道具和装备!", "price": 499, "index": 0, "type": 0, "texturename": "shop_goods_new.png"}, {"id": 0, "name": "血瓶", "describ": "購買12個恢復血瓶", "price": 24, "index": 0, "type": 2, "texturename": "shop_goods_10.png"}, {"id": 1, "name": "捲軸", "describ": "購買12個複活陣亡傭兵的捲軸", "price": 20, "index": 0, "type": 2, "texturename": "shop_goods_9.png"}, {"id": 3, "name": "急速冷卻", "describ": "加快50%技能冷卻速度!技能不停放!", "price": 40, "index": 0, "type": 2, "texturename": "shop_goods_3.png"}, {"id": 4, "name": "陣形擴充", "describ": "額外增加兩個陣型位置!讓你的隊伍更強大!", "price": 40, "index": 0, "type": 2, "texturename": "shop_goods_1.png"}, {"id": 5, "name": "生命恢復", "describ": "每4秒恢復5%最大生命值!戰鬥不停息!", "price": 20, "index": 0, "type": 2, "texturename": "shop_goods_4.png"}, {"id": 6, "name": "雙倍爆率", "describ": "增加一倍寶箱掉落率!去找更好的裝備吧!", "price": 20, "index": 0, "type": 2, "texturename": "shop_goods_6.png"}, {"id": 24, "name": "金幣禮包", "describ": "100000(十萬)金幣,20血瓶", "price": 99, "index": 1, "type": 2, "texturename": "shop_goods_29.png"}, {"id": 7, "name": "1萬金幣", "describ": "購買1萬金幣", "price": 20, "index": 1, "type": 2, "texturename": "shop_goods_11.png"}, {"id": 8, "name": "3萬金幣", "describ": "購買25000金幣,額外獲贈5000金幣!", "price": 50, "index": 1, "type": 2, "texturename": "shop_goods_12.png"}, {"id": 9, "name": "6萬金幣", "describ": "購買45000金幣,額外獲贈15000金幣!", "price": 90, "index": 1, "type": 2, "texturename": "shop_goods_13.png"}, {"id": 10, "name": "12萬金幣", "describ": "購買80000金幣,額外獲贈40000金幣!", "price": 160, "index": 1, "type": 2, "texturename": "shop_goods_16.png"}, {"id": 11, "name": "18萬金幣", "describ": "購買100000金幣,額外獲贈80000金幣!", "price": 200, "index": 1, "type": 2, "texturename": "shop_goods_17.png"}, {"id": 22, "name": "月卡礼包", "describ": "7天内获得350鉆石,7000金幣,14血瓶", "price": 999, "index": 2, "type": 0, "texturename": "shop_goods_27.png"}, {"id": 12, "name": "20水晶", "describ": "購買20水晶", "price": 199, "index": 2, "type": 0, "texturename": "shop_goods_18.png"}, {"id": 13, "name": "55水晶", "describ": "購買55水晶", "price": 499, "index": 2, "type": 0, "texturename": "shop_goods_19.png"}, {"id": 14, "name": "120水晶", "describ": "購買120水晶", "price": 999, "index": 2, "type": 0, "texturename": "shop_goods_20.png"}, {"id": 15, "name": "270水晶", "describ": "購買270水晶", "price": 1999, "index": 2, "type": 0, "texturename": "shop_goods_21.png"}, {"id": 16, "name": "840水晶", "describ": "購買840水晶", "price": 4999, "index": 2, "type": 0, "texturename": "shop_goods_22.png"}, {"id": 17, "name": "2000水晶", "describ": "購買2000水晶", "price": 9999, "index": 2, "type": 0, "texturename": "shop_goods_23.png"}, {"id": 18, "name": "5000水晶", "describ": "購買5000水晶", "price": 19299, "index": 2, "type": 0, "texturename": "shop_goods_26.png"}, {"id": 19, "name": "死亡復活", "describ": "花費5鑽石,復活你的英雄", "price": 5, "index": -1, "type": 2, "texturename": "shop_goods_14.png"}, {"id": 20, "name": "16個包裹", "describ": "花費10鑽石,擴充16格背包格子", "price": 10, "index": -1, "type": 2, "texturename": "shop_goods_7.png"}, {"id": 21, "name": "體力全滿", "describ": "花費10鑽石,立即補滿所有體力", "price": 10, "index": -1, "type": 2, "texturename": "shop_goods_30.png"}]};
+
+// Monster type colors (for procedural rendering, no real sprite atlases needed)
+const TYPE_COLORS = {
+  0:{body:'#8d6e63', trim:'#4e342e', name:'肉盾'}, // tank/melee
+  1:{body:'#e53935', trim:'#7f0000', name:'敏捷'}, // agile/melee
+  2:{body:'#1e88e5', trim:'#0d47a1', name:'強攻'}, // ranged/magic
+  3:{body:'#8e24aa', trim:'#4a148c', name:'遠攻'}, // ranged
+  4:{body:'#43a047', trim:'#1b5e20', name:'輔助'}, // support/heal
+};
+const QUALITY_COLORS = ['#9e9e9e','#42a5f5','#9c27b0','#ff9800','#f44336'];
+
+// ---------- SAVE SYSTEM ----------
+const SAVE_KEY = 'bravefighter_html5_save_v1';
+const DEFAULT_SAVE = {
+  gold: 500, gem: 20,
+  ownedHeroes: {0:{level:1,exp:0}}, // id -> {level,exp}
+  team: [0,-1,-1,-1,-1],           // max 5 slots, -1 = empty
+  ownedSkills: {0:true,3:true},    // start with 2 basic skills
+  skillBar: [0,3,-1],              // 3 hotkeys
+  clearedLevels: [],               // ids of cleared levels
+  unlockedLevelId: 0,
+  buffs: {},                       // purchased permanent buffs
+  potions: 2, scrolls: 1,
+};
+let SAVE = loadSave();
+function loadSave(){
+  try{
+    const s = JSON.parse(localStorage.getItem(SAVE_KEY));
+    if(s) return Object.assign({}, DEFAULT_SAVE, s);
+  }catch(e){}
+  return JSON.parse(JSON.stringify(DEFAULT_SAVE));
+}
+function save(){ localStorage.setItem(SAVE_KEY, JSON.stringify(SAVE)); }
+
+// ---------- HELPERS ----------
+function $(id){ return document.getElementById(id); }
+function rand(a,b){ return a+Math.random()*(b-a); }
+function randi(a,b){ return Math.floor(rand(a,b+1)); }
+function clamp(v,a,b){ return v<a?a:v>b?b:v; }
+function dist(a,b){ return Math.abs(a.x-b.x); }
+function showModal(title, body, buttons){
+  $('modal-title').textContent = title;
+  $('modal-body').innerHTML = body;
+  const bc = $('modal-btns'); bc.innerHTML='';
+  buttons.forEach(b=>{
+    const btn = document.createElement('button');
+    btn.textContent = b.label;
+    if(b.cls) btn.className = b.cls;
+    btn.onclick = ()=>{ $('modal').classList.add('hidden'); if(b.onClick) b.onClick(); };
+    bc.appendChild(btn);
+  });
+  $('modal').classList.remove('hidden');
+}
+function toast(msg){
+  const el = document.createElement('div');
+  el.className = 'dmg-txt';
+  el.style.left = '50%'; el.style.top = '20%'; el.style.transform='translateX(-50%)';
+  el.style.fontSize='16px'; el.style.color='#ffd95a'; el.textContent=msg;
+  $('ui').appendChild(el);
+  let y=20, op=1;
+  const iv=setInterval(()=>{y-=0.5;op-=0.02;el.style.top=y+'%';el.style.opacity=op;if(op<=0){clearInterval(iv);el.remove();}},30);
+}
+
+// ---------- SCREEN MANAGER ----------
+function goto(name){
+  ['menu','stage','town','battle'].forEach(s=>$('screen-'+s).classList.add('hidden'));
+  $('screen-'+name).classList.remove('hidden');
+  if(name==='stage') renderStage();
+  if(name==='town') renderTown();
+}
+
+// ---------- CANVAS ----------
+const canvas = $('game');
+const ctx = canvas.getContext('2d');
+function resizeCanvas(){
+  const ratio = 16/9;
+  const ww = window.innerWidth, wh = window.innerHeight;
+  let w=ww, h=ww/ratio;
+  if(h>wh){ h=wh; w=wh*ratio; }
+  canvas.style.width = w+'px';
+  canvas.style.height = h+'px';
+}
+window.addEventListener('resize', resizeCanvas); resizeCanvas();
+
+// ---------- PROCEDURAL SPRITE DRAW ----------
+function drawCharacter(ctx, x, y, mon, team, facing, animT, hpPct, mpPct, isAttacking, isDead, isBoss){
+  // team: 0=player (left), 1=enemy (right). facing: -1=left, 1=right
+  const scale = (mon.defaultscale||1) * (isBoss?1.6:1);
+  const W = (mon.Width||50)*scale, H = (mon.Height||100)*scale;
+  const cx = x, by = y;
+  const color = TYPE_COLORS[mon.type] || TYPE_COLORS[0];
+  const qcolor = QUALITY_COLORS[mon.quality] || '#9e9e9e';
+  if(isDead){ ctx.globalAlpha=0.4; }
+
+  ctx.save();
+  ctx.translate(cx, by);
+  ctx.scale(facing,1);
+  // shadow
+  ctx.fillStyle='rgba(0,0,0,0.3)';
+  ctx.beginPath(); ctx.ellipse(0,2,W*0.4,6,0,0,Math.PI*2); ctx.fill();
+  // body bounce
+  const bob = Math.sin(animT*6)*2;
+  ctx.translate(0, bob);
+  // legs (two small rectangles)
+  ctx.fillStyle = color.trim;
+  ctx.fillRect(-W*0.25,-H*0.25,W*0.2,H*0.25);
+  ctx.fillRect(W*0.05,-H*0.25,W*0.2,H*0.25);
+  // body (rounded rect)
+  ctx.fillStyle = color.body;
+  roundRect(ctx,-W*0.4,-H*0.8,W*0.8,H*0.6,10*scale); ctx.fill();
+  // body outline (quality color)
+  ctx.strokeStyle = qcolor; ctx.lineWidth = 2.5*scale;
+  roundRect(ctx,-W*0.4,-H*0.8,W*0.8,H*0.6,10*scale); ctx.stroke();
+  // head circle
+  ctx.fillStyle = color.body;
+  ctx.beginPath(); ctx.arc(0,-H*0.85,W*0.28,0,Math.PI*2); ctx.fill();
+  ctx.strokeStyle = qcolor; ctx.stroke();
+  // eyes
+  ctx.fillStyle='#fff';
+  ctx.beginPath(); ctx.arc(W*0.08,-H*0.88,W*0.08,0,Math.PI*2); ctx.fill();
+  ctx.beginPath(); ctx.arc(-W*0.1,-H*0.88,W*0.08,0,Math.PI*2); ctx.fill();
+  ctx.fillStyle='#000';
+  ctx.beginPath(); ctx.arc(W*0.1,-H*0.88,W*0.04,0,Math.PI*2); ctx.fill();
+  ctx.beginPath(); ctx.arc(-W*0.08,-H*0.88,W*0.04,0,Math.PI*2); ctx.fill();
+  // weapon/attack indicator
+  if(isAttacking){
+    ctx.fillStyle = '#fff176';
+    ctx.beginPath();
+    ctx.moveTo(W*0.3,-H*0.6);
+    ctx.lineTo(W*0.9,-H*0.5);
+    ctx.lineTo(W*0.3,-H*0.4);
+    ctx.closePath(); ctx.fill();
+    ctx.strokeStyle='#b28704'; ctx.stroke();
+  }
+  // quality star if boss/rare
+  if((mon.quality||0)>=3){
+    ctx.fillStyle='#ffeb3b';
+    ctx.font = `${14*scale}px sans-serif`;
+    ctx.textAlign='center';
+    ctx.fillText('★',0,-H*1.1);
+  }
+  ctx.restore();
+
+  // HP / MP bar
+  if(!isDead){
+    const bw=W, bh=5;
+    ctx.fillStyle='#000'; ctx.fillRect(cx-bw/2,by-8-bh-12,bw,bh+2);
+    ctx.fillStyle='#c62828'; ctx.fillRect(cx-bw/2+1,by-8-bh-11,(bw-2)*hpPct,bh);
+  }
+  ctx.globalAlpha=1;
+}
+function roundRect(ctx,x,y,w,h,r){
+  ctx.beginPath();
+  ctx.moveTo(x+r,y); ctx.lineTo(x+w-r,y);
+  ctx.quadraticCurveTo(x+w,y,x+w,y+r); ctx.lineTo(x+w,y+h-r);
+  ctx.quadraticCurveTo(x+w,y+h,x+w-r,y+h); ctx.lineTo(x+r,y+h);
+  ctx.quadraticCurveTo(x,y+h,x,y+h-r); ctx.lineTo(x,y+r);
+  ctx.quadraticCurveTo(x,y,x+r,y); ctx.closePath();
+}
+function drawProjectile(ctx,x,y,color,isHeal){
+  ctx.save();
+  if(isHeal){
+    ctx.fillStyle='#66ff66';
+    ctx.beginPath(); ctx.arc(x,y,8,0,Math.PI*2); ctx.fill();
+    ctx.fillStyle='#fff'; ctx.fillRect(x-1,y-5,2,10); ctx.fillRect(x-5,y-1,10,2);
+  }else{
+    ctx.fillStyle=color||'#ff5722';
+    ctx.beginPath(); ctx.arc(x,y,6,0,Math.PI*2); ctx.fill();
+    ctx.strokeStyle='#fff'; ctx.lineWidth=1; ctx.stroke();
+  }
+  ctx.restore();
+}
+
+// ---------- BATTLE ENGINE ----------
+const BATTLE = {
+  active:false,
+  allies:[], enemies:[], projectiles:[], effects:[],
+  waves:[], curWave:0, spawnQueue:[],
+  groundY: 440, // in canvas coords (origin top-left)
+  time:0, lastSpawn:0,
+  level:null, speedMult:1,
+  result:null,
+  gold:0,
+  bgScroll:0,
+};
+
+function getEnemyById(lookupId){
+  // enemy di XML: musuh yang muncul di stage ada di enemies list, "CharacterId" di EnemyGroup mengacu pada id musuh
+  // Dari XML, enemy CharacterId=0..8 tampaknya mengacu pada id 12-19 (drop mobs), tapi untuk kemudahan,
+  // kita petakan secara deterministik: id 0..len(enemies)-1
+  const pool = GAMEDATA.enemies.filter(e=>e.type!==undefined);
+  // enemies dengan id 12-19 adalah musuh normal, id 20+ boss
+  const normals = pool.filter(e=>(e.id>=12 && e.id<20) || (e.id>=46 && e.id<=50));
+  const bosses = pool.filter(e=>e.id>=20 && e.id<46);
+  if(lookupId===-1) return normals[randi(0,normals.length-1)];
+  // lookupId dari EnemyGroup CharacterId (0..)
+  if(lookupId < normals.length) return normals[lookupId] || normals[0];
+  return bosses[lookupId-normals.length] || bosses[0];
+}
+
+function makeUnit(monsterData, isAlly, xpos, slotIdx){
+  const lv = isAlly ? (SAVE.ownedHeroes[monsterData.id]?.level || 1) : 1;
+  // scale stat dengan level untuk hero
+  const lvMul = isAlly ? (1 + (lv-1)*0.12) : 1;
+  const hp = Math.floor((monsterData.hp||200)*lvMul);
+  return {
+    mon: monsterData,
+    isAlly, x:xpos, y: BATTLE.groundY,
+    hp, maxHp:hp,
+    mp:0, maxMp:100,
+    atk: Math.floor((monsterData.damage||50)*lvMul),
+    def: (monsterData.defense||5),
+    speed: monsterData.movespeed||60, // px/sec
+    range: monsterData.attackrange||100,
+    atkCooldown: (monsterData.attackDelt||2.5),
+    atkTimer: rand(0,1),
+    isAttacking:false, atkAnimT:0,
+    slot:slotIdx,
+    animT: Math.random()*10,
+    alive:true,
+    facing: isAlly?1:-1,
+    isBoss: (monsterData.quality||0)>=3 && !isAlly && (monsterData.id>=20),
+    stateTimer:0, stunned:0, slowed:0,
+  };
+}
+
+function startBattle(levelId){
+  const lv = GAMEDATA.levels.find(l=>l.id===levelId);
+  if(!lv){ toast('關卡不存在'); return; }
+  BATTLE.level = lv;
+  BATTLE.waves = lv.waves;
+  BATTLE.curWave = 0;
+  BATTLE.allies = []; BATTLE.enemies = []; BATTLE.projectiles=[]; BATTLE.effects=[];
+  BATTLE.spawnQueue = []; BATTLE.time=0; BATTLE.lastSpawn=0;
+  BATTLE.result=null; BATTLE.speedMult=1; BATTLE.gold=0;
+  // Spawn allies from team
+  const startX = 160;
+  const gap = 80;
+  let idx=0;
+  SAVE.team.forEach((hid,i)=>{
+    if(hid<0) return;
+    const h = GAMEDATA.heroes.find(x=>x.id===hid);
+    if(!h) return;
+    BATTLE.allies.push(makeUnit(h,true,startX+idx*gap,i));
+    idx++;
+  });
+  // Jika team kosong, kasih Lydia default
+  if(BATTLE.allies.length===0){
+    const h = GAMEDATA.heroes[0];
+    BATTLE.allies.push(makeUnit(h,true,startX,0));
+  }
+  // siapkan wave pertama
+  prepareWave(0);
+  BATTLE.active = true;
+  $('b-level').textContent = lv.id+1;
+  $('b-waves').textContent = lv.waves.length;
+  updateSkillBar();
+  goto('battle');
+}
+function prepareWave(i){
+  if(i>=BATTLE.waves.length) return;
+  $('b-wave').textContent = i+1;
+  // Generate enemy group deterministically. Wave data punya scnid/mapid — kita generate
+  // jumlah & jenis musuh berdasarkan battleValue dan id wave
+  const w = BATTLE.waves[i];
+  const bv = BATTLE.level.battleValue * (i+1);
+  const count = 4 + i + Math.floor(BATTLE.level.id/3);
+  BATTLE.spawnQueue = [];
+  let t=0.5;
+  const isLastWave = (i===BATTLE.waves.length-1);
+  for(let k=0;k<count;k++){
+    let eid = randi(0, Math.min(7+Math.floor(BATTLE.level.id/4), GAMEDATA.enemies.length-1));
+    // pick normal enemy
+    let cand = GAMEDATA.enemies.filter(e=>e.id>=12 && e.id<50);
+    if(!cand.length) cand = GAMEDATA.enemies;
+    const m = cand[Math.min(randi(0,cand.length-1),cand.length-1)];
+    BATTLE.spawnQueue.push({t, m});
+    t += rand(0.8, 1.6);
+  }
+  // Boss di wave terakhir setiap kelipatan 5 level, atau level>=7
+  if(isLastWave && (BATTLE.level.id%5===4 || BATTLE.level.id>=7)){
+    const bosses = GAMEDATA.enemies.filter(e=>e.id>=20 && e.id<46);
+    if(bosses.length){
+      const bm = bosses[randi(0,bosses.length-1)];
+      BATTLE.spawnQueue.push({t:t+1, m:bm});
+    }
+  }
+}
+
+function spawnEnemy(m){
+  const u = makeUnit(m,false,980,-1);
+  // scale difficulty by level
+  const diff = 1 + BATTLE.level.id*0.08;
+  u.maxHp = Math.floor(u.maxHp*diff); u.hp=u.maxHp;
+  u.atk = Math.floor(u.atk*diff*0.9);
+  BATTLE.enemies.push(u);
+}
+
+function findNearestTarget(unit, enemyList){
+  let best=null, bd=Infinity;
+  for(const e of enemyList){
+    if(!e.alive) continue;
+    const d = Math.abs(e.x-unit.x);
+    if(d<bd){ bd=d; best=e; }
+  }
+  return best;
+}
+
+function dealDamage(src, target, dmg, isCrit){
+  const d = Math.max(1, Math.floor(dmg - target.def*0.5 + rand(-dmg*0.1, dmg*0.1)));
+  target.hp -= d;
+  spawnDmgText(target.x, target.y - (target.mon.Height||100) - 10, d, isCrit?'#ffeb3b':'#fff');
+  BATTLE.effects.push({type:'hit', x:target.x, y:target.y-40, t:0});
+  if(target.hp<=0){ target.alive=false; target.hp=0;
+    if(!target.isAlly){
+      BATTLE.gold += Math.floor((target.mon.dropgold||10));
+      // drop exp ke hero terdekat
+      const near = findNearestTarget(target, BATTLE.allies);
+      if(near && SAVE.ownedHeroes[near.mon.id]){
+        SAVE.ownedHeroes[near.mon.id].exp += (target.mon.dropexp||20);
+        checkLevelUp(near);
+      }
+      // chance drop
+      if(Math.random()<0.15) BATTLE.gold += randi(5,20);
+    }
+  }
+}
+function checkLevelUp(unit){
+  const h = SAVE.ownedHeroes[unit.mon.id];
+  if(!h) return;
+  const need = h.level * 100;
+  if(h.exp >= need){
+    h.exp -= need; h.level++;
+    spawnDmgText(unit.x, unit.y-60, 'LEVEL UP!','#66ff66');
+    // boost stat
+    unit.maxHp = Math.floor((unit.mon.hp||200)*(1+(h.level-1)*0.12));
+    unit.hp = unit.maxHp;
+    unit.atk = Math.floor((unit.mon.damage||50)*(1+(h.level-1)*0.12));
+  }
+}
+function spawnDmgText(x,y,txt,color){
+  BATTLE.effects.push({type:'txt', x, y, txt, color:color||'#fff', t:0, vy:-30});
+}
+
+// ---------- SKILLS ----------
+const SKILL_ACTIVE = {};
+// skill id -> implementasi
+function regSkill(id, fn){ SKILL_ACTIVE[id]=fn; }
+function cooldownKey(id){ return 'sk_cd_'+id; }
+
+// Skill generik: damage area / heal / buff. Implementasi berdasarkan attr (1=dmg, 0=buff)
+GAMEDATA.skills.forEach(sk=>{
+  regSkill(sk.id, (caster)=>{
+    const value = sk.value;
+    const range = sk.range;
+    const isDmg = sk.attr===1;
+    const enemies = BATTLE.enemies; const allies = BATTLE.allies;
+    if(sk.name.includes('治療')||sk.name.includes('恢復')){
+      allies.forEach(a=>{ if(a.alive){ a.hp=Math.min(a.maxHp,a.hp+value); spawnDmgText(a.x,a.y-80,'+'+value,'#66ff66'); }});
+      BATTLE.effects.push({type:'heal', x:caster.x, t:0});
+    }else if(isDmg){
+      enemies.forEach(e=>{
+        if(!e.alive) return;
+        if(Math.abs(e.x-caster.x)<=range){ dealDamage(caster,e,caster.atk + value, false); }
+      });
+      BATTLE.effects.push({type:'blast', x:caster.x+range/2, y:caster.y-60, r:range*0.3, t:0});
+    }else{
+      // buff: berikan bonus atk/def/mspeed/speed
+      allies.forEach(a=>{ if(a.alive && Math.abs(a.x-caster.x)<=800){
+        a.atkBuff = (a.atkBuff||0)+value*0.01;
+        spawnDmgText(a.x,a.y-80,sk.name,'#6ec8ff');
+      }});
+    }
+  });
+});
+
+// ---------- SKILL BAR UI ----------
+function updateSkillBar(){
+  const bar = $('skillBar'); bar.innerHTML='';
+  SAVE.skillBar.forEach((sid,slot)=>{
+    const btn = document.createElement('div');
+    btn.className='skill-btn';
+    let sk=null, name='—';
+    if(sid>=0){ sk = GAMEDATA.skills.find(s=>s.id===sid); if(sk) name=sk.name.slice(0,3); }
+    btn.innerHTML = `<div style="padding:2px;">${name}</div>`;
+    const cdEl = document.createElement('div'); cdEl.className='cd-t'; cdEl.textContent='';
+    btn.appendChild(cdEl);
+    btn.onclick = ()=>castSkill(slot);
+    btn.dataset.slot = slot;
+    bar.appendChild(btn);
+  });
+}
+function castSkill(slot){
+  if(!BATTLE.active || BATTLE.result) return;
+  const sid = SAVE.skillBar[slot];
+  if(sid<0) return;
+  const key = cooldownKey(sid)+'_'+slot;
+  if(BATTLE[key] && BATTLE[key]>0){ toast('冷卻中'); return; }
+  // MP cost — pakai mp hero pertama
+  const caster = BATTLE.allies.find(a=>a.alive);
+  if(!caster) return;
+  if(caster.mp < 30){ toast('魔力不足'); return; }
+  caster.mp -= 30;
+  const sk = GAMEDATA.skills.find(s=>s.id===sid);
+  if(SKILL_ACTIVE[sid]) SKILL_ACTIVE[sid](caster);
+  BATTLE[key] = sk.delt||10;
+  // efek cast anim
+  BATTLE.effects.push({type:'cast',x:caster.x,y:caster.y-60,t:0});
+}
+
+// ---------- BATTLE LOOP ----------
+let lastT=0;
+function loop(ts){
+  const dt = Math.min(0.05, (ts-lastT)/1000) * (BATTLE.active?BATTLE.speedMult:1);
+  lastT=ts;
+  if(BATTLE.active && !BATTLE.result) tickBattle(dt);
+  render();
+  requestAnimationFrame(loop);
+}
+requestAnimationFrame(loop);
+
+function tickBattle(dt){
+  BATTLE.time += dt; BATTLE.bgScroll += dt*20;
+  // spawn queue
+  for(let i=BATTLE.spawnQueue.length-1;i>=0;i--){
+    const s = BATTLE.spawnQueue[i];
+    if(BATTLE.time >= s.t){ spawnEnemy(s.m); BATTLE.spawnQueue.splice(i,1); }
+  }
+  // wave complete?
+  const enemiesAlive = BATTLE.enemies.filter(e=>e.alive).length;
+  if(enemiesAlive===0 && BATTLE.spawnQueue.length===0){
+    BATTLE.curWave++;
+    if(BATTLE.curWave < BATTLE.waves.length){
+      BATTLE.time = 0; prepareWave(BATTLE.curWave);
+      toast('Wave '+ (BATTLE.curWave+1) + '!');
+    }else{
+      endBattle(true); return;
+    }
+  }
+  // allies
+  updateUnits(BATTLE.allies, BATTLE.enemies, dt, 1);
+  updateUnits(BATTLE.enemies, BATTLE.allies, dt, -1);
+  // projectiles
+  for(let i=BATTLE.projectiles.length-1;i>=0;i--){
+    const p = BATTLE.projectiles[i];
+    p.x += p.vx*dt; p.y += p.vy*dt; p.life -= dt;
+    // hit?
+    const list = p.targetIsAlly?BATTLE.allies:BATTLE.enemies;
+    let hit=false;
+    for(const u of list){
+      if(!u.alive) continue;
+      if(Math.abs(u.x-p.x)<25 && Math.abs(u.y-20-p.y)<50){
+        if(p.isHeal){ u.hp=Math.min(u.maxHp,u.hp+p.dmg); spawnDmgText(u.x,u.y-60,'+'+p.dmg,'#66ff66'); }
+        else dealDamage(p.src||u, u, p.dmg, false);
+        hit=true; break;
+      }
+    }
+    if(hit||p.life<=0||p.x<-50||p.x>1010) BATTLE.projectiles.splice(i,1);
+  }
+  // effects
+  for(let i=BATTLE.effects.length-1;i>=0;i--){
+    const e = BATTLE.effects[i]; e.t+=dt;
+    if(e.type==='txt'){ e.y += e.vy*dt; e.vy += 20*dt; }
+    if(e.t>1) BATTLE.effects.splice(i,1);
+  }
+  // skill cooldowns
+  SAVE.skillBar.forEach((sid,slot)=>{
+    const key = cooldownKey(sid)+'_'+slot;
+    if(BATTLE[key]>0) BATTLE[key] = Math.max(0,BATTLE[key]-dt);
+  });
+  // allies mp regen
+  BATTLE.allies.forEach(a=>{ if(a.alive) a.mp = Math.min(a.maxMp, a.mp+dt*8); });
+  // ally lose? if all allies dead
+  if(!BATTLE.allies.some(a=>a.alive)) endBattle(false);
+  // HUD
+  $('b-gold').textContent = BATTLE.gold;
+  // update skill button CD visuals
+  document.querySelectorAll('.skill-btn').forEach(btn=>{
+    const slot = parseInt(btn.dataset.slot);
+    const sid = SAVE.skillBar[slot];
+    const key = cooldownKey(sid)+'_'+slot;
+    const cd = BATTLE[key]||0;
+    const cdt = btn.querySelector('.cd-t');
+    if(cd>0){ btn.classList.add('cd'); btn.classList.remove('ready'); cdt.textContent=cd.toFixed(1); }
+    else { btn.classList.remove('cd'); cdt.textContent='';
+      const caster = BATTLE.allies.find(a=>a.alive);
+      if(caster && caster.mp>=30 && sid>=0) btn.classList.add('ready');
+      else btn.classList.remove('ready');
+    }
+  });
+}
+function updateUnits(units, enemies, dt, sideSign){
+  for(const u of units){
+    if(!u.alive) continue;
+    u.animT += dt;
+    if(u.atkTimer>0) u.atkTimer -= dt;
+    if(u.stunned>0){ u.stunned-=dt; continue; }
+    const target = findNearestTarget(u, enemies);
+    if(!target){ // maju ke arah berlawanan
+      u.x += u.speed*dt*sideSign * (u.slowed>0?0.5:1);
+      if(u.slowed>0)u.slowed-=dt;
+      continue;
+    }
+    const d = Math.abs(target.x - u.x);
+    u.facing = (target.x > u.x) ? 1 : -1;
+    if(d > u.range){
+      u.x += (u.speed*dt*sideSign) * (u.slowed>0?0.5:1);
+      u.isAttacking=false;
+    }else{
+      // in range: attack
+      if(u.atkTimer<=0){
+        u.isAttacking=true; u.atkAnimT=0.3; u.atkTimer=u.atkCooldown;
+        // Ranged? gunakan projectile jika range>200
+        if(u.range>200){
+          BATTLE.projectiles.push({
+            x:u.x, y:u.y-70,
+            vx:(target.x-u.x)*1.5, vy:0,
+            dmg: u.atk, life:1.5,
+            targetIsAlly: (sideSign===1?false:true),
+            isHeal: false, src: u,
+            color: TYPE_COLORS[u.mon.type]?.body||'#ff5722'
+          });
+        }else{
+          dealDamage(u, target, u.atk, Math.random()<0.1);
+        }
+      }
+    }
+    if(u.atkAnimT>0){ u.atkAnimT-=dt; if(u.atkAnimT<=0) u.isAttacking=false; }
+    if(u.slowed>0)u.slowed-=dt;
+  }
+}
+function endBattle(win){
+  BATTLE.result = win?'win':'lose';
+  BATTLE.active=false;
+  if(win){
+    SAVE.gold += BATTLE.gold + 50 + BATTLE.level.id*10;
+    SAVE.gem += (BATTLE.level.id%5===4?3:1);
+    if(!SAVE.clearedLevels.includes(BATTLE.level.id)) SAVE.clearedLevels.push(BATTLE.level.id);
+    SAVE.unlockedLevelId = Math.max(SAVE.unlockedLevelId, BATTLE.level.id+1);
+    save();
+    showModal('🏆 勝利！',
+      `獲得 <b style="color:#ffd95a">${BATTLE.gold+50+BATTLE.level.id*10}</b> 金幣<br>`+
+      `獲得 <b style="color:#6ec8ff">${BATTLE.level.id%5===4?3:1}</b> 水晶<br>`+
+      `關卡進度解鎖: 第 ${SAVE.unlockedLevelId+1} 關`,
+      [{label:'返回地圖',cls:'btn-green',onClick:()=>goto('stage')}]);
+  }else{
+    showModal('💀 戰敗', '隊伍全滅！<br>可以升級英雄或調整隊伍後再挑戰。',
+      [{label:'返回地圖',cls:'btn-red',onClick:()=>goto('stage')},{label:'復活(消耗1捲軸)',cls:'btn-blue',onClick:()=>{
+        if(SAVE.scrolls<=0){ toast('沒有復活捲軸'); return; }
+        SAVE.scrolls--; save();
+        BATTLE.allies.forEach(a=>{a.alive=true;a.hp=a.maxHp;});
+        BATTLE.active=true; BATTLE.result=null;
+        $('modal').classList.add('hidden');
+      }}]);
+  }
+}
+
+// ---------- RENDER ----------
+function render(){
+  const c=ctx; c.clearRect(0,0,canvas.width,canvas.height);
+  // sky gradient sudah dari CSS, tambah detail
+  // clouds
+  c.fillStyle='rgba(255,255,255,0.5)';
+  for(let i=0;i<5;i++){
+    const cx=((i*250-BATTLE.bgScroll*0.3)%1200+1200)%1200-100;
+    c.beginPath(); c.arc(cx,80+i*10,30,0,Math.PI*2); c.arc(cx+25,75+i*10,25,0,Math.PI*2); c.arc(cx+50,85+i*10,20,0,Math.PI*2); c.fill();
+  }
+  // ground line
+  c.fillStyle='#2a5018';
+  c.fillRect(0, BATTLE.groundY+10, canvas.width, canvas.height-BATTLE.groundY);
+  // grass detail
+  c.strokeStyle='#4caf50'; c.lineWidth=2;
+  for(let i=0;i<40;i++){
+    const gx=((i*30-BATTLE.bgScroll)%canvas.width+canvas.width)%canvas.width;
+    c.beginPath(); c.moveTo(gx,BATTLE.groundY+10); c.lineTo(gx-3,BATTLE.groundY); c.moveTo(gx,BATTLE.groundY+10); c.lineTo(gx+3,BATTLE.groundY+2); c.stroke();
+  }
+  if(!BATTLE.active){ return; }
+  // draw units
+  const all = [...BATTLE.allies,...BATTLE.enemies].filter(u=>u.alive).sort((a,b)=>a.y-b.y);
+  for(const u of all){
+    const hpPct = u.hp/u.maxHp;
+    drawCharacter(c,u.x,u.y,u.mon, u.isAlly?0:1, u.facing, u.animT, hpPct, u.mp/u.maxMp, u.isAttacking, !u.alive, u.isBoss);
+    // mp bar for allies
+    if(u.isAlly){
+      c.fillStyle='#000'; c.fillRect(u.x-25, u.y-2, 50, 3);
+      c.fillStyle='#29b6f6'; c.fillRect(u.x-24, u.y-1, 48*(u.mp/u.maxMp), 1);
+    }
+  }
+  // projectiles
+  for(const p of BATTLE.projectiles) drawProjectile(c,p.x,p.y,p.color,p.isHeal);
+  // effects
+  for(const e of BATTLE.effects){
+    if(e.type==='txt'){
+      c.fillStyle = e.color; c.font='bold 16px sans-serif'; c.textAlign='center';
+      c.globalAlpha = Math.max(0,1-e.t);
+      c.fillText(e.txt, e.x, e.y);
+      c.globalAlpha=1;
+    }else if(e.type==='hit'){
+      c.strokeStyle='rgba(255,255,255,'+(1-e.t*3)+')'; c.lineWidth=3;
+      c.beginPath(); c.arc(e.x,e.y,15+e.t*30,0,Math.PI*2); c.stroke();
+    }else if(e.type==='blast'){
+      c.fillStyle='rgba(255,152,0,'+(0.6-e.t*0.6)+')';
+      c.beginPath(); c.arc(e.x,e.y,e.r*(1+e.t*2),0,Math.PI*2); c.fill();
+    }else if(e.type==='heal'){
+      c.strokeStyle='rgba(102,255,102,'+(1-e.t)+')'; c.lineWidth=3;
+      c.beginPath(); c.arc(e.x,BATTLE.groundY-40,40+e.t*30,Math.PI,0); c.stroke();
+    }else if(e.type==='cast'){
+      c.strokeStyle='rgba(110,200,255,'+(1-e.t*2)+')'; c.lineWidth=3;
+      c.beginPath(); c.arc(e.x,e.y,10+e.t*40,0,Math.PI*2); c.stroke();
+    }
+  }
+}
+
+// ---------- STAGE SELECT ----------
+function renderStage(){
+  $('s-gold').textContent = SAVE.gold;
+  $('s-gem').textContent = SAVE.gem;
+  const box = $('levelList'); box.innerHTML='';
+  const wrap = document.createElement('div');
+  wrap.className='row';
+  const cont = GAMEDATA.levels;
+  cont.forEach(lv=>{
+    const unlocked = lv.id <= SAVE.unlockedLevelId;
+    const cleared = SAVE.clearedLevels.includes(lv.id);
+    const card = document.createElement('div');
+    card.className='card '+(cleared?'owned':'')+(unlocked?'':'');
+    card.style.width='140px'; card.style.textAlign='center';
+    card.innerHTML = `
+      <div style="font-size:22px;">${cleared?'⭐':(unlocked?'⚔':'🔒')}</div>
+      <div style="font-weight:bold;">第 ${lv.id+1} 關</div>
+      <div style="font-size:11px;color:#aaa;">戰力 ${Math.floor(lv.battleValue)}</div>
+      <div style="font-size:11px;">${lv.waves.length} wave</div>
+    `;
+    card.style.opacity = unlocked?'1':'0.4';
+    if(unlocked){ card.onclick = ()=>{
+      if(SAVE.team.every(x=>x<0)){ toast('隊伍空的！先去城鎮組隊'); return; }
+      startBattle(lv.id);
+    }; card.style.cursor='pointer'; }
+    wrap.appendChild(card);
+  });
+  box.appendChild(wrap);
+}
+
+// ---------- TOWN ----------
+function renderTown(){
+  $('t-gold').textContent=SAVE.gold; $('t-gem').textContent=SAVE.gem;
+  renderTeam(); renderHeroList(); renderShop(); renderSkills();
+  document.querySelectorAll('.tab').forEach(t=>{
+    t.onclick=()=>{
+      document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));
+      document.querySelectorAll('.tab-pane').forEach(p=>p.classList.add('hidden'));
+      t.classList.add('active');
+      $('tab-'+t.dataset.tab).classList.remove('hidden');
+    };
+  });
+}
+function renderTeam(){
+  const box = $('teamSlots'); box.innerHTML='';
+  for(let i=0;i<5;i++){
+    const slot=document.createElement('div');
+    slot.className='card'; slot.style.width='80px'; slot.style.height='90px';
+    slot.style.textAlign='center';
+    const hid = SAVE.team[i];
+    if(hid<0){
+      slot.innerHTML='<div style="color:#888;font-size:30px;margin-top:20px;">+</div><div style="font-size:11px;">空位</div>';
+    }else{
+      const h = GAMEDATA.heroes.find(x=>x.id===hid);
+      const owned = SAVE.ownedHeroes[hid];
+      const tc = TYPE_COLORS[h.type];
+      slot.innerHTML = `<div style="width:50px;height:50px;background:${tc.body};border:3px solid ${QUALITY_COLORS[h.quality]};border-radius:50%;margin:4px auto;"></div>
+        <div style="font-size:11px;">${h.name||'英雄'} Lv${owned.level}</div>`;
+      slot.onclick = ()=>{ SAVE.team[i]=-1; save(); renderTeam(); renderHeroList(); };
+      slot.title='點擊移出隊伍';
+    }
+    box.appendChild(slot);
+  }
+}
+function renderHeroList(){
+  const box=$('heroList'); box.innerHTML='';
+  GAMEDATA.heroes.forEach(h=>{
+    const owned = !!SAVE.ownedHeroes[h.id];
+    const card = document.createElement('div');
+    card.className='card '+(owned?'owned':'');
+    if(SAVE.team.includes(h.id)) card.classList.add('selected');
+    card.style.width='150px';
+    const tc = TYPE_COLORS[h.type] || TYPE_COLORS[0];
+    const level = SAVE.ownedHeroes[h.id]?.level || 0;
+    const exp = SAVE.ownedHeroes[h.id]?.exp || 0;
+    const cost = owned ? Math.floor((h.uplevelgold||500)*Math.pow(1.2,level)) : (h.opengold||0);
+    const currency = '💰';
+    card.innerHTML=`
+      <div class="row" style="align-items:center;gap:8px;">
+        <div style="width:40px;height:40px;background:${tc.body};border:2px solid ${QUALITY_COLORS[h.quality]};border-radius:50%;"></div>
+        <div style="flex:1;">
+          <div style="font-weight:bold;">${h.name} ${owned?`Lv${level}`:''}</div>
+          <div style="font-size:10px;color:#aaa;">${tc.name} · HP ${h.hp} · ATK ${h.damage}</div>
+        </div>
+      </div>
+      <div style="font-size:11px;margin-top:4px;color:#ddd;">${(h.describ||'').slice(0,30)}</div>
+      <div style="margin-top:6px;" class="row">
+        ${owned
+          ? `<button class="btn-blue" style="padding:4px 8px;font-size:12px;" ${SAVE.gold<cost?'disabled':''}>升級 ${currency}${cost}</button>
+             <button class="btn-green" style="padding:4px 8px;font-size:12px;">入隊</button>`
+          : `<button class="btn-green" style="padding:4px 8px;font-size:12px;" ${SAVE.gold<cost?'disabled':''}>招募 ${currency}${cost}</button>`}
+      </div>`;
+    const btns = card.querySelectorAll('button');
+    if(owned){
+      btns[0].onclick = ()=>{
+        if(SAVE.gold<cost) return;
+        SAVE.gold-=cost; SAVE.ownedHeroes[h.id].level++; save(); renderTown(); toast(h.name+' 升級!');
+      };
+      btns[1].onclick = ()=>{
+        const empty = SAVE.team.indexOf(-1);
+        if(empty<0){ toast('隊伍已滿(5)，請先移出'); return; }
+        if(SAVE.team.includes(h.id)){ toast('已在隊伍'); return; }
+        SAVE.team[empty]=h.id; save(); renderTeam(); renderHeroList();
+      };
+    }else{
+      btns[0].onclick = ()=>{
+        if(SAVE.gold<cost) return;
+        SAVE.gold-=cost; SAVE.ownedHeroes[h.id]={level:1,exp:0}; save(); renderTown(); toast('招募 '+h.name+' 成功！');
+      };
+    }
+    box.appendChild(card);
+  });
+}
+function renderShop(){
+  const box=$('shopList'); box.innerHTML='';
+  GAMEDATA.shop.forEach(g=>{
+    // Skip real-money (type 0) — auto-free
+    const card = document.createElement('div');
+    card.className='card'; card.style.width='160px';
+    const currency = g.type===2?'💎':'💰';
+    const price = g.type===0?0:g.price; // type 0 (real money) = gratis di HTML5
+    card.innerHTML=`
+      <div style="font-weight:bold;">${g.name}</div>
+      <div style="font-size:11px;color:#ccc;min-height:30px;">${g.describ}</div>
+      <button class="btn-green" style="margin-top:4px;width:100%;padding:6px;">${g.type===0?'免費':currency+price}</button>
+    `;
+    card.querySelector('button').onclick = ()=>buyGood(g);
+    box.appendChild(card);
+  });
+}
+function buyGood(g){
+  if(g.type===1 && SAVE.gold<g.price){ toast('金幣不足'); return; }
+  if(g.type===2 && SAVE.gem<g.price){ toast('水晶不足'); return; }
+  if(g.type===1) SAVE.gold-=g.price;
+  else if(g.type===2) SAVE.gem-=g.price;
+  // effect berdasarkan nama/id
+  switch(g.id){
+    case 0: SAVE.potions+=12; toast('+12 血瓶'); break;
+    case 1: SAVE.scrolls+=12; toast('+12 復活捲軸'); break;
+    case 7: SAVE.gold+=10000; break; // 1萬金
+    case 8: SAVE.gold+=30000; break;
+    case 9: SAVE.gold+=60000; break;
+    case 10: SAVE.gold+=120000; break;
+    case 11: SAVE.gold+=180000; break;
+    case 24: SAVE.gold+=100000; SAVE.potions+=20; break;
+    case 23: // boss pack: tambahkan 3 boss hero jika ada
+      ['萊昂哈特','達古達','斯爾夫'].forEach(n=>{
+        const b = GAMEDATA.heroes.find(h=>h.name===n);
+        if(b && !SAVE.ownedHeroes[b.id]) SAVE.ownedHeroes[b.id]={level:1,exp:0};
+      });
+      SAVE.gold+=10000; toast('獲得Boss英雄+10000金'); break;
+    case 25: SAVE.gem+=20; SAVE.gold+=5000; SAVE.potions+=5; SAVE.scrolls+=3; break;
+    case 22: SAVE.gem+=350; SAVE.gold+=7000; SAVE.potions+=14; break;
+    // crystal packs (type 0) free
+    case 12: SAVE.gem+=20; break;
+    case 13: SAVE.gem+=55; break;
+    case 14: SAVE.gem+=120; break;
+    case 15: SAVE.gem+=270; break;
+    case 16: SAVE.gem+=840; break;
+    case 17: SAVE.gem+=2000; break;
+    case 18: SAVE.gem+=5000; break;
+    case 2: // 史詩套裝 — tambah semua hero level+3
+      Object.keys(SAVE.ownedHeroes).forEach(id=>{ SAVE.ownedHeroes[id].level+=3; });
+      toast('全體英雄+3級！'); break;
+    default:
+      // buff lain
+      SAVE.buffs[g.id] = (SAVE.buffs[g.id]||0)+1;
+      toast(g.name+' 已購買');
+  }
+  save(); renderTown();
+}
+function renderSkills(){
+  const slotsBox = $('skillSlots'); slotsBox.innerHTML='';
+  for(let i=0;i<3;i++){
+    const sid = SAVE.skillBar[i];
+    const sk = sid>=0 ? GAMEDATA.skills.find(s=>s.id===sid) : null;
+    const slot = document.createElement('div');
+    slot.className='card'; slot.style.width='100px'; slot.style.textAlign='center';
+    slot.innerHTML = sk ? `<b>${sk.name}</b><div style="font-size:10px;">${sk.describ.slice(0,20)}</div><button style="margin-top:4px;padding:2px 6px;font-size:11px;" class="btn-red">移除</button>`
+                       : `<div style="color:#888;padding:10px;">空欄位 ${i+1}</div>`;
+    if(sk){ slot.querySelector('button').onclick=()=>{ SAVE.skillBar[i]=-1; save(); renderSkills(); }; }
+    slotsBox.appendChild(slot);
+  }
+  const box=$('skillList'); box.innerHTML='';
+  GAMEDATA.skills.forEach(sk=>{
+    const owned = !!SAVE.ownedSkills[sk.id];
+    const inBar = SAVE.skillBar.includes(sk.id);
+    const cost = sk.costgold;
+    const card = document.createElement('div');
+    card.className='card '+(owned?'owned':'')+(inBar?' selected':'');
+    card.style.width='180px';
+    card.innerHTML=`<b>${sk.name}</b><div style="font-size:11px;color:#ccc;">${sk.describ}</div>
+      <div style="margin-top:4px;" class="row">
+        ${owned
+          ? `<button class="btn-green" style="padding:3px 6px;font-size:11px;" ${inBar?'disabled':''}>裝備</button>`
+          : `<button class="btn-blue" style="padding:3px 6px;font-size:11px;" ${SAVE.gold<cost?'disabled':''}>學習 💰${cost}</button>`}
+      </div>`;
+    card.querySelector('button').onclick=()=>{
+      if(!owned){
+        if(SAVE.gold<cost) return;
+        SAVE.gold-=cost; SAVE.ownedSkills[sk.id]=true; save(); renderTown();
+      }else{
+        const empty = SAVE.skillBar.indexOf(-1);
+        if(empty<0){ toast('快捷欄已滿'); return; }
+        SAVE.skillBar[empty]=sk.id; save(); renderSkills();
+        if(BATTLE.active) updateSkillBar();
+      }
+    };
+    box.appendChild(card);
+  });
+}
+
+// ---------- BUTTON BINDINGS ----------
+$('btn-start').onclick = ()=>{
+  // reset save if first time
+  if(!localStorage.getItem(SAVE_KEY)){ save(); }
+  goto('stage');
+};
+$('btn-continue').onclick = ()=>{
+  if(!localStorage.getItem(SAVE_KEY)){ toast('沒有存檔'); return; }
+  goto('stage');
+};
+$('btn-reset').onclick = ()=>{
+  showModal('⚠ 清除存檔','確定要刪除進度重新開始嗎？',[
+    {label:'取消',cls:'btn-blue'},{label:'確定清除',cls:'btn-red',onClick:()=>{
+      localStorage.removeItem(SAVE_KEY); SAVE=JSON.parse(JSON.stringify(DEFAULT_SAVE)); save();
+      toast('存檔已清除');
+      $('saveinfo').textContent='存檔已重置。';
+    }}
+  ]);
+};
+$('btn-how').onclick = ()=>{
+  showModal('📖 玩法說明',
+    `Brave Fighter 是一款 <b>橫向自動戰鬥</b> 遊戲：<br><br>`+
+    `1. 英雄會自動向前走、攻擊範圍內的敵人<br>`+
+    `2. 英雄在隊伍中最多 5 位，可以在「城鎮」招募、升級、替換<br>`+
+    `3. 戰鬥中可以點擊下方 <b>技能紐</b> 手動施放技能（消耗魔力，有冷卻）<br>`+
+    `4. 打贏關卡可獲得金幣、水晶，解鎖下一關<br>`+
+    `5. 商店可以買血瓶、捲軸、金幣，所有付費項目（原 APK IAP）在 HTML5 版一律<b>免費/用金幣水晶購買</b><br>`+
+    `6. 遊戲進度自動存於瀏覽器 localStorage<br><br>`+
+    `⚠ 若戰鬥覺得慢，可點右上「1×」按鈕調整速度。`,
+    [{label:'知道了',cls:'btn-green'}]);
+};
+$('btn-to-town').onclick = ()=>goto('town');
+$('btn-to-stage').onclick = ()=>goto('stage');
+$('btn-quit').onclick = ()=>{
+  showModal('逃跑?','確定要放棄這場戰鬥嗎？',[
+    {label:'繼續戰鬥',cls:'btn-blue'},{label:'逃跑',cls:'btn-red',onClick:()=>{BATTLE.active=false;goto('stage');}}
+  ]);
+};
+$('btn-speed').onclick = ()=>{
+  BATTLE.speedMult = BATTLE.speedMult===1?2:BATTLE.speedMult===2?3:1;
+  $('btn-speed').textContent = BATTLE.speedMult+'×';
+};
+
+// Init: tampilkan info save
+(function init(){
+  if(localStorage.getItem(SAVE_KEY)){
+    $('saveinfo').innerHTML = `✓ 找到存檔（金幣 ${SAVE.gold}，水晶 ${SAVE.gem}，英雄 ${Object.keys(SAVE.ownedHeroes).length}）`;
+  }else{
+    $('saveinfo').textContent = '※ 首次遊玩，點「開始冒險」建立新存檔';
+  }
+})();
+</script>
+</body>
+</html>
