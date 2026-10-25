@@ -1,0 +1,33 @@
+==============================================================================
+# GHIDRA-STYLE ANALYSIS: libcocos2dcpp.so
+# Brave Fighter v2.3.4 - com.joynow.monster.gp
+==============================================================================
+
+Start      End          Size  Name                             Description
+----------------------------------------------------------------------------------------------------
+0x0016cc02 0x0016cc40    62 B  DictWriter_encrypt               Caller Encrypt (writer dictionary key-value)
+0x0016ccb2 0x0016ccfc    74 B  DictReader_decrypt               Caller Decrypt (reader dictionary)
+0x0016d51d 0x0016d71d   512 B  getWeaponDescrib                 Dekripsi deskripsi senjata
+                                                            demangled: getWeaponDescrib(int, int, int, std::basic_string<char, std::char_traits<char>, std::allocator<char> >&)
+0x0016d59d 0x0016d79d   512 B  getClothesDescrib                Dekripsi deskripsi armor/baju
+                                                            demangled: getClothesDescrib(int, int, int, std::basic_string<char, std::char_traits<char>, std::allocator<char> >&)
+0x0016d625 0x0016d825   512 B  getShipingDescrib                Dekripsi deskripsi consumable (使用品/shiping)
+                                                            demangled: getShipingDescrib(int, int, int, std::basic_string<char, std::char_traits<char>, std::allocator<char> >&)
+0x0016d719 0x0016d919   512 B  getMonsterSkillDescrib           Dekripsi deskripsi skill monster
+                                                            demangled: getMonsterSkillDescrib(int, int, std::basic_string<char, std::char_traits<char>, std::allocator<char> >&)
+0x00172cee 0x00172d72   132 B  XmlAttrWriter_encrypt            Caller Encrypt (writer atribut XML)
+0x00173518 0x00173718   512 B  XmlAttrDecoder_read              Loop atribut XML: skip nama atribut == "value", Decrypt atribut string lain dengan key "akidbx"
+0x001735da 0x001737da   512 B  XmlAttrDecrypt_call              BL ke Decrypt di dalam XmlAttrDecoder_read
+0x001a7ea2 0x001a80a2   512 B  UIMsg_decrypt_a                  Caller Decrypt (UI string -> gbkToUTF8)
+0x001a8052 0x001a8252   512 B  UIMsg_decrypt_b                  Caller Decrypt (UI dialog varian)
+0x001b8e68 0x001b8ebc    84 B  rc4KSA                           RC4 Key Scheduling Algorithm (256-byte S-box)
+0x001b8ebc 0x001b8f46   138 B  rc4Crypt                         RC4 PRGA: enkripsi/dekripsi simetris per-byte
+0x001b8f46 0x001b8f96    80 B  hexEncode_upper                  Binary -> uppercase hex string, null-terminated, panjang 2*len+1
+0x001b8f96 0x001b8ff6    96 B  Encrypt                          Encrypt(str,key) : RC4(str,key) -> hexEncode
+0x001b8ff6 0x001b904e    88 B  hexDecode_upper                  Uppercase hex string -> binary; return NULL jika ada char invalid
+0x001b904e 0x001b90ce   128 B  Decrypt                          Decrypt(hex,key) : hexDecode -> RC4 -> null-terminated
+0x001b9b5d 0x001b9d5d   512 B  gbkToUTF8                        Konversi byte GBK menjadi string UTF-8 (wrapper iconv)
+                                                            demangled: gbkToUTF8(char const*)
+0x001b9b62 0x001b9b94    50 B  atoi_a                           Parsing integer dari string (varian A, dipakai parser XML)
+0x001b9b94 0x001b9bc6    50 B  atoi_b                           Parsing integer dari string (varian B)
+0x001b9bc8 0x001b9c40   120 B  itoa                             int -> string desimal (builtin itoa)

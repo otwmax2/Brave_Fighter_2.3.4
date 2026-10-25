@@ -1,0 +1,8 @@
+==============================================================================
+# GHIDRA-STYLE ANALYSIS: libsqltest.so
+# Brave Fighter v2.3.4 - com.joynow.monster.gp
+==============================================================================
+
+Start      End          Size  Name                             Description
+----------------------------------------------------------------------------------------------------
+0x00000ff8 0x000010c0   200 B  Java_com_joynow_apt_MyApplication_getFile JNI: membaca file mentah dari APK assets via AAssetManager (open/read/close)

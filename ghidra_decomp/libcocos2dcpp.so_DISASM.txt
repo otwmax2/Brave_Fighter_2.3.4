@@ -1,0 +1,1319 @@
+
+==============================================================================
+// Function: DictWriter_encrypt
+// Address : 0x0016cc02 - 0x0016cc40  (62 bytes)
+// Detail  : Caller Encrypt (writer dictionary key-value)
+==============================================================================
+0x0016cc02:  bl       #0x1b8f96                                ; -> <Encrypt>
+0x0016cc06:  adds     r4, r0, #0                              
+0x0016cc08:  adds     r1, r4, #0                              
+0x0016cc0a:  add      r0, sp, #0x1c                           
+0x0016cc0c:  add      r2, sp, #0x10                           
+0x0016cc0e:  ldr      r6, [sp, #0x14]                         
+0x0016cc10:  blx      #0x4b2efc                               
+0x0016cc14:  ldr      r0, [sp, #4]                            
+0x0016cc16:  adds     r1, r6, #0                              
+0x0016cc18:  add      r2, sp, #0x1c                           
+0x0016cc1a:  bl       #0x29072c                               
+0x0016cc1e:  add      r0, sp, #0x1c                           
+0x0016cc20:  blx      #0x4b193c                               
+0x0016cc24:  adds     r0, r5, #0                              
+0x0016cc26:  blx      #0x4c56a8                                ; -> operator delete(void*)
+0x0016cc2a:  adds     r0, r4, #0                              
+0x0016cc2c:  blx      #0x4c56a8                                ; -> operator delete(void*)
+0x0016cc30:  add      r0, sp, #0x18                           
+0x0016cc32:  blx      #0x4b193c                               
+0x0016cc36:  add      r0, sp, #0x14                           
+0x0016cc38:  blx      #0x4b193c                               
+0x0016cc3c:  add      sp, #0x24                               
+0x0016cc3e:  pop      {r4, r5, r6, r7, pc}                    
+0x0016cc40:  add      r0, sp, #0x1c                           
+0x0016cc42:  blx      #0x4b193c                               
+0x0016cc46:  b        #0x16cc4a                               
+
+==============================================================================
+// Function: DictReader_decrypt
+// Address : 0x0016ccb2 - 0x0016ccfc  (74 bytes)
+// Detail  : Caller Decrypt (reader dictionary)
+==============================================================================
+0x0016ccb2:  bl       #0x1b904e                                ; -> <Decrypt>
+0x0016ccb6:  adds     r5, r0, #0                              
+0x0016ccb8:  adds     r1, r5, #0                              
+0x0016ccba:  add      r0, sp, #0x10                           
+0x0016ccbc:  add      r2, sp, #4                              
+0x0016ccbe:  blx      #0x4b2efc                               
+0x0016ccc2:  add      r0, sp, #0x14                           
+0x0016ccc4:  add      r1, sp, #0x10                           
+0x0016ccc6:  bl       #0x1b6f88                               
+0x0016ccca:  ldr      r0, [sp, #0x14]                         
+0x0016cccc:  bl       #0x1b9b94                                ; -> <atoi_b>
+0x0016ccd0:  adds     r6, r0, #0                              
+0x0016ccd2:  add      r0, sp, #0x14                           
+0x0016ccd4:  blx      #0x4b193c                               
+0x0016ccd8:  add      r0, sp, #0x10                           
+0x0016ccda:  blx      #0x4b193c                               
+0x0016ccde:  adds     r0, r5, #0                              
+0x0016cce0:  blx      #0x4c56a8                                ; -> operator delete(void*)
+0x0016cce4:  adds     r0, r4, #0                              
+0x0016cce6:  blx      #0x4c56a8                                ; -> operator delete(void*)
+0x0016ccea:  add      r0, sp, #0xc                            
+0x0016ccec:  blx      #0x4b193c                               
+0x0016ccf0:  add      r0, sp, #8                              
+0x0016ccf2:  blx      #0x4b193c                               
+0x0016ccf6:  add      sp, #0x18                               
+0x0016ccf8:  adds     r0, r6, #0                              
+0x0016ccfa:  pop      {r4, r5, r6, pc}                        
+0x0016ccfc:  add      r0, sp, #0x14                           
+0x0016ccfe:  blx      #0x4b193c                               
+0x0016cd02:  b        #0x16cd04                               
+
+==============================================================================
+// Function: getWeaponDescrib
+// Address : 0x0016d51d - 0x0016d71d  (512 bytes)
+// Detail  : Dekripsi deskripsi senjata
+// Symbol  : getWeaponDescrib(int, int, int, std::basic_string<char, std::char_traits<char>, std::allocator<char> >&)
+==============================================================================
+0x0016d51d:  strh     r5, [r6, #0x2c]                         
+0x0016d51f:  lsls     r0, r6, #0x1a                           
+0x0016d521:  lsls     r4, r3, #4                              
+0x0016d523:  lsls     r1, r2, #0xe                            
+0x0016d525:  subs     r2, r2, #6                              
+0x0016d527:  lsls     r4, r3, #0x14                           
+0x0016d529:  lsls     r0, r5, #4                              
+0x0016d52b:  lsls     r1, r2, #0xf                            
+0x0016d52d:  lsls     r2, r4, #4                              
+0x0016d52f:  adds     r2, r2, r6                              
+0x0016d531:  asrs     r3, r1, #0x11                           
+0x0016d533:  strb     r2, [r4, #8]                            
+0x0016d535:  ldrb     r3, [r0, #0xd]                          
+0x0016d537:  subs     r4, r0, r5                              
+0x0016d539:  lsrs     r0, r5, #1                              
+0x0016d53b:  movs     r2, r6                                  
+0x0016d53d:  ldr      r3, [sp, #0x90]                         
+0x0016d53f:  lsls     r0, r3, #1                              
+0x0016d541:  movs     r3, #0x93                               
+0x0016d543:  movs     r5, #0xe0                               
+0x0016d545:  adds     r1, r5, #4                              
+0x0016d547:  lsls     r1, r2, #3                              
+0x0016d549:  asrs     r2, r3, #0xe                            
+0x0016d54b:  ldrh     r1, [r3, r4]                            
+0x0016d54d:  str      r0, [r7, #0x14]                         
+0x0016d54f:  adds     r3, r5, r0                              
+0x0016d551:  lsls     r1, r2, #0xf                            
+0x0016d553:  lsls     r2, r3, #6                              
+0x0016d555:  adds     r0, #0x99                               
+
+==============================================================================
+// Function: getClothesDescrib
+// Address : 0x0016d59d - 0x0016d79d  (512 bytes)
+// Detail  : Dekripsi deskripsi armor/baju
+// Symbol  : getClothesDescrib(int, int, int, std::basic_string<char, std::char_traits<char>, std::allocator<char> >&)
+==============================================================================
+0x0016d59d:  strh     r5, [r6, #0x2c]                         
+0x0016d59f:  subs     r0, r6, #2                              
+0x0016d5a1:  subs     r4, r3, #4                              
+0x0016d5a3:  lsls     r3, r1, #0xd                            
+0x0016d5a5:  adds     r2, r2, r2                              
+0x0016d5a7:  tst      r2, r4                                  
+0x0016d5a9:  ldrb     r3, [r0, #0xd]                          
+0x0016d5ab:  subs     r4, r0, r5                              
+0x0016d5ad:  lsrs     r0, r5, #1                              
+0x0016d5af:  lsls     r2, r6, #0x1c                           
+0x0016d5b1:  ldr      r3, [sp, #0x70]                         
+0x0016d5b3:  lsls     r0, r3, #9                              
+0x0016d5b5:  lsls     r1, r2, #2                              
+0x0016d5b7:  lsls     r4, r4, #4                              
+0x0016d5b9:  cmp      r3, #0x93                               
+0x0016d5bb:  movs     r5, #0xe0                               
+0x0016d5bd:  movs     r5, #0x29                               
+0x0016d5bf:  lsls     r1, r2, #7                              
+0x0016d5c1:  asrs     r2, r3, #0xe                            
+0x0016d5c3:  ldrh     r1, [r3, r4]                            
+0x0016d5c5:  str      r0, [r7, #0x34]                         
+0x0016d5c7:  lsls     r3, r5, #0x14                           
+0x0016d5c9:  subs     r0, #0xd1                               
+0x0016d5cb:  lsls     r4, r3, #8                              
+0x0016d5cd:  lsls     r1, r3, #0xe                            
+
+==============================================================================
+// Function: getShipingDescrib
+// Address : 0x0016d625 - 0x0016d825  (512 bytes)
+// Detail  : Dekripsi deskripsi consumable (使用品/shiping)
+// Symbol  : getShipingDescrib(int, int, int, std::basic_string<char, std::char_traits<char>, std::allocator<char> >&)
+==============================================================================
+0x0016d625:  subs     r5, r6, #2                              
+0x0016d627:  subs     r0, #0x1c                               
+0x0016d629:  strh     r3, [r1, #0x3a]                         
+0x0016d62b:  lsls     r0, r6, #0xe                            
+0x0016d62d:  ldrb     r2, [r2, #0xe]                          
+0x0016d62f:  rsbs     r4, r0, #0                              
+0x0016d631:  subs     r1, r0, r4                              
+0x0016d633:  lsrs     r0, r5, #0x1d                           
+0x0016d635:  asrs     r4, r3, #4                              
+0x0016d637:  lsrs     r4, r3, #0x20                           
+0x0016d639:  ldr      r1, [r6, r4]                            
+0x0016d63b:  ldr      r3, [sp, #0x160]                        
+0x0016d63d:  blt      #0x16d671                               
+0x0016d63f:  lsls     r0, r5, #9                              
+0x0016d641:  lsls     r0, r2, #0x16                           
+0x0016d643:  lsls     r1, r2, #0x12                           
+0x0016d645:  lsls     r3, r2, #2                              
+0x0016d647:  ldr      r4, [r4, r4]                            
+0x0016d649:  movs     r5, #0xe0                               
+0x0016d64b:  strh     r1, [r5, r4]                            
+0x0016d64d:  lsls     r1, r2, #0x17                           
+0x0016d64f:  asrs     r2, r3, #0xe                            
+0x0016d651:  ldrh     r1, [r3, r4]                            
+0x0016d653:  str      r0, [r7, #0x14]                         
+0x0016d655:  lsls     r3, r5, #0x14                           
+0x0016d657:  lsls     r1, r2, #0xb                            
+0x0016d659:  subs     r1, #0x98                               
+0x0016d65b:  lsls     r4, r3, #0xc                            
+0x0016d65d:  mrc2     p13, #4, sp, c10, c7, #7                
+0x0016d661:  lsrs     r6, r7, #0x1b                           
+0x0016d663:  str      r0, [r4, #0x3c]                         
+0x0016d665:  lsls     r3, r5, #0x14                           
+0x0016d667:  lsls     r1, r2, #0xb                            
+0x0016d669:  subs     r1, #0x98                               
+0x0016d66b:  lsls     r4, r3, #0xc                            
+0x0016d66d:  mrc2     p9, #4, sl, c10, c7, #7                 
+0x0016d671:  lsls     r6, r7, #0x1b                           
+0x0016d673:  str      r0, [r4, #0x2c]                         
+0x0016d675:  lsrs     r3, r5, #0x14                           
+0x0016d677:  lsls     r1, r2, #0xb                            
+0x0016d679:  subs     r1, #0x98                               
+0x0016d67b:  lsls     r4, r3, #0xc                            
+0x0016d67d:  mrc2     p9, #4, apsr_nzcv, c10, c7, #7          
+0x0016d681:  lsls     r6, r7, #7                              
+0x0016d683:  lsrs     r0, r2, #0xa                            
+0x0016d685:  ldr      r0, [r4, r4]                            
+0x0016d687:  adr      r2, #0x3cc                              
+0x0016d689:  lsls     r6, r5, #0x17                           
+0x0016d68b:  lsls     r4, r3, #4                              
+0x0016d68d:  str      r0, [r3, #0x58]                         
+0x0016d68f:  ldr      r3, [r6, r3]                            
+0x0016d691:  movs     r4, #0xea                               
+0x0016d693:  str      r0, [r4, #0x4c]                         
+0x0016d695:  cmp      r6, #0x2b                               
+0x0016d697:  adds     r1, r2, #7                              
+0x0016d699:  cbnz     r5, #0x16d6ef                           
+0x0016d69b:  lsls     r0, r0, #0x10                           
+0x0016d69d:  ldrb     r0, [r3, #0x16]                         
+0x0016d69f:  lsls     r4, r0, #5                              
+0x0016d6a1:  cmp      r5, #0x93                               
+0x0016d6a3:  str      r0, [r5, #0x44]                         
+0x0016d6a5:  b        #0x16d88f                               
+0x0016d6a7:  lsls     r7, r5, #7                              
+0x0016d6a9:  str      r2, [r3, r6]                            
+0x0016d6ab:  str      r1, [r3, #0x54]                         
+0x0016d6ad:  adds     r2, #0xf3                               
+0x0016d6af:  lsls     r0, r5, #0x17                           
+0x0016d6b1:  lsls     r4, r3, #0xc                            
+0x0016d6b3:  str      r0, [r3, #0x48]                         
+0x0016d6b5:  bhi      #0x16d69f                               
+0x0016d6b7:  asrs     r7, r5, #0x1b                           
+0x0016d6b9:  str      r1, [r1, #0x54]                         
+0x0016d6bb:  cmp      r4, #0xf3                               
+0x0016d6bd:  cdp2     p9, #0xe, c8, c8, c1, #1                
+0x0016d6c1:  str      r5, [r0, #0x40]                         
+0x0016d6c3:  lsls     r3, r6, #0x1b                           
+0x0016d6c5:  lsls     r7, r5, #7                              
+0x0016d6c7:  cmp      r0, #0x1c                               
+0x0016d6c9:  str      r4, [r3, #0x50]                         
+0x0016d6cb:  movs     r4, #0xf3                               
+0x0016d6cd:  str      r0, [r5, #0x5c]                         
+0x0016d6cf:  subs     r0, #0xf3                               
+0x0016d6d1:  lsls     r2, r5, #0x13                           
+0x0016d6d3:  lsrs     r0, r2, #0xa                            
+0x0016d6d5:  ldr      r0, [r4, r4]                            
+0x0016d6d7:  ldrb     r3, [r6, #0xb]                          
+0x0016d6d9:  lsls     r6, r5, #0x17                           
+0x0016d6db:  lsls     r4, r3, #0x10                           
+0x0016d6dd:  cmp      r1, #0x98                               
+0x0016d6df:  ldr      r4, [pc, #0x70]                          ; [pool @0x0016d750] = 0xf3646a58
+0x0016d6e1:  strb     r0, [r6, #0xb]                          
+0x0016d6e3:  cmp      r1, #0xfa                               
+0x0016d6e5:  adds     r0, #0x1c                               
+0x0016d6e7:  cmp      r4, r3                                  
+0x0016d6e9:  str      r4, [sp, #0x3cc]                        
+0x0016d6eb:  cmp      r0, #0xe8                               
+0x0016d6ed:  ldrsb    r4, [r3, r4]                            
+0x0016d6ef:  bgt      #0x16d6d9                               
+0x0016d6f1:  lsls     r7, r5, #0xb                            
+0x0016d6f3:  lsls     r4, r6, #0xc                            
+0x0016d6f5:  adds     r0, #0xe0                               
+0x0016d6f7:  add      r4, r3                                  
+0x0016d6f9:  subs     r4, #0xf3                               
+0x0016d6fb:  lsls     r7, r5, #7                              
+0x0016d6fd:  lsls     r4, r6, #0x14                           
+0x0016d6ff:  adds     r3, r3, r6                              
+0x0016d701:  lsls     r5, r3, #1                              
+0x0016d703:  adr      r1, #0xa4                               
+0x0016d705:  lsls     r1, r2, #0x1f                           
+
+==============================================================================
+// Function: getMonsterSkillDescrib
+// Address : 0x0016d719 - 0x0016d919  (512 bytes)
+// Detail  : Dekripsi deskripsi skill monster
+// Symbol  : getMonsterSkillDescrib(int, int, std::basic_string<char, std::char_traits<char>, std::allocator<char> >&)
+==============================================================================
+0x0016d719:  movs     r5, #0xb5                               
+0x0016d71b:  asrs     r3, r1, #0x19                           
+0x0016d71d:  cmp      r4, #0x1c                               
+0x0016d71f:  tst      r2, r4                                  
+0x0016d721:  ldrb     r3, [r0, #0xd]                          
+0x0016d723:  subs     r4, r0, r5                              
+0x0016d725:  lsrs     r0, r5, #1                              
+0x0016d727:  strh     r2, [r6, #0x28]                         
+0x0016d729:  ldr      r2, [sp, #0x2c0]                        
+0x0016d72b:  lsls     r0, r3, #0x1d                           
+0x0016d72d:  lsls     r4, r3, #4                              
+0x0016d72f:  lsls     r1, r2, #2                              
+0x0016d731:  lsls     r2, r2, #2                              
+0x0016d733:  lsls     r4, r4, #0xc                            
+0x0016d735:  adds     r4, #0x93                               
+0x0016d737:  movs     r5, #0xe0                               
+0x0016d739:  cmp      r6, #0x29                               
+0x0016d73b:  lsls     r1, r2, #3                              
+0x0016d73d:  asrs     r2, r3, #0xe                            
+0x0016d73f:  ldrh     r1, [r3, r4]                            
+0x0016d741:  str      r0, [r7, #0x14]                         
+0x0016d743:  cmp      r1, #0x2b                               
+0x0016d745:  cmp      r4, #0xd1                               
+0x0016d747:  ldrb     r3, [r4, #0xc]                          
+0x0016d749:  lsls     r3, r0, #0xd                            
+0x0016d74b:  lsls     r2, r3, #0xa                            
+0x0016d74d:  blo      #0x16d7b9                               
+0x0016d74f:  ldr      r0, [r3, r0]                            
+0x0016d751:  str      r2, [r5, #0x44]                         
+0x0016d753:  ldrh     r3, [r6, #0x16]                         
+0x0016d755:  lsls     r7, r5, #0x17                           
+0x0016d757:  lsls     r4, r3, #4                              
+0x0016d759:  str      r0, [r3, #0x48]                         
+0x0016d75b:  strh     r3, [r6, #0x36]                         
+0x0016d75d:  asrs     r7, r5, #0x17                           
+0x0016d75f:  str      r1, [r1, #0x44]                         
+0x0016d761:  bhi      #0x16d74b                               
+0x0016d763:  cdp2     p9, #0xe, c8, c15, c1, #1               
+0x0016d767:  str      r5, [r0, #0x40]                         
+0x0016d769:  uxtb     r3, r6                                  
+0x0016d76b:  lsls     r6, r5, #7                              
+0x0016d76d:  cmp      r0, #0x1c                               
+0x0016d76f:  str      r4, [r3, #0x40]                         
+0x0016d771:  beq      #0x16d75b                               
+0x0016d773:  lsls     r7, r5, #0xb                            
+0x0016d775:  lsrs     r0, r2, #0xa                            
+0x0016d777:  ldr      r0, [r4, r4]                            
+0x0016d779:  cmp      r0, #0xf3                               
+0x0016d77b:  lsls     r6, r5, #0x17                           
+0x0016d77d:  lsls     r4, r3, #8                              
+0x0016d77f:  str      r0, [r3, #0x58]                         
+0x0016d781:  udf      #0xf3                                   
+0x0016d783:  cmp      r1, #0xe9                               
+0x0016d785:  ldr      r4, [pc, #0x70]                          ; [pool @0x0016d7f8] = 0x1c20d108
+0x0016d787:  subs     r0, r6, #7                              
+0x0016d789:  cmp      r1, #0xfa                               
+0x0016d78b:  adds     r0, #0x1c                               
+0x0016d78d:  cmp      r4, r3                                  
+0x0016d78f:  cmn      r3, r6                                  
+0x0016d791:  cmp      r0, #0xe8                               
+0x0016d793:  ldrsb    r4, [r3, r4]                            
+0x0016d795:  ldrh     r3, [r6, #6]                            
+0x0016d797:  lsls     r7, r5, #0xf                            
+0x0016d799:  adds     r0, #0xe0                               
+0x0016d79b:  add      r4, r3                                  
+
+==============================================================================
+// Function: XmlAttrWriter_encrypt
+// Address : 0x00172cee - 0x00172d72  (132 bytes)
+// Detail  : Caller Encrypt (writer atribut XML)
+==============================================================================
+0x00172cee:  bl       #0x1b8f96                                ; -> <Encrypt>
+0x00172cf2:  ldr      r1, [pc, #0xe0]                          ; [pool @0x00172dd4] = 0x0039d728
+0x00172cf4:  adds     r7, r0, #0                              
+0x00172cf6:  add      r2, sp, #0x14                           
+0x00172cf8:  add      r1, pc                                   ; = "update "
+0x00172cfa:  add      r0, sp, #0x20                           
+0x00172cfc:  bl       #0x172b80                               
+0x00172d00:  ldr      r2, [pc, #0xd4]                          ; [pool @0x00172dd8] = 0x0039d722
+0x00172d02:  add      r0, sp, #0x1c                           
+0x00172d04:  add      r1, sp, #0x20                           
+0x00172d06:  add      r2, pc                                   ; = " "
+0x00172d08:  bl       #0x1728c8                               
+0x00172d0c:  add      r0, sp, #0x20                           
+0x00172d0e:  blx      #0x4b193c                               
+0x00172d12:  add      r0, sp, #0x1c                           
+0x00172d14:  adds     r1, r7, #0                              
+0x00172d16:  blx      #0x4b2814                               
+0x00172d1a:  ldr      r1, [pc, #0xc0]                          ; [pool @0x00172ddc] = 0x0039d719
+0x00172d1c:  add      r0, sp, #0x1c                           
+0x00172d1e:  add      r1, pc                                   ; = "'"
+0x00172d20:  blx      #0x4b2814                               
+0x00172d24:  add      r0, sp, #0x1c                           
+0x00172d26:  adds     r1, r6, #0                              
+0x00172d28:  blx      #0x4b2814                               
+0x00172d2c:  add      r0, sp, #0x24                           
+0x00172d2e:  add      r1, sp, #0x1c                           
+0x00172d30:  blx      #0x4b2a90                               
+0x00172d34:  add      r0, sp, #0x24                           
+0x00172d36:  bl       #0x1b7a3c                               
+0x00172d3a:  adds     r4, r0, #0                              
+0x00172d3c:  add      r0, sp, #0x24                           
+0x00172d3e:  blx      #0x4b193c                               
+0x00172d42:  cmp      r4, #0                                  
+0x00172d44:  bne      #0x172d4a                               
+0x00172d46:  bl       #0x1b799c                               
+0x00172d4a:  adds     r0, r6, #0                              
+0x00172d4c:  blx      #0x4c56a8                                ; -> operator delete(void*)
+0x00172d50:  adds     r0, r5, #0                              
+0x00172d52:  blx      #0x4c56a8                                ; -> operator delete(void*)
+0x00172d56:  adds     r0, r7, #0                              
+0x00172d58:  blx      #0x4c56a8                                ; -> operator delete(void*)
+0x00172d5c:  add      r0, sp, #0x1c                           
+0x00172d5e:  blx      #0x4b193c                               
+0x00172d62:  add      r0, sp, #0x18                           
+0x00172d64:  blx      #0x4b193c                               
+0x00172d68:  add      r0, sp, #0x14                           
+0x00172d6a:  blx      #0x4b193c                               
+0x00172d6e:  add      sp, #0x2c                               
+0x00172d70:  pop      {r4, r5, r6, r7, pc}                    
+0x00172d72:  add      r0, sp, #0xc                            
+0x00172d74:  b        #0x172d78                               
+0x00172d76:  add      r0, sp, #0x10                           
+
+==============================================================================
+// Function: XmlAttrDecoder_read
+// Address : 0x00173518 - 0x00173718  (512 bytes)
+// Detail  : Loop atribut XML: skip nama atribut == "value", Decrypt atribut string lain dengan key "akidbx"
+==============================================================================
+0x00173518:  push     {r4, r5, r6, r7, lr}                    
+0x0017351a:  ldr      r6, [pc, #0x124]                         ; [pool @0x00173640] = 0x004655aa
+0x0017351c:  sub      sp, #0x5c                               
+0x0017351e:  add      r6, pc                                   ; = ""
+0x00173520:  bl       #0x16f6fc                               
+0x00173524:  cmp      r0, #0                                  
+0x00173526:  bne      #0x17352e                               
+0x00173528:  bl       #0x1b7b68                               
+0x0017352c:  b        #0x173ada                               
+0x0017352e:  ldr      r3, [pc, #0x114]                         ; [pool @0x00173644] = 0xffffe0bc
+0x00173530:  ldr      r3, [r6, r3]                            
+0x00173532:  adds     r3, #0xc                                
+0x00173534:  str      r3, [sp, #0x1c]                         
+0x00173536:  ldr      r3, [pc, #0x110]                         ; [pool @0x00173648] = 0xffffe17c
+0x00173538:  ldr      r3, [r6, r3]                            
+0x0017353a:  ldr      r3, [r3]                                
+0x0017353c:  cmp      r3, #0                                  
+0x0017353e:  bne      #0x173546                               
+0x00173540:  ldr      r1, [pc, #0x108]                         ; [pool @0x0017364c] = 0x0039ca05
+0x00173542:  add      r1, pc                                   ; = "d"
+0x00173544:  b        #0x17354a                               
+0x00173546:  ldr      r1, [pc, #0x108]                         ; [pool @0x00173650] = 0x0039ca9b
+0x00173548:  add      r1, pc                                   ; = "herodata1"
+0x0017354a:  add      r0, sp, #0x1c                           
+0x0017354c:  blx      #0x4b1c60                               
+0x00173550:  ldr      r1, [pc, #0x100]                         ; [pool @0x00173654] = 0x0039ceef
+0x00173552:  add      r0, sp, #0x20                           
+0x00173554:  add      r2, sp, #0x1c                           
+0x00173556:  add      r1, pc                                   ; = " "
+0x00173558:  bl       #0x172b80                               
+0x0017355c:  add      r0, sp, #0x30                           
+0x0017355e:  add      r1, sp, #0x20                           
+0x00173560:  blx      #0x4b2a90                               
+0x00173564:  add      r0, sp, #0x30                           
+0x00173566:  add      r1, sp, #0x24                           
+0x00173568:  add      r2, sp, #0x28                           
+0x0017356a:  add      r3, sp, #0x2c                           
+0x0017356c:  bl       #0x1b7b34                               
+0x00173570:  adds     r4, r0, #0                              
+0x00173572:  add      r0, sp, #0x30                           
+0x00173574:  blx      #0x4b193c                               
+0x00173578:  cmp      r4, #0                                  
+0x0017357a:  bne      #0x173590                               
+0x0017357c:  ldr      r3, [pc, #0xd8]                          ; [pool @0x00173658] = 0xffffe224
+0x0017357e:  movs     r1, #0x20                               
+0x00173580:  ldr      r0, [r6, r3]                            
+0x00173582:  bl       #0x261d50                               
+0x00173586:  bl       #0x263f80                               
+0x0017358a:  bl       #0x16fcc0                               
+0x0017358e:  b        #0x1739e2                               
+0x00173590:  add      r0, sp, #0x3c                           
+0x00173592:  bl       #0x2619a8                               
+0x00173596:  ldr      r5, [pc, #0xc4]                          ; [pool @0x0017365c] = 0x0039c4e0
+0x00173598:  movs     r1, #0                                  
+0x0017359a:  ldr      r3, [sp, #0x2c]                         
+0x0017359c:  str      r1, [sp, #8]                            
+0x0017359e:  add      r5, pc                                   ; = "t"
+0x001735a0:  b        #0x17362c                               
+0x001735a2:  ldr      r2, [sp, #0x24]                         
+0x001735a4:  lsls     r3, r4, #2                              
+0x001735a6:  adds     r1, r5, #0                              
+0x001735a8:  ldr      r3, [r3, r2]                            
+0x001735aa:  str      r2, [sp, #4]                            
+0x001735ac:  adds     r0, r3, #0                              
+0x001735ae:  str      r3, [sp, #0x10]                         
+0x001735b0:  blx      #0x169bb8                               
+0x001735b4:  cmp      r0, #0                                  
+0x001735b6:  bne      #0x1735c4                               
+0x001735b8:  ldr      r3, [sp, #4]                            
+0x001735ba:  ldr      r0, [r3, r7]                            
+0x001735bc:  blx      #0x169b64                               
+0x001735c0:  str      r0, [sp, #0xc]                          
+0x001735c2:  b        #0x173618                               
+0x001735c4:  ldr      r1, [pc, #0x98]                          ; [pool @0x00173660] = 0x0039c6d3
+0x001735c6:  ldr      r0, [sp, #0x10]                         
+0x001735c8:  add      r1, pc                                   ; = "value"
+0x001735ca:  blx      #0x169bb8                               
+0x001735ce:  cmp      r0, #0                                  
+0x001735d0:  bne      #0x173618                               
+0x001735d2:  ldr      r1, [sp, #4]                            
+0x001735d4:  ldr      r0, [r1, r7]                            
+0x001735d6:  ldr      r1, [pc, #0x8c]                          ; [pool @0x00173664] = 0x0039bf3a
+0x001735d8:  add      r1, pc                                   ; = "akidbx"
+0x001735da:  bl       #0x1b904e                                ; -> <Decrypt>
+0x001735de:  str      r0, [sp, #4]                            
+0x001735e0:  ldr      r1, [sp, #4]                            
+0x001735e2:  add      r0, sp, #0x38                           
+0x001735e4:  add      r2, sp, #0x18                           
+0x001735e6:  blx      #0x4b2efc                               
+0x001735ea:  add      r0, sp, #0x34                           
+0x001735ec:  add      r1, sp, #0x38                           
+0x001735ee:  bl       #0x1b6f88                               
+0x001735f2:  add      r0, sp, #0x38                           
+0x001735f4:  blx      #0x4b193c                               
+0x001735f8:  ldr      r0, [sp, #0x34]                         
+0x001735fa:  blx      #0x169b64                               
+0x001735fe:  bl       #0x16b344                               
+0x00173602:  adds     r1, r0, #0                              
+0x00173604:  ldr      r2, [sp, #0xc]                          
+0x00173606:  add      r0, sp, #0x3c                           
+0x00173608:  bl       #0x262ad0                               
+0x0017360c:  ldr      r0, [sp, #4]                            
+0x0017360e:  blx      #0x4c56a8                                ; -> operator delete(void*)
+0x00173612:  add      r0, sp, #0x34                           
+0x00173614:  blx      #0x4b193c                               
+0x00173618:  adds     r4, #1                                  
+0x0017361a:  adds     r7, #4                                  
+0x0017361c:  ldr      r2, [sp, #0x14]                         
+0x0017361e:  adds     r3, r4, r2                              
+0x00173620:  ldr      r2, [sp, #0x2c]                         
+0x00173622:  cmp      r4, r2                                  
+0x00173624:  blt      #0x1735a2                               
+0x00173626:  ldr      r1, [sp, #8]                            
+0x00173628:  adds     r1, #1                                  
+0x0017362a:  str      r1, [sp, #8]                            
+0x0017362c:  ldr      r2, [sp, #0x28]                         
+0x0017362e:  ldr      r1, [sp, #8]                            
+0x00173630:  cmp      r1, r2                                  
+0x00173632:  bge      #0x173668                               
+0x00173634:  movs     r4, #0                                  
+0x00173636:  str      r3, [sp, #0x14]                         
+0x00173638:  lsls     r7, r3, #2                              
+0x0017363a:  str      r4, [sp, #0xc]                          
+0x0017363c:  b        #0x17361c                               
+0x0017363e:  mov      r8, r8                                  
+0x00173640:  strb     r2, [r5, r6]                            
+0x00173642:  lsls     r6, r0, #1                              
+0x00173644:  b        #0x1737c0                               
+0x00173646:  vsra.u32 q15, q14, #1                            
+0x0017364a:  vtbl.8   d28, {d15, d16, d17}, d5                
+0x0017364e:  movs     r1, r7                                  
+0x00173650:  ldm      r2!, {r0, r1, r3, r4, r7}               
+0x00173652:  movs     r1, r7                                  
+0x00173654:  ldm      r6, {r0, r1, r2, r3, r5, r6, r7}        
+0x00173656:  movs     r1, r7                                  
+0x00173658:  b        #0x173aa4                               
+
+==============================================================================
+// Function: XmlAttrDecrypt_call
+// Address : 0x001735da - 0x001737da  (512 bytes)
+// Detail  : BL ke Decrypt di dalam XmlAttrDecoder_read
+==============================================================================
+0x001735da:  bl       #0x1b904e                                ; -> <Decrypt>
+0x001735de:  str      r0, [sp, #4]                            
+0x001735e0:  ldr      r1, [sp, #4]                            
+0x001735e2:  add      r0, sp, #0x38                           
+0x001735e4:  add      r2, sp, #0x18                           
+0x001735e6:  blx      #0x4b2efc                               
+0x001735ea:  add      r0, sp, #0x34                           
+0x001735ec:  add      r1, sp, #0x38                           
+0x001735ee:  bl       #0x1b6f88                               
+0x001735f2:  add      r0, sp, #0x38                           
+0x001735f4:  blx      #0x4b193c                               
+0x001735f8:  ldr      r0, [sp, #0x34]                         
+0x001735fa:  blx      #0x169b64                               
+0x001735fe:  bl       #0x16b344                               
+0x00173602:  adds     r1, r0, #0                              
+0x00173604:  ldr      r2, [sp, #0xc]                          
+0x00173606:  add      r0, sp, #0x3c                           
+0x00173608:  bl       #0x262ad0                               
+0x0017360c:  ldr      r0, [sp, #4]                            
+0x0017360e:  blx      #0x4c56a8                                ; -> operator delete(void*)
+0x00173612:  add      r0, sp, #0x34                           
+0x00173614:  blx      #0x4b193c                               
+0x00173618:  adds     r4, #1                                  
+0x0017361a:  adds     r7, #4                                  
+0x0017361c:  ldr      r2, [sp, #0x14]                         
+0x0017361e:  adds     r3, r4, r2                              
+0x00173620:  ldr      r2, [sp, #0x2c]                         
+0x00173622:  cmp      r4, r2                                  
+0x00173624:  blt      #0x1735a2                               
+0x00173626:  ldr      r1, [sp, #8]                            
+0x00173628:  adds     r1, #1                                  
+0x0017362a:  str      r1, [sp, #8]                            
+0x0017362c:  ldr      r2, [sp, #0x28]                         
+0x0017362e:  ldr      r1, [sp, #8]                            
+0x00173630:  cmp      r1, r2                                  
+0x00173632:  bge      #0x173668                               
+0x00173634:  movs     r4, #0                                  
+0x00173636:  str      r3, [sp, #0x14]                         
+0x00173638:  lsls     r7, r3, #2                              
+0x0017363a:  str      r4, [sp, #0xc]                          
+0x0017363c:  b        #0x17361c                               
+0x0017363e:  mov      r8, r8                                  
+0x00173640:  strb     r2, [r5, r6]                            
+0x00173642:  lsls     r6, r0, #1                              
+0x00173644:  b        #0x1737c0                               
+0x00173646:  vsra.u32 q15, q14, #1                            
+0x0017364a:  vtbl.8   d28, {d15, d16, d17}, d5                
+0x0017364e:  movs     r1, r7                                  
+0x00173650:  ldm      r2!, {r0, r1, r3, r4, r7}               
+0x00173652:  movs     r1, r7                                  
+0x00173654:  ldm      r6, {r0, r1, r2, r3, r5, r6, r7}        
+0x00173656:  movs     r1, r7                                  
+0x00173658:  b        #0x173aa4                               
+
+==============================================================================
+// Function: UIMsg_decrypt_a
+// Address : 0x001a7ea2 - 0x001a80a2  (512 bytes)
+// Detail  : Caller Decrypt (UI string -> gbkToUTF8)
+==============================================================================
+0x001a7ea2:  bl       #0x1b904e                                ; -> <Decrypt>
+0x001a7ea6:  adds     r7, r0, #0                              
+0x001a7ea8:  adds     r1, r7, #0                              
+0x001a7eaa:  add      r0, sp, #0x4c                           
+0x001a7eac:  add      r2, sp, #0x2c                           
+0x001a7eae:  blx      #0x4b2efc                               
+0x001a7eb2:  add      r0, sp, #0x50                           
+0x001a7eb4:  add      r1, sp, #0x4c                           
+0x001a7eb6:  bl       #0x1b6f88                               
+0x001a7eba:  ldr      r0, [sp, #0x50]                         
+0x001a7ebc:  bl       #0x1b9b94                                ; -> <atoi_b>
+0x001a7ec0:  blx      #0x4d2668                                ; -> __floatsisf
+0x001a7ec4:  ldr      r3, [sp, #0x14]                         
+0x001a7ec6:  str      r0, [r3]                                
+0x001a7ec8:  add      r0, sp, #0x50                           
+0x001a7eca:  blx      #0x4b193c                               
+0x001a7ece:  add      r0, sp, #0x4c                           
+0x001a7ed0:  blx      #0x4b193c                               
+0x001a7ed4:  adds     r0, r7, #0                              
+0x001a7ed6:  blx      #0x4c56a8                                ; -> operator delete(void*)
+0x001a7eda:  ldr      r1, [pc, #0xb8]                          ; [pool @0x001a7f94] = 0x0036bd8a
+0x001a7edc:  adds     r0, r6, #0                              
+0x001a7ede:  add      r1, pc                                   ; = "2"
+0x001a7ee0:  bl       #0x1e65a8                               
+0x001a7ee4:  movs     r1, #0                                  
+0x001a7ee6:  bl       #0x1e3f28                               
+0x001a7eea:  add      r0, sp, #0x54                           
+0x001a7eec:  blx      #0x4b193c                               
+0x001a7ef0:  b        #0x1a7fb8                               
+0x001a7ef2:  mov      r8, r8                                  
+0x001a7ef4:  lsrs     r2, r2, #0x1a                           
+0x001a7ef6:  lsls     r3, r0, #1                              
+0x001a7ef8:  str      r3, [sp, #0x160]                        
+0x001a7efa:  movs     r6, r6                                  
+0x001a7efc:  b        #0x1a78d0                               
+
+==============================================================================
+// Function: UIMsg_decrypt_b
+// Address : 0x001a8052 - 0x001a8252  (512 bytes)
+// Detail  : Caller Decrypt (UI dialog varian)
+==============================================================================
+0x001a8052:  bl       #0x1b904e                                ; -> <Decrypt>
+0x001a8056:  adds     r7, r0, #0                              
+0x001a8058:  adds     r1, r7, #0                              
+0x001a805a:  add      r0, sp, #0x6c                           
+0x001a805c:  add      r2, sp, #0x30                           
+0x001a805e:  blx      #0x4b2efc                               
+0x001a8062:  add      r0, sp, #0x70                           
+0x001a8064:  add      r1, sp, #0x6c                           
+0x001a8066:  bl       #0x1b6f88                               
+0x001a806a:  ldr      r0, [sp, #0x70]                         
+0x001a806c:  bl       #0x1b9b94                                ; -> <atoi_b>
+0x001a8070:  blx      #0x4d2668                                ; -> __floatsisf
+0x001a8074:  ldr      r2, [sp, #0x20]                         
+0x001a8076:  str      r0, [r2]                                
+0x001a8078:  add      r0, sp, #0x70                           
+0x001a807a:  blx      #0x4b193c                               
+0x001a807e:  add      r0, sp, #0x6c                           
+0x001a8080:  blx      #0x4b193c                               
+0x001a8084:  adds     r0, r7, #0                              
+0x001a8086:  blx      #0x4c56a8                                ; -> operator delete(void*)
+0x001a808a:  ldr      r1, [pc, #0x2c4]                         ; [pool @0x001a8350] = 0x0036bbf0
+0x001a808c:  adds     r0, r6, #0                              
+0x001a808e:  add      r1, pc                                   ; = "1"
+0x001a8090:  bl       #0x1e65a8                               
+0x001a8094:  movs     r1, #0                                  
+0x001a8096:  bl       #0x1e3f28                               
+0x001a809a:  add      r0, sp, #0x54                           
+0x001a809c:  blx      #0x4b193c                               
+0x001a80a0:  b        #0x1a80c2                               
+0x001a80a2:  ldr      r1, [pc, #0x2b0]                         ; [pool @0x001a8354] = 0x0036bbd8
+0x001a80a4:  adds     r0, r6, #0                              
+0x001a80a6:  add      r1, pc                                   ; = "1"
+0x001a80a8:  bl       #0x1e65a8                               
+0x001a80ac:  movs     r1, #1                                  
+0x001a80ae:  bl       #0x1e3f28                               
+0x001a80b2:  ldr      r1, [pc, #0x2a4]                         ; [pool @0x001a8358] = 0x0036bbd1
+0x001a80b4:  adds     r0, r6, #0                              
+0x001a80b6:  add      r1, pc                                   ; = "2"
+0x001a80b8:  bl       #0x1e65a8                               
+0x001a80bc:  movs     r1, #0                                  
+0x001a80be:  bl       #0x1e3f28                               
+0x001a80c2:  ldr      r1, [pc, #0x298]                         ; [pool @0x001a835c] = 0x0036742e
+0x001a80c4:  adds     r0, r4, #0                              
+0x001a80c6:  add      r1, pc                                   ; = "d"
+0x001a80c8:  bl       #0x29099a                               
+0x001a80cc:  ldr      r3, [pc, #0x290]                         ; [pool @0x001a8360] = 0xffffe01c
+0x001a80ce:  subs     r2, r0, #1                              
+0x001a80d0:  sbcs     r0, r2                                  
+0x001a80d2:  ldr      r2, [pc, #0x290]                         ; [pool @0x001a8364] = 0x0036747e
+0x001a80d4:  ldr      r3, [r5, r3]                            
+0x001a80d6:  adds     r1, r4, #0                              
+0x001a80d8:  add      r2, pc                                   ; = "fuck17"
+0x001a80da:  strb     r0, [r3]                                
+0x001a80dc:  add      r0, sp, #0x78                           
+0x001a80de:  bl       #0x290814                               
+0x001a80e2:  ldr      r3, [sp, #0x78]                         
+0x001a80e4:  subs     r3, #0xc                                
+0x001a80e6:  ldr      r3, [r3]                                
+0x001a80e8:  cmp      r3, #0                                  
+0x001a80ea:  beq      #0x1a810a                               
+0x001a80ec:  add      r0, sp, #0x74                           
+0x001a80ee:  add      r1, sp, #0x78                           
+0x001a80f0:  bl       #0x1b6f88                               
+0x001a80f4:  ldr      r0, [sp, #0x74]                         
+0x001a80f6:  bl       #0x1b9b94                                ; -> <atoi_b>
+0x001a80fa:  ldr      r3, [pc, #0x26c]                         ; [pool @0x001a8368] = 0xffffe1b8
+0x001a80fc:  subs     r2, r0, #1                              
+0x001a80fe:  sbcs     r0, r2                                  
+0x001a8100:  ldr      r3, [r5, r3]                            
+0x001a8102:  strb     r0, [r3]                                
+0x001a8104:  add      r0, sp, #0x74                           
+0x001a8106:  blx      #0x4b193c                               
+0x001a810a:  ldr      r1, [pc, #0x260]                         ; [pool @0x001a836c] = 0x00367417
+0x001a810c:  adds     r0, r4, #0                              
+0x001a810e:  add      r1, pc                                   ; = "7"
+0x001a8110:  bl       #0x29099a                               
+0x001a8114:  ldr      r3, [pc, #0x258]                         ; [pool @0x001a8370] = 0xffffe1a0
+0x001a8116:  ldr      r1, [pc, #0x25c]                         ; [pool @0x001a8374] = 0x0036740e
+0x001a8118:  subs     r2, r0, #1                              
+0x001a811a:  sbcs     r0, r2                                  
+0x001a811c:  ldr      r3, [r5, r3]                            
+0x001a811e:  add      r1, pc                                   ; = "0"
+0x001a8120:  strb     r0, [r3]                                
+0x001a8122:  adds     r0, r4, #0                              
+0x001a8124:  bl       #0x29099a                               
+0x001a8128:  ldr      r3, [pc, #0x24c]                         ; [pool @0x001a8378] = 0xffffe1a4
+0x001a812a:  ldr      r1, [pc, #0x250]                         ; [pool @0x001a837c] = 0x00367401
+0x001a812c:  subs     r2, r0, #1                              
+0x001a812e:  sbcs     r0, r2                                  
+0x001a8130:  ldr      r3, [r5, r3]                            
+0x001a8132:  add      r1, pc                                   ; = "1"
+0x001a8134:  strb     r0, [r3]                                
+0x001a8136:  adds     r0, r4, #0                              
+0x001a8138:  bl       #0x29099a                               
+0x001a813c:  ldr      r3, [pc, #0x240]                         ; [pool @0x001a8380] = 0xffffe0d8
+0x001a813e:  ldr      r1, [pc, #0x244]                         ; [pool @0x001a8384] = 0x003673f4
+0x001a8140:  subs     r2, r0, #1                              
+0x001a8142:  sbcs     r0, r2                                  
+0x001a8144:  ldr      r3, [r5, r3]                            
+0x001a8146:  add      r1, pc                                   ; = "2"
+0x001a8148:  strb     r0, [r3]                                
+0x001a814a:  adds     r0, r4, #0                              
+0x001a814c:  bl       #0x29099a                               
+0x001a8150:  ldr      r3, [pc, #0x234]                         ; [pool @0x001a8388] = 0xffffe1a8
+0x001a8152:  ldr      r1, [pc, #0x238]                         ; [pool @0x001a838c] = 0x003673e7
+0x001a8154:  subs     r2, r0, #1                              
+0x001a8156:  sbcs     r0, r2                                  
+0x001a8158:  ldr      r3, [r5, r3]                            
+0x001a815a:  add      r1, pc                                   ; = "3"
+0x001a815c:  strb     r0, [r3]                                
+0x001a815e:  adds     r0, r4, #0                              
+0x001a8160:  bl       #0x29099a                               
+0x001a8164:  ldr      r3, [pc, #0x228]                         ; [pool @0x001a8390] = 0xffffe1ac
+0x001a8166:  ldr      r1, [pc, #0x22c]                         ; [pool @0x001a8394] = 0x003673da
+0x001a8168:  subs     r2, r0, #1                              
+0x001a816a:  sbcs     r0, r2                                  
+0x001a816c:  ldr      r3, [r5, r3]                            
+0x001a816e:  add      r1, pc                                   ; = "4"
+0x001a8170:  strb     r0, [r3]                                
+0x001a8172:  adds     r0, r4, #0                              
+0x001a8174:  bl       #0x29099a                               
+0x001a8178:  ldr      r3, [pc, #0x21c]                         ; [pool @0x001a8398] = 0xffffe1b0
+0x001a817a:  ldr      r1, [pc, #0x220]                         ; [pool @0x001a839c] = 0x003673cd
+0x001a817c:  subs     r2, r0, #1                              
+0x001a817e:  sbcs     r0, r2                                  
+0x001a8180:  ldr      r3, [r5, r3]                            
+0x001a8182:  add      r1, pc                                   ; = "5"
+0x001a8184:  strb     r0, [r3]                                
+0x001a8186:  adds     r0, r4, #0                              
+0x001a8188:  bl       #0x29099a                               
+0x001a818c:  ldr      r3, [pc, #0x210]                         ; [pool @0x001a83a0] = 0xffffe1b4
+0x001a818e:  subs     r2, r0, #1                              
+0x001a8190:  sbcs     r0, r2                                  
+0x001a8192:  ldr      r2, [sp, #0xc]                          
+0x001a8194:  ldr      r3, [r5, r3]                            
+0x001a8196:  strb     r0, [r3]                                
+0x001a8198:  movs     r3, #0                                  
+0x001a819a:  str      r3, [r2]                                
+0x001a819c:  add      r0, sp, #0x78                           
+0x001a819e:  blx      #0x4b193c                               
+0x001a81a2:  b        #0x1a81ea                               
+0x001a81a4:  ldr      r3, [sp, #0xc]                          
+0x001a81a6:  movs     r5, #1                                  
+0x001a81a8:  str      r5, [r3]                                
+0x001a81aa:  bl       #0x171800                               
+0x001a81ae:  ldr      r1, [pc, #0x1f4]                         ; [pool @0x001a83a4] = 0x0036bab6
+0x001a81b0:  adds     r0, r6, #0                              
+0x001a81b2:  add      r1, pc                                   ; = "2"
+0x001a81b4:  bl       #0x1e65a8                               
+0x001a81b8:  adds     r1, r5, #0                              
+0x001a81ba:  bl       #0x1e3f28                               
+0x001a81be:  ldr      r1, [pc, #0x1e8]                         ; [pool @0x001a83a8] = 0x0036babc
+0x001a81c0:  adds     r0, r6, #0                              
+0x001a81c2:  add      r1, pc                                   ; = "1"
+0x001a81c4:  bl       #0x1e65a8                               
+0x001a81c8:  adds     r1, r5, #0                              
+0x001a81ca:  bl       #0x1e3f28                               
+0x001a81ce:  adds     r1, r4, #0                              
+0x001a81d0:  adds     r0, r6, #0                              
+0x001a81d2:  bl       #0x1e65a8                               
+0x001a81d6:  adds     r1, r7, #0                              
+0x001a81d8:  bl       #0x1e3f28                               
+0x001a81dc:  ldr      r1, [sp, #8]                            
+0x001a81de:  adds     r0, r6, #0                              
+0x001a81e0:  bl       #0x1e65a8                               
+0x001a81e4:  adds     r1, r7, #0                              
+0x001a81e6:  bl       #0x1e3f28                               
+0x001a81ea:  ldr      r1, [pc, #0x1c0]                         ; [pool @0x001a83ac] = 0x0036ba03
+0x001a81ec:  adds     r0, r6, #0                              
+0x001a81ee:  add      r1, pc                                   ; = "8"
+0x001a81f0:  bl       #0x1e65a8                               
+0x001a81f4:  ldr      r1, [pc, #0x1b8]                         ; [pool @0x001a83b0] = 0x0036ba05
+0x001a81f6:  adds     r5, r0, #0                              
+0x001a81f8:  adds     r0, r6, #0                              
+0x001a81fa:  add      r1, pc                                   ; = "0"
+0x001a81fc:  bl       #0x1e65a8                               
+0x001a8200:  ldr      r1, [pc, #0x1b0]                         ; [pool @0x001a83b4] = 0x0036ba31
+0x001a8202:  adds     r7, r0, #0                              
+0x001a8204:  adds     r0, r6, #0                              
+0x001a8206:  add      r1, pc                                   ; = "9"
+0x001a8208:  bl       #0x1e65a8                               
+0x001a820c:  ldr      r1, [pc, #0x1a8]                         ; [pool @0x001a83b8] = 0x0036ba33
+0x001a820e:  str      r0, [sp, #8]                            
+0x001a8210:  adds     r0, r6, #0                              
+0x001a8212:  add      r1, pc                                   ; = "0"
+0x001a8214:  bl       #0x1e65a8                               
+0x001a8218:  ldr      r1, [pc, #0x1a0]                         ; [pool @0x001a83bc] = 0x003697a7
+0x001a821a:  str      r0, [sp, #0xc]                          
+0x001a821c:  adds     r0, r6, #0                              
+0x001a821e:  add      r1, pc                                   ; = "1"
+0x001a8220:  bl       #0x1e65a8                               
+0x001a8224:  ldr      r1, [pc, #0x198]                         ; [pool @0x001a83c0] = 0x0036ba29
+0x001a8226:  str      r0, [sp, #0x24]                         
+0x001a8228:  adds     r0, r6, #0                              
+0x001a822a:  add      r1, pc                                   ; = "1"
+0x001a822c:  bl       #0x1e65a8                               
+0x001a8230:  adds     r6, r0, #0                              
+0x001a8232:  movs     r0, #0xa                                
+0x001a8234:  blx      #0x4c73cc                                ; -> operator new[](unsigned int)
+0x001a8238:  ldr      r2, [sp, #4]                            
+
+==============================================================================
+// Function: rc4KSA
+// Address : 0x001b8e68 - 0x001b8ebc  (84 bytes)
+// Detail  : RC4 Key Scheduling Algorithm (256-byte S-box)
+==============================================================================
+0x001b8e68:  push     {r0, r1, r2, r4, r5, r6, r7, lr}        
+0x001b8e6a:  str      r0, [sp]                                
+0x001b8e6c:  str      r1, [sp, #4]                            
+0x001b8e6e:  subs     r5, r2, #0                              
+0x001b8e70:  beq      #0x1b8eb8                               
+0x001b8e72:  rsbs     r3, r0, #0                              
+0x001b8e74:  adcs     r3, r0                                  
+0x001b8e76:  cmp      r3, #0                                  
+0x001b8e78:  bne      #0x1b8eb8                               
+0x001b8e7a:  movs     r2, #0x80                               
+0x001b8e7c:  lsls     r2, r2, #1                              
+0x001b8e7e:  strb     r3, [r5, r3]                            
+0x001b8e80:  adds     r3, #1                                  
+0x001b8e82:  cmp      r3, r2                                  
+0x001b8e84:  bne      #0x1b8e7e                               
+0x001b8e86:  movs     r6, #0                                  
+0x001b8e88:  adds     r4, r6, #0                              
+0x001b8e8a:  adds     r0, r4, #0                              
+0x001b8e8c:  ldr      r1, [sp, #4]                            
+0x001b8e8e:  blx      #0x4d1990                                ; -> __aeabi_idivmod
+0x001b8e92:  ldr      r2, [sp]                                
+0x001b8e94:  ldrb     r7, [r5, r4]                            
+0x001b8e96:  ldrb     r3, [r2, r1]                            
+0x001b8e98:  movs     r1, #0x80                               
+0x001b8e9a:  lsls     r1, r1, #1                              
+0x001b8e9c:  adds     r3, r3, r7                              
+0x001b8e9e:  adds     r6, r3, r6                              
+0x001b8ea0:  movs     r3, #0xff                               
+0x001b8ea2:  ands     r6, r3                                  
+0x001b8ea4:  adds     r3, r5, r6                              
+0x001b8ea6:  ldrb     r2, [r3]                                
+0x001b8ea8:  strb     r2, [r5, r4]                            
+0x001b8eaa:  adds     r4, #1                                  
+0x001b8eac:  strb     r7, [r3]                                
+0x001b8eae:  cmp      r4, r1                                  
+0x001b8eb0:  bne      #0x1b8e8a                               
+0x001b8eb2:  movs     r0, #1                                  
+0x001b8eb4:  rsbs     r0, r0, #0                              
+0x001b8eb6:  b        #0x1b8eba                               
+0x001b8eb8:  movs     r0, #0                                  
+0x001b8eba:  pop      {r1, r2, r3, r4, r5, r6, r7, pc}        
+0x001b8ebc:  push     {r4, r5, r6, r7, lr}                    
+0x001b8ebe:  sub      sp, #0x14                               
+0x001b8ec0:  str      r0, [sp, #8]                            
+
+==============================================================================
+// Function: rc4Crypt
+// Address : 0x001b8ebc - 0x001b8f46  (138 bytes)
+// Detail  : RC4 PRGA: enkripsi/dekripsi simetris per-byte
+==============================================================================
+0x001b8ebc:  push     {r4, r5, r6, r7, lr}                    
+0x001b8ebe:  sub      sp, #0x14                               
+0x001b8ec0:  str      r0, [sp, #8]                            
+0x001b8ec2:  str      r1, [sp, #0xc]                          
+0x001b8ec4:  adds     r5, r2, #0                              
+0x001b8ec6:  adds     r7, r3, #0                              
+0x001b8ec8:  cmp      r2, #0                                  
+0x001b8eca:  beq      #0x1b8f40                               
+0x001b8ecc:  rsbs     r6, r0, #0                              
+0x001b8ece:  adcs     r6, r0                                  
+0x001b8ed0:  cmp      r6, #0                                  
+0x001b8ed2:  bne      #0x1b8f40                               
+0x001b8ed4:  ldr      r0, [sp, #0x28]                         
+0x001b8ed6:  cmp      r0, #0                                  
+0x001b8ed8:  beq      #0x1b8f42                               
+0x001b8eda:  movs     r0, #0x80                               
+0x001b8edc:  lsls     r0, r0, #1                              
+0x001b8ede:  blx      #0x4c73cc                                ; -> operator new[](unsigned int)
+0x001b8ee2:  adds     r4, r0, #0                              
+0x001b8ee4:  adds     r1, r7, #0                              
+0x001b8ee6:  adds     r0, r5, #0                              
+0x001b8ee8:  adds     r2, r4, #0                              
+0x001b8eea:  bl       #0x1b8e68                                ; -> <rc4KSA>
+0x001b8eee:  cmp      r0, #0                                  
+0x001b8ef0:  beq      #0x1b8f42                               
+0x001b8ef2:  adds     r1, r6, #0                              
+0x001b8ef4:  adds     r2, r6, #0                              
+0x001b8ef6:  movs     r3, #0xff                               
+0x001b8ef8:  b        #0x1b8f26                               
+0x001b8efa:  adds     r2, #1                                  
+0x001b8efc:  ands     r2, r3                                  
+0x001b8efe:  adds     r5, r4, r2                              
+0x001b8f00:  ldrb     r0, [r5]                                
+0x001b8f02:  adds     r1, r0, r1                              
+0x001b8f04:  ands     r1, r3                                  
+0x001b8f06:  adds     r7, r4, r1                              
+0x001b8f08:  str      r7, [sp, #4]                            
+0x001b8f0a:  ldrb     r7, [r7]                                
+0x001b8f0c:  strb     r7, [r5]                                
+0x001b8f0e:  ldr      r7, [sp, #4]                            
+0x001b8f10:  strb     r0, [r7]                                
+0x001b8f12:  ldrb     r5, [r5]                                
+0x001b8f14:  ldr      r7, [sp, #8]                            
+0x001b8f16:  adds     r0, r5, r0                              
+0x001b8f18:  ands     r0, r3                                  
+0x001b8f1a:  ldrb     r5, [r4, r0]                            
+0x001b8f1c:  ldrb     r0, [r7, r6]                            
+0x001b8f1e:  eors     r0, r5                                  
+0x001b8f20:  ldr      r5, [sp, #0x28]                         
+0x001b8f22:  strb     r0, [r5, r6]                            
+0x001b8f24:  adds     r6, #1                                  
+0x001b8f26:  ldr      r7, [sp, #0xc]                          
+0x001b8f28:  cmp      r6, r7                                  
+0x001b8f2a:  blt      #0x1b8efa                               
+0x001b8f2c:  ldr      r3, [sp, #0x2c]                         
+0x001b8f2e:  str      r7, [r3]                                
+0x001b8f30:  cmp      r4, #0                                  
+0x001b8f32:  beq      #0x1b8f3a                               
+0x001b8f34:  adds     r0, r4, #0                              
+0x001b8f36:  blx      #0x4c56c0                                ; -> operator delete[](void*)
+0x001b8f3a:  movs     r0, #1                                  
+0x001b8f3c:  rsbs     r0, r0, #0                              
+0x001b8f3e:  b        #0x1b8f42                               
+0x001b8f40:  movs     r0, #0                                  
+0x001b8f42:  add      sp, #0x14                               
+0x001b8f44:  pop      {r4, r5, r6, r7, pc}                    
+0x001b8f46:  push     {r3, r4, r5, r6, r7, lr}                
+0x001b8f48:  adds     r4, r0, #0                              
+0x001b8f4a:  adds     r5, r1, #0                              
+
+==============================================================================
+// Function: hexEncode_upper
+// Address : 0x001b8f46 - 0x001b8f96  (80 bytes)
+// Detail  : Binary -> uppercase hex string, null-terminated, panjang 2*len+1
+==============================================================================
+0x001b8f46:  push     {r3, r4, r5, r6, r7, lr}                
+0x001b8f48:  adds     r4, r0, #0                              
+0x001b8f4a:  adds     r5, r1, #0                              
+0x001b8f4c:  subs     r0, #0                                  
+0x001b8f4e:  beq      #0x1b8f94                               
+0x001b8f50:  lsls     r6, r1, #1                              
+0x001b8f52:  adds     r0, r6, #1                              
+0x001b8f54:  blx      #0x4c73cc                                ; -> operator new[](unsigned int)
+0x001b8f58:  movs     r3, #0                                  
+0x001b8f5a:  adds     r2, r0, #0                              
+0x001b8f5c:  mov      ip, r0                                  
+0x001b8f5e:  b        #0x1b8f8a                               
+0x001b8f60:  ldrb     r1, [r4, r3]                            
+0x001b8f62:  movs     r0, #0x30                               
+0x001b8f64:  lsrs     r1, r1, #4                              
+0x001b8f66:  cmp      r1, #9                                  
+0x001b8f68:  ble      #0x1b8f6c                               
+0x001b8f6a:  movs     r0, #0x37                               
+0x001b8f6c:  adds     r1, r0, r1                              
+0x001b8f6e:  strb     r1, [r2]                                
+0x001b8f70:  ldrb     r0, [r4, r3]                            
+0x001b8f72:  movs     r1, #0xf                                
+0x001b8f74:  movs     r7, #0x30                               
+0x001b8f76:  ands     r0, r1                                  
+0x001b8f78:  lsls     r1, r0, #0x18                           
+0x001b8f7a:  lsrs     r1, r1, #0x18                           
+0x001b8f7c:  cmp      r0, #9                                  
+0x001b8f7e:  ble      #0x1b8f82                               
+0x001b8f80:  movs     r7, #0x37                               
+0x001b8f82:  adds     r1, r7, r1                              
+0x001b8f84:  strb     r1, [r2, #1]                            
+0x001b8f86:  adds     r3, #1                                  
+0x001b8f88:  adds     r2, #2                                  
+0x001b8f8a:  cmp      r3, r5                                  
+0x001b8f8c:  blt      #0x1b8f60                               
+0x001b8f8e:  mov      r0, ip                                  
+0x001b8f90:  movs     r3, #0                                  
+0x001b8f92:  strb     r3, [r0, r6]                            
+0x001b8f94:  pop      {r3, r4, r5, r6, r7, pc}                
+0x001b8f96:  push     {r4, r5, r6, r7, lr}                    
+0x001b8f98:  sub      sp, #0x14                               
+0x001b8f9a:  adds     r4, r0, #0                              
+
+==============================================================================
+// Function: Encrypt
+// Address : 0x001b8f96 - 0x001b8ff6  (96 bytes)
+// Detail  : Encrypt(str,key) : RC4(str,key) -> hexEncode
+==============================================================================
+0x001b8f96:  push     {r4, r5, r6, r7, lr}                    
+0x001b8f98:  sub      sp, #0x14                               
+0x001b8f9a:  adds     r4, r0, #0                              
+0x001b8f9c:  subs     r6, r1, #0                              
+0x001b8f9e:  beq      #0x1b8fee                               
+0x001b8fa0:  rsbs     r7, r0, #0                              
+0x001b8fa2:  adcs     r7, r0                                  
+0x001b8fa4:  cmp      r7, #0                                  
+0x001b8fa6:  bne      #0x1b8fee                               
+0x001b8fa8:  blx      #0x169b58                               
+0x001b8fac:  blx      #0x4c73cc                                ; -> operator new[](unsigned int)
+0x001b8fb0:  adds     r5, r0, #0                              
+0x001b8fb2:  adds     r0, r4, #0                              
+0x001b8fb4:  str      r7, [sp, #0xc]                          
+0x001b8fb6:  blx      #0x169b58                               
+0x001b8fba:  adds     r7, r0, #0                              
+0x001b8fbc:  adds     r0, r6, #0                              
+0x001b8fbe:  blx      #0x169b58                               
+0x001b8fc2:  add      r2, sp, #0xc                            
+0x001b8fc4:  adds     r3, r0, #0                              
+0x001b8fc6:  str      r2, [sp, #4]                            
+0x001b8fc8:  adds     r0, r4, #0                              
+0x001b8fca:  adds     r1, r7, #0                              
+0x001b8fcc:  adds     r2, r6, #0                              
+0x001b8fce:  str      r5, [sp]                                
+0x001b8fd0:  bl       #0x1b8ebc                                ; -> <rc4Crypt>
+0x001b8fd4:  subs     r4, r0, #0                              
+0x001b8fd6:  beq      #0x1b8ff0                               
+0x001b8fd8:  adds     r0, r5, #0                              
+0x001b8fda:  ldr      r1, [sp, #0xc]                          
+0x001b8fdc:  bl       #0x1b8f46                                ; -> <hexEncode_upper>
+0x001b8fe0:  adds     r4, r0, #0                              
+0x001b8fe2:  cmp      r5, #0                                  
+0x001b8fe4:  beq      #0x1b8ff0                               
+0x001b8fe6:  adds     r0, r5, #0                              
+0x001b8fe8:  blx      #0x4c56c0                                ; -> operator delete[](void*)
+0x001b8fec:  b        #0x1b8ff0                               
+0x001b8fee:  movs     r4, #0                                  
+0x001b8ff0:  add      sp, #0x14                               
+0x001b8ff2:  adds     r0, r4, #0                              
+0x001b8ff4:  pop      {r4, r5, r6, r7, pc}                    
+0x001b8ff6:  push     {r4, r5, r6, lr}                        
+0x001b8ff8:  subs     r6, r0, #0                              
+0x001b8ffa:  beq      #0x1b904c                               
+
+==============================================================================
+// Function: hexDecode_upper
+// Address : 0x001b8ff6 - 0x001b904e  (88 bytes)
+// Detail  : Uppercase hex string -> binary; return NULL jika ada char invalid
+==============================================================================
+0x001b8ff6:  push     {r4, r5, r6, lr}                        
+0x001b8ff8:  subs     r6, r0, #0                              
+0x001b8ffa:  beq      #0x1b904c                               
+0x001b8ffc:  blx      #0x169b58                               
+0x001b9000:  adds     r4, r0, #0                              
+0x001b9002:  movs     r0, #0                                  
+0x001b9004:  cmp      r4, r0                                  
+0x001b9006:  ble      #0x1b904c                               
+0x001b9008:  movs     r5, #1                                  
+0x001b900a:  ands     r5, r4                                  
+0x001b900c:  cmp      r5, r0                                  
+0x001b900e:  bne      #0x1b904c                               
+0x001b9010:  asrs     r4, r4, #1                              
+0x001b9012:  adds     r0, r4, #0                              
+0x001b9014:  blx      #0x4c73cc                                ; -> operator new[](unsigned int)
+0x001b9018:  b        #0x1b9044                               
+0x001b901a:  ldrb     r2, [r6]                                
+0x001b901c:  movs     r3, #0x30                               
+0x001b901e:  cmp      r2, #0x40                               
+0x001b9020:  bls      #0x1b9024                               
+0x001b9022:  movs     r3, #0x37                               
+0x001b9024:  subs     r2, r2, r3                              
+0x001b9026:  cmp      r2, #0xf                                
+0x001b9028:  bgt      #0x1b904a                               
+0x001b902a:  ldrb     r1, [r6, #1]                            
+0x001b902c:  movs     r3, #0x30                               
+0x001b902e:  cmp      r1, #0x40                               
+0x001b9030:  bls      #0x1b9034                               
+0x001b9032:  movs     r3, #0x37                               
+0x001b9034:  subs     r3, r1, r3                              
+0x001b9036:  adds     r6, #2                                  
+0x001b9038:  cmp      r3, #0xf                                
+0x001b903a:  bgt      #0x1b904a                               
+0x001b903c:  lsls     r2, r2, #4                              
+0x001b903e:  adds     r3, r3, r2                              
+0x001b9040:  strb     r3, [r0, r5]                            
+0x001b9042:  adds     r5, #1                                  
+0x001b9044:  cmp      r5, r4                                  
+0x001b9046:  blt      #0x1b901a                               
+0x001b9048:  b        #0x1b904c                               
+0x001b904a:  movs     r0, #0                                  
+0x001b904c:  pop      {r4, r5, r6, pc}                        
+0x001b904e:  push     {r4, r5, r6, r7, lr}                    
+0x001b9050:  sub      sp, #0x1c                               
+0x001b9052:  adds     r4, r0, #0                              
+
+==============================================================================
+// Function: Decrypt
+// Address : 0x001b904e - 0x001b90ce  (128 bytes)
+// Detail  : Decrypt(hex,key) : hexDecode -> RC4 -> null-terminated
+==============================================================================
+0x001b904e:  push     {r4, r5, r6, r7, lr}                    
+0x001b9050:  sub      sp, #0x1c                               
+0x001b9052:  adds     r4, r0, #0                              
+0x001b9054:  adds     r7, r1, #0                              
+0x001b9056:  subs     r5, r0, #0                              
+0x001b9058:  beq      #0x1b90c8                               
+0x001b905a:  adds     r0, r5, #0                              
+0x001b905c:  blx      #0x169b58                               
+0x001b9060:  movs     r5, #0                                  
+0x001b9062:  movs     r3, #1                                  
+0x001b9064:  adds     r6, r0, #0                              
+0x001b9066:  ands     r6, r3                                  
+0x001b9068:  cmp      r6, r5                                  
+0x001b906a:  bne      #0x1b90c8                               
+0x001b906c:  subs     r5, r7, #0                              
+0x001b906e:  beq      #0x1b90c8                               
+0x001b9070:  adds     r0, r4, #0                              
+0x001b9072:  bl       #0x1b8ff6                                ; -> <hexDecode_upper>
+0x001b9076:  str      r0, [sp, #0xc]                          
+0x001b9078:  adds     r0, r4, #0                              
+0x001b907a:  blx      #0x169b58                               
+0x001b907e:  lsrs     r0, r0, #1                              
+0x001b9080:  adds     r0, #1                                  
+0x001b9082:  blx      #0x4c73cc                                ; -> operator new[](unsigned int)
+0x001b9086:  adds     r5, r0, #0                              
+0x001b9088:  adds     r0, r4, #0                              
+0x001b908a:  str      r6, [sp, #0x14]                         
+0x001b908c:  blx      #0x169b58                               
+0x001b9090:  lsrs     r2, r0, #1                              
+0x001b9092:  adds     r2, #1                                  
+0x001b9094:  adds     r1, r6, #0                              
+0x001b9096:  adds     r0, r5, #0                              
+0x001b9098:  blx      #0x169ba0                               
+0x001b909c:  adds     r0, r4, #0                              
+0x001b909e:  blx      #0x169b58                               
+0x001b90a2:  adds     r4, r0, #0                              
+0x001b90a4:  adds     r0, r7, #0                              
+0x001b90a6:  blx      #0x169b58                               
+0x001b90aa:  add      r2, sp, #0x14                           
+0x001b90ac:  adds     r3, r0, #0                              
+0x001b90ae:  str      r2, [sp, #4]                            
+0x001b90b0:  lsrs     r1, r4, #1                              
+0x001b90b2:  ldr      r0, [sp, #0xc]                          
+0x001b90b4:  adds     r2, r7, #0                              
+0x001b90b6:  str      r5, [sp]                                
+0x001b90b8:  bl       #0x1b8ebc                                ; -> <rc4Crypt>
+0x001b90bc:  cmp      r0, #0                                  
+0x001b90be:  beq      #0x1b90c6                               
+0x001b90c0:  ldr      r3, [sp, #0x14]                         
+0x001b90c2:  strb     r6, [r5, r3]                            
+0x001b90c4:  b        #0x1b90c8                               
+0x001b90c6:  adds     r5, r0, #0                              
+0x001b90c8:  add      sp, #0x1c                               
+0x001b90ca:  adds     r0, r5, #0                              
+0x001b90cc:  pop      {r4, r5, r6, r7, pc}                    
+0x001b90ce:  ldr      r3, [r0]                                
+0x001b90d0:  ldrb     r2, [r3]                                
+0x001b90d2:  adds     r3, #1                                  
+
+==============================================================================
+// Function: gbkToUTF8
+// Address : 0x001b9b5d - 0x001b9d5d  (512 bytes)
+// Detail  : Konversi byte GBK menjadi string UTF-8 (wrapper iconv)
+// Symbol  : gbkToUTF8(char const*)
+==============================================================================
+0x001b9b5d:  adds     r0, #0x47                               
+0x001b9b5f:  strb     r0, [r7]                                
+0x001b9b61:  adds     r0, #0x47                               
+0x001b9b63:  lsls     r5, r6, #0xe                            
+0x001b9b65:  lsls     r4, r3, #0x10                           
+0x001b9b67:  lsls     r0, r7, #1                              
+0x001b9b69:  lsls     r0, r4, #7                              
+0x001b9b6b:  subs     r3, r6, r0                              
+0x001b9b6d:  adds     r0, #0x78                               
+0x001b9b6f:  lsrs     r2, r7, #4                              
+
+==============================================================================
+// Function: atoi_a
+// Address : 0x001b9b62 - 0x001b9b94  (50 bytes)
+// Detail  : Parsing integer dari string (varian A, dipakai parser XML)
+==============================================================================
+0x001b9b62:  push     {r4, r5, lr}                            
+0x001b9b64:  adds     r3, r0, #0                              
+0x001b9b66:  ldrb     r4, [r0]                                
+0x001b9b68:  b        #0x1b9b6c                               
+0x001b9b6a:  adds     r3, #1                                  
+0x001b9b6c:  ldrb     r2, [r3]                                
+0x001b9b6e:  subs     r2, #0x30                               
+0x001b9b70:  cmp      r2, #9                                  
+0x001b9b72:  bhi      #0x1b9b6a                               
+0x001b9b74:  movs     r0, #0                                  
+0x001b9b76:  movs     r5, #0xa                                
+0x001b9b78:  b        #0x1b9b80                               
+0x001b9b7a:  muls     r0, r5, r0                              
+0x001b9b7c:  adds     r3, #1                                  
+0x001b9b7e:  adds     r0, r0, r1                              
+0x001b9b80:  ldrb     r1, [r3]                                
+0x001b9b82:  subs     r1, #0x30                               
+0x001b9b84:  lsls     r2, r1, #0x18                           
+0x001b9b86:  lsrs     r2, r2, #0x18                           
+0x001b9b88:  cmp      r2, #9                                  
+0x001b9b8a:  bls      #0x1b9b7a                               
+0x001b9b8c:  cmp      r4, #0x2d                               
+0x001b9b8e:  bne      #0x1b9b92                               
+0x001b9b90:  rsbs     r0, r0, #0                              
+0x001b9b92:  pop      {r4, r5, pc}                            
+0x001b9b94:  push     {r4, r5, lr}                            
+0x001b9b96:  adds     r3, r0, #0                              
+0x001b9b98:  ldrb     r4, [r0]                                
+
+==============================================================================
+// Function: atoi_b
+// Address : 0x001b9b94 - 0x001b9bc6  (50 bytes)
+// Detail  : Parsing integer dari string (varian B)
+==============================================================================
+0x001b9b94:  push     {r4, r5, lr}                            
+0x001b9b96:  adds     r3, r0, #0                              
+0x001b9b98:  ldrb     r4, [r0]                                
+0x001b9b9a:  b        #0x1b9b9e                               
+0x001b9b9c:  adds     r3, #1                                  
+0x001b9b9e:  ldrb     r2, [r3]                                
+0x001b9ba0:  subs     r2, #0x30                               
+0x001b9ba2:  cmp      r2, #9                                  
+0x001b9ba4:  bhi      #0x1b9b9c                               
+0x001b9ba6:  movs     r0, #0                                  
+0x001b9ba8:  movs     r5, #0xa                                
+0x001b9baa:  b        #0x1b9bb2                               
+0x001b9bac:  muls     r0, r5, r0                              
+0x001b9bae:  adds     r3, #1                                  
+0x001b9bb0:  adds     r0, r0, r1                              
+0x001b9bb2:  ldrb     r1, [r3]                                
+0x001b9bb4:  subs     r1, #0x30                               
+0x001b9bb6:  lsls     r2, r1, #0x18                           
+0x001b9bb8:  lsrs     r2, r2, #0x18                           
+0x001b9bba:  cmp      r2, #9                                  
+0x001b9bbc:  bls      #0x1b9bac                               
+0x001b9bbe:  cmp      r4, #0x2d                               
+0x001b9bc0:  bne      #0x1b9bc4                               
+0x001b9bc2:  rsbs     r0, r0, #0                              
+0x001b9bc4:  pop      {r4, r5, pc}                            
+0x001b9bc6:  movs     r0, r0                                  
+0x001b9bc8:  push     {r4, r5, r6, r7, lr}                    
+0x001b9bca:  ldr      r3, [pc, #0x74]                          ; [pool @0x001b9c40] = 0x0041d698
+
+==============================================================================
+// Function: itoa
+// Address : 0x001b9bc8 - 0x001b9c40  (120 bytes)
+// Detail  : int -> string desimal (builtin itoa)
+==============================================================================
+0x001b9bc8:  push     {r4, r5, r6, r7, lr}                    
+0x001b9bca:  ldr      r3, [pc, #0x74]                          ; [pool @0x001b9c40] = 0x0041d698
+0x001b9bcc:  adds     r6, r0, #0                              
+0x001b9bce:  asrs     r0, r0, #0x1f                           
+0x001b9bd0:  add      r3, pc                                   ; -> 0x005d726c
+0x001b9bd2:  ldr      r3, [r3]                                
+0x001b9bd4:  sub      sp, #0x1c                               
+0x001b9bd6:  adds     r4, r6, r0                              
+0x001b9bd8:  ldr      r2, [r3]                                
+0x001b9bda:  adds     r7, r1, #0                              
+0x001b9bdc:  eors     r4, r0                                  
+0x001b9bde:  str      r2, [sp, #0x14]                         
+0x001b9be0:  movs     r5, #0                                  
+0x001b9be2:  str      r3, [sp, #4]                            
+0x001b9be4:  b        #0x1b9be8                               
+0x001b9be6:  adds     r5, r2, #0                              
+0x001b9be8:  adds     r0, r4, #0                              
+0x001b9bea:  movs     r1, #0xa                                
+0x001b9bec:  blx      #0x4d1990                                ; -> __aeabi_idivmod
+0x001b9bf0:  movs     r2, #8                                  
+0x001b9bf2:  adds     r2, r2, r5                              
+0x001b9bf4:  adds     r1, #0x30                               
+0x001b9bf6:  mov      r3, sp                                  
+0x001b9bf8:  strb     r1, [r2, r3]                            
+0x001b9bfa:  adds     r0, r4, #0                              
+0x001b9bfc:  movs     r1, #0xa                                
+0x001b9bfe:  blx      #0x4d18b4                                ; -> __divsi3
+0x001b9c02:  adds     r2, r5, #1                              
+0x001b9c04:  adds     r4, r0, #0                              
+0x001b9c06:  cmp      r0, #0                                  
+0x001b9c08:  bgt      #0x1b9be6                               
+0x001b9c0a:  cmp      r6, #0                                  
+0x001b9c0c:  bge      #0x1b9c16                               
+0x001b9c0e:  movs     r3, #0x2d                               
+0x001b9c10:  add      r0, sp, #8                              
+0x001b9c12:  strb     r3, [r0, r2]                            
+0x001b9c14:  adds     r2, r5, #2                              
+0x001b9c16:  add      r1, sp, #8                              
+0x001b9c18:  movs     r3, #0                                  
+0x001b9c1a:  strb     r3, [r1, r2]                            
+0x001b9c1c:  adds     r1, r1, r2                              
+0x001b9c1e:  mvns     r0, r3                                  
+0x001b9c20:  ldrb     r0, [r0, r1]                            
+0x001b9c22:  strb     r0, [r7, r3]                            
+0x001b9c24:  adds     r3, #1                                  
+0x001b9c26:  cmp      r3, r2                                  
+0x001b9c28:  bne      #0x1b9c1e                               
+0x001b9c2a:  ldr      r0, [sp, #4]                            
+0x001b9c2c:  movs     r2, #0                                  
+0x001b9c2e:  strb     r2, [r7, r3]                            
+0x001b9c30:  ldr      r2, [sp, #0x14]                         
+0x001b9c32:  ldr      r3, [r0]                                
+0x001b9c34:  cmp      r2, r3                                  
+0x001b9c36:  beq      #0x1b9c3c                               
+0x001b9c38:  blx      #0x169c90                               
+0x001b9c3c:  add      sp, #0x1c                               
+0x001b9c3e:  pop      {r4, r5, r6, r7, pc}                    
+0x001b9c40:  bvs      #0x1b9b74                               
+0x001b9c42:  lsls     r1, r0, #1                              
+0x001b9c44:  push     {r4, r5, r6, lr}                        

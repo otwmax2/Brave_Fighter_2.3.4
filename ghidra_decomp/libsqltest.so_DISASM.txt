@@ -1,0 +1,97 @@
+
+==============================================================================
+// Function: Java_com_joynow_apt_MyApplication_getFile
+// Address : 0x00000ff8 - 0x000010c0  (200 bytes)
+// Detail  : JNI: membaca file mentah dari APK assets via AAssetManager (open/read/close)
+==============================================================================
+0x00000ff8:  push     {r4, r5, r6, r7, lr}                    
+0x00000ffa:  mov      r7, r8                                  
+0x00000ffc:  push     {r7}                                    
+0x00000ffe:  sub      sp, #8                                  
+0x00001000:  adds     r1, r3, #0                              
+0x00001002:  mov      r8, r2                                  
+0x00001004:  adds     r6, r0, #0                              
+0x00001006:  blx      #0xf88                                  
+0x0000100a:  ldr      r1, [pc, #0xc4]                          ; [pool @0x000010d0] = 0x0000153a
+0x0000100c:  movs     r2, #0                                  
+0x0000100e:  add      r1, pc                                   ; -> 0x0000254a
+0x00001010:  blx      #0xf28                                  
+0x00001014:  adds     r7, r0, #0                              
+0x00001016:  blx      #0xfb8                                  
+0x0000101a:  adds     r5, r0, #0                              
+0x0000101c:  bl       #0x1110                                 
+0x00001020:  adds     r4, r0, #0                              
+0x00001022:  adds     r1, r4, #0                              
+0x00001024:  adds     r2, r5, #0                              
+0x00001026:  adds     r0, r7, #0                              
+0x00001028:  blx      #0xf70                                  
+0x0000102c:  ldr      r2, [r6]                                
+0x0000102e:  movs     r3, #0xa9                               
+0x00001030:  lsls     r3, r3, #2                              
+0x00001032:  ldr      r3, [r2, r3]                            
+0x00001034:  mov      r2, sp                                  
+0x00001036:  mov      r1, r8                                  
+0x00001038:  adds     r2, #7                                  
+0x0000103a:  adds     r0, r6, #0                              
+0x0000103c:  blx      r3                                      
+0x0000103e:  ldr      r1, [pc, #0x94]                          ; [pool @0x000010d4] = 0x00001514
+0x00001040:  add      r1, pc                                   ; = "wb+"
+0x00001042:  blx      #0xf7c                                  
+0x00001046:  mov      r8, r0                                  
+0x00001048:  cmp      r0, #0                                  
+0x0000104a:  beq      #0x10c0                                 
+0x0000104c:  movs     r0, #8                                  
+0x0000104e:  bl       #0x1110                                 
+0x00001052:  movs     r3, #0                                  
+0x00001054:  mov      ip, r0                                  
+0x00001056:  ldrb     r2, [r4, r3]                            
+0x00001058:  mov      r1, ip                                  
+0x0000105a:  strb     r2, [r1, r3]                            
+0x0000105c:  adds     r3, #1                                  
+0x0000105e:  cmp      r3, #8                                  
+0x00001060:  bne      #0x1056                                 
+0x00001062:  cmp      r5, #8                                  
+0x00001064:  ble      #0x1094                                 
+0x00001066:  movs     r2, #0                                  
+0x00001068:  b        #0x107c                                 
+0x0000106a:  adds     r1, r2, #0                              
+0x0000106c:  mov      r6, ip                                  
+0x0000106e:  ldrb     r1, [r6, r1]                            
+0x00001070:  adds     r2, #1                                  
+0x00001072:  eors     r1, r0                                  
+0x00001074:  strb     r1, [r4, r3]                            
+0x00001076:  adds     r3, #1                                  
+0x00001078:  cmp      r3, r5                                  
+0x0000107a:  beq      #0x1094                                 
+0x0000107c:  ldrb     r0, [r4, r3]                            
+0x0000107e:  cmp      r2, #7                                  
+0x00001080:  ble      #0x106a                                 
+0x00001082:  movs     r1, #0                                  
+0x00001084:  mov      r6, ip                                  
+0x00001086:  ldrb     r1, [r6, r1]                            
+0x00001088:  movs     r2, #0                                  
+0x0000108a:  eors     r1, r0                                  
+0x0000108c:  strb     r1, [r4, r3]                            
+0x0000108e:  adds     r3, #1                                  
+0x00001090:  cmp      r3, r5                                  
+0x00001092:  bne      #0x107c                                 
+0x00001094:  mov      r0, ip                                  
+0x00001096:  bl       #0x10e0                                 
+0x0000109a:  movs     r1, #1                                  
+0x0000109c:  adds     r2, r5, #0                              
+0x0000109e:  mov      r3, r8                                  
+0x000010a0:  adds     r0, r4, #0                              
+0x000010a2:  blx      #0xfac                                  
+0x000010a6:  mov      r0, r8                                  
+0x000010a8:  blx      #0xf94                                  
+0x000010ac:  adds     r0, r4, #0                              
+0x000010ae:  bl       #0x10e0                                 
+0x000010b2:  adds     r0, r7, #0                              
+0x000010b4:  blx      #0xf4c                                  
+0x000010b8:  add      sp, #8                                  
+0x000010ba:  pop      {r2}                                    
+0x000010bc:  mov      r8, r2                                  
+0x000010be:  pop      {r4, r5, r6, r7, pc}                    
+0x000010c0:  ldr      r1, [pc, #0x14]                          ; [pool @0x000010d8] = 0x00001492
+0x000010c2:  ldr      r2, [pc, #0x18]                          ; [pool @0x000010dc] = 0x00001494
+0x000010c4:  movs     r0, #4                                  
