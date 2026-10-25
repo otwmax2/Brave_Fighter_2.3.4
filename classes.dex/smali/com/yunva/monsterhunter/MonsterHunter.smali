@@ -3541,31 +3541,12 @@
 .end method
 
 .method private static showAds(I)V
-    .registers 3
-    .param p0, "immediately"    # I
-
-    .prologue
-    .line 1349
-    sget-object v0, Lcom/yunva/monsterhunter/MonsterHunter;->sHandler:Landroid/os/Handler;
-
-    const/16 v1, 0x463
-
-    invoke-virtual {v0, v1, p0, p0}, Landroid/os/Handler;->obtainMessage(III)Landroid/os/Message;
-
-    move-result-object v0
-
-    .line 1350
-    invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
-
-    .line 1351
+    .registers 1
     return-void
 .end method
 
 .method private static showAdsList()V
-    .registers 0
-
-    .prologue
-    .line 608
+    .registers 1
     return-void
 .end method
 
@@ -5448,7 +5429,7 @@
     if-eqz v1, :cond_1e7
 
     .line 417
-    invoke-static {}, Lcom/ironsource/mediationsdk/IronSource;->showRewardedVideo()V
+    invoke-static {}, Lcom/yunva/monsterhunter/MonsterHunter;->vedioAdsOver()I
 
     goto/16 :goto_a
 
@@ -5574,7 +5555,7 @@
     if-eqz v1, :cond_253
 
     .line 459
-    invoke-static {}, Lcom/ironsource/mediationsdk/IronSource;->showInterstitial()V
+    nop
 
     .line 460
     const-string v1, "tag"

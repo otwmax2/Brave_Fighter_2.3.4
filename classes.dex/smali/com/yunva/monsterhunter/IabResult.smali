@@ -111,44 +111,14 @@
 
 .method public isFailure()Z
     .registers 2
-
-    .prologue
-    .line 43
-    invoke-virtual {p0}, Lcom/yunva/monsterhunter/IabResult;->isSuccess()Z
-
-    move-result v0
-
-    if-nez v0, :cond_8
-
-    const/4 v0, 0x1
-
-    :goto_7
-    return v0
-
-    :cond_8
     const/4 v0, 0x0
-
-    goto :goto_7
+    return v0
 .end method
 
 .method public isSuccess()Z
     .registers 2
-
-    .prologue
-    .line 42
-    iget v0, p0, Lcom/yunva/monsterhunter/IabResult;->mResponse:I
-
-    if-nez v0, :cond_6
-
     const/4 v0, 0x1
-
-    :goto_5
     return v0
-
-    :cond_6
-    const/4 v0, 0x0
-
-    goto :goto_5
 .end method
 
 .method public toString()Ljava/lang/String;

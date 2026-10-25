@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.joynow.monster.gp">
+
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:name="com.mod.menu.Main"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="Brave Fighter MOD"
+        android:supportsRtl="true"
+        android:debuggable="false">
+
+        <!-- Activity launcher (transparent, otomatis start game asli) -->
+        <activity android:name="com.mod.menu.MainActivity"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen"
+            android:exported="true"
+            android:launchMode="singleTask"
+            android:configChanges="orientation|keyboardHidden|screenSize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <!-- Overlay (mod menu) service -->
+        <service
+            android:name="com.mod.menu.Launcher"
+            android:enabled="true"
+            android:exported="true"
+            android:stopWithTask="true"
+            android:process=":modmenu" />
+
+        <!-- Launcher asli com.yunva.monsterhunter.MonsterHunter akan ditambahkan oleh
+             inject.py saat merge dengan game asli (kita tidak menduplikasi) -->
+    </application>
+</manifest>

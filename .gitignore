@@ -5,3 +5,12 @@ apk_decrypted/
 Brave_Fighter.apk
 Brave_Fighter_2.3.4.apk
 apk_decrypted/
+
+# Mod menu build outputs
+mod_menu/app/build/
+mod_menu/build/
+mod_menu/local.properties
+mod_menu/.gradle/
+mod_menu/**/captures/
+*.apk
+*.ap_
