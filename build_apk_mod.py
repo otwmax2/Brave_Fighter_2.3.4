@@ -208,7 +208,9 @@ def main():
         print("[+] Menerapkan binary patch pada classes2.dex (free IAP + no ads)...")
         d2 = bytearray(entries['classes2.dex'])
         d2 = patch_classes2(d2)
-        entries['classes2.dex'] = bytes(d2)
+        if d2 is not None:
+            entries['classes2.dex'] = bytes(d2)
+        # (else patch_classes2 sudah memodifikasi bytearray in-place)
     else:
         print("[!] classes2.dex tidak ditemukan; IAP/ads patch dilewati.")
 
